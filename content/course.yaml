@@ -1,0 +1,28 @@
+# FY2045 Kvantemekanikk I — interaktiv pensumguide.
+# Innholdet er under arbeid; metadataene under er hentet fra NTNUs emneside.
+
+schemaVersion: 1
+
+code: FY2045
+title: Kvantemekanikk I
+subtitle: Interaktiv pensumguide
+term: H2026
+language: nb
+
+courseUrl: "https://www.ntnu.no/studier/emner/FY2045"
+institution: NTNU
+repoUrl: "https://github.com/MartinSA04/FY2045_companion"
+repoBranch: main
+
+accent: "#9b2d6f"
+accentDark: "#d77ab0"
+
+exam:
+  format: Skriftlig skoleeksamen, 4 timer
+  aids: "Kode C: bestemt, enkel kalkulator og spesifiserte trykte/håndskrevne hjelpemidler tillatt"
+
+features:
+  progress: true
+  search: true
+  flashcards: false
+  theme: true
