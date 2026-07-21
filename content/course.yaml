@@ -10,6 +10,9 @@ term: H2026
 language: nb
 
 courseUrl: "https://www.ntnu.no/studier/emner/FY2045"
+
+# Kurs-huben (oversikten over alle emnesidene) — gir "Alle emner"-lenken øverst i sidemenyen.
+hubUrl: "https://kurs.martinsundal.no"
 institution: NTNU
 repoUrl: "https://github.com/MartinSA04/FY2045_companion"
 repoBranch: main
