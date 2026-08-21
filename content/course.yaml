@@ -28,6 +28,59 @@ exam:
   format: Skriftlig skoleeksamen
   aids: "Kode C: bestemt, enkel kalkulator og spesifiserte trykte/håndskrevne hjelpemidler tillatt"
 
+# ── Tidligere eksamener → Eksamen-siden ──────────────────────────────────────
+# Lenker rett til PDF-ene hos NTNU; guiden hoster dem ikke selv. Datoene er lest
+# av forsiden på hvert sett, ikke gjettet fra filnavnet — IFY navngir flere av
+# filene etter semesteret (…_251200) og ikke etter eksamensdagen.
+# Et utvalg, nyeste først; resten ligger i arkivet som lenkes nederst.
+exams:
+  - {
+      label: "Ordinær eksamen, desember 2025",
+      date: 2025-12-16,
+      url: "https://www.ntnu.no/documents/10422/1269547939/E_FY2045_251200.pdf/0d3f75bc-9fb7-63f1-a0d9-81e313999b2d",
+      solutionUrl: "https://www.ntnu.no/documents/10422/1269547939/L_FY2045_251200.pdf/bc8c7937-b255-930d-211b-99a5847547ec",
+    }
+  - {
+      label: "Kontinuasjonseksamen, august 2025",
+      date: 2025-08-07,
+      url: "https://www.ntnu.no/documents/10422/1269547939/E_FY2045_250800.pdf/ea9cf2fb-301a-8fd8-3a22-99be4eddf277",
+      solutionUrl: "https://www.ntnu.no/documents/10422/1269547939/L_FY2045_250800.pdf/b87719aa-c490-ab76-53f4-e255b0c45fc1",
+    }
+  - {
+      label: "Ordinær eksamen, desember 2024",
+      date: 2024-12-14,
+      url: "https://www.ntnu.no/documents/10422/1269547939/E_FY2045_241214.pdf/6c0f83d2-1f30-c025-43cc-346d261048ae",
+      solutionUrl: "https://www.ntnu.no/documents/10422/1269547939/L_FY2045_241214.pdf/7ee843e6-5f1a-f1b8-9b93-649cfb67c0e3",
+    }
+  - {
+      label: "Kontinuasjonseksamen, august 2024",
+      date: 2024-08-13,
+      url: "https://www.ntnu.no/documents/10422/1269547939/E_FY2045_240813.pdf/c7f2ea42-88a5-fcaf-1abe-2f8f4d1c8a58",
+      solutionUrl: "https://www.ntnu.no/documents/10422/1269547939/L_FY2045_240813.pdf/874e26f4-4c7a-b11c-3368-cd3160b878be",
+    }
+  - {
+      label: "Ordinær eksamen, desember 2023",
+      date: 2023-12-21,
+      url: "https://www.ntnu.no/documents/10422/1269547939/E_FY2045_231221.pdf/d7075cca-84b7-82bf-2cd9-8b5c5c9539d0",
+      solutionUrl: "https://www.ntnu.no/documents/10422/1269547939/L_FY2045_231221.pdf/e8cb8a3d-2967-e5d3-8410-a903844b3059",
+    }
+  - {
+      label: "Ordinær eksamen, desember 2022",
+      date: 2022-12-03,
+      url: "https://www.ntnu.no/documents/10422/1269547939/E_FY2045_221203.pdf/68b3cafc-f2ad-6b7d-bccc-0a0fd70d1f59",
+    }
+  - {
+      label: "Ordinær eksamen, november 2021",
+      date: 2021-11-30,
+      url: "https://www.ntnu.no/documents/10422/1269547939/E_FY2045_211130.pdf/45a1f41e-332d-ad35-4879-2443fbfc429e",
+      solutionUrl: "https://www.ntnu.no/documents/10422/1269547939/L_FY2045_211130.pdf/f2394f99-e6e1-0a5a-d058-dcdf9f0c050f",
+    }
+
+# Hele arkivet hos Institutt for fysikk — rendres som siste rad i lista.
+examArchive:
+  url: "https://www.ntnu.no/fysikk/eksamen/landing/-/asset_publisher/uwSAlUJoweyy/content/fy2045-kvantemekanikk-i"
+  label: "Hele eksamensarkivet hos Institutt for fysikk"
+
 features:
   progress: true
   search: true
