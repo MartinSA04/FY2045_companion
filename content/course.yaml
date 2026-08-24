@@ -81,6 +81,107 @@ examArchive:
   url: "https://www.ntnu.no/fysikk/eksamen/landing/-/asset_publisher/uwSAlUJoweyy/content/fy2045-kvantemekanikk-i"
   label: "Hele eksamensarkivet hos Institutt for fysikk"
 
+# ── Formelsamling ────────────────────────────────────────────────────────────
+# Hvilke formler som står på årets vedlegg til eksamen er ikke verifisert, så
+# ingen rader gjør onSheet/memorize-krav.
+formulas:
+  - id: planck-stralingslov
+    tex: "u(\\nu, T) = \\dfrac{8\\pi\\nu^2}{c^3}\\,\\dfrac{h\\nu}{e^{h\\nu/k_BT} - 1}"
+    label: "Plancks strålingslov: spektral energitetthet i et hulrom med temperatur $T$."
+    section: "Repetisjon og postulater"
+  - id: fotoelektrisk-likning
+    tex: "E_{\\text{kin}} = h\\nu - W"
+    label: "Einsteins fotoelektriske likning. $W$ er frigjøringsarbeidet for metallet."
+    section: "Repetisjon og postulater"
+  - id: foton-energi-impuls
+    tex: "E_\\gamma = h\\nu, \\qquad p_\\gamma = \\dfrac{E_\\gamma}{c} = \\dfrac{h}{\\lambda}"
+    label: "Fotonets energi og impuls."
+    section: "Repetisjon og postulater"
+  - id: compton-relasjonen
+    tex: "\\lambda' - \\lambda = \\dfrac{h}{m_e c}\\,(1 - \\cos\\theta)"
+    label: "Compton-relasjonen for spredning av et foton på et fritt elektron."
+    section: "Repetisjon og postulater"
+  - id: bohr-energier
+    tex: "E_n = -\\dfrac{hcR_\\infty}{n^2} \\approx -\\dfrac{13{,}6\\ \\text{eV}}{n^2}"
+    label: "Energinivåene i hydrogen, $n = 1, 2, 3, \\dots$"
+    section: "Repetisjon og postulater"
+  - id: de-broglie-relasjonene
+    tex: "\\lambda = \\dfrac{h}{p}, \\qquad \\nu = \\dfrac{E}{h}"
+    label: "de Broglie-relasjonene: bølgelengde og frekvens for en partikkel."
+    section: "Repetisjon og postulater"
+
+  - id: schrodingerlikningen
+    tex: "i\\hbar\\,\\dfrac{\\partial\\Psi}{\\partial t} = \\hat H\\,\\Psi"
+    label: "Schrödingerlikningen: kvantemekanikkens bevegelseslikning."
+    section: "Repetisjon og postulater"
+  - id: forventningsverdi
+    tex: "\\langle F \\rangle_\\Psi = \\int \\Psi^* \\hat F\\, \\Psi\\, d\\tau"
+    label: "Forventningsverdien av observabelen $F$ i tilstanden $\\Psi$."
+    section: "Repetisjon og postulater"
+  - id: sannsynlighet-degenerert
+    tex: "P_n = \\sum_{i=1}^{g_n} |c_{ni}|^2"
+    label: "Sannsynligheten for å måle en degenerert egenverdi $f_n$ med degenerasjonsgrad $g_n$."
+    section: "Repetisjon og postulater"
+  - id: tidsutvikling-forventningsverdi
+    tex: "\\dfrac{d}{dt}\\langle F \\rangle = \\dfrac{i}{\\hbar}\\,\\bigl\\langle [\\hat H, \\hat F] \\bigr\\rangle + \\Bigl\\langle \\dfrac{\\partial \\hat F}{\\partial t} \\Bigr\\rangle"
+    label: "Tidsutviklingen til en forventningsverdi. Kommuterer en tidsuavhengig $\\hat F$ med $\\hat H$, er $F$ en bevegelseskonstant."
+    section: "Repetisjon og postulater"
+  - id: impuls-egenfunksjoner
+    tex: "\\psi_p(x) = (2\\pi\\hbar)^{-1/2}\\, e^{ipx/\\hbar}"
+    label: "Impulsegenfunksjonene, deltafunksjonsnormerte."
+    section: "Repetisjon og postulater"
+  - id: impulsrom-bolgefunksjon
+    tex: "\\Phi(p, t) = \\int_{-\\infty}^{\\infty} \\psi_p^*(x)\\, \\Psi(x, t)\\, dx"
+    label: "Bølgefunksjonen i impulsrommet. $|\\Phi(p, t)|^2$ er sannsynlighetstettheten for impulsen."
+    section: "Repetisjon og postulater"
+# ── Begreper ─────────────────────────────────────────────────────────────────
+glossary:
+  - term: "Foton"
+    definition: "Lyskvantet. Har energi $E = h\\nu$ og impuls $p = h/\\lambda$."
+    section: "Repetisjon og postulater"
+  - term: "Frigjøringsarbeid"
+    definition: "Energien $W$ som må til for å løsrive de løsest bundne elektronene fra et metall."
+    section: "Repetisjon og postulater"
+  - term: "Comptonbølgelengde"
+    definition: "$\\lambda_C = h/m_ec = 2{,}43$ pm for elektronet. Setter skalaen for komptonforskyvningen."
+    section: "Repetisjon og postulater"
+  - term: "Stasjonær tilstand"
+    definition: "Tilstand med skarp energi. Et atom i en stasjonær tilstand stråler ikke."
+    section: "Repetisjon og postulater"
+  - term: "Bølge-partikkel-dualitet"
+    definition: "Lys og materie har både bølge- og partikkelegenskaper. Bølgen bestemmer sannsynlighetsfordelingen, partikkelen viser seg i hver enkelt deteksjon."
+    section: "Repetisjon og postulater"
+  - term: "de Broglie-bølgelengde"
+    definition: "Bølgelengden $\\lambda = h/p$ knyttet til en partikkel med impuls $p$."
+    section: "Repetisjon og postulater"
+  - term: "Bølgefunksjon"
+    definition: "Funksjonen $\\Psi$ som beskriver tilstanden til et system. $|\\Psi|^2$ gir sannsynlighetsfordelingen; $\\Psi$ selv kan ikke måles."
+    section: "Repetisjon og postulater"
+  - term: "Bohrradius"
+    definition: "$a_0 = 4\\pi\\varepsilon_0\\hbar^2/m_ee^2 = 0{,}529$ Å. Lengdeskalaen for hydrogenatomet."
+    section: "Repetisjon og postulater"
+  - term: "Finstrukturkonstanten"
+    definition: "$\\alpha = e^2/4\\pi\\varepsilon_0\\hbar c \\approx 1/137$. Dimensjonsløs; angir styrken på den elektromagnetiske vekselvirkningen."
+    section: "Repetisjon og postulater"
+
+  - term: "Observabel"
+    definition: "Målbar fysisk størrelse. Representeres i teorien av en lineær operator."
+    section: "Repetisjon og postulater"
+  - term: "Forventningsverdi"
+    definition: "Gjennomsnittet måleverdiene nærmer seg når observabelen måles mange ganger på et ensemble preparert i samme tilstand."
+    section: "Repetisjon og postulater"
+  - term: "Degenerasjon"
+    definition: "At en egenverdi har flere lineært uavhengige egenfunksjoner. Antallet $g_n$ er degenerasjonsgraden."
+    section: "Repetisjon og postulater"
+  - term: "Kollaps"
+    definition: "Målingen fjerner den delen av bølgefunksjonen som ikke er forenlig med måleresultatet."
+    section: "Repetisjon og postulater"
+  - term: "Bevegelseskonstant"
+    definition: "Størrelse med tidsuavhengig forventningsverdi: en tidsuavhengig operator som kommuterer med $\\hat H$."
+    section: "Repetisjon og postulater"
+  - term: "Impulsrommet"
+    definition: "Formuleringen der $\\Phi(p, t)$ er bølgefunksjonen. Der er $\\hat p = p$ og $\\hat x = i\\hbar\\,\\partial/\\partial p$."
+    section: "Repetisjon og postulater"
 features:
   progress: true
   search: true

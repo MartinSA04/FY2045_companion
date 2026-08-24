@@ -1,0 +1,337 @@
+---
+order: 1
+title: "Repetisjon og postulater"
+summary: "Kvantehypotesene og bølgefunksjonen i kort repetisjon, deretter kvantemekanikkens fire postulater: måling av degenererte egenverdier, tidsutvikling av forventningsverdier og bølgefunksjonen i impulsrommet."
+importance: core
+updated: 2026-08-24
+---
+
+FY2045 bygger videre på TFY4215. Modulen repeterer først hvordan
+kvantehypotesene ble tvunget fram, og hva dobbeltspaltforsøket sier om
+bølgefunksjonen. Deretter samles teorien i de fire postulatene, som brukes på
+degenererte egenverdier, på tidsutviklingen til forventningsverdier og på
+impulsrommet.
+
+<LearningGoals>
+
+- Gjengi hvilke antakelser Planck, Einstein og Compton måtte innføre om lyset, og hvilke målinger som tvang dem fram.
+- Skille de to ideene fra Bohr-modellen som overlever, fra antakelsene som er forkastet.
+- Formulere de fire postulatene og bruke målepostulatet på degenererte egenverdier.
+- Regne ut tidsutviklingen til en <Term name="Forventningsverdi">forventningsverdi</Term> og avgjøre når en størrelse er en <Term name="Bevegelseskonstant">bevegelseskonstant</Term>.
+- Tolke $|\Phi(p, t)|^2$ som sannsynlighetstetthet i <Term name="Impulsrommet">impulsrommet</Term>.
+
+</LearningGoals>
+
+## Lyskvantene
+
+I 1900 fant Planck en formel som traff det målte spekteret fra et sort legeme
+ved alle temperaturer (<FormulaRef id="planck-stralingslov" />), med én ny
+konstant, $h$. For å utlede den måtte han anta at energi utveksles mellom
+stråling og materie i kvanter $h\nu$. Selv kalte han antakelsen en
+fortvilelseshandling.
+
+Einstein tok i 1905 et steg Planck aldri godtok: kvantiseringen ligger i selve
+lyset, som består av <Term name="Foton">fotoner</Term> med energi $h\nu$. Det
+forklarer den fotoelektriske effekten. Fotonets energi går med til
+<Term name="Frigjøringsarbeid">frigjøringsarbeidet</Term> $W$ og til kinetisk
+energi for elektronet, $E_{\text{kin}} = h\nu - W$
+(<FormulaRef id="fotoelektrisk-likning" />), og økt intensitet betyr bare flere
+fotoner. I 1917 ga Einstein fotonet også impulsen $p = E/c = h/\lambda$
+(<FormulaRef id="foton-energi-impuls" />).
+
+Avgjørelsen kom med Compton i 1923. Røntgen spredt på grafitt kom ut med lengre
+bølgelengde, og forskjellen vokste med spredningsvinkelen $\theta$. Klassisk
+skal elektronene svinge med feltet som driver dem og stråle med uendret
+frekvens, slik en antenne gjør. Behandles prosessen i stedet som et
+relativistisk støt mellom ett foton og et fritt elektron i ro, følger målingene
+nøyaktig.
+
+<Formula tex={"\\lambda' - \\lambda = \\dfrac{h}{m_e c}\\,(1 - \\cos\\theta)"} caption={"Compton-relasjonen. Forskyvningen er uavhengig av $\\lambda$ og størst ved tilbakespredning, $\\theta = 180^\\circ$."} />
+
+Forskyvningen settes av
+<Term name="Comptonbølgelengde">comptonbølgelengden</Term>
+$\lambda_C = h/m_ec = 2{,}43$ pm. Legg merke til at $\lambda'$ selv måles med
+braggspredning i en krystall: partikkelegenskapene forklarer støtet,
+bølgeegenskapene måler resultatet.
+
+<Statement kind="principle" name="Bølge-partikkel-dualitet">
+
+Lys har både bølgeegenskaper, beskrevet av $\lambda$ og $\nu = c/\lambda$, og
+partikkelegenskaper, som fotoner med energi $h\nu$ og impuls $h/\lambda$. Det
+er ikke et enten-eller: hvilken side som viser seg, avhenger av hva
+eksperimentet spør etter.
+
+</Statement>
+
+## Bohr og materiebølgene
+
+Atomene i en varm gass stråler på skarpe, diskrete bølgelengder, og Balmer fant
+systemet i hydrogenlinjene alt i 1885: generalisert er
+$1/\lambda = R_\infty(1/n^2 - 1/m^2)$ med heltall $m > n$. Med Rutherfords
+atomkjerne fra 1911 som utgangspunkt forklarte Bohr linjene i 1913.
+
+To av antakelsene hans står fortsatt. Atomet kan bare eksistere i et diskret
+sett <Term name="Stasjonær tilstand">stasjonære tilstander</Term>, hver med
+skarp energi, og i en slik tilstand stråler det ikke. Strålingen kommer i
+kvantesprang mellom tilstandene, med $h\nu = \Delta E$. For hydrogen svarer
+linjene til nivåene $E_n = -hcR_\infty/n^2 \approx -13{,}6$ eV$/n^2$
+(<FormulaRef id="bohr-energier" />).
+
+For å beregne nivåene antok Bohr i tillegg at elektronet går i sirkelbane etter
+Newtons lover, med dreieimpuls kvantisert som $L = n\hbar$. Det ga riktig
+$1/n^2$-avhengighet uten nye parametre, og som biprodukt to størrelser som går
+igjen gjennom hele emnet, <Term name="Bohrradius">bohrradien</Term>
+$a_0 = 0{,}529$ Å og
+<Term name="Finstrukturkonstanten">finstrukturkonstanten</Term>
+$\alpha \approx 1/137$.
+
+<Compare>
+
+<CompareCol title="Overlever">
+
+- Stasjonære tilstander med diskrete energier.
+- Kvantesprang med $h\nu = \Delta E$.
+- $\hbar$ som skala for kvantisert dreieimpuls.
+
+</CompareCol>
+
+<CompareCol title="Forkastet">
+
+- Klassiske baner $r(t)$ for elektronet.
+- $L = n\hbar$; grunntilstanden har $L = 0$.
+- Modellen feiler for alle atomer med mer enn ett elektron.
+
+</CompareCol>
+
+</Compare>
+
+<Callout type="warning" title="Riktig energi, gal modell">
+
+Bohr-modellen treffer hydrogennivåene eksakt, men elektronet går ikke i
+sirkelbane rundt kjernen. De stasjonære tilstandene forklares av partiklenes
+bølgenatur, og et elektron i et atom har ingen bane.
+
+</Callout>
+
+de Broglie snudde i 1923
+<Term name="Bølge-partikkel-dualitet">dualiteten</Term> rundt: også partikler
+har bølgenatur, med $\lambda = h/p$ og $\nu = E/h$
+(<FormulaRef id="de-broglie-relasjonene" />). Kravet om at sirkelbanen rommer et
+helt antall bølgelengder gjenskaper $L = n\hbar$. Davisson og Germer og
+G. P. Thomson bekreftet hypotesen i 1926 og 1927 med elektrondiffraksjon på
+krystaller, og da hadde Schrödinger alt funnet bølgelikningen som gjorde det
+Bohrs modell aldri klarte: den beskrev også tyngre atomer riktig.
+
+## Dobbeltspalten og bølgefunksjonen
+
+Send elektroner én og én mot en dobbeltspalte. Hvert elektron registreres i ett
+punkt på skjermen, men fordelingen av mange treff er et interferensmønster, det
+samme som for lys. For å beskrive det må vi som Young og Fresnel innføre en
+abstrakt <Term name="Bølgefunksjon">bølgefunksjon</Term>: bak spaltene er
+$\Psi_{12} = \Psi_1 + \Psi_2$, og $|\Psi_{12}|^2$ gjengir fordelingen. For lys
+viste bølgefunksjonen seg å være det elektriske feltet. For partikler finnes
+ikke noe tilsvarende: $\Psi$ lar seg ikke måle, og hvor ett enkelt elektron
+havner, kan ingen teori forutsi. <Sidenote>Radioaktive kjerner viser det samme:
+fordelingen av levetider er skarpt bestemt, men ingen måling kan si når én
+bestemt kjerne henfaller.</Sidenote>
+
+Overvåker du spaltene, går hvert elektron gjennom én av dem, men da forsvinner
+interferensmønsteret. Mønsteret finnes bare i eksperimenter der spørsmålet om
+vei ikke kan besvares. Noen spørsmål som er rimelige klassisk, har ikke svar i
+kvantefysikken.
+
+## Postulatene
+
+Alt dette samles i fire postulater, med samme rolle i kvantemekanikken som
+Newtons lover har i klassisk mekanikk.
+
+<Statement kind="principle" name="Postulat A: operatorpostulatet" id="postulat-a">
+
+Til enhver målbar fysisk størrelse, en
+<Term name="Observabel">observabel</Term> $F$, svarer det i teorien en lineær
+operator $\hat F$.
+
+</Statement>
+
+I posisjonsromformuleringen er oppskriften: skriv den klassiske størrelsen ved
+posisjon og impuls, og erstatt impulsen med operatoren
+$\hat p_x = (\hbar/i)\,\partial/\partial x$.
+
+<Table
+  columns={["Observabel", "Operator"]}
+  rows={[
+    ["$x$", "$\\hat x = x$"],
+    ["$p_x$", "$\\hat p_x = \\dfrac{\\hbar}{i}\\dfrac{\\partial}{\\partial x}$"],
+    ["$K = \\dfrac{p^2}{2m}$", "$\\hat K = -\\dfrac{\\hbar^2}{2m}\\nabla^2$"],
+    ["$E = \\dfrac{p^2}{2m} + V(\\vec r)$", "$\\hat H = -\\dfrac{\\hbar^2}{2m}\\nabla^2 + V(\\vec r)$"],
+  ]}
+  caption="Observabler og operatorer i posisjonsromformuleringen."
+/>
+
+<Statement kind="principle" name="Postulat B: bølgefunksjonspostulatet" id="postulat-b">
+
+Tilstanden til et system er fullstendig beskrevet av bølgefunksjonen
+$\Psi(q_1, \dots, q_n, t)$. Tidsutviklingen er bestemt av Schrödingerlikningen
+(<FormulaRef id="schrodingerlikningen" />).
+
+</Statement>
+
+<Formula tex={"i\\hbar\\,\\dfrac{\\partial\\Psi}{\\partial t} = \\hat H\\,\\Psi"} caption={"Schrödingerlikningen: kvantemekanikkens bevegelseslikning."} />
+
+Er $\Psi$ kjent ved ett tidspunkt, er den bestemt for alle senere. Likningen er
+lineær og homogen, så enhver superposisjon av løsninger er selv en løsning. Og
+mer informasjon om systemet enn den som ligger i $\Psi$, finnes ikke.
+
+<Statement kind="principle" name="Postulat C: forventningsverdipostulatet" id="postulat-c">
+
+Måles observabelen $F$ mange ganger på et ensemble preparert i tilstanden
+$\Psi$, nærmer gjennomsnittet av måleverdiene seg forventningsverdien
+$\langle F \rangle_\Psi = \int \Psi^* \hat F\, \Psi\, d\tau$
+(<FormulaRef id="forventningsverdi" />).
+
+</Statement>
+
+Med $F = x$ gir postulatet $\langle x \rangle = \int x\,|\Psi|^2\,d\tau$, så
+$|\Psi|^2$ er sannsynlighetstettheten i posisjonsrommet. Borns tolkning fra
+dobbeltspalten ligger altså inne i postulatet.
+
+<Statement kind="principle" name="Postulat D: målepostulatet" id="postulat-d">
+
+(i) En presis måling av $F$ kan bare gi én av egenverdiene $f_n$ til
+$\hat F$. (ii) Rett etter en måling som ga $f_n$, er systemet i en egentilstand
+av $\hat F$ med egenverdi $f_n$.
+
+</Statement>
+
+En måling endrer altså som regel tilstanden. Er tilstanden før målingen en
+superposisjon $\Psi = \sum_n c_n \psi_n$ av ortonormerte egentilstander, er
+sannsynligheten for å måle $f_n$ lik $|c_n|^2$, og en ny måling rett etterpå
+gir samme verdi igjen.
+
+## Måling av en degenerert egenverdi
+
+Punkt (ii) må presiseres når egenverdien er
+<Term name="Degenerasjon">degenerert</Term>, altså når
+$\hat F \psi_{ni} = f_n \psi_{ni}$ har $g_n$ lineært uavhengige løsninger.
+Utvid tilstanden i det ortonormerte egenfunksjonssettet,
+$\Psi = \sum_n \sum_{i=1}^{g_n} c_{ni}\, \psi_{ni}$. Sannsynligheten for å måle
+$f_n$ er summen over hele egenrommet (<FormulaRef id="sannsynlighet-degenerert" />).
+
+<Formula tex={"P_n = \\sum_{i=1}^{g_n} |c_{ni}|^2 = \\lVert \\Psi_n \\rVert^2, \\qquad \\Psi_n = \\sum_{i=1}^{g_n} c_{ni}\\, \\psi_{ni}"} caption={"Måleutfallet $f_n$ har sannsynligheten til hele egenrommet, og $\\Psi_n$ er delen av $\\Psi$ som er forenlig med $f_n$."} />
+
+Målingen etterlater systemet i den normerte tilstanden
+$\Psi_n / \lVert \Psi_n \rVert$. Resten av bølgefunksjonen fjernes; det er
+dette som kalles <Term name="Kollaps">kollapsen</Term>. Vektene innenfor
+egenrommet arves fra tilstanden før målingen, så målingen plukker ikke en
+vilkårlig egentilstand med riktig egenverdi.
+
+<Example title="måling på en isotrop harmonisk oscillator">
+
+En tredimensjonal isotrop oscillator har ortonormerte egenfunksjoner
+$\psi_{n_x n_y n_z}$ og energier $E_N = \hbar\omega(N + \tfrac32)$ med
+$N = n_x + n_y + n_z$. Systemet prepareres i
+
+$$\Psi = \sqrt{0{,}5}\,\psi_{000} + \sqrt{0{,}1}\,(\psi_{100} + \psi_{010} + \psi_{001}) + \sqrt{0{,}1}\,(\psi_{200} + i\,\psi_{020}).$$
+
+Hvilke energier kan en måling gi, med hvilke sannsynligheter, og hvilken
+tilstand står systemet i rett etter en måling som ga $E_1$?
+
+<Solution>
+
+Leddene har $N = 0$, $1$ og $2$, så mulige måleverdier er
+$E_0 = \tfrac32\hbar\omega$, $E_1 = \tfrac52\hbar\omega$ og
+$E_2 = \tfrac72\hbar\omega$. Sannsynlighetene er kvadratnormene av de tre
+delene: $P_0 = 0{,}5$, $P_1 = 3 \cdot 0{,}1 = 0{,}3$ og
+$P_2 = 2 \cdot 0{,}1 = 0{,}2$, som summerer seg til 1. Måles $E_1$, kollapser
+tilstanden til den normerte $N = 1$-delen.
+
+<Answer>$P_0 = 0{,}5$, $P_1 = 0{,}3$, $P_2 = 0{,}2$; etter målingen er tilstanden $(\psi_{100} + \psi_{010} + \psi_{001})/\sqrt{3}$</Answer>
+
+</Solution>
+
+</Example>
+
+## Tidsutvikling av forventningsverdier
+
+Hvordan $\langle F \rangle$ endrer seg med tida, følger av
+Schrödingerlikningen og av at $\hat H$ er hermitesk
+(<FormulaRef id="tidsutvikling-forventningsverdi" />).
+
+<Formula tex={"\\dfrac{d}{dt}\\langle F \\rangle = \\dfrac{i}{\\hbar}\\,\\bigl\\langle [\\hat H, \\hat F] \\bigr\\rangle + \\Bigl\\langle \\dfrac{\\partial \\hat F}{\\partial t} \\Bigr\\rangle"} caption={"Tidsutviklingen til forventningsverdien av $F$."} />
+
+Vanligvis avhenger ikke $\hat F$ av tida, og da står kommutatorleddet igjen
+alene. En tidsuavhengig operator som kommuterer med $\hat H$, gir en
+<Term name="Bevegelseskonstant">bevegelseskonstant</Term>:
+$\langle F \rangle$ er konstant uansett tilstand. For en fri partikkel
+kommuterer $\hat p$ med $\hat H = \hat p^2/2m$, så $\langle p \rangle$ er
+konstant, det kvantemekaniske motstykket til at en fri klassisk partikkel
+holder impulsen.
+
+## Kontinuerlige spektre og impulsrommet
+
+Impulsoperatoren har et kontinuerlig spektrum: $\hat p_x \psi_p = p\, \psi_p$
+for alle $p \in (-\infty, \infty)$, med egenfunksjonene
+$\psi_p(x) = (2\pi\hbar)^{-1/2}\, e^{ipx/\hbar}$
+(<FormulaRef id="impuls-egenfunksjoner" />). De kan ikke normeres på vanlig
+måte; faktoren $(2\pi\hbar)^{-1/2}$ gir i stedet deltafunksjonsnormering.
+Utviklingen av en tilstand i dette settet er et fourierintegral,
+$\Psi(x, t) = \int \Phi(p, t)\, \psi_p(x)\, dp$, med koeffisient
+
+<Formula tex={"\\Phi(p, t) = \\int_{-\\infty}^{\\infty} \\psi_p^*(x)\\, \\Psi(x, t)\\, dx"} caption={"Bølgefunksjonen i impulsrommet er fouriertransformen av $\\Psi$."} />
+
+I det diskrete tilfellet er sannsynligheten $|c_n|^2$. Her tar en
+sannsynlighetstetthet over: sannsynligheten for å måle impuls i
+$[p, p + dp]$ er $|\Phi(p, t)|^2\, dp$, akkurat som $|\Psi(x, t)|^2\, dx$ er
+sannsynligheten for å finne partikkelen i $[x, x + dx]$.
+
+Likheten er ikke tilfeldig. $\Phi(p, t)$ kan brukes som bølgefunksjon i en egen
+formulering av teorien, <Term name="Impulsrommet">impulsrommet</Term>: der er
+$\hat p = p$ ren multiplikasjon, mens $\hat x = i\hbar\, \partial/\partial p$.
+De to formuleringene gir samme forventningsverdier og samme fysikk, og hvilken
+som er enklest, avhenger av problemet.
+
+## Sjekk deg selv
+
+<Quiz
+  question={"Hva fra Bohr-modellen står seg i moderne kvantemekanikk?"}
+  options={[
+    "Sirkelbanene og kvantiseringen $L = n\\hbar$",
+    "Stasjonære tilstander og kvantesprang med $h\\nu = \\Delta E$",
+    "At grunntilstanden i hydrogen har dreieimpuls $\\hbar$",
+    "At modellen gjelder for alle atomer"
+  ]}
+  answer={1}
+  explanation={"Banene er forkastet, grunntilstanden har $L = 0$, og modellen feiler alt ved helium. De to ideene som overlever, er stasjonære tilstander og kvantesprang."}
+/>
+
+<Quiz
+  question={"Et system er i tilstanden $\\Psi = \\tfrac{1}{\\sqrt{2}}\\psi_1 + \\tfrac12\\psi_2 + \\tfrac12\\psi_3$, der $\\psi_n$ er ortonormerte energiegentilstander. Hva er sannsynligheten for at en energimåling gir $E_1$?"}
+  options={[
+    "$1/\\sqrt{2}$",
+    "$1/2$",
+    "$1/4$",
+    "$0$"
+  ]}
+  answer={1}
+  explanation={"Sannsynligheten er $|c_1|^2 = (1/\\sqrt{2})^2 = 1/2$. Koeffisienten selv er ikke en sannsynlighet."}
+/>
+
+<SelfCheck question={"Bruk uttrykket for $d\\langle F \\rangle/dt$ til å vise at energien er en bevegelseskonstant når $\\hat H$ ikke avhenger av tida."}>
+
+Sett $\hat F = \hat H$. Kommutatoren $[\hat H, \hat H] = 0$, og
+$\partial \hat H/\partial t = 0$, så $d\langle H \rangle/dt = 0$. Det er
+energibevaring i kvantemekanisk form.
+
+</SelfCheck>
+
+<KeyTakeaways>
+
+- Fotonet har $E = h\nu$ og $p = h/\lambda$, og Compton-forskyvningen $\lambda_C(1 - \cos\theta)$ bekreftet fotonhypotesen.
+- Fra Bohr-modellen overlever stasjonære tilstander og kvantesprang; banene og $L = n\hbar$ er forkastet.
+- de Broglie-relasjonene $\lambda = h/p$ og $\nu = E/h$ gjelder lys og materie. $|\Psi|^2$ gir sannsynlighetsfordelingen, og $\Psi$ kan ikke måles.
+- Postulatene: observabel $\leftrightarrow$ lineær operator, $\Psi$ beskriver tilstanden fullstendig og følger Schrödingerlikningen, $\langle F \rangle = \int \Psi^* \hat F\, \Psi\, d\tau$, og en måling gir alltid en egenverdi.
+- Degenerert egenverdi: $P_n = \sum_i |c_{ni}|^2$, og tilstanden kollapser til $\Psi_n/\lVert\Psi_n\rVert$.
+- $d\langle F \rangle/dt = (i/\hbar)\langle[\hat H, \hat F]\rangle + \langle \partial\hat F/\partial t \rangle$; en tidsuavhengig operator som kommuterer med $\hat H$, gir en bevegelseskonstant.
+- $|\Phi(p, t)|^2$ er sannsynlighetstettheten i impulsrommet, og $\Phi$ er selv bølgefunksjonen i en likeverdig formulering.
+
+</KeyTakeaways>
