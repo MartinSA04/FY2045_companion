@@ -1,0 +1,455 @@
+---
+order: 2
+title: "Tidsutvikling, måling og impulsrommet"
+summary: "Hvordan forventningsverdier endrer seg med tida og Ehrenfests teorem, hva en måling gjør med en degenerert egenverdi, og hvordan impulsegenfunksjonene gir en likeverdig formulering av kvantemekanikken i impulsrommet."
+importance: core
+updated: 2026-09-06
+---
+
+Postulatene sier hvordan tilstanden utvikler seg og hva en måling kan gi.
+Modulen bruker dem på tre ting: tidsutviklingen til en forventningsverdi, en
+måling der egenverdien er degenerert, og utviklingskoeffisientene når
+spekteret er kontinuerlig. Det siste fører til impulsrommet, der
+$\Phi(p, t)$ er bølgefunksjonen.
+
+<LearningGoals>
+
+- Utlede $d\langle F \rangle/dt$ fra Schrödingerlikningen og avgjøre når en størrelse er en <Term name="Bevegelseskonstant">bevegelseskonstant</Term>.
+- Bruke <Term name="Ehrenfests teorem">Ehrenfests teorem</Term> og forklare når $\langle x \rangle$ følger den klassiske banen eksakt.
+- Finne sannsynligheten for en degenerert egenverdi og tilstanden rett etter målingen.
+- Normere impulsegenfunksjonene med deltafunksjonen og tolke $|\Phi(p, t)|^2\,dp$.
+- Sette opp Schrödingerlikningen i <Term name="Impulsrommet">impulsrommet</Term>, med $\hat p = p$ og $\hat x = -(\hbar/i)\,\partial/\partial p$.
+
+</LearningGoals>
+
+## Tidsutvikling av forventningsverdier
+
+Forventningsverdien $\langle F \rangle = \int \Psi^* \hat F\, \Psi\, d\tau$
+avhenger av tida fordi $\Psi$ gjør det, og eventuelt fordi $\hat F$ gjør
+det. Deriver under integraltegnet, sett inn Schrödingerlikningen for
+$\partial\Psi/\partial t$ og bruk at $\hat H$ er hermitesk.
+
+<Derivation title="Utledning">
+
+Produktregelen gir tre ledd,
+
+$$
+\begin{aligned}
+\frac{d}{dt}\langle F \rangle = \int \Bigl[&(\partial_t\Psi^*)\,\hat F\,\Psi + \Psi^*\,(\partial_t\hat F)\,\Psi \\
+&+ \Psi^*\,\hat F\,\partial_t\Psi\Bigr]\,d\tau.
+\end{aligned}
+$$
+
+Schrödingerlikningen gir $\partial\Psi/\partial t = \hat H\Psi/i\hbar$ og
+$\partial\Psi^*/\partial t = -(\hat H\Psi)^*/i\hbar$. Første og siste ledd
+blir da
+
+$$
+\begin{aligned}
+&\frac{i}{\hbar}\int \bigl[(\hat H\Psi)^*\,\hat F\,\Psi - \Psi^*\,\hat F\,\hat H\,\Psi\bigr]\,d\tau \\
+&= \frac{i}{\hbar}\int \Psi^*\,(\hat H\hat F - \hat F\hat H)\,\Psi\, d\tau,
+\end{aligned}
+$$
+
+fordi $\hat H$ er hermitesk: $\int (\hat H\Psi)^*\,\chi\, d\tau = \int
+\Psi^*\,\hat H\chi\, d\tau$ for enhver $\chi$, her $\chi = \hat F\Psi$.
+
+</Derivation>
+
+<Formula tex={"\\dfrac{d}{dt}\\langle F \\rangle = \\dfrac{i}{\\hbar}\\,\\bigl\\langle [\\hat H, \\hat F] \\bigr\\rangle + \\Bigl\\langle \\dfrac{\\partial \\hat F}{\\partial t} \\Bigr\\rangle"} caption={"Tidsutviklingen til forventningsverdien av $F$, også kalt Ehrenfests generaliserte teorem."} />
+
+Vanligvis avhenger ikke $\hat F$ av tida, og da står kommutatorleddet igjen
+alene. Kommuterer en
+slik operator med $\hat H$, er $\langle F \rangle$ konstant i enhver
+tilstand, og $F$ er en
+<Term name="Bevegelseskonstant">bevegelseskonstant</Term>. Energien selv er
+det første eksempelet: $[\hat H, \hat H] = 0$, så $\langle E \rangle$ er
+konstant så lenge $\hat H$ ikke avhenger av tida. For en fri partikkel
+kommuterer $\hat p$ med $\hat H = \hat p^2/2m$, så $\langle p \rangle$ er
+konstant, som impulsen til en fri klassisk partikkel.
+
+### Ehrenfests teorem
+
+For en partikkel i et potensial, $\hat H = \hat p^2/2m + V(x)$, gir formelen
+med $\hat F = \hat x$ og $\hat F = \hat p$ to bevegelseslikninger for
+forventningsverdiene. Begge kommutatorene følger av $[\hat x, \hat p] = i\hbar$.
+
+<Derivation title="Kommutatorene">
+
+$V(x)$ kommuterer med $\hat x$, så
+
+$$
+\begin{aligned}
+[\hat H, \hat x] &= \frac{1}{2m}[\hat p^2, \hat x] \\
+&= \frac{1}{2m}\bigl(\hat p\,[\hat p, \hat x] + [\hat p, \hat x]\,\hat p\bigr) \\
+&= -\frac{i\hbar}{m}\,\hat p.
+\end{aligned}
+$$
+
+$\hat p$ kommuterer med $\hat p^2$, og med $\hat p = (\hbar/i)\,\partial/\partial x$ er
+
+$$
+\begin{aligned}
+[V, \hat p]\,\Psi &= V\,\frac{\hbar}{i}\frac{\partial\Psi}{\partial x} - \frac{\hbar}{i}\frac{\partial}{\partial x}(V\Psi) \\
+&= i\hbar\,V'(x)\,\Psi.
+\end{aligned}
+$$
+
+Sett inn i $d\langle F \rangle/dt = (i/\hbar)\langle[\hat H, \hat F]\rangle$.
+
+</Derivation>
+
+<Statement kind="theorem" name="Ehrenfests teorem" id="ehrenfests-teorem">
+
+For $\hat H = \hat p^2/2m + V(x)$ er
+
+$$
+\frac{d\langle x \rangle}{dt} = \frac{\langle p \rangle}{m}, \qquad \frac{d\langle p \rangle}{dt} = -\bigl\langle V'(x) \bigr\rangle.
+$$
+
+Bevegelseslikningene for forventningsverdiene av posisjon, impuls og kraft
+har samme form som Newtons likninger $dx/dt = p/m$ og $dp/dt = -V'(x)$.
+
+</Statement>
+
+Det ser ut som om $\langle x \rangle$ følger den klassiske banen, men
+høyresiden i den andre likningen er forventningsverdien av kraften,
+$\langle F(x) \rangle$, og ikke kraften i middelposisjonen,
+$F(\langle x \rangle)$. Rekkeutvikling om $\langle x \rangle$ viser
+forskjellen:
+
+$$
+\langle F(x) \rangle = F(\langle x \rangle) + \tfrac12\,(\Delta x)^2\,F''(\langle x \rangle) + \dots
+$$
+
+Korreksjonen vokser med bredden $\Delta x$ på bølgepakken og med hvor raskt
+kraften endrer seg. For en makroskopisk partikkel er $\Delta x$
+forsvinnende liten, og klassisk mekanikk gjelder. Det samme gjelder en
+mikroskopisk partikkel i et potensial som varierer langsomt over
+$\Delta x$, slik som i en akselerator. I et lineært eller kvadratisk
+potensial er $F'' = 0$, så der følger $\langle x \rangle$ den klassiske
+banen eksakt, uansett hvor bred pakken er.
+
+<Simulation
+  src="/sims/ehrenfest.js"
+  title="Bølgepakke og klassisk partikkel"
+  caption="Den fylte prikken er $\langle x \rangle$ for bølgepakken, ringen er en klassisk partikkel som starter i ro på samme sted. I det harmoniske potensialet følger de hverandre uansett bredde. I $x^4$-potensialet skiller de lag, og raskere jo bredere pakken er."
+  height={300}
+/>
+
+## Måling av en degenerert egenverdi
+
+Målepostulatet sier at systemet rett etter en måling som ga $f_n$, står i en
+egentilstand med egenverdi $f_n$. Er egenverdien ikke-degenerert, finnes
+bare én slik tilstand, $\psi_n$. Er egenverdien
+<Term name="Degenerasjon">degenerert</Term>, har
+$\hat F\psi_{ni} = f_n\psi_{ni}$ $g_n$ lineært uavhengige løsninger, og
+postulatet må presiseres.
+
+Utvid tilstanden i det ortonormerte egenfunksjonssettet,
+$\Psi = \sum_n \sum_{i=1}^{g_n} c_{ni}\,\psi_{ni}$ med
+$c_{ni} = \int \psi_{ni}^*\,\Psi\,d\tau$. Forventningsverdien er på den ene
+siden $\sum_n P_n f_n$, med $P_n$ som sannsynligheten for å måle $f_n$. På
+den andre siden gir forventningsverdipostulatet
+$\int\Psi^*\hat F\Psi\,d\tau = \sum_n \bigl(\sum_i |c_{ni}|^2\bigr) f_n$.
+Begge gjelder for enhver $\Psi$, så sannsynligheten er summen over hele
+<Term name="Egenrom">egenrommet</Term>.
+
+<Formula tex={"P_n = \\sum_{i=1}^{g_n} |c_{ni}|^2 = \\lVert \\Psi_n \\rVert^2"} caption={"Måleutfallet $f_n$ har sannsynligheten til hele egenrommet. $\\Psi_n = \\sum_i c_{ni}\\,\\psi_{ni}$ er delen av $\\Psi$ som er forenlig med $f_n$."} />
+
+<Statement kind="principle" name="Målepostulatet for en degenerert egenverdi" id="maling-degenerert">
+
+Rett etter en måling som ga $f_n$, står systemet i den normerte tilstanden
+$\Psi_n / \lVert \Psi_n \rVert$.
+
+</Statement>
+
+Delen av $\Psi$ som ikke er forenlig med $f_n$, fjernes. Det er dette som
+kalles <Term name="Kollaps">kollapsen</Term>. Vektene innenfor egenrommet
+arves fra tilstanden før målingen, så målingen plukker ikke en vilkårlig
+egentilstand med riktig egenverdi.
+
+<Example title="måling på en isotrop harmonisk oscillator">
+
+En tredimensjonal isotrop oscillator har ortonormerte egenfunksjoner
+$\psi_{n_x n_y n_z}$ og energier $E_N = \hbar\omega(N + \tfrac32)$ med
+$N = n_x + n_y + n_z$. Ved $t = 0$ prepareres den i
+
+$$
+\begin{aligned}
+\Psi &= \sqrt{0{,}4}\,\psi_{000} \\
+&\quad + \sqrt{0{,}1}\,(\psi_{100} + \psi_{010} + \psi_{001}) \\
+&\quad + \sqrt{0{,}1}\,(\psi_{200} + i\,\psi_{020} + \psi_{011}).
+\end{aligned}
+$$
+
+Hvilke energier kan en måling gi, med hvilke sannsynligheter, og hvilken
+tilstand står systemet i rett etter en måling som ga $E_2$?
+
+<Solution>
+
+De tre delene $\Psi_0$, $\Psi_1$ og $\Psi_2$ har $N = 0$, $1$ og $2$, så
+mulige måleverdier er $E_0 = \tfrac32\hbar\omega$,
+$E_1 = \tfrac52\hbar\omega$ og $E_2 = \tfrac72\hbar\omega$.
+Sannsynlighetene er kvadratnormene: $P_0 = 0{,}4$,
+$P_1 = 3 \cdot 0{,}1 = 0{,}3$ og $P_2 = 3 \cdot 0{,}1 = 0{,}3$, siden
+$|i|^2 = 1$. Summen er 1, så $\Psi$ er normert. Måles $E_2$, står systemet i
+$\Psi_2/\lVert\Psi_2\rVert$.
+
+<Answer>$P_0 = 0{,}4$, $P_1 = 0{,}3$, $P_2 = 0{,}3$; etter målingen er tilstanden $(\psi_{200} + i\,\psi_{020} + \psi_{011})/\sqrt{3}$</Answer>
+
+</Solution>
+
+</Example>
+
+Målingen etterlater altså en superposisjon innenfor egenrommet. For å ende
+i én bestemt egenfunksjon må du måle en observabel til. To operatorer som
+kommuterer, har felles egenfunksjoner, og størrelsene kan ha skarpe verdier
+samtidig; slike observable kalles
+<Term name="Kompatible observable">kompatible</Term>. I hydrogen er $E$,
+$L^2$ og $L_z$ kompatible med felles egenfunksjoner $\psi_{nlm}$: en
+energimåling fastlegger $n$, en måling av $L^2$ deretter $l$, og en måling
+av $L_z$ til slutt $m$. Kommuterer operatorene ikke, som $\hat x$ og
+$\hat p$, finnes ingen felles egenfunksjoner, og en måling av den ene
+ødelegger en skarp verdi for den andre.
+
+## Impulsegenfunksjonene
+
+Egenverdilikningen $\hat p_x\psi = p\,\psi$ med
+$\hat p_x = (\hbar/i)\,d/dx$ har løsningene $\psi_p(x) = A\,e^{ipx/\hbar}$,
+plane bølger, for alle reelle $p$. En kompleks $p$ ville gitt en løsning som
+vokser uten grense i den ene retningen. Spekteret er altså kontinuerlig. Men
+$|\psi_p|^2 = |A|^2$ er konstant, så $\int |\psi_p|^2\,dx$ divergerer, og
+egenfunksjonene kan ikke normeres til 1. I stedet velges $A$ slik at
+
+<Formula tex={"\\int_{-\\infty}^{\\infty} \\psi_{p'}^*(x)\\,\\psi_p(x)\\,dx = \\delta(p - p')"} caption={"Deltafunksjonsnormering. Motstykket til $\\int \\psi_{n'}^*\\psi_n\\,dx = \\delta_{nn'}$ for et diskret spektrum."} />
+
+Med integralframstillingen $\delta(y) = (2\pi)^{-1}\int e^{iyx}\,dx$ blir
+venstresiden $|A|^2 \int e^{i(p - p')x/\hbar}\,dx = 2\pi\hbar\,|A|^2\,
+\delta(p - p')$, så $A = (2\pi\hbar)^{-1/2}$
+(<FormulaRef id="impuls-egenfunksjoner" />).
+
+Posisjonsoperatoren har også et kontinuerlig spektrum.
+$\hat x\,\psi_y = y\,\psi_y$ har løsningen $\psi_y(x) = \delta(x - y)$, som
+er null overalt unntatt i $x = y$, og den er deltafunksjonsnormert på samme
+måte. Etter en posisjonsmåling som ga $x'$, står partikkelen i
+$\delta(x - x')$.
+
+<Compare>
+
+<CompareCol title="Diskret spektrum">
+
+- $\hat F\psi_n = f_n\,\psi_n$
+- $\int \psi_{n'}^*\psi_n\,d\tau = \delta_{nn'}$
+- $\Psi = \sum_n c_n\,\psi_n$ med $c_n = \int \psi_n^*\,\Psi\,d\tau$
+- $P_n = |c_n|^2$ er sannsynligheten for $f_n$
+
+</CompareCol>
+
+<CompareCol title="Kontinuerlig spektrum">
+
+- $\hat F\psi_f = f\,\psi_f$
+- $\int \psi_{f'}^*\psi_f\,d\tau = \delta(f - f')$
+- $\Psi = \int c(f)\,\psi_f\,df$ med $c(f) = \int \psi_f^*\,\Psi\,d\tau$
+- $|c(f)|^2\,df$ er sannsynligheten for et resultat i $(f, f + df)$
+
+</CompareCol>
+
+</Compare>
+
+## Sannsynlighetstettheten i impulsrommet
+
+Med impulsegenfunksjonene som basis er utviklingen av $\Psi$ et
+fourierintegral, $\Psi(x, t) = \int \Phi(p, t)\,\psi_p(x)\,dp$, og
+koeffisienten finner vi ved å projisere på $\psi_p$.
+
+<Formula tex={"\\Phi(p, t) = \\int_{-\\infty}^{\\infty} \\psi_p^*(x)\\, \\Psi(x, t)\\, dx"} caption={"Bølgefunksjonen i impulsrommet er fouriertransformen av $\\Psi$."} />
+
+Tolkningen av $\Phi$ følger av samme sammenlikning som i det degenererte
+tilfellet. Måles $p_x$ mange ganger på et ensemble i tilstanden $\Psi$, er
+$\langle p_x \rangle = \int P(p, t)\,p\,dp$, der $P(p, t)\,dp$ er
+sannsynligheten for et resultat i $[p, p + dp]$. Forventningsverdipostulatet
+gir samtidig
+
+$$
+\begin{aligned}
+\langle p_x \rangle &= \int (\hat p_x\Psi)^*\,\Psi\,dx \\
+&= \int dp\,\Phi^*(p, t)\,p \int \psi_p^*(x)\,\Psi(x, t)\,dx \\
+&= \int p\,|\Phi(p, t)|^2\,dp.
+\end{aligned}
+$$
+
+Her flyttet vi den hermiteske $\hat p_x$ over på den venstre faktoren, satte
+inn utviklingen av $\Psi$, brukte $\hat p_x\psi_p = p\,\psi_p$ og byttet
+rekkefølge på integralene. Sammenlikningen gir $P(p, t) = |\Phi(p, t)|^2$.
+
+<Statement kind="principle" name="Sannsynlighetstettheten i impulsrommet" id="sannsynlighet-impulsrommet">
+
+Er systemet i tilstanden $\Psi(x, t)$, er sannsynligheten for å måle $p_x$ i
+$(p, p + dp)$ lik $|\Phi(p, t)|^2\,dp$. $|\Phi|^2$ er
+sannsynlighetstettheten i impulsrommet, slik $|\Psi|^2$ er det i
+posisjonsrommet.
+
+</Statement>
+
+## Kvantemekanikk i impulsrommet
+
+Likheten er ikke tilfeldig. $\Phi(p, t)$ kan brukes som bølgefunksjon i en
+egen formulering av teorien. For en observabel som bare avhenger av $p$, er
+$\langle F(p) \rangle = \int |\Phi|^2\,F(p)\,dp$ fordi $|\Phi|^2$ er
+sannsynlighetstettheten. Skrevet som
+
+$$
+\langle F(p) \rangle = \int \Phi^*\,F(p)\,\Phi\,dp
+$$
+
+har det samme form som $\int \Psi^* \hat F\,\Psi\,dx$, så $\hat p = p$, ren multiplikasjon, slik $\hat x = x$ er det i
+posisjonsrommet. Den kinetiske energien $\hat p^2/2m$ blir dermed enkel.
+
+Posisjonen krever et regnestykke. Start i posisjonsrommet, med
+$\langle x^n \rangle = \int (x^n\Psi)^*\,\Psi\,dx$, og sett inn utviklingen
+av $\Psi$. Identiteten
+$x\,e^{ipx/\hbar} = (\hbar/i)\,\partial_p\,e^{ipx/\hbar}$ gir
+$x^n\psi_p = \bigl((\hbar/i)\,\partial/\partial p\bigr)^n\psi_p$.
+Konjugeringen snur fortegnet på $i$, og $p$-derivasjonen kan tas utenfor
+$x$-integralet, som er $\Phi(p, t)$:
+
+$$
+\langle x^n \rangle = \int \Phi^*(p, t)\Bigl(-\frac{\hbar}{i}\frac{\partial}{\partial p}\Bigr)^n \Phi(p, t)\,dp.
+$$
+
+Sammenliknet med oppskriften $\langle F \rangle = \int\Phi^*\hat F\Phi\,dp$
+betyr det at $\hat x = -(\hbar/i)\,\partial/\partial p$. Et potensial
+$V(x) = \sum_n v_n x^n$ blir operatorfunksjonen
+$\hat V = \sum_n v_n\,\hat x^{\,n}$, altså $V$ med $\hat x$ satt inn.
+Kommutatoren er den samme som før, $[\hat x, \hat p] = i\hbar$.
+
+$\Phi$ inneholder all informasjon om systemet, for $\Psi$ og $\Phi$ er et
+fourierpar og bestemmer hverandre. $\Phi$ har også sin egen bølgelikning.
+Deriver $\Phi = \int\psi_p^*\,\Psi\,dx$ med hensyn på tida og sett inn
+Schrödingerlikningen for $\Psi$. Den hermiteske $\hat H$ kan flyttes over på
+$\psi_p^*$, der $\hat p^2/2m$ gir tallet $p^2/2m$ og $V(x)$ blir
+operatorfunksjonen i $p$.
+
+<Formula tex={"i\\hbar\\,\\frac{\\partial\\Phi}{\\partial t} = \\Bigl[\\frac{p^2}{2m} + V\\Bigl(-\\frac{\\hbar}{i}\\frac{\\partial}{\\partial p}\\Bigr)\\Bigr]\\Phi"} caption={"Schrödingerlikningen i impulsrommet: samme likning, med operatorene fra impulsrommet satt inn i $\\hat H$."} />
+
+<Table
+  columns={["Posisjonsrommet", "Impulsrommet"]}
+  rows={[
+    ["$\\Psi(x, t)$", "$\\Phi(p, t)$"],
+    ["$\\hat x = x$", "$\\hat x = -\\dfrac{\\hbar}{i}\\dfrac{\\partial}{\\partial p}$"],
+    ["$\\hat p = \\dfrac{\\hbar}{i}\\dfrac{\\partial}{\\partial x}$", "$\\hat p = p$"],
+    ["$i\\hbar\\,\\partial_t\\Psi = \\hat H\\Psi$", "$i\\hbar\\,\\partial_t\\Phi = \\hat H\\Phi$"],
+  ]}
+  rowHeader={false}
+  caption="De to formuleringene i én dimensjon, begge med $\hat H = \hat p^2/2m + V(\hat x)$. I tre dimensjoner gjelder det samme for hver komponent."
+/>
+
+De to formuleringene gir samme fysikk. Posisjonsrommet er som regel enklest
+fordi $\hat H$ er kvadratisk i $p$ og mer innfløkt i $x$. Unntakene er en
+fri partikkel, et lineært potensial og den harmoniske oscillatoren, der de to
+er like enkle.
+
+For en fri partikkel er likningen $i\hbar\,\partial_t\Phi = (p^2/2m)\,\Phi$
+med løsningen $\Phi(p, t) = \Phi(p, 0)\,e^{-ip^2t/2m\hbar}$. Da er
+$|\Phi(p, t)|^2 = |\Phi(p, 0)|^2$: fordelingen av impuls endrer seg ikke,
+og alle observable som bare avhenger av $p$, har konstante
+forventningsverdier. Posisjonen har det ikke. Settes løsningen inn i
+$\langle x \rangle = \int\Phi^*\,(-\tfrac{\hbar}{i}\partial_p)\,\Phi\,dp$,
+virker $\partial_p$ også på fasen, og det leddet gir
+$\langle x \rangle_t = \langle x \rangle_0 + \langle p \rangle\,t/m$,
+Newtons første lov for forventningsverdiene.
+
+<Example title="grunntilstanden til den harmoniske oscillatoren i impulsrommet">
+
+Finn $\Phi(p, t)$ for grunntilstanden
+$\psi_0(x) = (m\omega/\pi\hbar)^{1/4}\,e^{-m\omega x^2/2\hbar}$ med energi
+$E_0 = \tfrac12\hbar\omega$.
+
+<Solution>
+
+Tidsavhengigheten er $\Psi_0(x, t) = \psi_0(x)\,e^{-i\omega t/2}$, og
+fouriertransformen er
+
+$$
+\begin{aligned}
+\Phi(p, t) &= \frac{e^{-i\omega t/2}}{\sqrt{2\pi\hbar}}\Bigl(\frac{m\omega}{\pi\hbar}\Bigr)^{1/4} I(p), \\
+I(p) &= \int_{-\infty}^{\infty} e^{-m\omega x^2/2\hbar - ipx/\hbar}\,dx.
+\end{aligned}
+$$
+
+Fullfør kvadratet i eksponenten:
+
+$$
+\begin{aligned}
+&-\frac{m\omega}{2\hbar}\Bigl(x^2 + \frac{2ipx}{m\omega}\Bigr) \\
+&= -\frac{m\omega}{2\hbar}\Bigl(x + \frac{ip}{m\omega}\Bigr)^2 - \frac{p^2}{2m\omega\hbar}.
+\end{aligned}
+$$
+
+Det siste leddet kan settes utenfor integralet, og resten er gaussisk,
+$\int e^{-a(x+b)^2}dx = \sqrt{\pi/a}$ med $a = m\omega/2\hbar$, så
+$I(p) = \sqrt{2\pi\hbar/m\omega}\,e^{-p^2/2m\omega\hbar}$. Samlet:
+
+$$
+\begin{aligned}
+\Phi(p, t) &= (\pi\hbar m\omega)^{-1/4}\, e^{-p^2/2m\omega\hbar} \\
+&\quad \times e^{-i\omega t/2}.
+\end{aligned}
+$$
+
+$|\Phi|^2$ er en gaussisk fordeling i $p$ med $\Delta p = \sqrt{m\omega\hbar/2}$.
+Sammen med $\Delta x = \sqrt{\hbar/2m\omega}$ fra $|\psi_0|^2$ gir det
+$\Delta x\,\Delta p = \hbar/2$, minst mulig.
+
+<Answer>$\Phi(p, t) = (\pi\hbar m\omega)^{-1/4}\, e^{-p^2/2m\omega\hbar}\, e^{-i\omega t/2}$, en gaussisk pakke med $\Delta p = \sqrt{m\omega\hbar/2}$</Answer>
+
+</Solution>
+
+</Example>
+
+## Sjekk deg selv
+
+<Quiz
+  question={"Et hydrogenatom er i tilstanden $\\Psi = \\tfrac12(\\psi_{100} + \\psi_{200} + \\psi_{210} + \\psi_{211})$, der $\\psi_{nlm}$ er ortonormerte energiegentilstander. En energimåling gir $E_2$. Hva er sannsynligheten for det, og hvilken tilstand står atomet i etterpå?"}
+  options={[
+    "$3/4$, og én av $\\psi_{200}$, $\\psi_{210}$ eller $\\psi_{211}$, tilfeldig valgt",
+    "$3/4$, og tilstanden $\\tfrac12(\\psi_{200} + \\psi_{210} + \\psi_{211})$",
+    "$3/4$, og tilstanden $(\\psi_{200} + \\psi_{210} + \\psi_{211})/\\sqrt{3}$",
+    "$1/4$, og tilstanden $\\psi_{200}$"
+  ]}
+  answer={2}
+  explanation={"$E_2$ har tre ledd med $|c|^2 = 1/4$ hver, så $P_2 = 3/4$. Målingen fjerner $\\psi_{100}$ og beholder resten med samme innbyrdes vekter, normert på nytt: delen $\\tfrac12(\\psi_{200} + \\psi_{210} + \\psi_{211})$ har norm $\\sqrt{3}/2$, og delt på den blir tilstanden $(\\psi_{200} + \\psi_{210} + \\psi_{211})/\\sqrt{3}$."}
+/>
+
+<Quiz
+  question={"En partikkel har den normerte bølgefunksjonen $\\Phi(p)$ i impulsrommet. Hvilken påstand er riktig?"}
+  options={[
+    "$|\\Phi(p)|^2\\,dp$ er sannsynligheten for å finne partikkelen mellom $x$ og $x + dx$.",
+    "$\\int |\\Phi(p)|^2\\,dp = 1$.",
+    "$\\langle p \\rangle = \\int |\\Phi(p)|^2\\,dp$.",
+    "En tilstand med skarp impuls er også skarpt lokalisert i posisjon."
+  ]}
+  answer={1}
+  explanation={"$|\\Phi|^2$ er sannsynlighetstettheten for impuls, så integralet over alle $p$ er 1. Forventningsverdien trenger en faktor $p$ i integranden, og en skarp impuls er en plan bølge, som er spredt over hele rommet."}
+/>
+
+<SelfCheck question={"Vis at $[\\hat x, \\hat p] = i\\hbar$ også med operatorene i impulsrommet."}>
+
+La operatorene virke på en vilkårlig $\Phi(p)$:
+$\hat x\hat p\,\Phi = -\tfrac{\hbar}{i}\,\partial_p(p\,\Phi) = -\tfrac{\hbar}{i}\,\Phi - \tfrac{\hbar}{i}\,p\,\partial_p\Phi$,
+mens $\hat p\hat x\,\Phi = -\tfrac{\hbar}{i}\,p\,\partial_p\Phi$.
+Differansen er $-\tfrac{\hbar}{i}\,\Phi = i\hbar\,\Phi$.
+
+</SelfCheck>
+
+<KeyTakeaways>
+
+- $d\langle F \rangle/dt = (i/\hbar)\langle[\hat H, \hat F]\rangle + \langle \partial\hat F/\partial t \rangle$. En tidsuavhengig operator som kommuterer med $\hat H$, gir en bevegelseskonstant.
+- Ehrenfests teorem: $d\langle x \rangle/dt = \langle p \rangle/m$ og $d\langle p \rangle/dt = -\langle V'(x) \rangle$. $\langle x \rangle$ følger den klassiske banen eksakt bare når $F'' = 0$, altså i lineære og kvadratiske potensialer.
+- Degenerert egenverdi: $P_n = \sum_i |c_{ni}|^2 = \lVert\Psi_n\rVert^2$, og målingen etterlater $\Psi_n/\lVert\Psi_n\rVert$. Én egenfunksjon får du først ved å måle kompatible observable etter tur.
+- Impulsegenfunksjonene $\psi_p = (2\pi\hbar)^{-1/2}e^{ipx/\hbar}$ er deltafunksjonsnormerte: $\int\psi_{p'}^*\psi_p\,dx = \delta(p - p')$.
+- $\Phi(p, t) = \int\psi_p^*\,\Psi\,dx$, og $|\Phi(p, t)|^2\,dp$ er sannsynligheten for å måle impuls i $(p, p + dp)$.
+- I impulsrommet er $\hat p = p$ og $\hat x = -(\hbar/i)\,\partial/\partial p$, og $\Phi$ følger Schrödingerlikningen med samme $\hat H$.
+
+</KeyTakeaways>

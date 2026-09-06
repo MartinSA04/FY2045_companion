@@ -121,19 +121,31 @@ formulas:
   - id: sannsynlighet-degenerert
     tex: "P_n = \\sum_{i=1}^{g_n} |c_{ni}|^2"
     label: "Sannsynligheten for å måle en degenerert egenverdi $f_n$ med degenerasjonsgrad $g_n$."
-    section: "Repetisjon og postulater"
+    section: "Tidsutvikling, måling og impulsrommet"
   - id: tidsutvikling-forventningsverdi
     tex: "\\dfrac{d}{dt}\\langle F \\rangle = \\dfrac{i}{\\hbar}\\,\\bigl\\langle [\\hat H, \\hat F] \\bigr\\rangle + \\Bigl\\langle \\dfrac{\\partial \\hat F}{\\partial t} \\Bigr\\rangle"
     label: "Tidsutviklingen til en forventningsverdi. Kommuterer en tidsuavhengig $\\hat F$ med $\\hat H$, er $F$ en bevegelseskonstant."
-    section: "Repetisjon og postulater"
+    section: "Tidsutvikling, måling og impulsrommet"
   - id: impuls-egenfunksjoner
     tex: "\\psi_p(x) = (2\\pi\\hbar)^{-1/2}\\, e^{ipx/\\hbar}"
     label: "Impulsegenfunksjonene, deltafunksjonsnormerte."
-    section: "Repetisjon og postulater"
+    section: "Tidsutvikling, måling og impulsrommet"
   - id: impulsrom-bolgefunksjon
     tex: "\\Phi(p, t) = \\int_{-\\infty}^{\\infty} \\psi_p^*(x)\\, \\Psi(x, t)\\, dx"
     label: "Bølgefunksjonen i impulsrommet. $|\\Phi(p, t)|^2$ er sannsynlighetstettheten for impulsen."
-    section: "Repetisjon og postulater"
+    section: "Tidsutvikling, måling og impulsrommet"
+  - id: ehrenfests-teorem
+    tex: "\\begin{aligned} \\dfrac{d\\langle x \\rangle}{dt} &= \\dfrac{\\langle p \\rangle}{m}, \\\\[4pt] \\dfrac{d\\langle p \\rangle}{dt} &= -\\langle V'(x) \\rangle \\end{aligned}"
+    label: "Ehrenfests teorem: bevegelseslikningene for $\\langle x \\rangle$ og $\\langle p \\rangle$ når $\\hat H = \\hat p^2/2m + V(x)$."
+    section: "Tidsutvikling, måling og impulsrommet"
+  - id: delta-normering
+    tex: "\\int \\psi_{p'}^*\\,\\psi_p\\,dx = \\delta(p - p')"
+    label: "Deltafunksjonsnormering av egenfunksjoner med kontinuerlig spektrum."
+    section: "Tidsutvikling, måling og impulsrommet"
+  - id: impulsrom-operatorer
+    tex: "\\hat p = p, \\qquad \\hat x = -\\dfrac{\\hbar}{i}\\,\\dfrac{\\partial}{\\partial p}"
+    label: "Operatorene i impulsrommet. $\\Phi(p, t)$ følger Schrödingerlikningen med samme $\\hat H$."
+    section: "Tidsutvikling, måling og impulsrommet"
 # ── Begreper ─────────────────────────────────────────────────────────────────
 glossary:
   - term: "Foton"
@@ -172,16 +184,28 @@ glossary:
     section: "Repetisjon og postulater"
   - term: "Degenerasjon"
     definition: "At en egenverdi har flere lineært uavhengige egenfunksjoner. Antallet $g_n$ er degenerasjonsgraden."
-    section: "Repetisjon og postulater"
+    section: "Tidsutvikling, måling og impulsrommet"
   - term: "Kollaps"
     definition: "Målingen fjerner den delen av bølgefunksjonen som ikke er forenlig med måleresultatet."
-    section: "Repetisjon og postulater"
+    section: "Tidsutvikling, måling og impulsrommet"
   - term: "Bevegelseskonstant"
     definition: "Størrelse med tidsuavhengig forventningsverdi: en tidsuavhengig operator som kommuterer med $\\hat H$."
-    section: "Repetisjon og postulater"
+    section: "Tidsutvikling, måling og impulsrommet"
   - term: "Impulsrommet"
-    definition: "Formuleringen der $\\Phi(p, t)$ er bølgefunksjonen. Der er $\\hat p = p$ og $\\hat x = i\\hbar\\,\\partial/\\partial p$."
-    section: "Repetisjon og postulater"
+    definition: "Formuleringen der $\\Phi(p, t)$ er bølgefunksjonen. Der er $\\hat p = p$ og $\\hat x = -(\\hbar/i)\\,\\partial/\\partial p$."
+    section: "Tidsutvikling, måling og impulsrommet"
+  - term: "Ehrenfests teorem"
+    definition: "Forventningsverdiene følger likninger med samme form som Newtons: $d\\langle x \\rangle/dt = \\langle p \\rangle/m$ og $d\\langle p \\rangle/dt = -\\langle V'(x) \\rangle$."
+    section: "Tidsutvikling, måling og impulsrommet"
+  - term: "Egenrom"
+    definition: "Alle egenfunksjoner som hører til samme egenverdi $f_n$. Dimensjonen er degenerasjonsgraden $g_n$."
+    section: "Tidsutvikling, måling og impulsrommet"
+  - term: "Kompatible observable"
+    definition: "Observable med kommuterende operatorer. De har felles egenfunksjoner og kan ha skarpe verdier samtidig."
+    section: "Tidsutvikling, måling og impulsrommet"
+  - term: "Deltafunksjonsnormering"
+    definition: "Normering av egenfunksjoner med kontinuerlig spektrum: $\\int \\psi_{f'}^*\\psi_f\\,d\\tau = \\delta(f - f')$ i stedet for $\\delta_{nn'}$."
+    section: "Tidsutvikling, måling og impulsrommet"
 features:
   progress: true
   search: true

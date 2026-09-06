@@ -1,24 +1,20 @@
 ---
 order: 1
 title: "Repetisjon og postulater"
-summary: "Kvantehypotesene og bølgefunksjonen i kort repetisjon, deretter kvantemekanikkens fire postulater: måling av degenererte egenverdier, tidsutvikling av forventningsverdier og bølgefunksjonen i impulsrommet."
+summary: "Kvantehypotesene og bølgefunksjonen i kort repetisjon, deretter kvantemekanikkens fire postulater: operatorer, Schrödingerlikningen, forventningsverdier og hva en måling kan gi."
 importance: core
-updated: 2026-08-24
+updated: 2026-09-06
 ---
 
 FY2045 bygger videre på TFY4215. Modulen repeterer først hvordan
 kvantehypotesene ble tvunget fram, og hva dobbeltspaltforsøket sier om
-bølgefunksjonen. Deretter samles teorien i de fire postulatene, som brukes på
-degenererte egenverdier, på tidsutviklingen til forventningsverdier og på
-impulsrommet.
+bølgefunksjonen. Deretter samles teorien i de fire postulatene.
 
 <LearningGoals>
 
 - Gjengi hvilke antakelser Planck, Einstein og Compton måtte innføre om lyset, og hvilke målinger som tvang dem fram.
 - Skille de to ideene fra Bohr-modellen som overlever, fra antakelsene som er forkastet.
-- Formulere de fire postulatene og bruke målepostulatet på degenererte egenverdier.
-- Regne ut tidsutviklingen til en <Term name="Forventningsverdi">forventningsverdi</Term> og avgjøre når en størrelse er en <Term name="Bevegelseskonstant">bevegelseskonstant</Term>.
-- Tolke $|\Phi(p, t)|^2$ som sannsynlighetstetthet i <Term name="Impulsrommet">impulsrommet</Term>.
+- Formulere de fire postulatene og bruke målepostulatet på en superposisjon av egentilstander.
 
 </LearningGoals>
 
@@ -185,7 +181,8 @@ mer informasjon om systemet enn den som ligger i $\Psi$, finnes ikke.
 <Statement kind="principle" name="Postulat C: forventningsverdipostulatet" id="postulat-c">
 
 Måles observabelen $F$ mange ganger på et ensemble preparert i tilstanden
-$\Psi$, nærmer gjennomsnittet av måleverdiene seg forventningsverdien
+$\Psi$, nærmer gjennomsnittet av måleverdiene seg
+<Term name="Forventningsverdi">forventningsverdien</Term>
 $\langle F \rangle_\Psi = \int \Psi^* \hat F\, \Psi\, d\tau$
 (<FormulaRef id="forventningsverdi" />).
 
@@ -206,89 +203,9 @@ av $\hat F$ med egenverdi $f_n$.
 En måling endrer altså som regel tilstanden. Er tilstanden før målingen en
 superposisjon $\Psi = \sum_n c_n \psi_n$ av ortonormerte egentilstander, er
 sannsynligheten for å måle $f_n$ lik $|c_n|^2$, og en ny måling rett etterpå
-gir samme verdi igjen.
-
-## Måling av en degenerert egenverdi
-
-Punkt (ii) må presiseres når egenverdien er
-<Term name="Degenerasjon">degenerert</Term>, altså når
-$\hat F \psi_{ni} = f_n \psi_{ni}$ har $g_n$ lineært uavhengige løsninger.
-Utvid tilstanden i det ortonormerte egenfunksjonssettet,
-$\Psi = \sum_n \sum_{i=1}^{g_n} c_{ni}\, \psi_{ni}$. Sannsynligheten for å måle
-$f_n$ er summen over hele egenrommet (<FormulaRef id="sannsynlighet-degenerert" />).
-
-<Formula tex={"P_n = \\sum_{i=1}^{g_n} |c_{ni}|^2 = \\lVert \\Psi_n \\rVert^2, \\qquad \\Psi_n = \\sum_{i=1}^{g_n} c_{ni}\\, \\psi_{ni}"} caption={"Måleutfallet $f_n$ har sannsynligheten til hele egenrommet, og $\\Psi_n$ er delen av $\\Psi$ som er forenlig med $f_n$."} />
-
-Målingen etterlater systemet i den normerte tilstanden
-$\Psi_n / \lVert \Psi_n \rVert$. Resten av bølgefunksjonen fjernes; det er
-dette som kalles <Term name="Kollaps">kollapsen</Term>. Vektene innenfor
-egenrommet arves fra tilstanden før målingen, så målingen plukker ikke en
-vilkårlig egentilstand med riktig egenverdi.
-
-<Example title="måling på en isotrop harmonisk oscillator">
-
-En tredimensjonal isotrop oscillator har ortonormerte egenfunksjoner
-$\psi_{n_x n_y n_z}$ og energier $E_N = \hbar\omega(N + \tfrac32)$ med
-$N = n_x + n_y + n_z$. Systemet prepareres i
-
-$$\Psi = \sqrt{0{,}5}\,\psi_{000} + \sqrt{0{,}1}\,(\psi_{100} + \psi_{010} + \psi_{001}) + \sqrt{0{,}1}\,(\psi_{200} + i\,\psi_{020}).$$
-
-Hvilke energier kan en måling gi, med hvilke sannsynligheter, og hvilken
-tilstand står systemet i rett etter en måling som ga $E_1$?
-
-<Solution>
-
-Leddene har $N = 0$, $1$ og $2$, så mulige måleverdier er
-$E_0 = \tfrac32\hbar\omega$, $E_1 = \tfrac52\hbar\omega$ og
-$E_2 = \tfrac72\hbar\omega$. Sannsynlighetene er kvadratnormene av de tre
-delene: $P_0 = 0{,}5$, $P_1 = 3 \cdot 0{,}1 = 0{,}3$ og
-$P_2 = 2 \cdot 0{,}1 = 0{,}2$, som summerer seg til 1. Måles $E_1$, kollapser
-tilstanden til den normerte $N = 1$-delen.
-
-<Answer>$P_0 = 0{,}5$, $P_1 = 0{,}3$, $P_2 = 0{,}2$; etter målingen er tilstanden $(\psi_{100} + \psi_{010} + \psi_{001})/\sqrt{3}$</Answer>
-
-</Solution>
-
-</Example>
-
-## Tidsutvikling av forventningsverdier
-
-Hvordan $\langle F \rangle$ endrer seg med tida, følger av
-Schrödingerlikningen og av at $\hat H$ er hermitesk
-(<FormulaRef id="tidsutvikling-forventningsverdi" />).
-
-<Formula tex={"\\dfrac{d}{dt}\\langle F \\rangle = \\dfrac{i}{\\hbar}\\,\\bigl\\langle [\\hat H, \\hat F] \\bigr\\rangle + \\Bigl\\langle \\dfrac{\\partial \\hat F}{\\partial t} \\Bigr\\rangle"} caption={"Tidsutviklingen til forventningsverdien av $F$."} />
-
-Vanligvis avhenger ikke $\hat F$ av tida, og da står kommutatorleddet igjen
-alene. En tidsuavhengig operator som kommuterer med $\hat H$, gir en
-<Term name="Bevegelseskonstant">bevegelseskonstant</Term>:
-$\langle F \rangle$ er konstant uansett tilstand. For en fri partikkel
-kommuterer $\hat p$ med $\hat H = \hat p^2/2m$, så $\langle p \rangle$ er
-konstant, det kvantemekaniske motstykket til at en fri klassisk partikkel
-holder impulsen.
-
-## Kontinuerlige spektre og impulsrommet
-
-Impulsoperatoren har et kontinuerlig spektrum: $\hat p_x \psi_p = p\, \psi_p$
-for alle $p \in (-\infty, \infty)$, med egenfunksjonene
-$\psi_p(x) = (2\pi\hbar)^{-1/2}\, e^{ipx/\hbar}$
-(<FormulaRef id="impuls-egenfunksjoner" />). De kan ikke normeres på vanlig
-måte; faktoren $(2\pi\hbar)^{-1/2}$ gir i stedet deltafunksjonsnormering.
-Utviklingen av en tilstand i dette settet er et fourierintegral,
-$\Psi(x, t) = \int \Phi(p, t)\, \psi_p(x)\, dp$, med koeffisient
-
-<Formula tex={"\\Phi(p, t) = \\int_{-\\infty}^{\\infty} \\psi_p^*(x)\\, \\Psi(x, t)\\, dx"} caption={"Bølgefunksjonen i impulsrommet er fouriertransformen av $\\Psi$."} />
-
-I det diskrete tilfellet er sannsynligheten $|c_n|^2$. Her tar en
-sannsynlighetstetthet over: sannsynligheten for å måle impuls i
-$[p, p + dp]$ er $|\Phi(p, t)|^2\, dp$, akkurat som $|\Psi(x, t)|^2\, dx$ er
-sannsynligheten for å finne partikkelen i $[x, x + dx]$.
-
-Likheten er ikke tilfeldig. $\Phi(p, t)$ kan brukes som bølgefunksjon i en egen
-formulering av teorien, <Term name="Impulsrommet">impulsrommet</Term>: der er
-$\hat p = p$ ren multiplikasjon, mens $\hat x = i\hbar\, \partial/\partial p$.
-De to formuleringene gir samme forventningsverdier og samme fysikk, og hvilken
-som er enklest, avhenger av problemet.
+gir samme verdi igjen. Måler du i stedet posisjonen og finner $x'$, står
+partikkelen rett etterpå i posisjonsegentilstanden $\delta(x - x')$, som ikke
+er en energiegentilstand.
 
 ## Sjekk deg selv
 
@@ -316,11 +233,12 @@ som er enklest, avhenger av problemet.
   explanation={"Sannsynligheten er $|c_1|^2 = (1/\\sqrt{2})^2 = 1/2$. Koeffisienten selv er ikke en sannsynlighet."}
 />
 
-<SelfCheck question={"Bruk uttrykket for $d\\langle F \\rangle/dt$ til å vise at energien er en bevegelseskonstant når $\\hat H$ ikke avhenger av tida."}>
+<SelfCheck question={"En posisjonsmåling ga $x'$, så tilstanden er $\\delta(x - x')$. Hvilke energier kan en energimåling rett etterpå gi?"}>
 
-Sett $\hat F = \hat H$. Kommutatoren $[\hat H, \hat H] = 0$, og
-$\partial \hat H/\partial t = 0$, så $d\langle H \rangle/dt = 0$. Det er
-energibevaring i kvantemekanisk form.
+Alle energiene $E_n$ der $\psi_n(x') \neq 0$. Utviklet i energiegenfunksjonene er
+$\delta(x - x') = \sum_n \psi_n^*(x')\,\psi_n(x)$, så hver egentilstand er med,
+med koeffisient $\psi_n^*(x')$. Posisjonsmålingen har fjernet all informasjon
+om energien.
 
 </SelfCheck>
 
@@ -330,8 +248,6 @@ energibevaring i kvantemekanisk form.
 - Fra Bohr-modellen overlever stasjonære tilstander og kvantesprang; banene og $L = n\hbar$ er forkastet.
 - de Broglie-relasjonene $\lambda = h/p$ og $\nu = E/h$ gjelder lys og materie. $|\Psi|^2$ gir sannsynlighetsfordelingen, og $\Psi$ kan ikke måles.
 - Postulatene: observabel $\leftrightarrow$ lineær operator, $\Psi$ beskriver tilstanden fullstendig og følger Schrödingerlikningen, $\langle F \rangle = \int \Psi^* \hat F\, \Psi\, d\tau$, og en måling gir alltid en egenverdi.
-- Degenerert egenverdi: $P_n = \sum_i |c_{ni}|^2$, og tilstanden kollapser til $\Psi_n/\lVert\Psi_n\rVert$.
-- $d\langle F \rangle/dt = (i/\hbar)\langle[\hat H, \hat F]\rangle + \langle \partial\hat F/\partial t \rangle$; en tidsuavhengig operator som kommuterer med $\hat H$, gir en bevegelseskonstant.
-- $|\Phi(p, t)|^2$ er sannsynlighetstettheten i impulsrommet, og $\Phi$ er selv bølgefunksjonen i en likeverdig formulering.
+- En måling gir alltid en egenverdi og etterlater systemet i en egentilstand med den verdien; i superposisjonen $\sum_n c_n\psi_n$ er sannsynligheten for $f_n$ lik $|c_n|^2$.
 
 </KeyTakeaways>
