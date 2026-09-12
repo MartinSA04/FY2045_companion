@@ -146,6 +146,42 @@ formulas:
     tex: "\\hat p = p, \\qquad \\hat x = -\\dfrac{\\hbar}{i}\\,\\dfrac{\\partial}{\\partial p}"
     label: "Operatorene i impulsrommet. $\\Phi(p, t)$ følger Schrödingerlikningen med samme $\\hat H$."
     section: "Tidsutvikling, måling og impulsrommet"
+  - id: skalarprodukt-dirac
+    tex: "\\begin{aligned} \\langle a|b\\rangle &= \\langle b|a\\rangle^*, \\\\[2pt] c\\,|a\\rangle &\\;\\leftrightarrow\\; c^*\\langle a| \\end{aligned}"
+    label: "Skalarproduktet i Diracnotasjon, og den duale vektoren til $c\\,|a\\rangle$."
+    section: "Diracnotasjon og representasjoner"
+  - id: komponenter-tre-basiser
+    tex: "\\begin{aligned} \\psi(x) &= \\langle x|\\psi\\rangle, \\\\[2pt] \\Phi(p) &= \\langle p|\\psi\\rangle, \\\\[2pt] c_n &= \\langle n|\\psi\\rangle \\end{aligned}"
+    label: "Bølgefunksjonene og utviklingskoeffisientene er komponentene til $|\\psi\\rangle$ i tre basiser."
+    section: "Diracnotasjon og representasjoner"
+  - id: fullstendighetsrelasjonen
+    tex: "\\begin{aligned} \\sum_n |n\\rangle\\langle n| &= \\mathbb{1}, \\\\[2pt] \\int dx\\,|x\\rangle\\langle x| &= \\mathbb{1} \\end{aligned}"
+    label: "Fullstendighetsrelasjonen for en diskret og en kontinuerlig basis. Settes inn for å bytte basis."
+    section: "Diracnotasjon og representasjoner"
+  - id: adjungert-operator
+    tex: "\\begin{aligned} \\langle a|\\hat A^\\dagger|b\\rangle &= \\langle b|\\hat A|a\\rangle^*, \\\\[2pt] (\\hat A\\hat B)^\\dagger &= \\hat B^\\dagger\\hat A^\\dagger \\end{aligned}"
+    label: "Den adjungerte operatoren og produktregelen. En hermitesk operator har $\\hat A^\\dagger = \\hat A$."
+    section: "Diracnotasjon og representasjoner"
+  - id: spektralrepresentasjon
+    tex: "\\begin{aligned} \\hat F &= \\sum_n |f_n\\rangle f_n\\langle f_n| \\\\[2pt] \\hat F &= \\int df\\,|f\\rangle f\\langle f| \\end{aligned}"
+    label: "Spektralrepresentasjonen av en operator, for diskret spektrum $f_n$ (øverst) og kontinuerlig spektrum $f$ (nederst)."
+    section: "Diracnotasjon og representasjoner"
+  - id: forventningsverdi-dirac
+    tex: "\\begin{aligned} \\langle F\\rangle &= \\langle\\Psi|\\hat F|\\Psi\\rangle \\\\[2pt] &= \\sum_n f_n\\,|\\langle f_n|\\Psi\\rangle|^2 \\end{aligned}"
+    label: "Forventningsverdien i generell formulering. $|\\langle f_n|\\Psi\\rangle|^2$ er sannsynligheten for $f_n$."
+    section: "Diracnotasjon og representasjoner"
+  - id: schrodinger-generell
+    tex: "i\\hbar\\,\\dfrac{d}{dt}|\\Psi, t\\rangle = \\hat H\\,|\\Psi, t\\rangle"
+    label: "Schrödingerlikningen for tilstandsvektoren. Projisert på $\\langle x|$ gir den bølgelikningen."
+    section: "Diracnotasjon og representasjoner"
+  - id: impuls-matriseelement
+    tex: "\\langle x''|\\hat p|x'\\rangle = \\dfrac{\\hbar}{i}\\,\\dfrac{\\partial}{\\partial x''}\\,\\delta(x'' - x')"
+    label: "Matriseelementet til impulsoperatoren i posisjonsbasisen, utledet fra $[\\hat x, \\hat p] = i\\hbar$."
+    section: "Diracnotasjon og representasjoner"
+  - id: overlapp-x-p
+    tex: "\\langle x|p\\rangle = \\dfrac{1}{\\sqrt{2\\pi\\hbar}}\\,e^{ipx/\\hbar}"
+    label: "Overlappet mellom posisjons- og impulsbasisen. Gir $\\Psi(x) = \\int dp\\,\\langle x|p\\rangle\\,\\Phi(p)$."
+    section: "Diracnotasjon og representasjoner"
 # ── Begreper ─────────────────────────────────────────────────────────────────
 glossary:
   - term: "Foton"
@@ -206,6 +242,39 @@ glossary:
   - term: "Deltafunksjonsnormering"
     definition: "Normering av egenfunksjoner med kontinuerlig spektrum: $\\int \\psi_{f'}^*\\psi_f\\,d\\tau = \\delta(f - f')$ i stedet for $\\delta_{nn'}$."
     section: "Tidsutvikling, måling og impulsrommet"
+  - term: "Tilstandsvektor"
+    definition: "Vektoren $|\\psi\\rangle$ i Hilbertrommet som beskriver tilstanden. Bølgefunksjonen $\\psi(x) = \\langle x|\\psi\\rangle$ er komponentene dens i posisjonsbasisen."
+    section: "Diracnotasjon og representasjoner"
+  - term: "Hilbertrom"
+    definition: "Komplekst, lineært vektorrom med skalarprodukt. For bølgefunksjoner er det de kvadratisk integrerbare funksjonene, $L^2$."
+    section: "Diracnotasjon og representasjoner"
+  - term: "Bra og ket"
+    definition: "Ketvektoren $|a\\rangle$ er en tilstandsvektor, bravektoren $\\langle a|$ den duale vektoren. Sammen gir de skalarproduktet $\\langle a|b\\rangle$."
+    section: "Diracnotasjon og representasjoner"
+  - term: "Fullstendighetsrelasjonen"
+    definition: "$\\sum_n |n\\rangle\\langle n| = \\mathbb{1}$ for et ortonormert basissett. Settes inn i et uttrykk for å bytte basis."
+    section: "Diracnotasjon og representasjoner"
+  - term: "Projeksjonsoperator"
+    definition: "$\\hat P_n = |n\\rangle\\langle n|$. Plukker ut den delen av en vektor som peker langs $|n\\rangle$. Hermitesk, med $\\hat P_n^2 = \\hat P_n$."
+    section: "Diracnotasjon og representasjoner"
+  - term: "Adjungert operator"
+    definition: "$\\hat A^\\dagger$, definert ved $\\langle a|\\hat A^\\dagger|b\\rangle = \\langle b|\\hat A|a\\rangle^*$. Den duale vektoren til $\\hat A|a\\rangle$ er $\\langle a|\\hat A^\\dagger$."
+    section: "Diracnotasjon og representasjoner"
+  - term: "Hermitesk operator"
+    definition: "Operator med $\\hat A^\\dagger = \\hat A$. Har reelle egenverdier og reelle forventningsverdier, og observable svarer til hermiteske operatorer."
+    section: "Diracnotasjon og representasjoner"
+  - term: "Spektrum"
+    definition: "Mengden av egenverdier til en operator. Kan være diskret, kontinuerlig eller begge deler."
+    section: "Diracnotasjon og representasjoner"
+  - term: "Representasjon"
+    definition: "Den generelle formuleringen projisert på en bestemt basis. Posisjonsbasisen gir bølgemekanikk i $x$, impulsbasisen gir impulsrommet, og en diskret basis gir matrisemekanikk."
+    section: "Diracnotasjon og representasjoner"
+  - term: "Posisjonsrepresentasjonen"
+    definition: "Kvantemekanikken med egenvektorene $|x'\\rangle$ til $\\hat x$ som basis. Der er $\\psi(x) = \\langle x|\\psi\\rangle$ bølgefunksjonen og $(\\hbar/i)\\,\\partial/\\partial x$ impulsoperatoren."
+    section: "Diracnotasjon og representasjoner"
+  - term: "Matrisemekanikk"
+    definition: "Kvantemekanikken i en diskret basis: tilstander er kolonnematriser $a_k = \\langle k|a\\rangle$ og operatorer er matriser $A_{kn} = \\langle k|\\hat A|n\\rangle$."
+    section: "Diracnotasjon og representasjoner"
 features:
   progress: true
   search: true

@@ -1,0 +1,461 @@
+---
+order: 3
+title: "Diracnotasjon og representasjoner"
+summary: "Tilstanden som en vektor i Hilbertrommet: bra, ket og skalarprodukt, fullstendighetsrelasjonen, adjungerte og hermiteske operatorer, postulatene i generell form, og hvordan posisjons- og impulsrepresentasjonen kommer ut ved å projisere på egenvektorene til x og p."
+importance: core
+updated: 2026-09-12
+---
+
+Bølgefunksjonen $\psi(x)$ og impulsbølgefunksjonen $\Phi(p)$ beskriver samme
+tilstand. I den generelle formuleringen er tilstanden en vektor $|\psi\rangle$
+i et Hilbertrom, og $\psi(x)$ og $\Phi(p)$ er komponentene til den samme
+vektoren i to ulike basiser. Notasjonen er Diracs. Den gjør regningene
+kortere, og den dekker også systemer som ikke har noen bølgefunksjon, slik
+som spinn.
+
+<LearningGoals>
+
+- Regne med <Term name="Bra og ket">bra- og ketvektorer</Term>: skalarprodukt, dual vektor og <Term name="Adjungert operator">adjungert operator</Term>.
+- Bruke <Term name="Fullstendighetsrelasjonen">fullstendighetsrelasjonen</Term> $\sum_n |n\rangle\langle n| = \mathbb{1}$ til å bytte basis og skrive om uttrykk.
+- Tolke $\psi(x) = \langle x|\psi\rangle$, $\Phi(p) = \langle p|\psi\rangle$ og $c_n = \langle n|\psi\rangle$ som komponenter av samme <Term name="Tilstandsvektor">tilstandsvektor</Term>.
+- Skrive postulatene i generell form og utlede <Term name="Posisjonsrepresentasjonen">posisjonsrepresentasjonen</Term> og impulsrepresentasjonen fra dem.
+
+</LearningGoals>
+
+## Tilstandsvektorer
+
+Tilstanden til et system er en vektor $|\psi\rangle$ i et komplekst, lineært
+vektorrom $\mathcal H$, kalt et <Term name="Hilbertrom">Hilbertrom</Term>.
+Dimensjonen kan være endelig eller uendelig. Vektoren avhenger av tida,
+$|\psi, t\rangle$, men tida skrives bare ut når den trengs. Til hver vektor
+$|a\rangle$ hører en dual vektor $\langle a|$ i det duale rommet
+$\mathcal H^*$, og produktet av en dual vektor og en vektor er
+skalarproduktet $\langle a|b\rangle$, et komplekst tall. Dirac kalte
+$\langle a|$ en bra og $|b\rangle$ en ket, fordi de sammen gir en «bracket».
+
+<Formula tex={"\\langle a|b\\rangle = \\langle b|a\\rangle^*"} caption={"Skalarproduktet er lineært i ketvektoren og antilineært i bravektoren: den duale vektoren til $c\\,|a\\rangle$ er $c^*\\langle a|$."} />
+
+Reglene er de samme som for skalarproduktet $\int\psi_1^*\psi_2\,dx$ mellom
+to bølgefunksjoner, og det er ikke tilfeldig. Til hver bølgefunksjon svarer
+det én tilstandsvektor, og skalarproduktet mellom to vektorer er definert lik
+skalarproduktet mellom bølgefunksjonene deres.
+
+<Table
+  columns={["Bølgefunksjon", "Tilstandsvektor"]}
+  rows={[
+    ["$\\psi(x)$", "$|\\psi\\rangle$"],
+    ["$\\psi_n(x)$", "$|\\psi_n\\rangle = |n\\rangle = |E_n\\rangle$"],
+    ["$\\delta(x - x')$", "$|x'\\rangle$"],
+    ["$(2\\pi\\hbar)^{-1/2}\\,e^{ipx/\\hbar}$", "$|p\\rangle$"],
+  ]}
+  rowHeader={false}
+  caption="Bølgefunksjoner og de tilsvarende tilstandsvektorene. Samsvaret er én-til-én, men de er ulike objekter i ulike vektorrom."
+/>
+
+Skalarproduktet $\langle a|b\rangle$ er sannsynlighetsamplituden for å finne
+systemet i tilstanden $|a\rangle$ når det er i tilstanden $|b\rangle$, slik
+$\int\psi_a^*\psi_b\,dx$ er det. Er $|x\rangle$ tilstanden der partikkelen
+står i $x$, er $\langle x|\psi\rangle$ amplituden for å finne partikkelen i
+$x$ når tilstanden er $|\psi\rangle$. Det er nettopp bølgefunksjonen.
+
+<Statement kind="principle" name="Bølgefunksjonen som projeksjon" id="bolgefunksjon-projeksjon">
+
+$\psi(x) = \langle x|\psi\rangle$. Bølgefunksjonen er komponenten av
+tilstandsvektoren $|\psi\rangle$ langs basisvektoren $|x\rangle$. På samme
+måte er $\Phi(p) = \langle p|\psi\rangle$ komponenten langs $|p\rangle$, og
+$c_n = \langle n|\psi\rangle$ komponenten langs energiegenvektoren
+$|n\rangle$.
+
+</Statement>
+
+## Fullstendighet
+
+Velg $n$ ortonormerte basisvektorer, $\langle k|m\rangle = \delta_{km}$. En
+vilkårlig vektor er $|\psi\rangle = \sum_k c_k|k\rangle$, og multiplikasjon
+fra venstre med $\langle m|$ gir koeffisienten $c_m = \langle m|\psi\rangle$.
+Sett den inn igjen. Tallet $\langle k|\psi\rangle$ kan flyttes fritt, så
+
+$$
+\begin{aligned}
+|\psi\rangle &= \sum_k \langle k|\psi\rangle\,|k\rangle = \sum_k |k\rangle\langle k|\psi\rangle \\
+&= \Bigl(\sum_k |k\rangle\langle k|\Bigr)|\psi\rangle .
+\end{aligned}
+$$
+
+Dette gjelder for enhver $|\psi\rangle$, så operatoren i parentesen er
+enhetsoperatoren.
+
+<Formula tex={"\\begin{aligned} \\sum_n |n\\rangle\\langle n| &= \\mathbb{1}, \\\\[2pt] \\int dx\\,|x\\rangle\\langle x| &= \\mathbb{1} \\end{aligned}"} caption={"Fullstendighetsrelasjonen for en diskret og for en kontinuerlig basis. I det kontinuerlige tilfellet er $\\langle x'|x\\rangle = \\delta(x - x')$ i stedet for $\\delta_{kk'}$, og det samme gjelder for $|p\\rangle$."} />
+
+Et produkt $|a\rangle\langle b|$ med ketvektoren til venstre er en operator,
+mens $\langle a|b\rangle$ er et tall. Leddet $|n\rangle\langle n|$ er
+<Term name="Projeksjonsoperator">projeksjonsoperatoren</Term> $\hat P_n$:
+$\hat P_n|\psi\rangle = \langle n|\psi\rangle\,|n\rangle = c_n|n\rangle$ er
+den delen av $|\psi\rangle$ som peker langs $|n\rangle$. Fullstendighet betyr
+at projeksjonene på alle basisvektorene til sammen gir vektoren tilbake. I
+tre basiser er
+
+$$
+\begin{aligned}
+|\psi\rangle &= \sum_n \langle n|\psi\rangle\,|n\rangle \\
+&= \int dp\,\langle p|\psi\rangle\,|p\rangle \\
+&= \int dx'\,\langle x'|\psi\rangle\,|x'\rangle,
+\end{aligned}
+$$
+
+med komponentene $c_n$, $\Phi(p)$ og $\psi(x')$. Komponentene avhenger av
+basisen, vektoren gjør det ikke, slik en vanlig vektor
+$\vec A = \sum_i A_i\,\hat e_i = \sum_i A_i'\,\hat e_i'$ er den samme uansett
+hvilke akser den beskrives med.
+
+Å sette inn $\mathbb{1}$ der det passer, er hovedteknikken i notasjonen.
+Normen gir det første eksempelet:
+
+$$
+\begin{aligned}
+\langle\psi|\psi\rangle &= \langle\psi|\mathbb{1}|\psi\rangle = \sum_n |\langle n|\psi\rangle|^2 \\
+&= \int |\psi(x)|^2\,dx = \int |\Phi(p)|^2\,dp .
+\end{aligned}
+$$
+
+Sannsynlighetene summerer seg til 1 i hver basis, for de er kvadratene av
+komponentene til den samme enhetsvektoren.
+
+<Simulation
+  src="/sims/basis.js"
+  title="Én tilstand, tre basiser"
+  caption="Samme tilstand, en gaussisk pakke i en harmonisk oscillator, sett i tre basiser. Flytt pakken med $x_0$: posisjonsbildet og energifordelingen endrer seg, mens $|\Phi(p)|^2$ står stille og $x_0$ bare vises i fasen til $\Phi$. Gi pakken impuls $p_0$, og det er omvendt."
+  height={360}
+/>
+
+<Callout type="note" title="Hilbertrommet og deltafunksjonsnormerte vektorer">
+
+Hilbertrommet er mengden av kvadratisk integrerbare funksjoner på et
+intervall, $\int|f|^2\,dx < \infty$, med skalarproduktet
+$\langle f|g\rangle = \int f^*g\,dx$. Matematikerne kaller det $L^2(a, b)$.
+Schwarz' ulikhet $|\langle f|g\rangle| \le \sqrt{\langle f|f\rangle}\,\sqrt{\langle g|g\rangle}$
+sikrer at skalarproduktet finnes. Posisjons- og impulsegenvektorene
+$|x\rangle$ og $|p\rangle$ er deltafunksjonsnormerte og hører ikke til
+rommet. De er ingen fysiske tilstander, men de brukes som basisvektorer
+likevel, og det utvidede rommet kalles et rigget Hilbertrom.
+
+</Callout>
+
+## Operatorer
+
+En operator $\hat A$ avbilder Hilbertrommet på seg selv,
+$\hat A|a\rangle = |c\rangle$, og står til venstre for en ket. Den
+<Term name="Adjungert operator">adjungerte</Term> operatoren $\hat A^\dagger$
+er definert ved
+
+<Formula tex={"\\langle a|\\hat A^\\dagger|b\\rangle = \\langle b|\\hat A|a\\rangle^*"} caption={"Definisjonen av den adjungerte operatoren, for alle $|a\\rangle$ og $|b\\rangle$. Den duale vektoren til $\\hat A|a\\rangle$ er $\\langle a|\\hat A^\\dagger$."} />
+
+Regnereglene er de samme som for adjungering av matriser:
+$(\hat A^\dagger)^\dagger = \hat A$, $(\alpha\hat A)^\dagger = \alpha^*\hat A^\dagger$
+og $(\hat A\hat B)^\dagger = \hat B^\dagger\hat A^\dagger$. Den adjungerte til
+et vilkårlig uttrykk finner du ved å konjugere tallene, adjungere
+operatorene, bytte bra og ket og snu rekkefølgen på faktorene. Tall og
+skalarprodukter kan flyttes fritt.
+
+Er $\hat A^\dagger = \hat A$, er operatoren
+<Term name="Hermitesk operator">hermitesk</Term>, og
+$\langle a|\hat A|a\rangle = \langle a|\hat A|a\rangle^*$ er reell for alle
+$|a\rangle$. Observable svarer til hermiteske operatorer, som før.
+
+Vektoren $|a\rangle$ er en egenvektor av $\hat A$ hvis
+$\hat A|a\rangle = \lambda_a|a\rangle$, og mengden av egenverdier er
+<Term name="Spektrum">spekteret</Term> til $\hat A$. For en hermitesk
+operator er egenverdiene reelle, og egenvektorene til en observabel antas å
+være et fullstendig sett, så de kan brukes som basis. Da gir
+fullstendighetsrelasjonen et uttrykk for operatoren selv. Med
+$\hat F|f\rangle = f|f\rangle$ og kontinuerlig spektrum er
+
+$$
+\begin{aligned}
+\hat F|\psi\rangle &= \hat F\int df\,|f\rangle\langle f|\psi\rangle \\
+&= \int df\,f\,|f\rangle\langle f|\psi\rangle ,
+\end{aligned}
+$$
+
+og siden det gjelder for alle $|\psi\rangle$:
+
+<Formula tex={"\\begin{aligned} \\hat F &= \\int df\\,|f\\rangle f\\langle f| \\\\[2pt] \\hat F &= \\sum_n |f_n\\rangle f_n\\langle f_n| \\end{aligned}"} caption={"Spektralrepresentasjonen av en operator, for kontinuerlig (øverst) og diskret (nederst) spektrum. En operatorfunksjon $G(\\hat F)$ har samme form med $G(f)$ i stedet for $f$."} />
+
+Forventningsverdien følger med samme teknikk:
+$\langle\psi|\hat F|\psi\rangle = \sum_n f_n\,|\langle f_n|\psi\rangle|^2 = \sum_n P_n f_n$.
+Sannsynligheten for $f_n$ er kvadratet av komponenten langs $|f_n\rangle$,
+som i bølgemekanikken.
+
+<Example title="regning i en diskret basis">
+
+Et system har to ortonormerte energiegenvektorer $|1\rangle$ og $|2\rangle$
+og står i tilstanden $|\psi\rangle = (|1\rangle + 2i\,|2\rangle)/\sqrt5$.
+Finn $\langle\psi|$, sannsynlighetene for $E_1$ og $E_2$ og
+forventningsverdien av $\hat A = |1\rangle\langle 2| + |2\rangle\langle 1|$.
+Er $\hat A$ hermitesk?
+
+<Solution>
+
+Den duale vektoren har konjugerte koeffisienter,
+
+$$
+\langle\psi| = \frac{\langle 1| - 2i\,\langle 2|}{\sqrt5},
+$$
+
+og $\langle\psi|\psi\rangle = (1 + 4)/5 = 1$. Sannsynlighetene er
+$P_1 = |\langle 1|\psi\rangle|^2 = 1/5$ og
+$P_2 = |\langle 2|\psi\rangle|^2 = 4/5$.
+
+Adjungering bytter bra og ket: $(|1\rangle\langle 2|)^\dagger = |2\rangle\langle 1|$,
+så $\hat A^\dagger = |2\rangle\langle 1| + |1\rangle\langle 2| = \hat A$.
+Operatoren virker på tilstanden ved at hvert ledd plukker ut én komponent,
+
+$$
+\begin{aligned}
+\hat A|\psi\rangle &= |1\rangle\langle 2|\psi\rangle + |2\rangle\langle 1|\psi\rangle \\
+&= \frac{2i\,|1\rangle + |2\rangle}{\sqrt5},
+\end{aligned}
+$$
+
+og med $\langle\psi|$ fra venstre blir
+
+$$
+\begin{aligned}
+\langle\psi|\hat A|\psi\rangle &= \tfrac{1}{5}\bigl(\langle 1| - 2i\,\langle 2|\bigr) \\
+&\qquad\times\bigl(2i\,|1\rangle + |2\rangle\bigr) \\
+&= \tfrac{1}{5}\,(2i - 2i) = 0 .
+\end{aligned}
+$$
+
+I basisen $\{|1\rangle, |2\rangle\}$ er $\hat A$ matrisen med $A_{12} = A_{21} = 1$
+og null på diagonalen.
+
+<Answer>$\langle\psi| = (\langle 1| - 2i\,\langle 2|)/\sqrt5$, $P_1 = 1/5$, $P_2 = 4/5$, $\langle A\rangle = 0$, og $\hat A$ er hermitesk</Answer>
+
+</Solution>
+
+</Example>
+
+## Postulatene i generell form
+
+Postulatene fra bølgemekanikken har samme innhold, med tilstandsvektoren i
+stedet for bølgefunksjonen.
+
+<Table
+  columns={["Bølgemekanikk", "Generell formulering"]}
+  rows={[
+    ["$\\Psi(x, t)$", "$|\\Psi, t\\rangle$, med $\\langle\\Psi, t|\\Psi, t\\rangle = 1$"],
+    ["$i\\hbar\\,\\partial_t\\Psi = \\hat H\\Psi$", "$i\\hbar\\,\\dfrac{d}{dt}|\\Psi, t\\rangle = \\hat H|\\Psi, t\\rangle$"],
+    ["$\\langle F\\rangle = \\int\\Psi^*\\hat F\\,\\Psi\\,d\\tau$", "$\\langle F\\rangle = \\langle\\Psi|\\hat F|\\Psi\\rangle$"],
+    ["Måling gir en egenverdi $f_n$", "Måling gir en egenverdi $f_n$"],
+  ]}
+  rowHeader={false}
+  caption="Postulat B, C og D i de to formuleringene. Postulat A er som før: en observabel $F$ svarer til en lineær, hermitesk operator $\hat F$."
+/>
+
+Postulat A får ett tillegg. Operatorene for en generalisert koordinat og den
+tilhørende impulsen oppfyller $[\hat q_n, \hat p_n] = i\hbar$. I den generelle
+formuleringen er $\hat p$ definert av denne kommutatoren, og uttrykket
+$(\hbar/i)\,\partial/\partial x$ er det $\hat p$ blir i én bestemt basis.
+Ingen av postulatene forutsetter en bølgefunksjon, så de gjelder også for
+spinn, der Hilbertrommet er todimensjonalt.
+
+## Representasjoner
+
+Postulatene sier ikke hva $|x\rangle$ eller $\psi(x)$ er. En
+<Term name="Representasjon">representasjon</Term> er den generelle
+formuleringen projisert på én bestemt basis, og valget av basis avgjør
+hvordan tilstander og operatorer ser ut.
+
+### I posisjonsbasisen
+
+Posisjonsrepresentasjonen kommer ut når egenvektorene til $\hat x$ brukes
+som basis. Egenverdilikningen
+$\hat x|x'\rangle = x'|x'\rangle$ har kontinuerlige egenverdier
+$x' \in (-\infty, \infty)$, med $\langle x''|x'\rangle = \delta(x'' - x')$ og
+$\int dx'\,|x'\rangle\langle x'| = \mathbb{1}$, og komponentene
+$\langle x'|\psi\rangle = \psi(x')$ er bølgefunksjonen. Skalarprodukt og
+fullstendighet blir det de var:
+
+$$
+\begin{aligned}
+\langle\psi_1|\psi_2\rangle &= \int dx\,\langle\psi_1|x\rangle\langle x|\psi_2\rangle \\
+&= \int dx\,\psi_1^*(x)\,\psi_2(x), \\[4pt]
+\langle x''|x'\rangle &= \sum_n \langle x''|n\rangle\langle n|x'\rangle \\
+&= \sum_n \psi_n(x'')\,\psi_n^*(x') = \delta(x'' - x') .
+\end{aligned}
+$$
+
+Operatorene trenger matriseelementene $\langle x''|\hat F|x'\rangle$, for
+med to enhetsoperatorer er
+
+$$
+\begin{aligned}
+\langle\psi|\hat F|\psi\rangle &= \int dx''\!\int dx'\,\psi^*(x'') \\
+&\qquad\times\langle x''|\hat F|x'\rangle\,\psi(x') .
+\end{aligned}
+$$
+
+For $\hat x$ er $\langle x''|\hat x|x'\rangle = x'\,\delta(x'' - x')$, og for
+enhver funksjon som kan rekkeutvikles,
+$\langle x''|F(\hat x)|x'\rangle = F(x')\,\delta(x'' - x')$. Impulsoperatoren
+er bare definert gjennom kommutatoren, så den må hentes derfra.
+
+<Derivation title="Matriseelementet til impulsoperatoren">
+
+Ta matriseelementet av $[\hat x, \hat p] = i\hbar\,\mathbb{1}$ mellom
+$\langle x''|$ og $|x'\rangle$, og la $\hat x$ virke på bravektoren i det
+første leddet og på ketvektoren i det andre:
+
+$$
+(x'' - x')\,\langle x''|\hat p|x'\rangle = i\hbar\,\delta(x'' - x') .
+$$
+
+Delvis integrasjon gir identiteten $y\,\delta'(y) = -\delta(y)$, og med
+$y = x'' - x'$ er $(x'' - x')\,\delta'(x'' - x') = -\delta(x'' - x')$.
+Sammenliknet med likningen over betyr det at
+
+$$
+\langle x''|\hat p|x'\rangle = \frac{\hbar}{i}\,\frac{\partial}{\partial x''}\,\delta(x'' - x') .
+$$
+
+Samme regning for potenser av $\hat p$ gir
+
+$$
+\begin{aligned}
+\langle x''|F(\hat p, \hat x)|x'\rangle &= F\Bigl(\frac{\hbar}{i}\frac{\partial}{\partial x''}, x''\Bigr) \\
+&\qquad\times\delta(x'' - x') .
+\end{aligned}
+$$
+
+</Derivation>
+
+Sett inn i forventningsverdien. Deltafunksjonen tar det ene integralet, og
+
+$$
+\langle\psi|\hat F|\psi\rangle = \int dx\,\psi^*(x)\,F\Bigl(\frac{\hbar}{i}\frac{\partial}{\partial x}, x\Bigr)\,\psi(x),
+$$
+
+som er postulat C i bølgemekanikken. Postulat B gir Schrödingerlikningen på
+samme måte. Multipliser $i\hbar\,\tfrac{d}{dt}|\Psi, t\rangle = \hat H|\Psi, t\rangle$
+med $\langle x|$ fra venstre og sett inn $\mathbb{1}$:
+
+$$
+\begin{aligned}
+i\hbar\,\partial_t\Psi(x, t) &= \int dx'\,\langle x|\hat H|x'\rangle\langle x'|\Psi, t\rangle \\
+&= H\Bigl(\frac{\hbar}{i}\frac{\partial}{\partial x}, x\Bigr)\Psi(x, t) .
+\end{aligned}
+$$
+
+Med posisjonsegenvektorene som basis er den generelle formuleringen
+bølgemekanikk i posisjonsrommet.
+
+### I impulsbasisen
+
+Bruk i stedet egenvektorene til $\hat p$, $\hat p|p\rangle = p|p\rangle$,
+som basis. Komponentene $\langle p|\Psi\rangle = \Phi(p)$ er bølgefunksjonen
+i <Term name="Impulsrommet">impulsrommet</Term>, og sammenhengen med
+$\Psi(x)$ følger av fullstendighetsrelasjonen for $|p\rangle$:
+
+$$
+\begin{aligned}
+\Psi(x) = \langle x|\Psi\rangle &= \int dp\,\langle x|p\rangle\langle p|\Psi\rangle \\
+&= \int dp\,\langle x|p\rangle\,\Phi(p) .
+\end{aligned}
+$$
+
+Overlappet $\langle x|p\rangle$ er egenfunksjonen til $\hat p$ i
+posisjonsrepresentasjonen, og det kan regnes ut fra egenverdilikningen.
+
+<Derivation title="Overlappet mellom posisjons- og impulsbasisen">
+
+Multipliser $\hat p|p\rangle = p|p\rangle$ med $\langle x|$ fra venstre og
+sett inn posisjonsbasisen. Matriseelementet til $\hat p$ gjør integralet til
+en derivasjon:
+
+$$
+\begin{aligned}
+p\,\langle x|p\rangle &= \int dx'\,\langle x|\hat p|x'\rangle\langle x'|p\rangle \\
+&= \int dx'\,\frac{\hbar}{i}\frac{\partial}{\partial x}\delta(x - x')\,\langle x'|p\rangle \\
+&= \frac{\hbar}{i}\frac{\partial}{\partial x}\langle x|p\rangle .
+\end{aligned}
+$$
+
+Løsningen er $\langle x|p\rangle = C\,e^{ipx/\hbar}$, og konstanten velges så
+$\langle p'|p\rangle = \delta(p - p')$:
+
+$$
+\begin{aligned}
+\langle p'|p\rangle &= \int dx\,\langle p'|x\rangle\langle x|p\rangle \\
+&= |C|^2\int dx\,e^{i(p - p')x/\hbar} \\
+&= 2\pi\hbar\,|C|^2\,\delta(p - p') .
+\end{aligned}
+$$
+
+</Derivation>
+
+<Formula tex={"\\langle x|p\\rangle = \\dfrac{1}{\\sqrt{2\\pi\\hbar}}\\,e^{ipx/\\hbar}"} caption={"Overlappet mellom posisjons- og impulsbasisen. Satt inn over gir det fourierintegralet $\\Psi(x) = \\int dp\\,\\Phi(p)\\,e^{ipx/\\hbar}/\\sqrt{2\\pi\\hbar}$."} />
+
+Projiseres Schrödingerlikningen på $\langle p|$ i stedet for $\langle x|$,
+kommer likningen for $\Phi(p, t)$ ut med $\hat p = p$ og
+$\hat x = -(\hbar/i)\,\partial/\partial p$, slik den var i impulsrommet. De
+to formuleringene er samme likning projisert på to basiser.
+
+### I en diskret basis
+
+Er basisen diskret og ortonormert, $|k\rangle$ med
+$\langle k|n\rangle = \delta_{kn}$, blir komponentene $a_k = \langle k|a\rangle$
+en kolonnematrise, $\langle a|$ radmatrisen med elementene $a_k^*$, og en
+operator matrisen $A_{kn} = \langle k|\hat A|n\rangle$. Komponentene til
+$\hat A|a\rangle$ er $\sum_n A_{kn}a_n$, og et produkt av operatorer blir et
+matriseprodukt. Schrödingerlikningen blir et sett koplede likninger,
+$i\hbar\,\dot\Psi_k = \sum_n H_{kn}\Psi_n$, og energiene til de stasjonære
+tilstandene er egenverdiene til matrisen, $\det(H - E\,\mathbb{1}) = 0$. Dette
+er <Term name="Matrisemekanikk">matrisemekanikken</Term>, som Heisenberg fant
+i 1925, noen måneder før Schrödinger fant bølgelikningen.
+
+## Sjekk deg selv
+
+<Quiz
+  question={"Hva er $\\langle x|\\psi\\rangle$?"}
+  options={[
+    "Sannsynligheten for å finne partikkelen i $x$",
+    "Bølgefunksjonen $\\psi(x)$: komponenten av $|\\psi\\rangle$ langs basisvektoren $|x\\rangle$",
+    "Operatoren som projiserer $|\\psi\\rangle$ på $|x\\rangle$",
+    "Normen til $|\\psi\\rangle$"
+  ]}
+  answer={1}
+  explanation={"Skalarproduktet er en amplitude, ikke en sannsynlighet: $|\\langle x|\\psi\\rangle|^2$ er sannsynlighetstettheten. Projeksjonsoperatoren er $|x\\rangle\\langle x|$, og normen er $\\langle\\psi|\\psi\\rangle^{1/2}$."}
+/>
+
+<Quiz
+  question={"Hva er den adjungerte til ketvektoren $c\\,|a\\rangle\\langle b|\\hat A|d\\rangle$?"}
+  options={[
+    "$c\\,\\langle a|\\langle b|\\hat A|d\\rangle$",
+    "$c^*\\langle a|\\hat A^\\dagger|b\\rangle\\langle d|$",
+    "$c^*\\langle d|\\hat A^\\dagger|b\\rangle\\langle a|$",
+    "$c^*\\langle d|\\hat A|b\\rangle\\langle a|$"
+  ]}
+  answer={2}
+  explanation={"Konjuger tallet, adjunger operatoren, bytt bra og ket og snu rekkefølgen. Skalarproduktet $\\langle b|\\hat A|d\\rangle$ er et tall og blir $\\langle b|\\hat A|d\\rangle^* = \\langle d|\\hat A^\\dagger|b\\rangle$, og ketvektoren $|a\\rangle$ blir bravektoren $\\langle a|$."}
+/>
+
+<SelfCheck question={"Vis at projeksjonsoperatoren $\\hat P_n = |n\\rangle\\langle n|$ er hermitesk, og at $\\hat P_n^2 = \\hat P_n$."}>
+
+Adjungering bytter bra og ket, så $(|n\rangle\langle n|)^\dagger = |n\rangle\langle n|$.
+Videre er $\hat P_n^2 = |n\rangle\langle n|n\rangle\langle n| = |n\rangle\langle n|$
+fordi $\langle n|n\rangle = 1$. Å projisere to ganger gir det samme som én
+gang, og egenverdiene til $\hat P_n$ er 0 og 1.
+
+</SelfCheck>
+
+<KeyTakeaways>
+
+- Tilstanden er en vektor $|\psi\rangle$ i Hilbertrommet. $\langle a|b\rangle = \langle b|a\rangle^*$ er et tall, og den duale til $c\,|a\rangle$ er $c^*\langle a|$.
+- $\psi(x) = \langle x|\psi\rangle$, $\Phi(p) = \langle p|\psi\rangle$ og $c_n = \langle n|\psi\rangle$ er komponentene til samme vektor i tre basiser. $|\text{komponent}|^2$ er sannsynligheten, og summen er 1 i hver basis.
+- Fullstendighetsrelasjonen $\sum_n |n\rangle\langle n| = \mathbb{1}$, eller $\int dx\,|x\rangle\langle x| = \mathbb{1}$, settes inn der det passer for å bytte basis.
+- $\langle a|\hat A^\dagger|b\rangle = \langle b|\hat A|a\rangle^*$, $(\hat A\hat B)^\dagger = \hat B^\dagger\hat A^\dagger$, og en hermitesk operator har $\hat A^\dagger = \hat A$, reelle egenverdier og spektralrepresentasjonen $\hat F = \sum_n |f_n\rangle f_n\langle f_n|$.
+- Postulatene: $\langle F\rangle = \langle\Psi|\hat F|\Psi\rangle$, $i\hbar\,\tfrac{d}{dt}|\Psi, t\rangle = \hat H|\Psi, t\rangle$, og $[\hat q_n, \hat p_n] = i\hbar$ definerer impulsoperatoren.
+- Projisert på $|x\rangle$ gir postulatene bølgemekanikken, med $\langle x''|\hat p|x'\rangle = (\hbar/i)\,\partial_{x''}\delta(x'' - x')$. Projisert på $|p\rangle$ gir de impulsrommet, og $\langle x|p\rangle = (2\pi\hbar)^{-1/2}e^{ipx/\hbar}$ knytter dem sammen.
+
+</KeyTakeaways>
