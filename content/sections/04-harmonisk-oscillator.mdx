@@ -1,0 +1,385 @@
+---
+order: 4
+title: "Harmonisk oscillator"
+summary: "Oscillatoren løst med operatoralgebra: stigeoperatorene a og a†, hele spekteret rett fra kommutatoren, matriseelementer uten integraler, grunntilstanden fra a|0⟩ = 0, og koherente tilstander som svinger som en klassisk partikkel."
+importance: core
+updated: 2026-09-15
+---
+
+Fra det forrige emnet er oscillatoren kjent i posisjonsrommet:
+Schrödingerlikningen med $V = \tfrac12 m\omega^2x^2$, en rekkeutvikling og
+Hermitefunksjoner som svar. Den generelle formuleringen gir en kortere vei.
+Spekteret og egentilstandene følger av kommutatoren $[\hat x, \hat p] = i\hbar$
+alene, uten at noen basis velges, og regningen er noen linjer algebra. Dette
+er den <Term name="Algebraisk metode">algebraiske metoden</Term>, og den
+rekker lenger enn oscillatoren: samme teknikk kvantiserer dreieimpuls og
+spinn. Oscillatoren selv dukker opp overalt, fordi nesten ethvert potensial
+er harmonisk nær bunnen. Molekylsvingninger, gittersvingninger og
+strålingsfeltets moder er alle oscillatorer.
+
+<LearningGoals>
+
+- Utlede spekteret $E_n = \hbar\omega(n + \tfrac12)$ fra kommutatoren alene, med <Term name="Stigeoperatorer">stigeoperatorene</Term> $a$ og $a^\dagger$.
+- Bruke $a|n\rangle = \sqrt n\,|n-1\rangle$ og $a^\dagger|n\rangle = \sqrt{n+1}\,|n+1\rangle$ til å regne matriseelementer og forventningsverdier uten integraler.
+- Finne grunntilstanden fra $a|0\rangle = 0$ og kjenne igjen Hermitefunksjonene.
+- Gjøre rede for hva en <Term name="Koherent tilstand">koherent tilstand</Term> er, og hvorfor den svinger som en klassisk partikkel.
+
+</LearningGoals>
+
+## Stigeoperatorene
+
+Hamiltonoperatoren er
+
+$$
+\hat H = \frac{\hat p^2}{2m} + \tfrac12 m\omega^2\hat x^2
+= \frac{1}{2m}\bigl[\hat p^2 + (m\omega\hat x)^2\bigr].
+$$
+
+Hadde $\hat p$ og $\hat x$ vært tall, kunne summen av to kvadrater vært
+faktorisert som $(ip + m\omega x)(-ip + m\omega x)$. Operatorene kommuterer
+ikke, så faktoriseringen går ikke helt opp, men de to faktorene er verdt å
+definere likevel, med en skalering som gjør dem dimensjonsløse:
+
+<Formula tex={"\\begin{aligned} a &= \\dfrac{i\\hat p + m\\omega\\hat x}{\\sqrt{2\\hbar m\\omega}}, \\\\[4pt] a^\\dagger &= \\dfrac{-i\\hat p + m\\omega\\hat x}{\\sqrt{2\\hbar m\\omega}} \\end{aligned}"} caption={"Stigeoperatorene. De er ikke hermiteske, men hverandres adjungerte, og skrives uten hatt."} />
+
+Produktet av dem er nesten $\hat H$:
+
+$$
+\begin{aligned}
+a^\dagger a &= \frac{\hat p^2 + (m\omega\hat x)^2 + im\omega\,[\hat x, \hat p]}{2\hbar m\omega} \\
+&= \frac{\hat H}{\hbar\omega} - \frac12 .
+\end{aligned}
+$$
+
+Kommutatoren i telleren er $i\hbar$, og den gir det siste leddet. Samme
+regning med motsatt rekkefølge gir $aa^\dagger = \hat H/\hbar\omega + \tfrac12$,
+og differansen mellom de to er alt metoden trenger:
+
+<Formula tex={"[a, a^\\dagger] = 1, \\qquad \\hat H = \\hbar\\omega\\bigl(\\hat N + \\tfrac12\\bigr)"} caption={"Kommutatoren og Hamiltonoperatoren uttrykt med $\\hat N = a^\\dagger a$. Egenverdiproblemet for $\\hat H$ er dermed egenverdiproblemet for $\\hat N$."} />
+
+Operatoren $\hat N = a^\dagger a$ kalles
+<Term name="Talloperator">talloperatoren</Term>, og navnet blir begrunnet
+nedenfor. To kommutatorer til følger direkte av $[a, a^\dagger] = 1$:
+
+$$
+\begin{aligned}
+[\hat N, a] &= a^\dagger a a - a a^\dagger a = [a^\dagger, a]\,a = -a, \\
+[\hat N, a^\dagger] &= a^\dagger\,[a, a^\dagger] = a^\dagger .
+\end{aligned}
+$$
+
+## Energistigen
+
+Anta at $\hat N$ har en normert egentilstand $|n\rangle$ med egenverdi $n$,
+altså $\hat N|n\rangle = n|n\rangle$ og $E_n = \hbar\omega(n + \tfrac12)$.
+Se så på vektoren $a|n\rangle$. Kommutatoren $[\hat N, a] = -a$ flytter
+$\hat N$ forbi $a$:
+
+$$
+\hat N\,(a|n\rangle) = (a\hat N - a)|n\rangle = (n - 1)\,(a|n\rangle).
+$$
+
+Er $a|n\rangle$ ikke nullvektoren, er den en egentilstand med egenverdi
+$n - 1$: $a$ har senket energien ett trinn $\hbar\omega$. Tilsvarende viser
+$[\hat N, a^\dagger] = a^\dagger$ at $a^\dagger|n\rangle$ er en egentilstand
+med egenverdi $n + 1$. Fra én egentilstand lager de to operatorene en hel
+stige av egentilstander, og det er derfor de kalles stigeoperatorer.
+
+Oppover kan stigen fortsette uten ende, men ikke nedover. Kvadratet av
+normen til $a|n\rangle$ er
+
+$$
+\|\,a|n\rangle\,\|^2 = \langle n|a^\dagger a|n\rangle = n \ge 0,
+$$
+
+så ingen egenverdi er negativ. Nedstigningen må derfor stoppe: det finnes en
+nederste tilstand $|0\rangle$ der $a|0\rangle = 0$, og for den gir samme
+likning $n_0 = \|\,a|0\rangle\,\|^2 = 0$. Fra en vilkårlig egentilstand går
+det et helt antall trinn ned til bunnen, så $n$ er et ikke-negativt heltall.
+
+<Statement kind="theorem" name="Spekteret til den harmoniske oscillatoren" id="oscillator-spekteret">
+
+$$
+E_n = \hbar\omega\bigl(n + \tfrac12\bigr), \qquad n = 0, 1, 2, \dots
+$$
+
+Nivåene ligger i lik avstand $\hbar\omega$, og hvert nivå er
+ikke-degenerert. Grunntilstanden har
+<Term name="Nullpunktsenergi">nullpunktsenergien</Term>
+$E_0 = \tfrac12\hbar\omega$.
+
+</Statement>
+
+Spekteret er bestemt uten bølgefunksjoner og uten at noen basis er valgt.
+Regningen brukte bare $[a, a^\dagger] = 1$, som igjen kom fra
+$[\hat x, \hat p] = i\hbar$.
+
+Normene fastlegger også virkningen av operatorene, så nær som en fase som
+velges reell: $\|\,a|n\rangle\,\| = \sqrt n$, og samme regning med
+$aa^\dagger = \hat N + 1$ gir $\|\,a^\dagger|n\rangle\,\| = \sqrt{n + 1}$.
+
+<Formula tex={"\\begin{aligned} a\\,|n\\rangle &= \\sqrt{n}\\,|n - 1\\rangle, \\\\[2pt] a^\\dagger|n\\rangle &= \\sqrt{n + 1}\\,|n + 1\\rangle \\end{aligned}"} caption={"Virkningen på egentilstandene. $a$ kalles senkeoperatoren og $a^\\dagger$ heveoperatoren, og egenverdien $n$ til $\\hat N$ teller kvantene $\\hbar\\omega$ over nullpunktsenergien."} />
+
+Hele stigen bygges nedenfra:
+
+$$
+|n\rangle = \frac{(a^\dagger)^n}{\sqrt{n!}}\,|0\rangle .
+$$
+
+## Regning med stigeoperatorene
+
+Definisjonene løst for $\hat x$ og $\hat p$ gjør operatormetoden til et
+regneverktøy:
+
+<Formula tex={"\\begin{aligned} \\hat x &= \\sqrt{\\dfrac{\\hbar}{2m\\omega}}\\,(a + a^\\dagger), \\\\[4pt] \\hat p &= i\\sqrt{\\dfrac{m\\hbar\\omega}{2}}\\,(a^\\dagger - a) \\end{aligned}"} caption={"Posisjon og impuls uttrykt med stigeoperatorene. Matriseelementer av $\\hat x$ og $\\hat p$ blir algebra i stedet for integraler."} />
+
+Med virkningen på $|n\rangle$ og ortonormaliteten
+$\langle m|n\rangle = \delta_{mn}$ følger matriseelementene direkte:
+
+$$
+\langle m|\hat x|n\rangle = \sqrt{\frac{\hbar}{2m\omega}}\,
+\bigl(\sqrt{n}\,\delta_{m,n-1} + \sqrt{n + 1}\,\delta_{m,n+1}\bigr).
+$$
+
+Både $\hat x$ og $\hat p$ kopler bare nabonivåer, og begge har null på
+diagonalen: $\langle x\rangle = \langle p\rangle = 0$ i enhver stasjonær
+tilstand.
+
+<Example title="forventningsverdien av potensialet">
+
+Finn $\langle V\rangle = \tfrac12 m\omega^2\,\langle n|\hat x^2|n\rangle$ i
+tilstanden $|n\rangle$.
+
+<Solution>
+
+Kvadrer $\hat x$ uttrykt med stigeoperatorene:
+
+$$
+\hat x^2 = \frac{\hbar}{2m\omega}\,(a + a^\dagger)^2 .
+$$
+
+Gang ut kvadratet. Leddene $aa$ og $a^\dagger a^\dagger$ ender i
+$|n \mp 2\rangle$, som er ortogonale på $|n\rangle$, så de bidrar ikke. De
+to i midten er $aa^\dagger = \hat N + 1$ og $a^\dagger a = \hat N$:
+
+$$
+\langle n|\hat x^2|n\rangle = \frac{\hbar}{2m\omega}\,(2n + 1),
+$$
+
+og dermed
+
+$$
+\langle V\rangle = \tfrac14\hbar\omega\,(2n + 1) = \frac{E_n}{2}.
+$$
+
+Samme regning med $\hat p^2$ gir
+$\langle \hat p^2/2m\rangle = E_n/2$. Energien deler seg likt mellom
+kinetisk og potensiell del, som i den klassiske oscillatoren.
+
+<Answer>$\langle V\rangle = \tfrac14\hbar\omega\,(2n + 1) = E_n/2$</Answer>
+
+</Solution>
+
+</Example>
+
+## Bølgefunksjonene
+
+Så langt er ingen basis valgt. Bølgefunksjonene kommer ut når stigen
+projiseres på posisjonsbasisen, og startpunktet er $a|0\rangle = 0$.
+
+<Derivation title="Grunntilstanden fra a|0⟩ = 0">
+
+Projiser $a|0\rangle = 0$ på $\langle x|$ og bruk
+$\hat p \to (\hbar/i)\,d/dx$ i posisjonsrepresentasjonen:
+
+$$
+\begin{aligned}
+&\langle x|\,i\hat p + m\omega\hat x\,|0\rangle \\
+&\quad = \Bigl(\hbar\frac{d}{dx} + m\omega x\Bigr)\,\psi_0(x) = 0 .
+\end{aligned}
+$$
+
+Dette er en førsteordens differensiallikning,
+$\psi_0'/\psi_0 = -(m\omega/\hbar)\,x$, med løsning
+
+$$
+\psi_0(x) = \Bigl(\frac{m\omega}{\pi\hbar}\Bigr)^{1/4} e^{-m\omega x^2/2\hbar},
+$$
+
+der konstanten er valgt så $\int|\psi_0|^2\,dx = 1$.
+
+</Derivation>
+
+Grunntilstanden er en gausspakke, den samme som rekkeutviklingen gir. De
+eksiterte tilstandene følger ved å heve,
+$\psi_n(x) = \langle x|(a^\dagger)^n|0\rangle/\sqrt{n!}$. Hver $a^\dagger$
+er av første orden i $x$ og $d/dx$, så hvert trinn ganger inn et polynom av
+én grad høyere:
+
+<Formula tex={"\\begin{aligned} \\psi_n(x) &= \\Bigl(\\dfrac{m\\omega}{\\pi\\hbar}\\Bigr)^{1/4} \\dfrac{H_n(\\xi)\\,e^{-\\xi^2/2}}{\\sqrt{2^n n!}} \\\\[4pt] \\xi &= \\sqrt{m\\omega/\\hbar}\\;x \\end{aligned}"} caption={"Egenfunksjonene. $H_n$ er Hermitepolynomene, og funksjonene er de samme som rekkeutviklingsmetoden gir, uten at en andreordens differensiallikning er løst."} />
+
+## Superposisjoner
+
+En stasjonær tilstand står stille. Tettheten
+$|\Psi_n(x, t)|^2 = |\psi_n(x)|^2$ er tidsuavhengig, og
+$\langle x\rangle = 0$ uansett hvor høyt i stigen tilstanden ligger.
+Bevegelse krever en superposisjon av nivåer. I en blanding av to nabonivåer
+svinger kryssleddet i $|\Psi|^2$ med differansefrekvensen
+$(E_{n+1} - E_n)/\hbar = \omega$, en svevning mellom de to stasjonære
+tilstandene, og $\langle x\rangle$ følger med.
+
+<Example title="to nivåer i svingning">
+
+Oscillatoren er ved $t = 0$ i tilstanden
+$|\Psi(0)\rangle = \tfrac15\bigl(3\,|0\rangle + 4\,|1\rangle\bigr)$. Finn
+$\langle x\rangle$ og $\langle p\rangle$ som funksjoner av tida, og
+kontroller <FormulaRef id="ehrenfests-teorem">Ehrenfests teorem</FormulaRef>.
+
+<Solution>
+
+Tilstanden er normert, $(3^2 + 4^2)/25 = 1$, og hvert nivå får sin
+fasefaktor $e^{-iE_nt/\hbar}$:
+
+$$
+\begin{aligned}
+|\Psi(t)\rangle &= \tfrac15\bigl(3\,e^{-i\omega t/2}\,|0\rangle \\
+&\qquad + 4\,e^{-3i\omega t/2}\,|1\rangle\bigr).
+\end{aligned}
+$$
+
+$\hat x$ kopler bare nabonivåer, så bare kryssleddene bidrar, med
+$\langle 0|\hat x|1\rangle = \sqrt{\hbar/2m\omega}$:
+
+$$
+\begin{aligned}
+\langle x\rangle
+&= 2\,\mathrm{Re}\Bigl[\tfrac{3}{5}\cdot\tfrac{4}{5}\,
+e^{-i\omega t}\,\langle 0|\hat x|1\rangle\Bigr] \\
+&= \frac{24}{25}\sqrt{\frac{\hbar}{2m\omega}}\,\cos\omega t .
+\end{aligned}
+$$
+
+Impulsen har $\langle 0|\hat p|1\rangle = -i\sqrt{m\hbar\omega/2}$, og
+samme regning gir
+
+$$
+\langle p\rangle = -\frac{24}{25}\sqrt{\frac{m\hbar\omega}{2}}\,\sin\omega t .
+$$
+
+Deriver: $d\langle x\rangle/dt = -\tfrac{24}{25}\sqrt{\hbar\omega/2m}\,\sin\omega t$,
+som er $\langle p\rangle/m$, og
+$d\langle p\rangle/dt = -m\omega^2\langle x\rangle = -\langle V'(x)\rangle$.
+Begge likningene stemmer.
+
+<Answer>$\langle x\rangle = \tfrac{24}{25}\sqrt{\hbar/2m\omega}\,\cos\omega t$ og $\langle p\rangle = -\tfrac{24}{25}\sqrt{m\hbar\omega/2}\,\sin\omega t$</Answer>
+
+</Solution>
+
+</Example>
+
+<Simulation
+  src="/sims/oscillator.js"
+  title="Tilstander i oscillatorpotensialet"
+  caption="Samme potensial, fire tilstander, med nivåene $E_n$ som trinn. De fylte trinnene er nivåene som inngår, med styrke $|c_n|^2$. Stasjonære tilstander står stille. Blandingen $(3|0\rangle + 4|1\rangle)/5$ svinger med frekvensen $\omega$, og den koherente tilstanden svinger som en klassisk partikkel uten å endre form."
+  height={340}
+/>
+
+## Koherente tilstander
+
+Schrödinger lette allerede i 1926 etter den kvantetilstanden som likner mest på
+en klassisk svingning. Svaret er egentilstandene til senkeoperatoren:
+
+<Formula tex={"\\begin{aligned} a\\,|\\alpha\\rangle &= \\alpha\\,|\\alpha\\rangle, \\\\[2pt] |\\alpha\\rangle &= e^{-|\\alpha|^2/2} \\sum_{n=0}^{\\infty} \\dfrac{\\alpha^n}{\\sqrt{n!}}\\,|n\\rangle \\end{aligned}"} caption={"Den koherente tilstanden. $a$ er ikke hermitesk, så egenverdien $\\alpha$ er kompleks, og det finnes en tilstand for enhver $\\alpha$."} />
+
+Rekka følger av definisjonen. Sett $|\alpha\rangle = \sum_n c_n|n\rangle$
+inn i $a|\alpha\rangle = \alpha|\alpha\rangle$; ledd for ledd gir det
+$c_{n+1}\sqrt{n + 1} = \alpha\,c_n$, altså $c_n = \alpha^n c_0/\sqrt{n!}$,
+og normeringen $\sum_n |c_n|^2 = |c_0|^2\,e^{|\alpha|^2} = 1$ bestemmer
+$c_0$. Fordelingen over nivåene er en poissonfordeling,
+$|c_n|^2 = e^{-|\alpha|^2}|\alpha|^{2n}/n!$, med gjennomsnitt
+$\langle n\rangle = |\alpha|^2$.
+
+I tidsutviklingen får hvert ledd fasen $e^{-i(n + 1/2)\omega t}$, og
+$n$-avhengigheten kan flyttes inn i egenverdien:
+
+$$
+|\Psi(t)\rangle = e^{-i\omega t/2}\,\bigl|\,\alpha e^{-i\omega t}\bigr\rangle .
+$$
+
+En koherent tilstand forblir koherent; egenverdien roterer i det komplekse
+planet med vinkelfrekvensen $\omega$. Med $\alpha = |\alpha|e^{i\theta}$ er
+
+$$
+\langle x\rangle = \sqrt{\frac{2\hbar}{m\omega}}\,|\alpha|\,
+\cos(\omega t - \theta),
+$$
+
+og tettheten i posisjonsbasisen kan regnes ut eksakt:
+
+$$
+|\langle x|\Psi(t)\rangle|^2
+= \sqrt{\frac{m\omega}{\pi\hbar}}\,
+e^{-m\omega\,(x - \langle x\rangle)^2/\hbar}.
+$$
+
+Dette er en gausspakke med grunntilstandens bredde som svinger med klassisk
+amplitude uten å endre form, og med $\Delta x\,\Delta p = \hbar/2$ hele
+tiden. Laserlys er i god tilnærmelse en koherent tilstand av
+strålingsfeltet, og beskrivelsen ga Glauber nobelprisen i 2005.
+
+## Sjekk deg selv
+
+<Quiz
+  question={"Hva er $a^\\dagger a\\,|3\\rangle$?"}
+  options={[
+    "$\\sqrt{3}\\,|2\\rangle$",
+    "$3\\,|3\\rangle$",
+    "$4\\,|3\\rangle$",
+    "$\\hbar\\omega\\bigl(3 + \\tfrac12\\bigr)|3\\rangle$"
+  ]}
+  answer={1}
+  explanation={"Først $a|3\\rangle = \\sqrt{3}\\,|2\\rangle$, så $a^\\dagger$ på resultatet: $\\sqrt{3}\\cdot\\sqrt{3}\\,|3\\rangle = 3\\,|3\\rangle$. Talloperatoren $\\hat N = a^\\dagger a$ gir egenverdien $n$, ikke energien; den er egenverdien til $\\hat H = \\hbar\\omega(\\hat N + \\tfrac12)$."}
+/>
+
+<Quiz
+  question={"En oscillator står i en superposisjon der bare $|0\\rangle$ og $|2\\rangle$ inngår. Hvordan beveger $\\langle x\\rangle$ seg?"}
+  options={[
+    "Svinger med frekvensen $\\omega$",
+    "Svinger med frekvensen $2\\omega$",
+    "Står stille",
+    "Svinger med frekvensen $\\omega/2$"
+  ]}
+  answer={2}
+  explanation={"$\\hat x$ kopler bare nabonivåer, og $\\langle 0|\\hat x|2\\rangle = 0$, så $\\langle x\\rangle = 0$ hele tiden. Tilstanden er likevel ikke i ro: $\\hat x^2$ kopler nivåer to trinn fra hverandre, så $\\Delta x$ pulserer med frekvensen $(E_2 - E_0)/\\hbar = 2\\omega$."}
+/>
+
+<SelfCheck question={"Vis at $\\Delta x\\,\\Delta p = (n + \\tfrac12)\\,\\hbar$ i tilstanden $|n\\rangle$."}>
+
+Begge forventningsverdiene $\langle x\rangle$ og $\langle p\rangle$ er null,
+siden $\hat x$ og $\hat p$ bare kopler nabonivåer. Kvadratene har ledd på
+diagonalen: $\langle n|(a + a^\dagger)^2|n\rangle = 2n + 1$ og
+$\langle n|(a^\dagger - a)^2|n\rangle = -(2n + 1)$, så
+
+$$
+\begin{aligned}
+(\Delta x)^2 &= \frac{\hbar}{2m\omega}\,(2n + 1), \\[2pt]
+(\Delta p)^2 &= \frac{m\hbar\omega}{2}\,(2n + 1),
+\end{aligned}
+$$
+
+og produktet er $\Delta x\,\Delta p = (n + \tfrac12)\,\hbar$.
+Grunntilstanden har minst mulig uskarphet, $\hbar/2$, og produktet vokser
+ett trinn $\hbar$ for hvert nivå oppover stigen.
+
+</SelfCheck>
+
+<KeyTakeaways>
+
+- Stigeoperatorene $a = (i\hat p + m\omega\hat x)/\sqrt{2\hbar m\omega}$ og $a^\dagger$ oppfyller $[a, a^\dagger] = 1$, og $\hat H = \hbar\omega(a^\dagger a + \tfrac12)$.
+- $a$ senker og $a^\dagger$ hever energien ett trinn: $a|n\rangle = \sqrt n\,|n-1\rangle$ og $a^\dagger|n\rangle = \sqrt{n+1}\,|n+1\rangle$. Normkravet stopper stigen nederst, $a|0\rangle = 0$.
+- Spekteret $E_n = \hbar\omega(n + \tfrac12)$, $n = 0, 1, 2, \dots$, er ikke-degenerert og følger av $[\hat x, \hat p] = i\hbar$ alene.
+- Matriseelementer regnes med $\hat x = \sqrt{\hbar/2m\omega}\,(a + a^\dagger)$ og $\hat p = i\sqrt{m\hbar\omega/2}\,(a^\dagger - a)$; begge kopler bare nabonivåer.
+- Grunntilstanden løser $a|0\rangle = 0$ og er en gausspakke; $(a^\dagger)^n$ bygger Hermitefunksjonene uten at noen differensiallikning av andre orden løses.
+- En stasjonær tilstand står stille. En superposisjon av nabonivåer svinger med $\omega$, og den koherente tilstanden $a|\alpha\rangle = \alpha|\alpha\rangle$ svinger som en klassisk partikkel uten å endre form.
+
+</KeyTakeaways>

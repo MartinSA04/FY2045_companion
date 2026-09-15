@@ -182,6 +182,43 @@ formulas:
     tex: "\\langle x|p\\rangle = \\dfrac{1}{\\sqrt{2\\pi\\hbar}}\\,e^{ipx/\\hbar}"
     label: "Overlappet mellom posisjons- og impulsbasisen. Gir $\\Psi(x) = \\int dp\\,\\langle x|p\\rangle\\,\\Phi(p)$."
     section: "Diracnotasjon og representasjoner"
+
+  - id: stigeoperatorene
+    tex: "\\begin{aligned} a &= \\dfrac{i\\hat p + m\\omega\\hat x}{\\sqrt{2\\hbar m\\omega}}, \\\\[4pt] a^\\dagger &= \\dfrac{-i\\hat p + m\\omega\\hat x}{\\sqrt{2\\hbar m\\omega}} \\end{aligned}"
+    label: "Stigeoperatorene: $a$ senker og $a^\\dagger$ hever energien ett trinn $\\hbar\\omega$. De er hverandres adjungerte."
+    section: "Harmonisk oscillator"
+  - id: oscillator-hamilton
+    tex: "\\begin{aligned} \\bigl[a, a^\\dagger\\bigr] &= 1, \\\\[2pt] \\hat H &= \\hbar\\omega\\bigl(\\hat N + \\tfrac12\\bigr) \\end{aligned}"
+    label: "Kommutatoren og Hamiltonoperatoren uttrykt med talloperatoren $\\hat N = a^\\dagger a$."
+    section: "Harmonisk oscillator"
+  - id: oscillator-energiene
+    tex: "E_n = \\hbar\\omega\\bigl(n + \\tfrac12\\bigr)"
+    label: "Energinivåene, $n = 0, 1, 2, \\dots$ Ikke-degenererte, med nullpunktsenergien $E_0 = \\tfrac12\\hbar\\omega$."
+    section: "Harmonisk oscillator"
+  - id: virkningen-av-stigeoperatorene
+    tex: "\\begin{aligned} a\\,|n\\rangle &= \\sqrt{n}\\,|n - 1\\rangle, \\\\[2pt] a^\\dagger|n\\rangle &= \\sqrt{n + 1}\\,|n + 1\\rangle \\end{aligned}"
+    label: "Virkningen på egentilstandene. $a|0\\rangle = 0$, og $|n\\rangle = (n!)^{-1/2}(a^\\dagger)^n|0\\rangle$."
+    section: "Harmonisk oscillator"
+  - id: x-og-p-ved-stigeoperatorene
+    tex: "\\begin{aligned} \\hat x &= \\sqrt{\\dfrac{\\hbar}{2m\\omega}}\\,(a + a^\\dagger), \\\\[4pt] \\hat p &= i\\sqrt{\\dfrac{m\\hbar\\omega}{2}}\\,(a^\\dagger - a) \\end{aligned}"
+    label: "Posisjon og impuls uttrykt med stigeoperatorene. Begge kopler bare nabonivåer."
+    section: "Harmonisk oscillator"
+  - id: oscillator-grunntilstanden
+    tex: "\\psi_0(x) = \\Bigl(\\dfrac{m\\omega}{\\pi\\hbar}\\Bigr)^{1/4} e^{-m\\omega x^2/2\\hbar}"
+    label: "Grunntilstanden, løsningen av $a|0\\rangle = 0$ i posisjonsbasisen."
+    section: "Harmonisk oscillator"
+  - id: oscillator-egenfunksjonene
+    tex: "\\begin{aligned} \\psi_n(x) &= \\Bigl(\\dfrac{m\\omega}{\\pi\\hbar}\\Bigr)^{1/4} \\dfrac{H_n(\\xi)\\,e^{-\\xi^2/2}}{\\sqrt{2^n n!}} \\\\[4pt] \\xi &= \\sqrt{m\\omega/\\hbar}\\;x \\end{aligned}"
+    label: "Egenfunksjonene. $H_n$ er Hermitepolynomene."
+    section: "Harmonisk oscillator"
+  - id: koherent-tilstand
+    tex: "\\begin{aligned} a\\,|\\alpha\\rangle &= \\alpha\\,|\\alpha\\rangle, \\\\[2pt] |\\alpha\\rangle &= e^{-|\\alpha|^2/2} \\sum_{n=0}^{\\infty} \\dfrac{\\alpha^n}{\\sqrt{n!}}\\,|n\\rangle \\end{aligned}"
+    label: "Den koherente tilstanden: egentilstand av senkeoperatoren, med kompleks egenverdi $\\alpha$."
+    section: "Harmonisk oscillator"
+  - id: koherent-bevegelse
+    tex: "\\langle x \\rangle = \\sqrt{\\dfrac{2\\hbar}{m\\omega}}\\,|\\alpha|\\,\\cos(\\omega t - \\theta)"
+    label: "Bevegelsen til en koherent tilstand, med $\\alpha = |\\alpha|e^{i\\theta}$. Pakken beholder grunntilstandens form og bredde."
+    section: "Harmonisk oscillator"
 # ── Begreper ─────────────────────────────────────────────────────────────────
 glossary:
   - term: "Foton"
@@ -275,6 +312,22 @@ glossary:
   - term: "Matrisemekanikk"
     definition: "Kvantemekanikken i en diskret basis: tilstander er kolonnematriser $a_k = \\langle k|a\\rangle$ og operatorer er matriser $A_{kn} = \\langle k|\\hat A|n\\rangle$."
     section: "Diracnotasjon og representasjoner"
+
+  - term: "Algebraisk metode"
+    definition: "Å løse et egenverdiproblem med operatoralgebra alene, uten å velge noen basis. Kalles også operatormetoden."
+    section: "Harmonisk oscillator"
+  - term: "Stigeoperatorer"
+    definition: "Samlenavn på $a$ og $a^\\dagger$: senkeoperatoren $a$ senker og heveoperatoren $a^\\dagger$ hever energien ett trinn $\\hbar\\omega$. De er hverandres adjungerte og ikke hermiteske."
+    section: "Harmonisk oscillator"
+  - term: "Talloperator"
+    definition: "$\\hat N = a^\\dagger a$, med $\\hat N|n\\rangle = n|n\\rangle$. Egenverdien teller kvantene $\\hbar\\omega$ over nullpunktsenergien."
+    section: "Harmonisk oscillator"
+  - term: "Nullpunktsenergi"
+    definition: "Grunntilstandsenergien $E_0 = \\tfrac12\\hbar\\omega$. Oscillatoren har den fordi $\\Delta x$ og $\\Delta p$ ikke kan være null samtidig."
+    section: "Harmonisk oscillator"
+  - term: "Koherent tilstand"
+    definition: "Egentilstand av senkeoperatoren, $a|\\alpha\\rangle = \\alpha|\\alpha\\rangle$: en gausspakke med grunntilstandens bredde som svinger som en klassisk partikkel med amplitude $|\\alpha|\\sqrt{2\\hbar/m\\omega}$."
+    section: "Harmonisk oscillator"
 features:
   progress: true
   search: true
