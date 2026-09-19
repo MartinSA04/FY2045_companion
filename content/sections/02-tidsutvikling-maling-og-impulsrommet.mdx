@@ -166,7 +166,11 @@ den komplekskonjugerte gir $\partial\Psi^*/\partial t = -(\hat H\Psi)^*/(i\hbar)
 Sett inn:
 
 $$
-\frac{d}{dt}\langle F\rangle = -\frac{1}{i\hbar}\int (\hat H\Psi)^* \hat F\Psi\,d\tau + \frac{1}{i\hbar}\int \Psi^* \hat F\hat H\Psi\,d\tau + \left\langle\frac{\partial\hat F}{\partial t}\right\rangle.
+\begin{aligned}
+\frac{d}{dt}\langle F\rangle &= -\frac{1}{i\hbar}\int (\hat H\Psi)^* \hat F\Psi\,d\tau \\
+&\quad + \frac{1}{i\hbar}\int \Psi^* \hat F\hat H\Psi\,d\tau \\
+&\quad + \left\langle\frac{\partial\hat F}{\partial t}\right\rangle.
+\end{aligned}
 $$
 
 Siden $\hat H$ er hermitesk, kan den flyttes over på $\hat F\Psi$ i det første
@@ -259,7 +263,10 @@ $\hat p$, finnes ingen felles egenfunksjoner, og en måling av den ene
 The energy levels of a 2D infinite well are
 
 $$
-E_{n_x, n_y} = \frac{\hbar^2\pi^2}{2mL^2}\left(n_x^2 + n_y^2\right) = \epsilon\left(n_x^2 + n_y^2\right), \qquad (5)
+\begin{aligned}
+E_{n_x, n_y} &= \frac{\hbar^2\pi^2}{2mL^2}\left(n_x^2 + n_y^2\right) \\
+&= \epsilon\left(n_x^2 + n_y^2\right),
+\end{aligned}
 $$
 
 where $L$ is the width of the square well and $n_x$ and $n_y$ are positive
@@ -267,7 +274,10 @@ integer values ($n_x, n_y = 1, 2, 3, \ldots$). The original wave function is
 composed as
 
 $$
-\Psi = \frac{1}{\sqrt{2}}\psi_{11} + \frac{1}{\sqrt{5}}(\psi_{12} + i\psi_{21}) + \frac{1}{\sqrt{10}}\psi_{22} \qquad (6)
+\begin{aligned}
+\Psi &= \frac{1}{\sqrt{2}}\psi_{11} + \frac{1}{\sqrt{5}}(\psi_{12} + i\psi_{21}) \\
+&\quad + \frac{1}{\sqrt{10}}\psi_{22}
+\end{aligned}
 $$
 
 in terms of the eigenstates referring to the combinations of the quantum
@@ -384,7 +394,7 @@ Consider a particle in one dimension represented by the wave function in
 momentum space
 
 $$
-\phi(p) = \begin{cases} C, & \text{for } 0 \le p \le p_0, \\ 0, & \text{otherwise.} \end{cases} \qquad (4)
+\phi(p) = \begin{cases} C, & \text{for } 0 \le p \le p_0, \\ 0, & \text{otherwise.} \end{cases}
 $$
 
 Which one of the following options holds true?
@@ -405,7 +415,10 @@ $\int_0^{p_0} C^2\,dp = C^2 p_0 = 1$ gir $C = 1/\sqrt{p_0}$. Forventningsverdien
 av en funksjon av $p$ er integralet av funksjonen mot tettheten:
 
 $$
-\langle p^2\rangle = \int_0^{p_0} p^2\,|\phi(p)|^2\,dp = \frac{1}{p_0}\cdot\frac{p_0^3}{3} = \frac{p_0^2}{3}.
+\begin{aligned}
+\langle p^2\rangle &= \int_0^{p_0} p^2\,|\phi(p)|^2\,dp \\
+&= \frac{1}{p_0}\cdot\frac{p_0^3}{3} = \frac{p_0^2}{3}.
+\end{aligned}
 $$
 
 <Answer>A</Answer>
