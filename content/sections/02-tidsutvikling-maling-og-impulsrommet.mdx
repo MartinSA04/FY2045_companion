@@ -137,6 +137,46 @@ banen eksakt, uansett hvor bred pakken er.
   height={300}
 />
 
+<Example label="Eksamensoppgave" title="Utled tidsutviklingen av en forventningsverdi">
+<ExamRef id="2022-des" task="4" />
+
+Derive the equation
+
+$$
+\frac{d}{dt}\langle F\rangle = \frac{i}{\hbar}\langle[\hat H, \hat F]\rangle + \left\langle\frac{\partial \hat F}{\partial t}\right\rangle
+$$
+
+using the general definition of an expectation value in the state
+$|\psi\rangle$,
+
+$$
+\langle F\rangle = \langle\psi|\hat F|\psi\rangle.
+$$
+
+You are free to use any formulation of quantum mechanics. Hint: Use the
+product rule.
+
+<Solution>
+Skriv forventningsverdien som et integral, $\langle F\rangle = \int \Psi^* \hat F \Psi\,d\tau$,
+og deriver med produktregelen. Tre ledd oppstår: ett der $\Psi^*$ deriveres,
+ett der $\Psi$ deriveres, og ett der $\hat F$ selv avhenger av tiden.
+
+Schrödingerligningen gir $\partial\Psi/\partial t = \hat H\Psi/(i\hbar)$, og
+den komplekskonjugerte gir $\partial\Psi^*/\partial t = -(\hat H\Psi)^*/(i\hbar)$.
+Sett inn:
+
+$$
+\frac{d}{dt}\langle F\rangle = -\frac{1}{i\hbar}\int (\hat H\Psi)^* \hat F\Psi\,d\tau + \frac{1}{i\hbar}\int \Psi^* \hat F\hat H\Psi\,d\tau + \left\langle\frac{\partial\hat F}{\partial t}\right\rangle.
+$$
+
+Siden $\hat H$ er hermitesk, kan den flyttes over på $\hat F\Psi$ i det første
+integralet: $\int (\hat H\Psi)^*\hat F\Psi\,d\tau = \int \Psi^*\hat H\hat F\Psi\,d\tau$.
+De to første leddene blir da $\frac{1}{i\hbar}\langle \hat F\hat H - \hat H\hat F\rangle = \frac{i}{\hbar}\langle[\hat H, \hat F]\rangle$.
+
+<Answer>$\dfrac{d}{dt}\langle F\rangle = \dfrac{i}{\hbar}\langle[\hat H,\hat F]\rangle + \left\langle\dfrac{\partial\hat F}{\partial t}\right\rangle$, med hermitesiteten til $\hat H$ som det avgjørende steget.</Answer>
+</Solution>
+</Example>
+
 ## Måling av en degenerert egenverdi
 
 Målepostulatet sier at systemet rett etter en måling som ga $f_n$, står i en
@@ -212,6 +252,51 @@ energimåling fastlegger $n$, en måling av $L^2$ deretter $l$, og en måling
 av $L_z$ til slutt $m$. Kommuterer operatorene ikke, som $\hat x$ og
 $\hat p$, finnes ingen felles egenfunksjoner, og en måling av den ene
 ødelegger en skarp verdi for den andre.
+
+<Example label="Eksamensoppgave" title="Måling i en todimensjonal brønn">
+<ExamRef id="2024-des" task="1 i" />
+
+The energy levels of a 2D infinite well are
+
+$$
+E_{n_x, n_y} = \frac{\hbar^2\pi^2}{2mL^2}\left(n_x^2 + n_y^2\right) = \epsilon\left(n_x^2 + n_y^2\right), \qquad (5)
+$$
+
+where $L$ is the width of the square well and $n_x$ and $n_y$ are positive
+integer values ($n_x, n_y = 1, 2, 3, \ldots$). The original wave function is
+composed as
+
+$$
+\Psi = \frac{1}{\sqrt{2}}\psi_{11} + \frac{1}{\sqrt{5}}(\psi_{12} + i\psi_{21}) + \frac{1}{\sqrt{10}}\psi_{22} \qquad (6)
+$$
+
+in terms of the eigenstates referring to the combinations of the quantum
+numbers $n_x$ and $n_y$. Which one of the following option holds true after
+the measurement?
+
+A Probability for measuring $E = 5\epsilon$ is 0.2.
+
+B For $E = 5\epsilon$, the wave function becomes $\Psi = \frac{1}{\sqrt{2}}(\psi_{12} + i\psi_{21})$.
+
+C For $E = 9\epsilon$, the wave function becomes $\Psi = \psi_{22}$.
+
+D The three lowest possible total energies are $E = 2\epsilon$, $E = 4\epsilon$, and $E = 5\epsilon$.
+
+E It is not possible to measure $E = 5\epsilon$.
+
+<Solution>
+Energiene i superposisjonen er $2\epsilon$ for $\psi_{11}$, $5\epsilon$ for
+både $\psi_{12}$ og $\psi_{21}$, og $8\epsilon$ for $\psi_{22}$. Nivået
+$5\epsilon$ er degenerert, så sannsynligheten er summen
+$\tfrac15 + \tfrac15 = 0{,}4$, ikke 0,2. Måles $5\epsilon$, er den nye
+tilstanden projeksjonen på det degenererte rommet,
+$\frac{1}{\sqrt5}(\psi_{12} + i\psi_{21})$, normert på nytt:
+$\frac{1}{\sqrt2}(\psi_{12} + i\psi_{21})$. Det er B. C nevner en energi som
+ikke finnes, og de tre laveste nivåene er $2\epsilon$, $5\epsilon$ og $8\epsilon$.
+
+<Answer>B</Answer>
+</Solution>
+</Example>
 
 ## Impulsegenfunksjonene
 
@@ -291,6 +376,41 @@ sannsynlighetstettheten i impulsrommet, slik $|\Psi|^2$ er det i
 posisjonsrommet.
 
 </Statement>
+
+<Example label="Eksamensoppgave" title="En bølgefunksjon gitt i impulsrommet">
+<ExamRef id="2024-des" task="1 h" />
+
+Consider a particle in one dimension represented by the wave function in
+momentum space
+
+$$
+\phi(p) = \begin{cases} C, & \text{for } 0 \le p \le p_0, \\ 0, & \text{otherwise.} \end{cases} \qquad (4)
+$$
+
+Which one of the following options holds true?
+
+A $C = \dfrac{1}{\sqrt{p_0}}$, $\langle p^2\rangle = \dfrac{p_0^2}{3}$.
+
+B $C = \dfrac{1}{p_0}$, $\langle p^2\rangle = \dfrac{p_0^2}{4}$.
+
+C $C = \dfrac{\sqrt{2}}{p_0}$, $\langle p^2\rangle = \dfrac{p_0^2}{3}$.
+
+D $C = \dfrac{1}{\sqrt{2p_0}}$, $\langle p^2\rangle = \dfrac{p_0^2}{6}$.
+
+E $C = \dfrac{\sqrt{3}}{p_0}$, $\langle p^2\rangle = \dfrac{p_0^2}{5}$.
+
+<Solution>
+$|\phi(p)|^2$ er sannsynlighetstettheten i impulsrommet, så
+$\int_0^{p_0} C^2\,dp = C^2 p_0 = 1$ gir $C = 1/\sqrt{p_0}$. Forventningsverdien
+av en funksjon av $p$ er integralet av funksjonen mot tettheten:
+
+$$
+\langle p^2\rangle = \int_0^{p_0} p^2\,|\phi(p)|^2\,dp = \frac{1}{p_0}\cdot\frac{p_0^3}{3} = \frac{p_0^2}{3}.
+$$
+
+<Answer>A</Answer>
+</Solution>
+</Example>
 
 ## Kvantemekanikk i impulsrommet
 

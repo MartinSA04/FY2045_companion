@@ -207,6 +207,77 @@ gir samme verdi igjen. Måler du i stedet posisjonen og finner $x'$, står
 partikkelen rett etterpå i posisjonsegentilstanden $\delta(x - x')$, som ikke
 er en energiegentilstand.
 
+<Example label="Eksamensoppgave" title="Normering og forventningsverdi">
+<ExamRef id="2023-des" task="1 c–d" />
+
+c) A particle is in a state described by
+
+$$
+|\psi\rangle = A\big[|1\rangle - |2\rangle + \sqrt{3}\,|3\rangle\big], \qquad (1)
+$$
+
+where $|n\rangle$ are orthonormal energy eigenstates. What is the normalization
+constant $A$ when chosen real and positive?
+
+A $A = 1/\sqrt{5}$ &nbsp; B $A = 1$ &nbsp; C $A = 5$ &nbsp; D $A = 1/5$ &nbsp; E $A = 1/3$
+
+d) The energy eigenvalue of the state $|n\rangle$ is
+
+$$
+E_n = \epsilon n^2, \qquad (2)
+$$
+
+where $n = 1, 2, 3, \ldots$. What is the energy expectation value of the state
+$|\psi\rangle$ in Eq. (1)?
+
+A $\langle E\rangle = 14\epsilon$ &nbsp; B $\langle E\rangle = \tfrac{14}{25}\epsilon$ &nbsp; C $\langle E\rangle = \tfrac{14}{5}\epsilon$ &nbsp; D $\langle E\rangle = 32\epsilon$ &nbsp; E $\langle E\rangle = \tfrac{32}{5}\epsilon$
+
+<Solution>
+c) Basisen er ortonormert, så normen er summen av kvadratene til
+koeffisientene: $\langle\psi|\psi\rangle = |A|^2(1 + 1 + 3) = 5|A|^2 = 1$, altså
+$A = 1/\sqrt{5}$.
+
+d) Hver egentilstand måles med sannsynlighet $|c_n|^2$, så
+$\langle E\rangle = \sum_n |c_n|^2 E_n = \tfrac{1}{5}(1\cdot\epsilon + 1\cdot 4\epsilon + 3\cdot 9\epsilon) = \tfrac{32}{5}\epsilon$.
+
+<Answer>c) A, $A = 1/\sqrt{5}$. d) E, $\langle E\rangle = \tfrac{32}{5}\epsilon$.</Answer>
+</Solution>
+</Example>
+
+<Example label="Eksamensoppgave" title="Hvilken påstand er feil?">
+<ExamRef id="2025-des" task="1 e" />
+
+The system is initially prepared in the normalized state
+
+$$
+\Psi(x, t) = \frac{1}{\sqrt{2}}\left(\psi_1(x)e^{-iE_1 t/\hbar} + \psi_2(x)e^{-iE_2 t/\hbar}\right),
+$$
+
+where $\psi_1(x)$ and $\psi_2(x)$ are orthonormal energy eigenstates of the
+Hamiltonian. Which of the following statements is wrong?
+
+A The probability density $|\Psi(x,t)|^2$ contains interference terms that oscillate with angular frequency $(E_2 - E_1)/\hbar$.
+
+B The probabilities for measuring $E_1$ and $E_2$ are equal.
+
+C Upon measuring the energy and obtaining $E_1$, the post-measurement state collapses to $\psi_1(x)$ (up to an overall phase).
+
+D The expectation value of the Hamiltonian in this state is $\tfrac12(E_1 + E_2)$.
+
+E The ratio of probabilities for measuring $E_1$ to $E_2$ is $E_1/E_2$.
+
+<Solution>
+Begge koeffisientene er $1/\sqrt{2}$, så sannsynligheten for hver energi er
+$\tfrac12$. Det gjør B riktig, gir $\langle H\rangle = \tfrac12 E_1 + \tfrac12 E_2$
+i D, og forholdet mellom sannsynlighetene er 1, ikke $E_1/E_2$. Energien selv
+inngår ikke i sannsynligheten, bare koeffisienten. A stemmer, fordi
+kryssleddet i $|\Psi|^2$ svinger som $\cos((E_2 - E_1)t/\hbar)$, og C er
+målepostulatet.
+
+<Answer>E er feil.</Answer>
+</Solution>
+</Example>
+
 ## Sjekk deg selv
 
 <Quiz

@@ -68,6 +68,51 @@ $|n\rangle$.
 
 </Statement>
 
+<Example label="Eksamensoppgave" title="Tolkningen av et skalarprodukt">
+<ExamRef id="2023-des" task="2 b" />
+
+What is the physical interpretation of a Dirac bra-ket $\langle a|b\rangle$?
+
+<Solution>
+$\langle a|b\rangle$ er sannsynlighetsamplituden for å finne systemet i
+tilstanden $|a\rangle$ når det er i tilstanden $|b\rangle$. Kvadratet
+$|\langle a|b\rangle|^2$ er sannsynligheten for det utfallet.
+
+<Answer>Amplituden for å finne $|a\rangle$ gitt $|b\rangle$; $|\langle a|b\rangle|^2$ er sannsynligheten.</Answer>
+</Solution>
+</Example>
+
+<Example label="Eksamensoppgave" title="Den duale vektoren">
+<ExamRef id="2024-aug-kont" task="1 d" />
+
+Consider the normalized state vector
+
+$$
+|\psi\rangle = \frac{1}{3}\big[(1 + 2i)|1\rangle - 2i|2\rangle\big],
+$$
+
+where $|1\rangle$ and $|2\rangle$ are orthonormal basis vectors. What is
+$\langle\psi|$, the dual vector of $|\psi\rangle$?
+
+A $\langle\psi| = \frac{1}{3}\big[(1 + 2i)|1\rangle - 2i|2\rangle\big]$
+
+B $\langle\psi| = \frac{1}{3}\big[\langle 1| + \langle 2|\big]$
+
+C $\langle\psi| = \frac{1}{3}\big[(1 + 2i)\langle 1| - 2i\langle 2|\big]$
+
+D $\langle\psi| = \frac{1}{3}\big[(1 - 2i)\langle 1| + 2i\langle 2|\big]$
+
+E $\langle\psi| = \frac{1}{3}\big[(1 + 2i)\langle 1| + 2i\langle 2|\big]$
+
+<Solution>
+Den duale vektoren til $c|a\rangle$ er $c^*\langle a|$: hver ket blir en bra,
+og hver koeffisient komplekskonjugeres. $(1 + 2i)^* = 1 - 2i$ og
+$(-2i)^* = 2i$. A består fortsatt av kets, og C og E har glemt å konjugere.
+
+<Answer>D</Answer>
+</Solution>
+</Example>
+
 ## Fullstendighet
 
 Velg $n$ ortonormerte basisvektorer, $\langle k|m\rangle = \delta_{km}$. En
@@ -140,6 +185,26 @@ rommet. De er ingen fysiske tilstander, men de brukes som basisvektorer
 likevel, og det utvidede rommet kalles et rigget Hilbertrom.
 
 </Callout>
+
+<Example label="Eksamensoppgave" title="Normering i posisjonsrommet">
+<ExamRef id="2024-aug-kont" task="3" />
+
+Show that if a state $|\psi\rangle$ is normalized, the corresponding position
+space wavefunction $\psi(x) = \langle x|\psi\rangle$ is also normalized.
+
+<Solution>
+Normert betyr $\langle\psi|\psi\rangle = 1$. Sett inn fullstendighetsrelasjonen
+for posisjonsbasisen, $\int dx\,|x\rangle\langle x| = 1$, mellom braen og keten:
+
+$$
+1 = \langle\psi|\psi\rangle = \int dx\,\langle\psi|x\rangle\langle x|\psi\rangle = \int dx\,\psi^*(x)\,\psi(x) = \int dx\,|\psi(x)|^2,
+$$
+
+siden $\langle\psi|x\rangle = \langle x|\psi\rangle^* = \psi^*(x)$.
+
+<Answer>$\int |\psi(x)|^2\,dx = \langle\psi|\psi\rangle = 1$.</Answer>
+</Solution>
+</Example>
 
 ## Operatorer
 

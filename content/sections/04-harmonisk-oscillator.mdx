@@ -218,6 +218,137 @@ er av første orden i $x$ og $d/dx$, så hvert trinn ganger inn et polynom av
 
 <Formula tex={"\\begin{aligned} \\psi_n(x) &= \\Bigl(\\dfrac{m\\omega}{\\pi\\hbar}\\Bigr)^{1/4} \\dfrac{H_n(\\xi)\\,e^{-\\xi^2/2}}{\\sqrt{2^n n!}} \\\\[4pt] \\xi &= \\sqrt{m\\omega/\\hbar}\\;x \\end{aligned}"} caption={"Egenfunksjonene. $H_n$ er Hermitepolynomene, og funksjonene er de samme som rekkeutviklingsmetoden gir, uten at en andreordens differensiallikning er løst."} />
 
+<Example label="Eksamensoppgave" title="Grunntilstanden fra $a|0\rangle = 0$">
+<ExamRef id="2022-des" task="5 a–b" />
+
+Consider a system described by the Hamiltonian
+
+$$
+\hat H = \frac{\hat p_x^2}{2m} + \frac12 k\hat x^2 + \frac14 q\hat x^4, \qquad (9)
+$$
+
+where $k$ and $q$ are real parameters, with $q \ge 0$.
+
+When $q = 0$ and $k > 0$, Eq. (9) describes a harmonic oscillator, and the
+Schrödinger equation can be solved by introducing the ladder operators
+
+$$
+\begin{aligned}
+a &= \sqrt{\frac{m\omega}{2\hbar}}\left[\hat x + \frac{i}{m\omega}\hat p_x\right], \\
+a^\dagger &= \sqrt{\frac{m\omega}{2\hbar}}\left[\hat x - \frac{i}{m\omega}\hat p_x\right], \qquad (10)
+\end{aligned}
+$$
+
+with $\omega \equiv \sqrt{k/m}$. The resulting energies are
+
+$$
+\begin{aligned}
+E_n &= \hbar\omega\left(n + \tfrac12\right), \\
+&\quad (n = 0, 1, 2\ldots), \qquad (11)
+\end{aligned}
+$$
+
+with orthonormal eigenstates $|n\rangle$ defined by the eigenvalue equation
+
+$$
+a^\dagger a|n\rangle = n|n\rangle, \qquad (12)
+$$
+
+and
+
+$$
+a|0\rangle = 0. \qquad (13)
+$$
+
+a) Use Eqs. (10) and (13) to show that the position space wavefunction
+$\psi_0(x)$ of the ground state of the harmonic oscillator is
+
+$$
+\psi_0(x) = Ae^{-m\omega x^2/2\hbar}. \qquad (14)
+$$
+
+Hint: The following might be useful:
+
+$$
+\begin{aligned}
+\langle x|n\rangle &= \psi_n(x), \\
+1 &= \int dx\,|x\rangle\langle x|, \\
+\langle x''|F(\hat x, \hat p_x)|x'\rangle &= F\!\left(x'', \frac{\hbar}{i}\frac{\partial}{\partial x''}\right) \\
+&\quad \times\,\delta(x'' - x').
+\end{aligned}
+$$
+
+Some of the integration formulas given in the formula sheet might also be
+useful for this problem.
+
+b) Calculate the normalization constant $A$ in Eq. (14).
+
+<Solution>
+a) I posisjonsrepresentasjonen virker $\hat x$ som $x$ og $\hat p_x$ som
+$(\hbar/i)\,d/dx$. Ligning (13) blir da en differensialligning for
+$\psi_0(x) = \langle x|0\rangle$:
+
+$$
+\sqrt{\frac{m\omega}{2\hbar}}\left(x + \frac{\hbar}{m\omega}\frac{d}{dx}\right)\psi_0 = 0
+\quad\Longrightarrow\quad
+\frac{d\psi_0}{dx} = -\frac{m\omega}{\hbar}\,x\,\psi_0.
+$$
+
+Separasjon gir $\ln\psi_0 = -m\omega x^2/2\hbar + \text{konst}$, altså
+$\psi_0(x) = Ae^{-m\omega x^2/2\hbar}$.
+
+b) Normering: $\int_{-\infty}^{\infty}|A|^2 e^{-m\omega x^2/\hbar}\,dx = |A|^2\sqrt{\pi\hbar/m\omega} = 1$,
+så $A = (m\omega/\pi\hbar)^{1/4}$ når $A$ velges reell og positiv.
+
+<Answer>a) $\psi_0(x) = Ae^{-m\omega x^2/2\hbar}$ følger av $a\psi_0 = 0$. b) $A = \left(\dfrac{m\omega}{\pi\hbar}\right)^{1/4}$.</Answer>
+</Solution>
+</Example>
+
+<Example label="Eksamensoppgave" title="Stigeoperatorene i bruk">
+<ExamRef id="2025-aug-kont" task="3 a–c" />
+
+The Hamiltonian of a one-dimensional harmonic oscillator reads
+
+$$
+\hat H = \frac{\hat p^2}{2m} + \frac12 m\omega^2\hat x^2.
+$$
+
+a) Rewrite the Hamiltonian using the ladder operators and use it for
+deriving the ground state and the first excited state energies.
+
+b) Derive the analytical from [sic] of the first excited state wavefunction
+by using the ladder operators.
+
+c) Compute the commutators $[\hat a, \hat x]$ and $[\hat a, \hat p]$.
+
+<Solution>
+Med $\hat a = \sqrt{m\omega/2\hbar}\,(\hat x + i\hat p/m\omega)$ og
+$\hat a^\dagger$ som den adjungerte, slik settet definerer dem på formelarket.
+
+a) Produktet $\hat a^\dagger\hat a$ gir $\hat H/\hbar\omega - \tfrac12$, siden
+kryssleddene samler seg til $\tfrac{i}{2\hbar}[\hat x, \hat p] = -\tfrac12$.
+Altså $\hat H = \hbar\omega(\hat a^\dagger\hat a + \tfrac12)$. Talloperatoren
+har egenverdiene $n = 0, 1, 2, \ldots$, så $E_0 = \tfrac12\hbar\omega$ og
+$E_1 = \tfrac32\hbar\omega$.
+
+b) $\psi_1 = \hat a^\dagger\psi_0$ med $\psi_0 = (m\omega/\pi\hbar)^{1/4}e^{-m\omega x^2/2\hbar}$.
+I posisjonsrepresentasjonen er
+$\hat a^\dagger = \sqrt{m\omega/2\hbar}\,(x - (\hbar/m\omega)\,d/dx)$, og den
+deriverte av $\psi_0$ er $-(m\omega/\hbar)x\psi_0$, så
+
+$$
+\psi_1(x) = \sqrt{\frac{m\omega}{2\hbar}}\cdot 2x\,\psi_0(x) = \left(\frac{4m^3\omega^3}{\pi\hbar^3}\right)^{1/4} x\,e^{-m\omega x^2/2\hbar}.
+$$
+
+c) Bare $[\hat x, \hat p] = i\hbar$ trengs:
+$[\hat a, \hat x] = \sqrt{m\omega/2\hbar}\,\frac{i}{m\omega}[\hat p, \hat x] = \sqrt{\hbar/2m\omega}$
+og
+$[\hat a, \hat p] = \sqrt{m\omega/2\hbar}\,[\hat x, \hat p] = i\sqrt{m\hbar\omega/2}$.
+
+<Answer>a) $E_0 = \tfrac12\hbar\omega$, $E_1 = \tfrac32\hbar\omega$. b) $\psi_1 = (4m^3\omega^3/\pi\hbar^3)^{1/4}\,x\,e^{-m\omega x^2/2\hbar}$. c) $[\hat a,\hat x] = \sqrt{\hbar/2m\omega}$, $[\hat a,\hat p] = i\sqrt{m\hbar\omega/2}$.</Answer>
+</Solution>
+</Example>
+
 ## Superposisjoner
 
 En stasjonær tilstand står stille. Tettheten
