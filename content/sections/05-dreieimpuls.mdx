@@ -1,0 +1,461 @@
+---
+order: 5
+title: "Dreieimpuls"
+summary: "Dreieimpuls definert ved kommutatorene: egenverdiene ħ²j(j+1) og ħm fra heve- og senkeoperatorene alene, hvorfor banedreieimpulsen bare har heltallige kvantetall, og radiallikningen for et sentralsymmetrisk potensial med hydrogenatomet som eksempel."
+importance: core
+updated: 2026-09-23
+---
+
+Banedreieimpulsen $\vec L = \vec r \times \vec p$ er kjent fra det forrige
+emnet i posisjonsrommet: $L_z$ og $L^2$ som differensialoperatorer i
+vinklene, kuleflatefunksjonene som egenfunksjoner og kvantetallene $l$ og
+$m$. Her defineres en dreieimpuls i stedet ved kommutatorene mellom
+komponentene, og spekteret følger av dem med den samme
+<Term name="Algebraisk metode">algebraiske metoden</Term> som ga
+oscillatorspekteret. Metoden gir mer enn banedreieimpulsen. Den tillater
+også halvtallige kvantetall, og de hører til spinn. Dreieimpulsen er
+bevart i ethvert sentralsymmetrisk potensial, og derfor bærer den
+kvantetallene som ordner nivåene i atomer.
+
+<LearningGoals>
+
+- Utlede egenverdiene $\hbar^2 j(j+1)$ og $\hbar m$ fra kommutatorene alene, med heve- og senkeoperatorene $J_\pm$.
+- Bruke $J_\pm|j,m\rangle = \hbar\sqrt{j(j+1) - m(m\pm1)}\,|j,m\pm1\rangle$ til å regne matriseelementer og forventningsverdier.
+- Forklare hvorfor banedreieimpulsen bare har heltallige $l$ og $m$.
+- Redusere Schrödingerlikningen i et <Term name="Sentralsymmetrisk potensial">sentralsymmetrisk potensial</Term> til <Term name="Radiallikningen">radiallikningen</Term>, og kjenne spekteret til hydrogenatomet.
+
+</LearningGoals>
+
+## Dreieimpulsoperatorene
+
+En <Term name="Dreieimpuls">dreieimpuls</Term> $\vec J$ er en vektor av
+tre hermiteske operatorer $J_x$, $J_y$ og $J_z$ som oppfyller
+
+<Formula tex={"\\begin{aligned} [J_x, J_y] &= i\\hbar J_z, \\\\[2pt] [J_y, J_z] &= i\\hbar J_x, \\\\[2pt] [J_z, J_x] &= i\\hbar J_y \\end{aligned}"} caption={"Definisjonen av en dreieimpuls. Kort skrevet er $[J_i, J_j] = i\\hbar\\sum_k \\varepsilon_{ijk}J_k$, der Levi-Civita-symbolet $\\varepsilon_{ijk}$ er $+1$ for $xyz$ og sykliske permutasjoner av den, $-1$ for de andre permutasjonene og $0$ når to indekser er like."} />
+
+Dreieimpulsoperatorene skrives uten hatt, som stigeoperatorene. At
+komponentene ikke kommuterer, henger sammen med at dreininger om ulike
+akser ikke kommuterer. Drei en bok 90° om $x$-aksen og så 90° om
+$y$-aksen, og gjør det samme i motsatt rekkefølge. Boka ender i to ulike
+stillinger. Dreieimpulsen er generatoren for dreininger: en dreining
+vinkelen $\varphi$ om $z$-aksen er operatoren $e^{-i\varphi J_z/\hbar}$.
+Når dreiningene ikke kommuterer, kan ikke generatorene heller gjøre det.
+
+Kvadratet $J^2 = J_x^2 + J_y^2 + J_z^2$ kommuterer derimot med hver
+komponent. Med $[J_i^2, J_j] = J_i[J_i, J_j] + [J_i, J_j]J_i$ er
+
+$$
+\begin{aligned}
+[J^2, J_j] &= \sum_i [J_i^2, J_j] \\
+&= i\hbar\sum_{i,k}\varepsilon_{ijk}\,(J_iJ_k + J_kJ_i) \\
+&= 0,
+\end{aligned}
+$$
+
+fordi $\varepsilon_{ijk}$ skifter fortegn når $i$ og $k$ bytter plass,
+mens parentesen ikke gjør det. $J^2$ og én komponent, etter vane $J_z$, er
+dermed <Term name="Kompatible observable">kompatible observable</Term> med
+felles egenvektorer. To komponenter kan ikke ha skarpe verdier samtidig,
+unntatt når hele dreieimpulsen er null.
+
+## Egenverdiene
+
+Kall de felles egenvektorene $|a, b\rangle$, med
+$J^2|a, b\rangle = a\,|a, b\rangle$ og $J_z|a, b\rangle = b\,|a, b\rangle$.
+Så langt vet vi ingenting om $a$ og $b$. Som for oscillatoren lønner det
+seg å danne to kombinasjoner som ikke er hermiteske:
+
+<Formula tex={"\\begin{aligned} J_\\pm &= J_x \\pm iJ_y, \\\\[2pt] [J_z, J_\\pm] &= \\pm\\hbar J_\\pm, \\\\[2pt] [J^2, J_\\pm] &= 0 \\end{aligned}"} caption={"Heveoperatoren $J_+$ og senkeoperatoren $J_-$. De er hverandres adjungerte, $J_+^\\dagger = J_-$."} />
+
+Kommutatoren med $J_z$ følger av definisjonen:
+$[J_z, J_x] \pm i[J_z, J_y] = i\hbar J_y \pm \hbar J_x = \pm\hbar J_\pm$.
+Den flytter $J_z$ forbi $J_\pm$:
+
+$$
+J_z\,(J_\pm|a, b\rangle) = (J_\pm J_z \pm \hbar J_\pm)|a, b\rangle \allowbreak = (b \pm \hbar)\,(J_\pm|a, b\rangle),
+$$
+
+og siden $J_\pm$ kommuterer med $J^2$, har $J_\pm|a, b\rangle$ fortsatt
+egenverdien $a$. Heveoperatoren øker egenverdien til $J_z$ med $\hbar$ og
+senkeoperatoren minsker den med $\hbar$, mens $J^2$ er uendret. Det er
+samme stige som for oscillatoren, men nå med verdier av $J_z$ som trinn.
+
+Stigen kan ikke fortsette i noen retning. For å se det trengs produktet
+
+$$
+J_\mp J_\pm = J_x^2 + J_y^2 \pm i[J_x, J_y] \allowbreak = J^2 - J_z^2 \mp \hbar J_z .
+$$
+
+Kvadratet av normen til $J_\pm|a, b\rangle$ er da
+
+$$
+\langle a, b|J_\mp J_\pm|a, b\rangle = a - b(b \pm \hbar) \ge 0 .
+$$
+
+For en gitt $a$ holder ikke ulikheten når $|b|$ blir for stor, uansett
+fortegn. Det må derfor finnes en øverste verdi $b_{\max}$ der
+$J_+|a, b_{\max}\rangle = 0$ og en nederste $b_{\min}$ der
+$J_-|a, b_{\min}\rangle = 0$. Der er normen null, så
+
+$$
+a = b_{\max}(b_{\max} + \hbar) = b_{\min}(b_{\min} - \hbar).
+$$
+
+Likningen har to løsninger, $b_{\min} = b_{\max} + \hbar$ og
+$b_{\min} = -b_{\max}$. Den første gir $b_{\min} > b_{\max}$, så den andre
+gjelder. Fra bunnen til toppen går det et helt antall trinn $n$, altså
+$2b_{\max} = n\hbar$ og $a = \hbar^2\,\tfrac n2\bigl(\tfrac n2 + 1\bigr)$.
+Med $j = n/2$ og $m = b/\hbar$ blir resultatet:
+
+<Statement kind="theorem" name="Egenverdiene til en dreieimpuls" id="dreieimpuls-egenverdiene">
+
+$$
+\begin{aligned}
+J^2\,|j, m\rangle &= \hbar^2 j(j + 1)\,|j, m\rangle, \\
+J_z\,|j, m\rangle &= \hbar m\,|j, m\rangle,
+\end{aligned}
+$$
+
+med $j = 0, \tfrac12, 1, \tfrac32, \dots$ og
+$m = -j, -j + 1, \dots, j - 1, j$. Til hver $j$ hører $2j + 1$ verdier
+av $m$.
+
+</Statement>
+
+Regningen brukte bare kommutatorene, og heltallige og halvtallige $j$ er
+like gode løsninger. For $j > 0$ er $j(j + 1) > j^2$, så $|J_z|$ er alltid
+mindre enn lengden $\sqrt{j(j+1)}\,\hbar$. Pekte $\vec J$ langs $z$-aksen,
+ville $J_x$ og $J_y$ begge vært null, og dermed skarpe samtidig.
+
+Normen bestemmer også virkningen av $J_\pm$, når fasen velges reell og
+positiv:
+
+<Formula tex={"J_\\pm|j, m\\rangle = \\hbar\\sqrt{j(j + 1) - m(m \\pm 1)}\\;|j, m \\pm 1\\rangle"} caption={"Virkningen av heve- og senkeoperatoren. Roten er null for $m = j$ oppover og for $m = -j$ nedover, så stigen stopper av seg selv."} />
+
+<Simulation
+  src="/sims/dreieimpuls.js"
+  title="Dreieimpulsen i tilstanden |j,m⟩"
+  caption="Kula har radius $|\vec J| = \sqrt{j(j+1)}\,\hbar$, og ringene ligger i høydene $J_z = m\hbar$. I tilstanden $|j,m\rangle$ ligger $\vec J$ et sted på den markerte kjeglen, uten bestemt retning rundt $z$-aksen. Søylene er sannsynligheten for hvert utfall $m'\hbar$ når $J_x$ måles, og de stiplede linjene viser hvor langt $J_x$ rekker på kjeglen. Selv for $m = j$ er spredningen i $J_x$ ikke null."
+  height={400}
+/>
+
+## Banedreieimpuls
+
+Den klassiske definisjonen $\vec L = \vec r \times \vec p$ gir
+<Term name="Banedreieimpuls">banedreieimpulsen</Term>, med komponentene
+
+$$
+\begin{aligned}
+L_x &= \hat y\hat p_z - \hat z\hat p_y, \\
+L_y &= \hat z\hat p_x - \hat x\hat p_z, \\
+L_z &= \hat x\hat p_y - \hat y\hat p_x .
+\end{aligned}
+$$
+
+Kommutatorene følger av $[\hat x_i, \hat p_j] = i\hbar\,\delta_{ij}$. Bare
+de to leddene der en koordinat møter sin egen impuls, bidrar:
+
+$$
+\begin{aligned}
+[L_x, L_y] &= [\hat y\hat p_z, \hat z\hat p_x] + [\hat z\hat p_y, \hat x\hat p_z] \\
+&= \hat y\,[\hat p_z, \hat z]\,\hat p_x + \hat x\,[\hat z, \hat p_z]\,\hat p_y \\
+&= i\hbar\,(\hat x\hat p_y - \hat y\hat p_x) = i\hbar L_z .
+\end{aligned}
+$$
+
+De to andre følger ved syklisk permutasjon av $x$, $y$ og $z$. $\vec L$ er altså en dreieimpuls,
+og alt fra forrige avsnitt gjelder, med $l$ i stedet for $j$:
+$L^2|l, m\rangle = \hbar^2 l(l + 1)|l, m\rangle$ og
+$L_z|l, m\rangle = \hbar m|l, m\rangle$. Det som gjenstår, er å finne ut
+hvilke $l$ som faktisk forekommer.
+
+I kulekoordinatene $(r, \theta, \varphi)$ blir operatorene
+differensialoperatorer i vinklene alene:
+
+<Formula tex={"\\begin{aligned} L_z &= \\frac{\\hbar}{i}\\frac{\\partial}{\\partial\\varphi}, \\\\[4pt] L^2 &= -\\hbar^2\\Bigl(\\frac{\\partial^2}{\\partial\\theta^2} + \\cot\\theta\\,\\frac{\\partial}{\\partial\\theta} + \\frac{1}{\\sin^2\\theta}\\frac{\\partial^2}{\\partial\\varphi^2}\\Bigr) \\end{aligned}"} caption={"Banedreieimpulsen i posisjonsrepresentasjonen, i kulekoordinater. Ingen av dem inneholder $r$."} />
+
+Projiser egenverdilikningene på $\langle r, \theta, \varphi|$, slik
+posisjonsrepresentasjonen ble funnet før. Da blir
+$\psi_{lm}(r, \theta, \varphi) = \langle r, \theta, \varphi|l, m\rangle$
+løsningen av to differensiallikninger der $r$ ikke inngår, og løsningen
+skiller seg:
+
+$$
+\begin{aligned}
+\psi_{lm}(r, \theta, \varphi) &= R(r)\,Y_{lm}(\theta, \varphi), \\
+Y_{lm}(\theta, \varphi) &= \Theta_{lm}(\theta)\,e^{im\varphi} .
+\end{aligned}
+$$
+
+<Term name="Kuleflatefunksjoner">Kuleflatefunksjonene</Term> $Y_{lm}$ er
+et ortonormert, fullstendig sett av funksjoner på kuleflaten. Faktoren
+$e^{im\varphi}$ løser $L_z$-likningen, og den avgjør hvilke $m$ som er
+lov. Vinklene $\varphi$ og $\varphi + 2\pi$ er samme punkt, men for
+halvtallig $m$ er $e^{im(\varphi + 2\pi)} = -e^{im\varphi}$. Da ville
+$Y_{lm}(\theta, \varphi + 2\pi) = -Y_{lm}(\theta, \varphi)$, og
+bølgefunksjonen ville ikke vært kontinuerlig. Altså er $m$ et heltall, og
+siden $m$ går i hele trinn opp til $l$, er $l$ det også:
+$l = 0, 1, 2, \dots$
+
+De halvtallige verdiene fra algebraen kan derfor ikke beskrives med
+funksjoner av posisjonen. De finnes likevel: elektronet har en indre
+dreieimpuls, spinnet, med $j = \tfrac12$.
+
+<Example label="Eksamensoppgave" title="Heltallige kvantetall">
+<ExamRef id="2025-des" task="2 d" />
+
+d) Why is the orbital angular momentum restricted to non-negative integer
+values?
+
+<Solution>
+
+$Y_{lm}$ inneholder faktoren $e^{im\varphi}$, og $\varphi$ og
+$\varphi + 2\pi$ er samme punkt. Bølgefunksjonen må ha samme verdi der,
+og det krever heltallig $m$. Siden $m$ går i hele trinn fra $-l$ til $l$,
+er $l$ også et heltall. Negativ er $l$ ikke: stigen gir
+$l = b_{\max}/\hbar$, og $b_{\max} \ge 0$ fordi $b_{\min} = -b_{\max}$
+ikke kan ligge over $b_{\max}$. Kvantetallet $m$ kan være negativt.
+
+<Answer>Entydig $e^{im\varphi}$ krever heltallig $m$, og dermed heltallig $l$; $l = b_{\max}/\hbar \ge 0$ fordi stigen går fra $-l$ til $l$.</Answer>
+
+</Solution>
+
+</Example>
+
+<Example title="heveoperatoren på en kuleflatefunksjon">
+
+I kulekoordinater er
+
+$$
+L_\pm = \hbar\,e^{\pm i\varphi}\Bigl(\pm\frac{\partial}{\partial\theta} + i\cot\theta\,\frac{\partial}{\partial\varphi}\Bigr).
+$$
+
+Start med $Y_{10}(\theta, \varphi) = \sqrt{3/4\pi}\,\cos\theta$. Finn
+$Y_{11}$ med heveoperatoren, og vis at stigen stopper der.
+
+<Solution>
+
+$Y_{10}$ avhenger ikke av $\varphi$, så bare $\theta$-leddet virker:
+
+$$
+L_+Y_{10} = \sqrt{\frac{3}{4\pi}}\;\hbar\,e^{i\varphi}\,\frac{\partial\cos\theta}{\partial\theta} \allowbreak = -\hbar\sqrt{\frac{3}{4\pi}}\,\sin\theta\,e^{i\varphi} .
+$$
+
+Stigeformelen med $l = 1$, $m = 0$ gir
+$L_+|1, 0\rangle = \hbar\sqrt{2}\,|1, 1\rangle$. Del på $\sqrt2\,\hbar$:
+
+$$
+Y_{11} = -\sqrt{\frac{3}{8\pi}}\,\sin\theta\,e^{i\varphi} .
+$$
+
+Normen stemmer:
+$\tfrac{3}{8\pi}\int_0^{2\pi}\!d\varphi\int_0^{\pi}\sin^2\theta\,\sin\theta\,d\theta = \tfrac{3}{8\pi}\cdot 2\pi\cdot\tfrac43 = 1$.
+Én gang til: $\partial_\varphi$ gir en faktor $i$, og bortsett fra
+fellesfaktoren $-\hbar\sqrt{3/8\pi}\,e^{2i\varphi}$ er
+
+$$
+L_+Y_{11} \propto \cos\theta - \cot\theta\,\sin\theta = 0 .
+$$
+
+Stigen stopper ved $m = l = 1$, som roten i stigeformelen sier.
+
+<Answer>$Y_{11} = -\sqrt{3/8\pi}\,\sin\theta\,e^{i\varphi}$, og $L_+Y_{11} = 0$</Answer>
+
+</Solution>
+
+</Example>
+
+<Example label="Eksamensoppgave" title="Måling på en superposisjon">
+<ExamRef id="2025-des" task="1 p" />
+
+p) An electron in a hydrogen-like atom is prepared in the (normalized)
+state with orbital quantum number $\ell = 2$:
+
+$$
+|\psi\rangle = \frac{1}{\sqrt{14}}\bigl(2|2,2\rangle + |2,1\rangle \allowbreak + 3|2,0\rangle\bigr). \allowbreak\qquad (15)
+$$
+
+Here $|\ell, m\rangle$ are simultaneous eigenstates of $L^2$ and $L_z$.
+
+<Quiz
+  question={"Select the option which is <b>wrong</b>."}
+  options={[
+    "The probability of measuring $L_z = 2\\hbar$ is $P(L_z = 2\\hbar) = \\frac{2}{7}$.",
+    "The probability of measuring $L_z = 0$ is $P(L_z = 0) = \\frac{3}{14}$.",
+    "The expectation value of $L_z$ is $\\langle L_z\\rangle = \\frac{9}{14}\\hbar$.",
+    "The expectation value of $L_y$ is $\\langle L_y\\rangle = 0$.",
+    "The expectation value of $L^2$ is $\\langle L^2\\rangle = 6\\hbar^2$."
+  ]}
+  answer={1}
+  explanation={"Sannsynlighetene er $|c_m|^2$: $P(L_z = 2\\hbar) = 4/14 = 2/7$, men $P(L_z = 0) = 9/14$. Med $P(\\hbar) = 1/14$ er $\\langle L_z\\rangle = (4\\cdot 2 + 1)\\hbar/14 = 9\\hbar/14$. $L_y = (L_+ - L_-)/2i$ kopler bare nabo-$m$, og med reelle koeffisienter blir $\\langle L_y\\rangle = 0$. Alle leddene har $\\ell = 2$, så $L^2|\\psi\\rangle = 6\\hbar^2|\\psi\\rangle$."}
+/>
+
+</Example>
+
+## Sentralsymmetrisk potensial
+
+I et sentralsymmetrisk potensial avhenger $V$ bare av avstanden
+$r = |\vec r|$. Laplaceoperatoren i kulekoordinater inneholder nettopp
+vinkeldelen av $L^2$, så Hamiltonoperatoren blir
+
+$$
+\hat H = -\frac{\hbar^2}{2m}\Bigl(\frac{\partial^2}{\partial r^2} + \frac{2}{r}\frac{\partial}{\partial r}\Bigr) \allowbreak + \frac{L^2}{2mr^2} + V(r),
+$$
+
+der $m$ er massen. Vinklene inngår bare gjennom $L^2$, og $L^2$ kommuterer
+med sine egne komponenter. Derfor kommuterer $\hat H$ med $L^2$ og med
+$L_x$, $L_y$ og $L_z$. Alle fire er
+<Term name="Bevegelseskonstant">bevegelseskonstanter</Term>, og $\hat H$,
+$L^2$ og $L_z$ har felles egenfunksjoner
+$\psi(r, \theta, \varphi) = R(r)\,Y_{lm}(\theta, \varphi)$. Sett den inn,
+bytt $L^2$ med $\hbar^2 l(l + 1)$, og skriv $u(r) = rR(r)$:
+
+<Formula tex={"-\\frac{\\hbar^2}{2m}\\frac{d^2u}{dr^2} \\allowbreak + \\Bigl[V(r) + \\frac{\\hbar^2 l(l + 1)}{2mr^2}\\Bigr]u \\allowbreak = Eu"} caption={"Radiallikningen for $u(r) = rR(r)$. Den har samme form som en endimensjonal Schrödingerlikning for $r > 0$, med sentrifugalpotensialet $\\hbar^2 l(l+1)/2mr^2$ lagt til $V(r)$."} />
+
+<Term name="Sentrifugalpotensialet">Sentrifugalpotensialet</Term> er den
+kinetiske energien i bevegelsen rundt origo, og det holder partikkelen
+borte fra sentrum når $l > 0$. Kvantetallet $m$ inngår ikke i
+radiallikningen. Hvert energinivå er derfor minst $(2l + 1)$ ganger
+degenerert, uansett hvordan $V(r)$ ser ut.
+
+<Example label="Eksamensoppgave" title="Dreieimpulsen er bevart">
+<ExamRef id="2023-des" task="5 b" />
+
+A three-dimensional (3D) isotropic harmonic oscillator is described by the
+Hamiltonian
+
+$$
+\hat H = \frac{\hat p_x^2 + \hat p_y^2 + \hat p_z^2}{2m} \allowbreak + \frac12 m\omega^2(\hat x^2 + \hat y^2 + \hat z^2), \allowbreak\qquad (10)
+$$
+
+where $m$ is the mass of the particle, and $\omega = \sqrt{k/m}$ with
+spring constant $k$. The momentum operator $\hat p_j$ and position
+operator $\hat x_j$ along direction $j \in \{x, y, z\}$ satisfy the
+commutation relation $[\hat x_j, \hat p_j] = i\hbar$, while operators in
+different directions commute, for instance, $[\hat p_x, \hat y] = 0$.
+
+b) The orbital angular momentum operator is
+$\hat{\mathbf L} = \hat{\mathbf r} \times \hat{\mathbf p}$, where
+$\hat{\mathbf r} = (\hat x, \hat y, \hat z)$ and
+$\hat{\mathbf p} = (\hat p_x, \hat p_y, \hat p_z)$. Show that the
+Hamiltonian commutes with the $z$ component of the orbital angular
+momentum, $\hat L_z = \hat x\hat p_y - \hat y\hat p_x$. Use this to
+argue/show that the Hamiltonian commutes with all components of
+$\hat{\mathbf L}$ as well as $\hat{\mathbf L}^2$.
+
+*Hint:* The commutation relations in the formula sheet might be useful.
+
+<Solution>
+
+Leddene med $\hat p_z$ og $\hat z$ kommuterer med $\hat L_z$. Med
+$[\hat p_x^2, \hat x] = -2i\hbar\,\hat p_x$ og
+$[\hat x^2, \hat p_x] = 2i\hbar\,\hat x$ er
+
+$$
+\begin{aligned}
+[\hat p_x^2, \hat L_z] &= -2i\hbar\,\hat p_x\hat p_y, \\
+[\hat p_y^2, \hat L_z] &= 2i\hbar\,\hat p_y\hat p_x, \\
+[\hat x^2, \hat L_z] &= -2i\hbar\,\hat y\hat x, \\
+[\hat y^2, \hat L_z] &= 2i\hbar\,\hat x\hat y .
+\end{aligned}
+$$
+
+Impulsene kommuterer innbyrdes, og det gjør koordinatene også, så leddene
+nuller hverandre parvis. Altså er $[\hat H, \hat L_z] = 0$. $\hat H$ er uendret når $x$, $y$ og $z$
+bytter plass, så samme regning gir $[\hat H, \hat L_x] = [\hat H, \hat L_y] = 0$.
+Da er også
+
+$$
+[\hat H, \hat{\mathbf L}^2] = \sum_i\bigl(\hat L_i[\hat H, \hat L_i] \allowbreak + [\hat H, \hat L_i]\hat L_i\bigr) \allowbreak = 0 .
+$$
+
+Det er ventet, fordi potensialet $\tfrac12 m\omega^2 r^2$ er
+sentralsymmetrisk.
+
+<Answer>$[\hat H, \hat L_z] = 0$; ved symmetri også $[\hat H, \hat L_x] = [\hat H, \hat L_y] = 0$, og dermed $[\hat H, \hat{\mathbf L}^2] = 0$.</Answer>
+
+</Solution>
+
+</Example>
+
+### Hydrogenatomet
+
+For hydrogen er $V(r) = -e^2/4\pi\varepsilon_0 r$. Radiallikningen løses
+ikke i detalj her, men oppførselen i de to endene bestemmer formen på
+løsningen. Langt ute går både $V(r)$ og sentrifugalpotensialet mot null,
+og for en bunden tilstand med $E < 0$ står det igjen
+
+$$
+\frac{d^2u}{dr^2} = \kappa^2 u, \qquad \kappa = \frac{\sqrt{-2mE}}{\hbar},
+$$
+
+med den avtagende løsningen $u \propto e^{-\kappa r}$. Nær origo dominerer
+sentrifugalpotensialet, $u'' \approx l(l + 1)\,u/r^2$, med løsningene
+$r^{l+1}$ og $r^{-l}$. Den andre er singulær, så $u \propto r^{l+1}$ og
+$R \propto r^l$. Settes $u = e^{-\kappa r}v(r)$ med $v$ et polynom som
+begynner på $r^{l+1}$, må rekka brytes av for at løsningen skal holde seg
+endelig. Det kvantiserer energien:
+
+$$
+E_n = -\frac{m_e}{2\hbar^2}\Bigl(\frac{e^2}{4\pi\varepsilon_0}\Bigr)^2\frac{1}{n^2} \allowbreak = -\frac{13{,}6\ \text{eV}}{n^2}, \allowbreak\qquad n = 1, 2, 3, \dots
+$$
+
+Dette er <FormulaRef id="bohr-energier">Bohr-energiene</FormulaRef>, med
+$l = 0, 1, \dots, n - 1$. Radialfunksjonen $R_{nl}$ er et polynom av grad
+$n - 1$ ganger $e^{-r/na_0}$, der $a_0$ er
+<Term name="Bohrradius">Bohrradien</Term>. Energien avhenger bare av $n$.
+Summen over $l$ gir $\sum_{l=0}^{n-1}(2l + 1) = n^2$ tilstander på hvert
+nivå, flere enn de $2l + 1$ som kulesymmetrien alene krever.
+
+## Sjekk deg selv
+
+<Quiz
+  question={"En partikkel er i en egentilstand av $J^2$ med egenverdi $6\\hbar^2$. Hva er den største verdien en måling av $J_z$ kan gi?"}
+  options={[
+    "$\\sqrt{6}\\,\\hbar$",
+    "$2\\hbar$",
+    "$3\\hbar$",
+    "$6\\hbar$"
+  ]}
+  answer={1}
+  explanation={"$j(j + 1) = 6$ gir $j = 2$, og $m$ går fra $-2$ til $2$. Største utfall er $2\\hbar$. $J_z$ når aldri lengden $\\sqrt{6}\\,\\hbar$, for da ville $J_x$ og $J_y$ vært skarpe samtidig."}
+/>
+
+<Quiz
+  question={"Hvor mange tilstander har energien $E_3$ i hydrogenatomet når spinnet ikke regnes med?"}
+  options={[
+    "$3$",
+    "$5$",
+    "$9$",
+    "$18$"
+  ]}
+  answer={2}
+  explanation={"$l = 0, 1, 2$ gir $1 + 3 + 5 = 9$ verdier av $(l, m)$. $18$ er tallet med spinnet regnet med, og $5$ er degenerasjonen $2l + 1$ for $l = 2$ alene."}
+/>
+
+<SelfCheck question={"Vis at $[L_z, \\hat x] = i\\hbar\\hat y$."}>
+
+Med $L_z = \hat x\hat p_y - \hat y\hat p_x$ kommuterer det første leddet
+med $\hat x$. I det andre er bare $[\hat p_x, \hat x] = -i\hbar$ ulik
+null:
+
+$$
+[L_z, \hat x] = -\hat y\,[\hat p_x, \hat x] = i\hbar\,\hat y .
+$$
+
+Samme regning gir $[L_z, \hat y] = -i\hbar\,\hat x$ og
+$[L_z, \hat z] = 0$. Komponentene av posisjonsoperatoren oppfører seg
+under $L_z$ som komponentene av en vektor som dreies om $z$-aksen.
+
+</SelfCheck>
+
+<KeyTakeaways>
+
+- En dreieimpuls er definert ved $[J_i, J_j] = i\hbar\sum_k\varepsilon_{ijk}J_k$. $J^2$ kommuterer med hver komponent, så $J^2$ og $J_z$ har felles egentilstander $|j, m\rangle$.
+- Heve- og senkeoperatorene $J_\pm = J_x \pm iJ_y$ endrer $m$ med $\pm1$. Normkravet stopper stigen i begge ender og gir $J^2 = \hbar^2 j(j+1)$, $J_z = \hbar m$ med $j = 0, \tfrac12, 1, \dots$ og $m = -j, \dots, j$.
+- $J_\pm|j, m\rangle = \hbar\sqrt{j(j+1) - m(m\pm1)}\,|j, m\pm1\rangle$, og $J_\mp J_\pm = J^2 - J_z^2 \mp \hbar J_z$ gjør matriseelementer til algebra.
+- Banedreieimpulsen $\vec r \times \vec p$ er en dreieimpuls. Kravet om entydig $e^{im\varphi}$ gjør $l$ og $m$ til heltall; halvtallige $j$ hører til spinn.
+- I et sentralsymmetrisk potensial er $L^2$ og $L_z$ bevegelseskonstanter, $\psi = R(r)Y_{lm}$, og $u = rR$ løser radiallikningen med sentrifugalpotensialet $\hbar^2 l(l+1)/2mr^2$.
+- Hydrogen har $E_n = -13{,}6\ \text{eV}/n^2$ med $l = 0, \dots, n - 1$ og $n^2$ tilstander per nivå uten spinn.
+
+</KeyTakeaways>

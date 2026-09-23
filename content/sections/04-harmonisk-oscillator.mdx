@@ -1,9 +1,9 @@
 ---
 order: 4
 title: "Harmonisk oscillator"
-summary: "Oscillatoren løst med operatoralgebra: stigeoperatorene a og a†, hele spekteret rett fra kommutatoren, matriseelementer uten integraler, grunntilstanden fra a|0⟩ = 0, og koherente tilstander som svinger som en klassisk partikkel."
+summary: "Oscillatoren løst med operatoralgebra: stigeoperatorene a og a†, hele spekteret rett fra kommutatoren, matriseelementer uten integraler, grunntilstanden fra a|0⟩ = 0, koherente tilstander som svinger som en klassisk partikkel, og Heisenbergbildet der operatorene utvikler seg i tid."
 importance: core
-updated: 2026-09-15
+updated: 2026-09-23
 ---
 
 Fra det forrige emnet er oscillatoren kjent i posisjonsrommet:
@@ -23,6 +23,7 @@ strålingsfeltets moder er alle oscillatorer.
 - Bruke $a|n\rangle = \sqrt n\,|n-1\rangle$ og $a^\dagger|n\rangle = \sqrt{n+1}\,|n+1\rangle$ til å regne matriseelementer og forventningsverdier uten integraler.
 - Finne grunntilstanden fra $a|0\rangle = 0$ og kjenne igjen Hermitefunksjonene.
 - Gjøre rede for hva en <Term name="Koherent tilstand">koherent tilstand</Term> er, og hvorfor den svinger som en klassisk partikkel.
+- Skille mellom Schrödinger- og Heisenbergbildet og bruke bevegelseslikningen $d\hat F_H/dt = (i/\hbar)[\hat H, \hat F_H]$.
 
 </LearningGoals>
 
@@ -459,6 +460,114 @@ amplitude uten å endre form, og med $\Delta x\,\Delta p = \hbar/2$ hele
 tiden. Laserlys er i god tilnærmelse en koherent tilstand av
 strålingsfeltet, og beskrivelsen ga Glauber nobelprisen i 2005.
 
+## Schrödinger- og Heisenbergbildet
+
+Tidsutviklingen kan skrives som én operator. Når $\hat H$ ikke avhenger
+eksplisitt av tida, er
+
+$$
+\begin{aligned}
+|\Psi, t\rangle &= \hat U(t, t_0)\,|\Psi, t_0\rangle, \\
+\hat U(t, t_0) &= e^{-i(t - t_0)\hat H/\hbar},
+\end{aligned}
+$$
+
+der eksponentialfunksjonen av en operator betyr rekka
+$e^{\hat X} = \sum_n \hat X^n/n!$. Deriver med hensyn på $t$, og
+$|\Psi, t\rangle$ oppfyller Schrödingerlikningen.
+<Term name="Tidsutviklingsoperator">Tidsutviklingsoperatoren</Term>
+$\hat U$ er unitær, $\hat U^\dagger = \hat U^{-1}$, så normen er den samme
+til alle tider. Sett den inn i en forventningsverdi:
+
+$$
+\langle F\rangle = \langle\Psi, t|\hat F|\Psi, t\rangle \allowbreak = \langle\Psi, t_0|\,\hat U^\dagger\hat F\hat U\,|\Psi, t_0\rangle .
+$$
+
+Uttrykket kan leses på to måter. I
+<Term name="Schrödingerbildet">Schrödingerbildet</Term> står operatoren
+$\hat F$ fast, og tilstanden utvikler seg i tid. I
+<Term name="Heisenbergbildet">Heisenbergbildet</Term> står tilstanden fast
+i $|\Psi, t_0\rangle$, og tidsavhengigheten ligger i operatoren:
+
+<Formula tex={"\\begin{aligned} \\hat F_H(t) &= \\hat U^\\dagger\\hat F\\,\\hat U, \\\\[4pt] \\frac{d\\hat F_H}{dt} &= \\frac{i}{\\hbar}\\,\\bigl[\\hat H, \\hat F_H\\bigr] \\end{aligned}"} caption={"Heisenbergbildet: operatoren og bevegelseslikningen dens, for en $\\hat F$ uten eksplisitt tidsavhengighet. Forventningsverdien av likningen er likningen for $d\\langle F\\rangle/dt$ i Schrödingerbildet."} />
+
+Begge bildene gir de samme forventningsverdiene, og kommutatorene er de
+samme: er $[\hat A, \hat B] = \hat C$, er også
+$[\hat A_H, \hat B_H] = \hat U^\dagger[\hat A, \hat B]\,\hat U = \hat C_H$.
+En operator som kommuterer med $\hat H$, er derfor en
+<Term name="Bevegelseskonstant">bevegelseskonstant</Term> i begge bildene.
+
+For oscillatoren gir bevegelseslikningen stigeoperatorene direkte.
+
+<Example label="Eksamensoppgave" title="Stigeoperatoren i Heisenbergbildet">
+<ExamRef id="2025-aug-kont" task="3 d" />
+
+The Hamiltonian of a one-dimensional harmonic oscillator reads
+
+$$
+\hat H = \frac{\hat p^2}{2m} + \frac12 m\omega^2\hat x^2. \qquad (7)
+$$
+
+d) Compute the commutator $[\hat H, \hat a]$. What is the physical
+interpretation of this result? Further, use the Heisenberg equation of
+motion for some arbitrary operator $\hat A(t)$
+
+$$
+\frac{d\hat A(t)}{dt} = \frac{1}{i\hbar}[\hat A(t), \hat H] \allowbreak + \left(\frac{\partial\hat A}{\partial t}\right) \allowbreak\qquad (8)
+$$
+
+for deriving the time-dependence of $\hat a$. What is the physical
+interpretation of this result? (Similar conclusions apply for
+$\hat a^\dagger$.)
+
+<Solution>
+
+Med $\hat H = \hbar\omega(\hat a^\dagger\hat a + \tfrac12)$ og
+$[\hat a^\dagger\hat a, \hat a] = [\hat a^\dagger, \hat a]\,\hat a = -\hat a$
+er
+
+$$
+[\hat H, \hat a] = -\hbar\omega\,\hat a .
+$$
+
+Det betyr at $\hat a$ senker energien ett trinn:
+$\hat H\,(\hat a|n\rangle) = (E_n - \hbar\omega)\,(\hat a|n\rangle)$.
+
+$\hat a$ har ingen eksplisitt tidsavhengighet, så bare kommutatoren
+bidrar, og $[\hat a, \hat H] = \hbar\omega\,\hat a$ gjelder også i
+Heisenbergbildet:
+
+$$
+\begin{aligned}
+\frac{d\hat a}{dt} &= \frac{\hbar\omega}{i\hbar}\,\hat a = -i\omega\,\hat a, \\
+\hat a(t) &= \hat a(0)\,e^{-i\omega t} .
+\end{aligned}
+$$
+
+Operatoren får bare en fasefaktor som dreier seg med vinkelfrekvensen
+$\omega$, og $\hat a^\dagger(t) = \hat a^\dagger(0)\,e^{i\omega t}$. Derfor svinger
+alle forventningsverdier som bygges av $\hat a$ og $\hat a^\dagger$ med $\omega$.
+Løsningsforslaget skriver $e^{+i\omega t}$, men $1/i = -i$ gir
+minustegnet.
+
+<Answer>$[\hat H, \hat a] = -\hbar\omega\,\hat a$: $\hat a$ senker energien med $\hbar\omega$. $\hat a(t) = \hat a(0)\,e^{-i\omega t}$: en ren fasedreining med frekvensen $\omega$.</Answer>
+
+</Solution>
+
+</Example>
+
+Med $a_H(t) = e^{-i\omega t}a$ satt inn i
+$\hat x = \sqrt{\hbar/2m\omega}\,(a + a^\dagger)$ blir
+
+$$
+\hat x_H(t) = \hat x\cos\omega t + \frac{\hat p}{m\omega}\,\sin\omega t ,
+$$
+
+den klassiske løsningen, men som en likning mellom operatorer. Derfor
+følger $\langle x\rangle$ en klassisk svingning i enhver tilstand, slik
+blandingen $(3|0\rangle + 4|1\rangle)/5$ gjorde. Guiden bruker
+Schrödingerbildet der ikke annet er sagt.
+
 ## Sjekk deg selv
 
 <Quiz
@@ -513,5 +622,6 @@ ett trinn $\hbar$ for hvert nivå oppover stigen.
 - Matriseelementer regnes med $\hat x = \sqrt{\hbar/2m\omega}\,(a + a^\dagger)$ og $\hat p = i\sqrt{m\hbar\omega/2}\,(a^\dagger - a)$; begge kopler bare nabonivåer.
 - Grunntilstanden løser $a|0\rangle = 0$ og er en gausspakke; $(a^\dagger)^n$ bygger Hermitefunksjonene uten at noen differensiallikning av andre orden løses.
 - En stasjonær tilstand står stille. En superposisjon av nabonivåer svinger med $\omega$, og den koherente tilstanden $a|\alpha\rangle = \alpha|\alpha\rangle$ svinger som en klassisk partikkel uten å endre form.
+- I Heisenbergbildet utvikler operatorene seg, $\hat F_H = \hat U^\dagger\hat F\hat U$ med $\hat U = e^{-i(t - t_0)\hat H/\hbar}$. For oscillatoren gir det $\hat x_H(t) = \hat x\cos\omega t + (\hat p/m\omega)\sin\omega t$.
 
 </KeyTakeaways>

@@ -226,6 +226,51 @@ formulas:
     tex: "\\langle x \\rangle = \\sqrt{\\dfrac{2\\hbar}{m\\omega}}\\,|\\alpha|\\,\\cos(\\omega t - \\theta)"
     label: "Bevegelsen til en koherent tilstand, med $\\alpha = |\\alpha|e^{i\\theta}$. Pakken beholder grunntilstandens form og bredde."
     section: "Harmonisk oscillator"
+  - id: tidsutviklingsoperatoren
+    tex: "\\begin{aligned} \\hat U(t, t_0) &= e^{-i(t - t_0)\\hat H/\\hbar}, \\\\[2pt] |\\Psi, t\\rangle &= \\hat U(t, t_0)\\,|\\Psi, t_0\\rangle \\end{aligned}"
+    label: "Tidsutviklingsoperatoren, når $\\hat H$ ikke avhenger eksplisitt av tida. Den er unitær, $\\hat U^\\dagger = \\hat U^{-1}$."
+    section: "Harmonisk oscillator"
+  - id: heisenbergbildet
+    tex: "\\begin{aligned} \\hat F_H(t) &= \\hat U^\\dagger\\hat F\\,\\hat U, \\\\[4pt] \\dfrac{d\\hat F_H}{dt} &= \\dfrac{i}{\\hbar}\\,\\bigl[\\hat H, \\hat F_H\\bigr] \\end{aligned}"
+    label: "Heisenbergbildet: operatoren utvikler seg i tid og tilstanden står fast. For oscillatoren er $a_H(t) = e^{-i\\omega t}a$."
+    section: "Harmonisk oscillator"
+
+  - id: dreieimpuls-kommutatorer
+    tex: "\\begin{aligned} [J_i, J_j] &= i\\hbar\\sum_k \\varepsilon_{ijk}J_k, \\\\[2pt] [J^2, J_i] &= 0 \\end{aligned}"
+    label: "Definisjonen av en dreieimpuls. $\\varepsilon_{ijk}$ er Levi-Civita-symbolet."
+    section: "Dreieimpuls"
+  - id: dreieimpuls-stigeoperatorer
+    tex: "\\begin{aligned} J_\\pm &= J_x \\pm iJ_y, \\\\[2pt] [J_z, J_\\pm] &= \\pm\\hbar J_\\pm \\end{aligned}"
+    label: "Heve- og senkeoperatoren. De kommuterer med $J^2$, og $J_+^\\dagger = J_-$."
+    section: "Dreieimpuls"
+  - id: jminus-jpluss
+    tex: "J_\\mp J_\\pm = J^2 - J_z^2 \\mp \\hbar J_z"
+    label: "Produktet av senke- og heveoperatoren. Gir normen til $J_\\pm|j,m\\rangle$."
+    section: "Dreieimpuls"
+  - id: dreieimpuls-egenverdier
+    tex: "\\begin{aligned} J^2|j, m\\rangle &= \\hbar^2 j(j + 1)\\,|j, m\\rangle, \\\\[2pt] J_z|j, m\\rangle &= \\hbar m\\,|j, m\\rangle \\end{aligned}"
+    label: "Egenverdiene, med $j = 0, \\tfrac12, 1, \\tfrac32, \\dots$ og $m = -j, -j + 1, \\dots, j$."
+    section: "Dreieimpuls"
+  - id: virkningen-av-jpm
+    tex: "J_\\pm|j, m\\rangle = \\hbar\\sqrt{j(j + 1) - m(m \\pm 1)}\\;|j, m \\pm 1\\rangle"
+    label: "Virkningen av heve- og senkeoperatoren. Null for $m = j$ oppover og for $m = -j$ nedover."
+    section: "Dreieimpuls"
+  - id: banedreieimpuls-kulekoordinater
+    tex: "\\begin{aligned} L_z &= \\dfrac{\\hbar}{i}\\dfrac{\\partial}{\\partial\\varphi}, \\\\[4pt] L^2 &= -\\hbar^2\\Bigl(\\dfrac{\\partial^2}{\\partial\\theta^2} + \\cot\\theta\\,\\dfrac{\\partial}{\\partial\\theta} + \\dfrac{1}{\\sin^2\\theta}\\dfrac{\\partial^2}{\\partial\\varphi^2}\\Bigr) \\end{aligned}"
+    label: "Banedreieimpulsen i kulekoordinater."
+    section: "Dreieimpuls"
+  - id: l-pluss-minus-kulekoordinater
+    tex: "L_\\pm = \\hbar\\,e^{\\pm i\\varphi}\\Bigl(\\pm\\dfrac{\\partial}{\\partial\\theta} + i\\cot\\theta\\,\\dfrac{\\partial}{\\partial\\varphi}\\Bigr)"
+    label: "Heve- og senkeoperatoren for banedreieimpulsen i kulekoordinater."
+    section: "Dreieimpuls"
+  - id: kuleflatefunksjoner
+    tex: "\\begin{aligned} \\psi_{lm}(r, \\theta, \\varphi) &= R(r)\\,Y_{lm}(\\theta, \\varphi), \\\\[2pt] Y_{lm} &= \\Theta_{lm}(\\theta)\\,e^{im\\varphi} \\end{aligned}"
+    label: "Felles egenfunksjoner for $L^2$ og $L_z$. Kuleflatefunksjonene $Y_{lm}$ er ortonormerte på kuleflaten, og $l$ og $m$ er heltall."
+    section: "Dreieimpuls"
+  - id: radiallikningen
+    tex: "-\\dfrac{\\hbar^2}{2m}\\dfrac{d^2u}{dr^2} \\allowbreak + \\Bigl[V(r) + \\dfrac{\\hbar^2 l(l + 1)}{2mr^2}\\Bigr]u \\allowbreak = Eu"
+    label: "Radiallikningen for $u(r) = rR(r)$ i et sentralsymmetrisk potensial. Kvantetallet $m$ inngår ikke."
+    section: "Dreieimpuls"
 # ── Begreper ─────────────────────────────────────────────────────────────────
 glossary:
   - term: "Foton"
@@ -335,6 +380,34 @@ glossary:
   - term: "Koherent tilstand"
     definition: "Egentilstand av senkeoperatoren, $a|\\alpha\\rangle = \\alpha|\\alpha\\rangle$: en gausspakke med grunntilstandens bredde som svinger som en klassisk partikkel med amplitude $|\\alpha|\\sqrt{2\\hbar/m\\omega}$."
     section: "Harmonisk oscillator"
+  - term: "Tidsutviklingsoperator"
+    definition: "$\\hat U(t, t_0) = e^{-i(t - t_0)\\hat H/\\hbar}$, som fører en tilstand fra $t_0$ til $t$. Den er unitær, så normen er bevart."
+    section: "Harmonisk oscillator"
+  - term: "Schrödingerbildet"
+    definition: "Beskrivelsen der tilstanden $|\\Psi, t\\rangle$ utvikler seg i tid og operatorene står fast. Guiden bruker den der ikke annet er sagt."
+    section: "Harmonisk oscillator"
+  - term: "Heisenbergbildet"
+    definition: "Beskrivelsen der tilstanden står fast og operatorene utvikler seg, $\\hat F_H(t) = \\hat U^\\dagger\\hat F\\hat U$. Gir de samme forventningsverdiene som Schrödingerbildet."
+    section: "Harmonisk oscillator"
+
+  - term: "Dreieimpuls"
+    definition: "Vektor $\\vec J$ av tre hermiteske operatorer med $[J_i, J_j] = i\\hbar\\sum_k\\varepsilon_{ijk}J_k$. Egenverdiene er $\\hbar^2 j(j+1)$ for $J^2$ og $\\hbar m$ for $J_z$."
+    section: "Dreieimpuls"
+  - term: "Banedreieimpuls"
+    definition: "$\\vec L = \\vec r \\times \\vec p$, dreieimpulsen knyttet til bevegelse i rommet. Har bare heltallige $l$ og $m$."
+    section: "Dreieimpuls"
+  - term: "Kuleflatefunksjoner"
+    definition: "$Y_{lm}(\\theta, \\varphi) = \\langle \\theta, \\varphi|l, m\\rangle$, de felles egenfunksjonene til $L^2$ og $L_z$. Et ortonormert, fullstendig sett på kuleflaten."
+    section: "Dreieimpuls"
+  - term: "Sentralsymmetrisk potensial"
+    definition: "Potensial som bare avhenger av avstanden $r$ fra origo. Da er $L^2$ og alle komponentene av $\\vec L$ bevegelseskonstanter."
+    section: "Dreieimpuls"
+  - term: "Radiallikningen"
+    definition: "Den endimensjonale likningen for $u(r) = rR(r)$ som står igjen når vinkeldelen $Y_{lm}$ er skilt ut i et sentralsymmetrisk potensial."
+    section: "Dreieimpuls"
+  - term: "Sentrifugalpotensialet"
+    definition: "Leddet $\\hbar^2 l(l+1)/2mr^2$ i radiallikningen: den kinetiske energien i bevegelsen rundt origo. Holder partikkelen borte fra sentrum når $l > 0$."
+    section: "Dreieimpuls"
 features:
   progress: true
   search: true
