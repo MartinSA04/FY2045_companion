@@ -31,7 +31,7 @@ kvantetallene som ordner nivåene i atomer.
 En <Term name="Dreieimpuls">dreieimpuls</Term> $\vec J$ er en vektor av
 tre hermiteske operatorer $J_x$, $J_y$ og $J_z$ som oppfyller
 
-<Formula tex={"\\begin{aligned} [J_x, J_y] &= i\\hbar J_z, \\\\[2pt] [J_y, J_z] &= i\\hbar J_x, \\\\[2pt] [J_z, J_x] &= i\\hbar J_y \\end{aligned}"} caption={"Definisjonen av en dreieimpuls. Kort skrevet er $[J_i, J_j] = i\\hbar\\sum_k \\varepsilon_{ijk}J_k$, der Levi-Civita-symbolet $\\varepsilon_{ijk}$ er $+1$ for $xyz$ og sykliske permutasjoner av den, $-1$ for de andre permutasjonene og $0$ når to indekser er like."} />
+<Formula tex={"[J_x, J_y] = i\\hbar J_z, \\allowbreak\\quad [J_y, J_z] = i\\hbar J_x, \\allowbreak\\quad [J_z, J_x] = i\\hbar J_y"} caption={"Definisjonen av en dreieimpuls. Kort skrevet er $[J_i, J_j] = i\\hbar\\sum_k \\varepsilon_{ijk}J_k$, der Levi-Civita-symbolet $\\varepsilon_{ijk}$ er $+1$ for $xyz$ og sykliske permutasjoner av den, $-1$ for de andre permutasjonene og $0$ når to indekser er like."} />
 
 Dreieimpulsoperatorene skrives uten hatt, som stigeoperatorene. At
 komponentene ikke kommuterer, henger sammen med at dreininger om ulike
@@ -45,11 +45,7 @@ Kvadratet $J^2 = J_x^2 + J_y^2 + J_z^2$ kommuterer derimot med hver
 komponent. Med $[J_i^2, J_j] = J_i[J_i, J_j] + [J_i, J_j]J_i$ er
 
 $$
-\begin{aligned}
-[J^2, J_j] &= \sum_i [J_i^2, J_j] \\
-&= i\hbar\sum_{i,k}\varepsilon_{ijk}\,(J_iJ_k + J_kJ_i) \\
-&= 0,
-\end{aligned}
+[J^2, J_j] = \sum_i [J_i^2, J_j] \allowbreak = i\hbar\sum_{i,k}\varepsilon_{ijk}\,(J_iJ_k + J_kJ_i) \allowbreak = 0,
 $$
 
 fordi $\varepsilon_{ijk}$ skifter fortegn når $i$ og $k$ bytter plass,
@@ -65,7 +61,7 @@ $J^2|a, b\rangle = a\,|a, b\rangle$ og $J_z|a, b\rangle = b\,|a, b\rangle$.
 Så langt vet vi ingenting om $a$ og $b$. Som for oscillatoren lønner det
 seg å danne to kombinasjoner som ikke er hermiteske:
 
-<Formula tex={"\\begin{aligned} J_\\pm &= J_x \\pm iJ_y, \\\\[2pt] [J_z, J_\\pm] &= \\pm\\hbar J_\\pm, \\\\[2pt] [J^2, J_\\pm] &= 0 \\end{aligned}"} caption={"Heveoperatoren $J_+$ og senkeoperatoren $J_-$. De er hverandres adjungerte, $J_+^\\dagger = J_-$."} />
+<Formula tex={"J_\\pm = J_x \\pm iJ_y, \\allowbreak\\quad [J_z, J_\\pm] = \\pm\\hbar J_\\pm, \\allowbreak\\quad [J^2, J_\\pm] = 0"} caption={"Heveoperatoren $J_+$ og senkeoperatoren $J_-$. De er hverandres adjungerte, $J_+^\\dagger = J_-$."} />
 
 Kommutatoren med $J_z$ følger av definisjonen:
 $[J_z, J_x] \pm i[J_z, J_y] = i\hbar J_y \pm \hbar J_x = \pm\hbar J_\pm$.
@@ -145,11 +141,7 @@ Den klassiske definisjonen $\vec L = \vec r \times \vec p$ gir
 <Term name="Banedreieimpuls">banedreieimpulsen</Term>, med komponentene
 
 $$
-\begin{aligned}
-L_x &= \hat y\hat p_z - \hat z\hat p_y, \\
-L_y &= \hat z\hat p_x - \hat x\hat p_z, \\
-L_z &= \hat x\hat p_y - \hat y\hat p_x .
-\end{aligned}
+L_x = \hat y\hat p_z - \hat z\hat p_y, \allowbreak\quad L_y = \hat z\hat p_x - \hat x\hat p_z, \allowbreak\quad L_z = \hat x\hat p_y - \hat y\hat p_x .
 $$
 
 Kommutatorene følger av $[\hat x_i, \hat p_j] = i\hbar\,\delta_{ij}$. Bare
@@ -172,7 +164,7 @@ hvilke $l$ som faktisk forekommer.
 I kulekoordinatene $(r, \theta, \varphi)$ blir operatorene
 differensialoperatorer i vinklene alene:
 
-<Formula tex={"\\begin{aligned} L_z &= \\frac{\\hbar}{i}\\frac{\\partial}{\\partial\\varphi}, \\\\[4pt] L^2 &= -\\hbar^2\\Bigl(\\frac{\\partial^2}{\\partial\\theta^2} + \\cot\\theta\\,\\frac{\\partial}{\\partial\\theta} + \\frac{1}{\\sin^2\\theta}\\frac{\\partial^2}{\\partial\\varphi^2}\\Bigr) \\end{aligned}"} caption={"Banedreieimpulsen i posisjonsrepresentasjonen, i kulekoordinater. Ingen av dem inneholder $r$."} />
+<Formula tex={"L_z = \\frac{\\hbar}{i}\\frac{\\partial}{\\partial\\varphi}, \\allowbreak\\quad L^2 = -\\hbar^2\\Bigl(\\frac{\\partial^2}{\\partial\\theta^2} + \\cot\\theta\\,\\frac{\\partial}{\\partial\\theta} + \\frac{1}{\\sin^2\\theta}\\frac{\\partial^2}{\\partial\\varphi^2}\\Bigr)"} caption={"Banedreieimpulsen i posisjonsrepresentasjonen, i kulekoordinater. Ingen av dem inneholder $r$."} />
 
 Projiser egenverdilikningene på $\langle r, \theta, \varphi|$, slik
 posisjonsrepresentasjonen ble funnet før. Da blir
@@ -181,10 +173,7 @@ løsningen av to differensiallikninger der $r$ ikke inngår, og løsningen
 skiller seg:
 
 $$
-\begin{aligned}
-\psi_{lm}(r, \theta, \varphi) &= R(r)\,Y_{lm}(\theta, \varphi), \\
-Y_{lm}(\theta, \varphi) &= \Theta_{lm}(\theta)\,e^{im\varphi} .
-\end{aligned}
+\psi_{lm}(r, \theta, \varphi) = R(r)\,Y_{lm}(\theta, \varphi), \allowbreak\quad Y_{lm}(\theta, \varphi) = \Theta_{lm}(\theta)\,e^{im\varphi} .
 $$
 
 <Term name="Kuleflatefunksjoner">Kuleflatefunksjonene</Term> $Y_{lm}$ er
@@ -352,12 +341,7 @@ $[\hat p_x^2, \hat x] = -2i\hbar\,\hat p_x$ og
 $[\hat x^2, \hat p_x] = 2i\hbar\,\hat x$ er
 
 $$
-\begin{aligned}
-[\hat p_x^2, \hat L_z] &= -2i\hbar\,\hat p_x\hat p_y, \\
-[\hat p_y^2, \hat L_z] &= 2i\hbar\,\hat p_y\hat p_x, \\
-[\hat x^2, \hat L_z] &= -2i\hbar\,\hat y\hat x, \\
-[\hat y^2, \hat L_z] &= 2i\hbar\,\hat x\hat y .
-\end{aligned}
+[\hat p_x^2, \hat L_z] = -2i\hbar\,\hat p_x\hat p_y, \allowbreak\quad [\hat p_y^2, \hat L_z] = 2i\hbar\,\hat p_y\hat p_x, \allowbreak\quad [\hat x^2, \hat L_z] = -2i\hbar\,\hat y\hat x, \allowbreak\quad [\hat y^2, \hat L_z] = 2i\hbar\,\hat x\hat y .
 $$
 
 Impulsene kommuterer innbyrdes, og det gjør koordinatene også, så leddene
