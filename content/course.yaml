@@ -271,6 +271,80 @@ formulas:
     tex: "-\\dfrac{\\hbar^2}{2m}\\dfrac{d^2u}{dr^2} \\allowbreak + \\Bigl[V(r) + \\dfrac{\\hbar^2 l(l + 1)}{2mr^2}\\Bigr]u \\allowbreak = Eu"
     label: "Radiallikningen for $u(r) = rR(r)$ i et sentralsymmetrisk potensial. Kvantetallet $m$ inngår ikke."
     section: "Dreieimpuls"
+
+# ── Symboler ─────────────────────────────────────────────────────────────────
+# Én rad per betydning. Der en bokstav betyr to ting (m, n, α, θ, F, a), sier
+# notatet hvilken den andre er.
+symbols:
+  # ── Lyskvantene og Bohr-modellen ──
+  - { tex: "\\nu", meaning: "Frekvensen", unit: "Hz", section: "Lyskvantene og Bohr-modellen", formula: foton-energi-impuls, note: "Fotonet har energien $h\\nu$. For en partikkel er $\\nu = E/h$." }
+  - { tex: "\\lambda", meaning: "Bølgelengden", unit: "m", section: "Lyskvantene og Bohr-modellen", term: "de Broglie-bølgelengde", formula: de-broglie-relasjonene, note: "For en partikkel med impuls $p$ er $\\lambda = h/p$." }
+  - { tex: "W", meaning: "Frigjøringsarbeidet for metallet", unit: "eV", section: "Lyskvantene og Bohr-modellen", term: "Frigjøringsarbeid", formula: fotoelektrisk-likning }
+  - { tex: "\\theta", meaning: "Spredningsvinkelen i Compton-relasjonen", section: "Lyskvantene og Bohr-modellen", formula: compton-relasjonen, note: "Ikke polarvinkelen $\\theta$ i kulekoordinater." }
+  - { tex: "\\lambda_C", meaning: "Comptonbølgelengden, $h/m_ec$", unit: "pm", section: "Lyskvantene og Bohr-modellen", term: "Comptonbølgelengde", formula: compton-relasjonen, note: "$2{,}43$ pm for elektronet." }
+  - { tex: "u(\\nu, T)", meaning: "Spektral energitetthet i et hulrom med temperatur $T$", unit: "J·s/m³", section: "Lyskvantene og Bohr-modellen", formula: planck-stralingslov, note: "Ikke $u(r) = rR(r)$ i radiallikningen." }
+  - { tex: "R_\\infty", meaning: "Rydbergkonstanten", unit: "m⁻¹", section: "Lyskvantene og Bohr-modellen", formula: bohr-energier, note: "I Balmers formel $1/\\lambda = R_\\infty(1/n^2 - 1/m^2)$ er $n$ og $m$ heltall med $m > n$." }
+  # ── Postulatene, måling og impulsrommet ──
+  - { tex: "\\Psi(x, t)", meaning: "Bølgefunksjonen som funksjon av posisjon og tid", section: "Postulatene, måling og impulsrommet", term: "Bølgefunksjon", formula: schrodingerlikningen, id: bolgefunksjonen, note: "$|\\Psi|^2$ er sannsynlighetstettheten. $\\Psi$ selv kan ikke måles." }
+  - { tex: "\\psi(x),\\allowbreak\\ \\psi_n(x)", meaning: "Bølgefunksjonen når tida ikke er skrevet ut, og egenfunksjonen med indeks $n$", section: "Postulatene, måling og impulsrommet", formula: komponenter-tre-basiser, note: "$\\psi(x) = \\langle x|\\psi\\rangle$ og $\\psi_n(x) = \\langle x|n\\rangle$." }
+  - { tex: "m", meaning: "Massen til partikkelen", unit: "kg", section: "Postulatene, måling og impulsrommet", id: masse, note: "Ikke kvantetallet $m$ til $J_z$. I $\\langle m|\\hat x|n\\rangle$ er $m$ et nivå, og massen står i samme formel." }
+  - { tex: "F,\\ \\hat F", meaning: "En observabel og operatoren som svarer til den", section: "Postulatene, måling og impulsrommet", term: "Observabel", formula: forventningsverdi, note: "Ved Ehrenfests teorem er $F(x) = -V'(x)$ kraften." }
+  - { tex: "f_n", meaning: "Egenverdiene til $\\hat F$, de mulige måleverdiene", section: "Postulatene, måling og impulsrommet", term: "Spektrum", formula: spektralrepresentasjon, note: "Skrives $f$ uten indeks når spekteret er kontinuerlig." }
+  - { tex: "c_n", meaning: "Utviklingskoeffisienten, $c_n = \\langle n|\\psi\\rangle$", section: "Postulatene, måling og impulsrommet", formula: komponenter-tre-basiser, note: "$|c_n|^2$ er sannsynligheten for $f_n$. Ved degenerasjon $c_{ni}$ med $i = 1, \\dots, g_n$." }
+  - { tex: "\\langle F\\rangle", meaning: "Forventningsverdien av $F$", section: "Postulatene, måling og impulsrommet", term: "Forventningsverdi", formula: forventningsverdi, note: "I Diracnotasjon $\\langle\\Psi|\\hat F|\\Psi\\rangle$." }
+  - { tex: "d\\tau", meaning: "Volumelementet i integralet over alle koordinatene", section: "Postulatene, måling og impulsrommet", formula: forventningsverdi, note: "$dx$ i én dimensjon." }
+  - { tex: "\\hat H", meaning: "Hamiltonoperatoren", section: "Postulatene, måling og impulsrommet", formula: schrodingerlikningen, note: "$\\hat p^2/2m + V$. Ikke Hermitepolynomet $H_n$." }
+  - { tex: "V", meaning: "Potensiell energi, $V(x)$ eller $V(r)$", unit: "J", section: "Postulatene, måling og impulsrommet", formula: ehrenfests-teorem, note: "I et sentralsymmetrisk potensial avhenger $V$ bare av $r$." }
+  - { tex: "[\\hat A, \\hat B]", meaning: "Kommutatoren $\\hat A\\hat B - \\hat B\\hat A$", section: "Postulatene, måling og impulsrommet", formula: tidsutvikling-forventningsverdi, id: kommutator, note: "Er den null, har operatorene felles egenfunksjoner." }
+  - { tex: "g_n", meaning: "Degenerasjonsgraden til egenverdien $f_n$", section: "Postulatene, måling og impulsrommet", term: "Degenerasjon", formula: sannsynlighet-degenerert }
+  - { tex: "P_n", meaning: "Sannsynligheten for å måle $f_n$", section: "Postulatene, måling og impulsrommet", formula: sannsynlighet-degenerert, note: "Ikke projeksjonsoperatoren $\\hat P_n$." }
+  - { tex: "\\hat x,\\ \\hat p", meaning: "Posisjons- og impulsoperatoren", section: "Postulatene, måling og impulsrommet", formula: impulsrom-operatorer, note: "$[\\hat x, \\hat p] = i\\hbar$. I posisjonsrommet er $\\hat p = (\\hbar/i)\\,\\partial/\\partial x$, i impulsrommet $\\hat x = -(\\hbar/i)\\,\\partial/\\partial p$." }
+  - { tex: "\\Delta x,\\allowbreak\\ \\Delta p", meaning: "Uskarpheten i posisjon og impuls", section: "Postulatene, måling og impulsrommet", note: "$(\\Delta x)^2 = \\langle x^2\\rangle - \\langle x\\rangle^2$. Produktet er minst $\\hbar/2$, og grunntilstanden i oscillatoren når grensen." }
+  - { tex: "\\psi_p(x)", meaning: "Impulsegenfunksjonen, en plan bølge med impuls $p$", section: "Postulatene, måling og impulsrommet", formula: impuls-egenfunksjoner, note: "Deltafunksjonsnormert: $\\int\\psi_{p'}^*\\psi_p\\,dx = \\delta(p - p')$." }
+  - { tex: "\\Phi(p, t)", meaning: "Bølgefunksjonen i impulsrommet", section: "Postulatene, måling og impulsrommet", term: "Impulsrommet", formula: impulsrom-bolgefunksjon, id: phi, note: "$|\\Phi|^2$ er sannsynlighetstettheten for impulsen. Eksamensoppgaver skriver også $\\phi(p)$." }
+  - { tex: "\\delta(x),\\allowbreak\\ \\delta_{nn'}", meaning: "Deltafunksjonen og Kronecker-deltaet", section: "Postulatene, måling og impulsrommet", formula: delta-normering, note: "$\\delta(x - x')$ er null unntatt i $x = x'$. $\\delta_{nn'}$ er 1 for $n = n'$ og ellers 0." }
+  # ── Diracnotasjon ──
+  - { tex: "|\\psi\\rangle,\\allowbreak\\ |\\Psi, t\\rangle", meaning: "Tilstandsvektoren, uten og med tida skrevet ut", section: "Diracnotasjon", term: "Tilstandsvektor", formula: schrodinger-generell, id: ket }
+  - { tex: "\\langle a|", meaning: "Bravektoren, den duale vektoren til $|a\\rangle$", section: "Diracnotasjon", term: "Bra og ket", formula: skalarprodukt-dirac, note: "Den duale vektoren til $c\\,|a\\rangle$ er $c^*\\langle a|$." }
+  - { tex: "\\langle a|b\\rangle", meaning: "Skalarproduktet, et komplekst tall", section: "Diracnotasjon", formula: skalarprodukt-dirac, note: "Amplituden for å finne systemet i $|a\\rangle$ når det er i $|b\\rangle$. $|\\langle a|b\\rangle|^2$ er sannsynligheten." }
+  - { tex: "|n\\rangle", meaning: "Energiegenvektoren med indeks $n$", section: "Diracnotasjon", formula: komponenter-tre-basiser, note: "$|n\\rangle = |\\psi_n\\rangle = |E_n\\rangle$." }
+  - { tex: "|x\\rangle,\\allowbreak\\ |p\\rangle", meaning: "Egenvektorene til $\\hat x$ og $\\hat p$", section: "Diracnotasjon", formula: overlapp-x-p, note: "Deltafunksjonsnormerte og ingen fysiske tilstander. $\\langle x|\\psi\\rangle = \\psi(x)$ og $\\langle p|\\psi\\rangle = \\Phi(p)$." }
+  - { tex: "\\mathbb{1}", meaning: "Enhetsoperatoren", section: "Diracnotasjon", formula: fullstendighetsrelasjonen, note: "$\\sum_n |n\\rangle\\langle n| = \\mathbb{1}$ settes inn for å bytte basis." }
+  - { tex: "\\hat A^\\dagger", meaning: "Den adjungerte operatoren til $\\hat A$", section: "Diracnotasjon", term: "Adjungert operator", formula: adjungert-operator, note: "Operatoren er hermitesk når $\\hat A^\\dagger = \\hat A$." }
+  - { tex: "\\hat P_n", meaning: "Projeksjonsoperatoren $|n\\rangle\\langle n|$", section: "Diracnotasjon", term: "Projeksjonsoperator", note: "Ikke sannsynligheten $P_n$." }
+  # ── Harmonisk oscillator ──
+  - { tex: "\\omega", meaning: "Vinkelfrekvensen til oscillatoren", unit: "s⁻¹", section: "Harmonisk oscillator", formula: oscillator-energiene, note: "$V = \\tfrac12 m\\omega^2x^2$. Nivåene ligger $\\hbar\\omega$ fra hverandre." }
+  - { tex: "a,\\ a^\\dagger", meaning: "Senke- og heveoperatoren", section: "Harmonisk oscillator", term: "Stigeoperatorer", formula: stigeoperatorene, id: stigeoperatorer, note: "Dimensjonsløse og uten hatt; noen eksamensoppgaver skriver $\\hat a$. I utledningen av dreieimpulsspekteret er $a$ egenverdien til $J^2$." }
+  - { tex: "\\hat N", meaning: "Talloperatoren $a^\\dagger a$", section: "Harmonisk oscillator", term: "Talloperator", formula: oscillator-hamilton }
+  - { tex: "n", meaning: "Nivået i oscillatoren, egenverdien til $\\hat N$", section: "Harmonisk oscillator", formula: virkningen-av-stigeoperatorene, id: n-oscillator, note: "$n = 0, 1, 2, \\dots$ Ikke $n$ i hydrogen, som starter på 1. I postulatene er $n$ bare en indeks for egentilstandene." }
+  - { tex: "E_n", meaning: "Energien til nivå $n$, $\\hbar\\omega(n + \\tfrac12)$", unit: "J", section: "Harmonisk oscillator", formula: oscillator-energiene, note: "$E_0 = \\tfrac12\\hbar\\omega$ er nullpunktsenergien." }
+  - { tex: "H_n(\\xi)", meaning: "Hermitepolynomet av grad $n$", section: "Harmonisk oscillator", formula: oscillator-egenfunksjonene, note: "Ikke Hamiltonoperatoren $\\hat H$." }
+  - { tex: "\\xi", meaning: "Dimensjonsløs posisjon, $\\sqrt{m\\omega/\\hbar}\\,x$", section: "Harmonisk oscillator", formula: oscillator-egenfunksjonene }
+  - { tex: "\\alpha,\\ |\\alpha\\rangle", meaning: "Den koherente tilstanden, med $a|\\alpha\\rangle = \\alpha|\\alpha\\rangle$", section: "Harmonisk oscillator", term: "Koherent tilstand", formula: koherent-tilstand, id: alfa, note: "Kompleks, $\\alpha = |\\alpha|e^{i\\theta}$, og $\\langle n\\rangle = |\\alpha|^2$. Ikke finstrukturkonstanten $\\alpha$." }
+  - { tex: "\\hat U(t, t_0)", meaning: "Tidsutviklingsoperatoren", section: "Harmonisk oscillator", term: "Tidsutviklingsoperator", formula: tidsutviklingsoperatoren, note: "Unitær: $\\hat U^\\dagger = \\hat U^{-1}$." }
+  - { tex: "\\hat F_H(t)", meaning: "Operatoren $\\hat F$ i Heisenbergbildet", section: "Harmonisk oscillator", term: "Heisenbergbildet", formula: heisenbergbildet, note: "$\\hat F_H = \\hat U^\\dagger\\hat F\\hat U$. For oscillatoren er $a_H(t) = e^{-i\\omega t}a$." }
+  # ── Dreieimpuls og hydrogen ──
+  - { tex: "\\vec J,\\allowbreak\\ J_x,\\allowbreak\\ J_y,\\allowbreak\\ J_z", meaning: "En dreieimpuls og komponentene av den", unit: "J·s", section: "Dreieimpuls og hydrogen", term: "Dreieimpuls", formula: dreieimpuls-kommutatorer, note: "Uten hatt, som stigeoperatorene. $J^2 = J_x^2 + J_y^2 + J_z^2$." }
+  - { tex: "J_\\pm", meaning: "Heve- og senkeoperatoren for dreieimpuls, $J_x \\pm iJ_y$", section: "Dreieimpuls og hydrogen", formula: dreieimpuls-stigeoperatorer, note: "Endrer $m$ med $\\pm 1$. For banedreieimpulsen skrives de $L_\\pm$." }
+  - { tex: "j", meaning: "Kvantetallet til $J^2$, med egenverdien $\\hbar^2 j(j+1)$", section: "Dreieimpuls og hydrogen", formula: dreieimpuls-egenverdier, note: "$j = 0, \\tfrac12, 1, \\tfrac32, \\dots$ Halvtallige $j$ hører til spinn." }
+  - { tex: "m", meaning: "Kvantetallet til $J_z$ og $L_z$, med egenverdien $\\hbar m$", section: "Dreieimpuls og hydrogen", formula: dreieimpuls-egenverdier, id: m-kvantetall, note: "$m = -j, \\dots, j$ i hele trinn, $2j + 1$ verdier. Ikke massen $m$." }
+  - { tex: "\\varepsilon_{ijk}", meaning: "Levi-Civita-symbolet", section: "Dreieimpuls og hydrogen", formula: dreieimpuls-kommutatorer, note: "$+1$ for $xyz$ og sykliske permutasjoner, $-1$ for de andre og $0$ når to indekser er like. Ikke $\\varepsilon_0$." }
+  - { tex: "\\vec L,\\allowbreak\\ L_z,\\allowbreak\\ L^2", meaning: "Banedreieimpulsen $\\vec r \\times \\vec p$", unit: "J·s", section: "Dreieimpuls og hydrogen", term: "Banedreieimpuls", formula: banedreieimpuls-kulekoordinater, note: "Uten hatt, som $\\vec J$. Eksamensoppgaver skriver $\\hat{\\mathbf L}$." }
+  - { tex: "l", meaning: "Kvantetallet til $L^2$, med egenverdien $\\hbar^2 l(l+1)$", section: "Dreieimpuls og hydrogen", formula: kuleflatefunksjoner, note: "$l = 0, 1, 2, \\dots$, bare heltall. Eksamensoppgaver skriver også $\\ell$." }
+  - { tex: "r,\\allowbreak\\ \\theta,\\allowbreak\\ \\varphi", meaning: "Kulekoordinatene: avstanden fra origo, polarvinkelen og asimutvinkelen", section: "Dreieimpuls og hydrogen", formula: banedreieimpuls-kulekoordinater, note: "Ikke spredningsvinkelen $\\theta$ i Compton-relasjonen eller fasen $\\theta$ til $\\alpha$." }
+  - { tex: "Y_{lm}", meaning: "Kuleflatefunksjonene", section: "Dreieimpuls og hydrogen", term: "Kuleflatefunksjoner", formula: kuleflatefunksjoner, note: "$Y_{lm} = \\Theta_{lm}(\\theta)\\,e^{im\\varphi}$." }
+  - { tex: "R(r),\\allowbreak\\ u(r)", meaning: "Radialfunksjonen og $u(r) = rR(r)$", section: "Dreieimpuls og hydrogen", term: "Radiallikningen", formula: radiallikningen, note: "Ikke Rydbergkonstanten $R_\\infty$ eller energitettheten $u(\\nu, T)$." }
+  - { tex: "\\kappa", meaning: "Hvor raskt en bunden tilstand avtar langt ute, $\\sqrt{-2mE}/\\hbar$", unit: "m⁻¹", section: "Dreieimpuls og hydrogen", note: "$u \\propto e^{-\\kappa r}$ når $E < 0$." }
+  - { tex: "n", meaning: "Hovedkvantetallet, som nummererer energinivåene i hydrogen", section: "Dreieimpuls og hydrogen", formula: bohr-energier, id: n-hydrogen, note: "$n = 1, 2, 3, \\dots$ og $l = 0, \\dots, n - 1$. Ikke nivået $n$ i oscillatoren, som starter på 0." }
+  - { tex: "E_n", meaning: "Energinivåene i hydrogen", unit: "eV", section: "Dreieimpuls og hydrogen", formula: bohr-energier, note: "$-13{,}6\\ \\text{eV}/n^2$, med $n^2$ tilstander per nivå uten spinn." }
+  # ── Konstanter ──
+  - { tex: "h,\\ \\hbar", meaning: "Plancks konstant og $\\hbar = h/2\\pi$", unit: "J·s", section: "Konstanter", id: hbar }
+  - { tex: "e", meaning: "Elementærladningen", unit: "C", section: "Konstanter", note: "Hydrogenpotensialet er $V(r) = -e^2/4\\pi\\varepsilon_0 r$." }
+  - { tex: "\\varepsilon_0", meaning: "Permittiviteten i vakuum", unit: "F/m", section: "Konstanter" }
+  - { tex: "m_e", meaning: "Elektronmassen", unit: "kg", section: "Konstanter", note: "Radiallikningen skriver massen $m$; for hydrogen er den $m_e$." }
+  - { tex: "a_0", meaning: "Bohrradien", unit: "Å", section: "Konstanter", term: "Bohrradius", note: "$0{,}529$ Å." }
+  - { tex: "\\alpha", meaning: "Finstrukturkonstanten", section: "Konstanter", term: "Finstrukturkonstanten", id: finstrukturkonstanten, note: "$\\alpha \\approx 1/137$, dimensjonsløs. Ikke egenverdien $\\alpha$ til en koherent tilstand." }
+
 # ── Begreper ─────────────────────────────────────────────────────────────────
 glossary:
   - term: "Foton"
