@@ -280,7 +280,7 @@ glossary:
     definition: "Energien $W$ som må til for å løsrive de løsest bundne elektronene fra et metall."
     section: "Repetisjon og postulater"
   - term: "Comptonbølgelengde"
-    definition: "$\\lambda_C = h/m_ec = 2{,}43$ pm for elektronet. Setter skalaen for komptonforskyvningen."
+    definition: "$\\lambda_C = h/m_ec = 2{,}43$ pm for elektronet. Setter skalaen for Compton-forskyvningen."
     section: "Repetisjon og postulater"
   - term: "Stasjonær tilstand"
     definition: "Tilstand med skarp energi. Et atom i en stasjonær tilstand stråler ikke."

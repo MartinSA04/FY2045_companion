@@ -3,7 +3,11 @@
  * stasjonære tilstandene |0⟩ og |1⟩, blandingen (3|0⟩ + 4|1⟩)/5 og en
  * koherent tilstand |α⟩ med reell α. Potensialet tegnes med trinnene
  * E_n = n + ½; trinnene som inngår i tilstanden får aksentfarge med
- * styrke |c_n|². |Ψ(x,t)|² animeres, med ⟨x⟩ som prikk på grunnlinja.
+ * styrke |c_n|² i forhold til den største vekten. |Ψ(x,t)|² animeres, med
+ * ⟨x⟩ som prikk på grunnlinja. Merkelappene n = 0 og n = 1 står ytterst til
+ * venstre, der ingen stasjonær tilstand når opp. Blandingen og den koherente
+ * tilstanden starter ved høyre vendepunkt, så også stillbildet ved t = 0 er
+ * fritt der.
  *
  * Alt er lukkede uttrykk:
  *   |0⟩ og |1⟩: |ψ₀|² og |ψ₁|², tidsuavhengige,
@@ -128,6 +132,29 @@ export default function init({ ctx, controls, getSize, onResize, signal }) {
     getComputedStyle(document.documentElement).getPropertyValue(name).trim() ||
     fallback;
 
+  // Tekst med senket indeks: "E_n" tegnes som E med n senket i mindre skrift.
+  // Delene med oddetallsindeks etter split er indeksene.
+  const subFont = (i, size, family) =>
+    `${i % 2 ? Math.round(size * 0.75) : size}px ${family}`;
+  function subWidth(text, size, family) {
+    let width = 0;
+    text.split(/_(\S)/).forEach((p, i) => {
+      ctx.font = subFont(i, size, family);
+      width += ctx.measureText(p).width;
+    });
+    ctx.font = subFont(0, size, family);
+    return width;
+  }
+  function subText(text, x, y, size, family) {
+    let cx = x;
+    text.split(/_(\S)/).forEach((p, i) => {
+      ctx.font = subFont(i, size, family);
+      ctx.fillText(p, cx, i % 2 ? y + 0.3 * size : y);
+      cx += ctx.measureText(p).width;
+    });
+    ctx.font = subFont(0, size, family);
+  }
+
   function draw() {
     const { w, h } = getSize();
     if (w < 60 || h < 60) return;
@@ -137,6 +164,7 @@ export default function init({ ctx, controls, getSize, onResize, signal }) {
     const border = cssVar("--border", "#d0d5dc");
     const strong = cssVar("--border-strong", "#b0b7c1");
     const mono = cssVar("--font-mono", "ui-monospace, monospace");
+    const canvasBg = cssVar("--canvas-bg", cssVar("--bg-elevated", "#ffffff"));
 
     const pad = 12;
     // Forklaringen øverst: én linje når den får plass, ellers to.
@@ -147,7 +175,7 @@ export default function init({ ctx, controls, getSize, onResize, signal }) {
       ["⟨x⟩", (x, y) => { ctx.fillStyle = accent; ctx.beginPath(); ctx.arc(x, y, 5, 0, 2 * Math.PI); ctx.fill(); }],
       ["nivåene E_n", (x, y) => { ctx.strokeStyle = strong; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.moveTo(x - 6, y); ctx.lineTo(x + 6, y); ctx.stroke(); }],
     ];
-    const widths = items.map(([s]) => 16 + ctx.measureText(s).width);
+    const widths = items.map(([s]) => 16 + subWidth(s, 12, mono));
     const total = widths.reduce((a, b) => a + b, 0) + 18 * (items.length - 1);
     const oneRow = pad + total <= w - pad;
     let lx = pad;
@@ -156,7 +184,7 @@ export default function init({ ctx, controls, getSize, onResize, signal }) {
       if (!oneRow && i === 2) lx = pad;
       glyph(lx + 5, ly);
       ctx.fillStyle = muted;
-      ctx.fillText(s, lx + 16, ly);
+      subText(s, lx + 16, ly, 12, mono);
       lx += widths[i] + 18;
     });
     const top = oneRow ? 30 : 48;
@@ -183,9 +211,13 @@ export default function init({ ctx, controls, getSize, onResize, signal }) {
       ctx.stroke();
     }
 
-    // Trinnene E_n = n + ½, tegnet mellom veggene i potensialet.
+    // Trinnene E_n = n + ½, tegnet mellom veggene i potensialet. Styrken på
+    // aksentfargen er |c_n|² delt på den største vekten, så fordelingen synes.
     const cn = weights();
+    const cmax = Math.max(...cn);
     ctx.font = `11px ${mono}`;
+    const labelX = pad; // venstrekanten til merkelappene n = 0 og n = 1
+    const labelW = ctx.measureText("n = 0").width;
     for (let n = 0; n < NRUNG; n++) {
       const E = n + 0.5;
       const xe = Math.sqrt(2 * E);
@@ -200,7 +232,7 @@ export default function init({ ctx, controls, getSize, onResize, signal }) {
       if (wn > 0.005) {
         ctx.strokeStyle = accent;
         ctx.lineWidth = 2.5;
-        ctx.globalAlpha = Math.max(0.2, wn);
+        ctx.globalAlpha = 0.12 + 0.88 * (wn / cmax);
         ctx.beginPath();
         ctx.moveTo(px(-xe), y);
         ctx.lineTo(px(xe), y);
@@ -208,8 +240,15 @@ export default function init({ ctx, controls, getSize, onResize, signal }) {
         ctx.globalAlpha = 1;
       }
       if (n < 2) {
-        ctx.fillStyle = muted;
-        ctx.fillText(`n = ${n}`, px(xe) + 8, y);
+        // Stiplet linje fra veggen ut til merkelappen.
+        ctx.strokeStyle = border;
+        ctx.lineWidth = 1;
+        ctx.setLineDash([2, 4]);
+        ctx.beginPath();
+        ctx.moveTo(labelX + labelW + 8, y);
+        ctx.lineTo(px(-xe) - 4, y);
+        ctx.stroke();
+        ctx.setLineDash([]);
       }
     }
 
@@ -254,6 +293,21 @@ export default function init({ ctx, controls, getSize, onResize, signal }) {
     ctx.beginPath();
     ctx.arc(px(meanX()), base, 6, 0, 2 * Math.PI);
     ctx.fill();
+
+    // Merkelappene til de to nederste trinnene, ytterst til venstre. Halen
+    // til den koherente tilstanden når dit et øyeblikk hver periode ved stor
+    // α, så bokstavene får en kant i lerretsfargen og kurven brytes bak dem.
+    ctx.font = `11px ${mono}`;
+    ctx.textAlign = "left";
+    ctx.lineJoin = "round";
+    for (let n = 0; n < 2; n++) {
+      const y = pyV(n + 0.5);
+      ctx.strokeStyle = canvasBg;
+      ctx.lineWidth = 4;
+      ctx.strokeText(`n = ${n}`, labelX, y);
+      ctx.fillStyle = muted;
+      ctx.fillText(`n = ${n}`, labelX, y);
+    }
 
     sOut.textContent = nb(alpha);
   }

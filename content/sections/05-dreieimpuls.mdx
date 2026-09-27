@@ -3,11 +3,11 @@ order: 5
 title: "Dreieimpuls"
 summary: "Dreieimpuls definert ved kommutatorene: egenverdiene ħ²j(j+1) og ħm fra heve- og senkeoperatorene alene, hvorfor banedreieimpulsen bare har heltallige kvantetall, og radiallikningen for et sentralsymmetrisk potensial med hydrogenatomet som eksempel."
 importance: core
-updated: 2026-09-23
+updated: 2026-09-27
 ---
 
-Banedreieimpulsen $\vec L = \vec r \times \vec p$ er kjent fra det forrige
-emnet i posisjonsrommet: $L_z$ og $L^2$ som differensialoperatorer i
+Fra TFY4215 er banedreieimpulsen $\vec L = \vec r \times \vec p$ kjent
+i posisjonsrommet: $L_z$ og $L^2$ som differensialoperatorer i
 vinklene, kuleflatefunksjonene som egenfunksjoner og kvantetallene $l$ og
 $m$. Her defineres en dreieimpuls i stedet ved kommutatorene mellom
 komponentene, og spekteret følger av dem med den samme
@@ -182,7 +182,7 @@ $e^{im\varphi}$ løser $L_z$-likningen, og den avgjør hvilke $m$ som er
 lov. Vinklene $\varphi$ og $\varphi + 2\pi$ er samme punkt, men for
 halvtallig $m$ er $e^{im(\varphi + 2\pi)} = -e^{im\varphi}$. Da ville
 $Y_{lm}(\theta, \varphi + 2\pi) = -Y_{lm}(\theta, \varphi)$, og
-bølgefunksjonen ville ikke vært kontinuerlig. Altså er $m$ et heltall, og
+bølgefunksjonen ville ikke vært entydig. Altså er $m$ et heltall, og
 siden $m$ går i hele trinn opp til $l$, er $l$ det også:
 $l = 0, 1, 2, \dots$
 
@@ -376,9 +376,9 @@ $$
 med den avtagende løsningen $u \propto e^{-\kappa r}$. Nær origo dominerer
 sentrifugalpotensialet, $u'' \approx l(l + 1)\,u/r^2$, med løsningene
 $r^{l+1}$ og $r^{-l}$. Den andre er singulær, så $u \propto r^{l+1}$ og
-$R \propto r^l$. Settes $u = e^{-\kappa r}v(r)$ med $v$ et polynom som
-begynner på $r^{l+1}$, må rekka brytes av for at løsningen skal holde seg
-endelig. Det kvantiserer energien:
+$R \propto r^l$. Settes $u = e^{-\kappa r}v(r)$ med $v$ en potensrekke som
+begynner på $r^{l+1}$, må rekka brytes av for at $u$ skal kunne normeres.
+Det kvantiserer energien:
 
 $$
 E_n = -\frac{m_e}{2\hbar^2}\Bigl(\frac{e^2}{4\pi\varepsilon_0}\Bigr)^2\frac{1}{n^2} \allowbreak = -\frac{13{,}6\ \text{eV}}{n^2}, \allowbreak\qquad n = 1, 2, 3, \dots

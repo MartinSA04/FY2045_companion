@@ -60,13 +60,14 @@ export default function init({ ctx, controls, getSize, onResize, signal }) {
     if (a % 2 === 0) return a === 2 ? `${s}ħ` : `${s}${a / 2}ħ`;
     return a === 1 ? `${s}ħ/2` : `${s}${a}ħ/2`;
   }
-  // |J| = √(j(j+1)) ħ som tekst: √6 ħ, √15/2 ħ.
+  // |J| = √(j(j+1)) ħ som tekst: √6 ħ, ½√15 ħ. Halvtallige j får ½ foran
+  // rota, så √3/2 ikke leses som √(3/2).
   function lengthText(tj) {
     if (tj % 2 === 0) {
       const j = tj / 2;
       return `√${j * (j + 1)} ħ`;
     }
-    return `√${tj * (tj + 2)}/2 ħ`;
+    return `½√${tj * (tj + 2)} ħ`;
   }
 
   // ── kontroller ────────────────────────────────────────────────────────────
@@ -129,6 +130,29 @@ export default function init({ ctx, controls, getSize, onResize, signal }) {
   const cssVar = (name, fallback) =>
     getComputedStyle(document.documentElement).getPropertyValue(name).trim() ||
     fallback;
+
+  // Tekst med senket indeks: "J_z" tegnes som J med z senket i mindre skrift.
+  // Delene med oddetallsindeks etter split er indeksene. align som textAlign.
+  const subFont = (i, size, family) =>
+    `${i % 2 ? Math.round(size * 0.75) : size}px ${family}`;
+  function subText(text, x, y, size, family, align) {
+    const parts = text.split(/_(\S)/);
+    let width = 0;
+    parts.forEach((p, i) => {
+      ctx.font = subFont(i, size, family);
+      width += ctx.measureText(p).width;
+    });
+    let cx = align === "center" ? x - width / 2 : align === "right" ? x - width : x;
+    const saved = ctx.textAlign;
+    ctx.textAlign = "left";
+    parts.forEach((p, i) => {
+      ctx.font = subFont(i, size, family);
+      ctx.fillText(p, cx, i % 2 ? y + 0.3 * size : y);
+      cx += ctx.measureText(p).width;
+    });
+    ctx.textAlign = saved;
+    ctx.font = subFont(0, size, family);
+  }
 
   function arrow(x1, y1, x2, y2, head) {
     const a = Math.atan2(y2 - y1, x2 - x1);
@@ -249,8 +273,8 @@ export default function init({ ctx, controls, getSize, onResize, signal }) {
     // Aksetitlene, og lengden |J| til venstre for J_z-aksen.
     ctx.fillStyle = muted;
     ctx.textAlign = "left";
-    ctx.fillText("J_z", cx + 8, top - 6);
-    ctx.fillText("J_x", cx + (R + 0.4) * s + 4, cy);
+    subText("J_z", cx + 8, top - 6, 12, mono, "left");
+    subText("J_x", cx + (R + 0.4) * s + 4, cy, 12, mono, "left");
     ctx.textAlign = "right";
     ctx.fillText(`|J| = ${lengthText(twoJ)}`, cx - 10, top - 6);
 
@@ -293,7 +317,7 @@ export default function init({ ctx, controls, getSize, onResize, signal }) {
     ctx.globalAlpha = 1;
     ctx.fillStyle = muted;
     ctx.textAlign = "center";
-    ctx.fillText("sannsynlighet for hvert utfall av J_x", cx, base + 30);
+    subText("sannsynlighet for hvert utfall av J_x", cx, base + 30, 12, mono, "center");
     // Etiketter under søylene, glisnet ut når de står tett.
     ctx.textAlign = "center";
     const every = s >= 40 ? 1 : twoJ % 2 === 0 ? 2 : twoJ;
