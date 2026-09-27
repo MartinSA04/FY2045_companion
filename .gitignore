@@ -7,3 +7,4 @@ dist/
 # Local reference material (exams, lecture slides, textbooks) — fetched for
 # authoring/verification, never committed.
 course_content/
+exports/
