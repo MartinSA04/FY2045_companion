@@ -30,10 +30,9 @@ Einstein tok i 1905 et steg Planck aldri godtok: kvantiseringen ligger i selve
 lyset, som består av <Term name="Foton">fotoner</Term> med energi $h\nu$. Det
 forklarer den fotoelektriske effekten. Fotonets energi går med til
 <Term name="Frigjøringsarbeid">frigjøringsarbeidet</Term> $W$ og til kinetisk
-energi for elektronet, $E_{\text{kin}} = h\nu - W$
-(<FormulaRef id="fotoelektrisk-likning" />), og økt intensitet betyr bare flere
-fotoner. I 1917 ga Einstein fotonet også impulsen $p = E/c = h/\lambda$
-(<FormulaRef id="foton-energi-impuls" />).
+energi for elektronet, <FormulaRef id="fotoelektrisk-likning" />, og økt
+intensitet betyr bare flere fotoner. I 1917 ga Einstein fotonet også impulsen
+$p = E/c = h/\lambda$.
 
 Avgjørelsen kom med Compton i 1923. Røntgen spredt på grafitt kom ut med lengre
 bølgelengde, og forskjellen vokste med spredningsvinkelen $\theta$. Klassisk
@@ -70,8 +69,7 @@ To av antakelsene hans står fortsatt. Atomet kan bare eksistere i et diskret
 sett <Term name="Stasjonær tilstand">stasjonære tilstander</Term>, hver med
 skarp energi, og i en slik tilstand stråler det ikke. Strålingen kommer i
 kvantesprang mellom tilstandene, med $h\nu = \Delta E$. For hydrogen svarer
-linjene til nivåene $E_n = -hcR_\infty/n^2 \approx -13{,}6$ eV$/n^2$
-(<FormulaRef id="bohr-energier" />).
+linjene til nivåene <FormulaRef id="bohr-energier" />.
 
 For å beregne nivåene antok Bohr i tillegg at elektronet går i sirkelbane etter
 Newtons lover, med dreieimpuls kvantisert som $L = n\hbar$. Det ga riktig
@@ -111,8 +109,7 @@ bølgenatur, og et elektron i et atom har ingen bane.
 
 de Broglie snudde i 1923
 <Term name="Bølge-partikkel-dualitet">dualiteten</Term> rundt: også partikler
-har bølgenatur, med $\lambda = h/p$ og $\nu = E/h$
-(<FormulaRef id="de-broglie-relasjonene" />). Kravet om at sirkelbanen rommer et
+har bølgenatur, med <FormulaRef id="de-broglie-relasjonene" />. Kravet om at sirkelbanen rommer et
 helt antall bølgelengder gjenskaper $L = n\hbar$. Davisson og Germer og
 G. P. Thomson bekreftet hypotesen i 1926 og 1927 med elektrondiffraksjon på
 krystaller, og da hadde Schrödinger alt funnet bølgelikningen som gjorde det
@@ -167,8 +164,7 @@ $\hat p_x = (\hbar/i)\,\partial/\partial x$.
 <Statement kind="principle" name="Postulat B: bølgefunksjonspostulatet" id="postulat-b">
 
 Tilstanden til et system er fullstendig beskrevet av bølgefunksjonen
-$\Psi(q_1, \dots, q_n, t)$. Tidsutviklingen er bestemt av Schrödingerlikningen
-(<FormulaRef id="schrodingerlikningen" />).
+$\Psi(q_1, \dots, q_n, t)$. Tidsutviklingen er bestemt av Schrödingerlikningen.
 
 </Statement>
 
@@ -183,8 +179,7 @@ mer informasjon om systemet enn den som ligger i $\Psi$, finnes ikke.
 Måles observabelen $F$ mange ganger på et ensemble preparert i tilstanden
 $\Psi$, nærmer gjennomsnittet av måleverdiene seg
 <Term name="Forventningsverdi">forventningsverdien</Term>
-$\langle F \rangle_\Psi = \int \Psi^* \hat F\, \Psi\, d\tau$
-(<FormulaRef id="forventningsverdi" />).
+<FormulaRef id="forventningsverdi" />.
 
 </Statement>
 
@@ -216,10 +211,20 @@ $$
 |\psi\rangle = A\big[|1\rangle - |2\rangle + \sqrt{3}\,|3\rangle\big], \qquad (1)
 $$
 
-where $|n\rangle$ are orthonormal energy eigenstates. What is the normalization
-constant $A$ when chosen real and positive?
+where $|n\rangle$ are orthonormal energy eigenstates.
 
-A $A = 1/\sqrt{5}$ &nbsp; B $A = 1$ &nbsp; C $A = 5$ &nbsp; D $A = 1/5$ &nbsp; E $A = 1/3$
+<Quiz
+  question={"What is the normalization constant $A$ when chosen real and positive?"}
+  options={[
+    "$A = \\frac{1}{\\sqrt{5}}$",
+    "$A = 1$",
+    "$A = 5$",
+    "$A = \\frac{1}{5}$",
+    "$A = \\frac{1}{3}$"
+  ]}
+  answer={0}
+  explanation={"Basisen er ortonormert, så normen er summen av kvadratene til koeffisientene: $\\langle\\psi|\\psi\\rangle = |A|^2{(1 + 1 + 3)} = 5|A|^2 = 1$, altså $A = 1/\\sqrt{5}$."}
+/>
 
 d) The energy eigenvalue of the state $|n\rangle$ is
 
@@ -227,21 +232,21 @@ $$
 E_n = \epsilon n^2, \qquad (2)
 $$
 
-where $n = 1, 2, 3, \ldots$. What is the energy expectation value of the state
-$|\psi\rangle$ in Eq. (1)?
+where $n = 1, 2, 3, \ldots$.
 
-A $\langle E\rangle = 14\epsilon$ &nbsp; B $\langle E\rangle = \tfrac{14}{25}\epsilon$ &nbsp; C $\langle E\rangle = \tfrac{14}{5}\epsilon$ &nbsp; D $\langle E\rangle = 32\epsilon$ &nbsp; E $\langle E\rangle = \tfrac{32}{5}\epsilon$
+<Quiz
+  question={"What is the energy expectation value of the state $|\\psi\\rangle$ in Eq. (1)?"}
+  options={[
+    "$\\langle E\\rangle = 14\\epsilon$",
+    "$\\langle E\\rangle = \\frac{14}{25}\\epsilon$",
+    "$\\langle E\\rangle = \\frac{14}{5}\\epsilon$",
+    "$\\langle E\\rangle = 32\\epsilon$",
+    "$\\langle E\\rangle = \\frac{32}{5}\\epsilon$"
+  ]}
+  answer={4}
+  explanation={"Hver egentilstand måles med sannsynlighet $|c_n|^2$, så $\\langle E\\rangle = \\sum_n |c_n|^2 E_n = \\tfrac{1}{5}{(1\\cdot\\epsilon + 1\\cdot 4\\epsilon + 3\\cdot 9\\epsilon)} = \\tfrac{32}{5}\\epsilon$."}
+/>
 
-<Solution>
-c) Basisen er ortonormert, så normen er summen av kvadratene til
-koeffisientene: $\langle\psi|\psi\rangle = |A|^2(1 + 1 + 3) = 5|A|^2 = 1$, altså
-$A = 1/\sqrt{5}$.
-
-d) Hver egentilstand måles med sannsynlighet $|c_n|^2$, så
-$\langle E\rangle = \sum_n |c_n|^2 E_n = \tfrac{1}{5}(1\cdot\epsilon + 1\cdot 4\epsilon + 3\cdot 9\epsilon) = \tfrac{32}{5}\epsilon$.
-
-<Answer>c) A, $A = 1/\sqrt{5}$. d) E, $\langle E\rangle = \tfrac{32}{5}\epsilon$.</Answer>
-</Solution>
 </Example>
 
 <Example label="Eksamensoppgave" title="Hvilken påstand er feil?">
@@ -254,28 +259,21 @@ $$
 $$
 
 where $\psi_1(x)$ and $\psi_2(x)$ are orthonormal energy eigenstates of the
-Hamiltonian. Which of the following statements is wrong?
+Hamiltonian.
 
-A The probability density $|\Psi(x,t)|^2$ contains interference terms that oscillate with angular frequency $(E_2 - E_1)/\hbar$.
+<Quiz
+  question={"Which of the following statements is <b>wrong</b>?"}
+  options={[
+    "The probability density $|\\Psi(x,t)|^2$ contains interference terms that oscillate with angular frequency $(E_2 - E_1)/\\hbar$.",
+    "The probabilities for measuring $E_1$ and $E_2$ are equal.",
+    "Upon measuring the energy and obtaining $E_1$, the post-measurement state collapses to $\\psi_1(x)$ (up to an overall phase).",
+    "The expectation value of the Hamiltonian in this state is $\\frac{1}{2}(E_1 + E_2)$.",
+    "The ratio of probabilities for measuring $E_1$ to $E_2$ is $E_1/E_2$."
+  ]}
+  answer={4}
+  explanation={"Begge koeffisientene er $1/\\sqrt{2}$, så sannsynligheten for hver energi er $\\tfrac12$, og $\\langle H\\rangle = \\tfrac12 E_1 + \\tfrac12 E_2$. Forholdet mellom sannsynlighetene er derfor 1, ikke $E_1/E_2$. Energien selv inngår ikke i sannsynligheten, bare koeffisienten. Kryssleddet i $|\\Psi|^2$ svinger som $\\cos({(E_2 - E_1)t/\\hbar})$, og kollapsen til $\\psi_1$ er målepostulatet."}
+/>
 
-B The probabilities for measuring $E_1$ and $E_2$ are equal.
-
-C Upon measuring the energy and obtaining $E_1$, the post-measurement state collapses to $\psi_1(x)$ (up to an overall phase).
-
-D The expectation value of the Hamiltonian in this state is $\tfrac12(E_1 + E_2)$.
-
-E The ratio of probabilities for measuring $E_1$ to $E_2$ is $E_1/E_2$.
-
-<Solution>
-Begge koeffisientene er $1/\sqrt{2}$, så sannsynligheten for hver energi er
-$\tfrac12$. Det gjør B riktig, gir $\langle H\rangle = \tfrac12 E_1 + \tfrac12 E_2$
-i D, og forholdet mellom sannsynlighetene er 1, ikke $E_1/E_2$. Energien selv
-inngår ikke i sannsynligheten, bare koeffisienten. A stemmer, fordi
-kryssleddet i $|\Psi|^2$ svinger som $\cos((E_2 - E_1)t/\hbar)$, og C er
-målepostulatet.
-
-<Answer>E er feil.</Answer>
-</Solution>
 </Example>
 
 ## Sjekk deg selv

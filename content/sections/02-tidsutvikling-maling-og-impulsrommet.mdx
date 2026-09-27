@@ -267,31 +267,21 @@ $$
 $$
 
 in terms of the eigenstates referring to the combinations of the quantum
-numbers $n_x$ and $n_y$. Which one of the following option holds true after
-the measurement?
+numbers $n_x$ and $n_y$.
 
-A Probability for measuring $E = 5\epsilon$ is 0.2.
+<Quiz
+  question={"Which one of the following option holds true after the measurement?"}
+  options={[
+    "Probability for measuring $E = 5\\epsilon$ is 0.2.",
+    "For $E = 5\\epsilon$, the wave function becomes $\\Psi = \\frac{1}{\\sqrt{2}}(\\psi_{12} + i\\psi_{21})$.",
+    "For $E = 9\\epsilon$, the wave function becomes $\\Psi = \\psi_{22}$.",
+    "The three lowest possible total energies are $E = 2\\epsilon$, $E = 4\\epsilon$, and $E = 5\\epsilon$.",
+    "It is not possible to measure $E = 5\\epsilon$."
+  ]}
+  answer={1}
+  explanation={"Energiene i superposisjonen er $2\\epsilon$ for $\\psi_{11}$, $5\\epsilon$ for både $\\psi_{12}$ og $\\psi_{21}$, og $8\\epsilon$ for $\\psi_{22}$. Nivået $5\\epsilon$ er degenerert, så sannsynligheten er summen $\\tfrac15 + \\tfrac15 = 0{,}4$, ikke 0,2. Måles $5\\epsilon$, er den nye tilstanden projeksjonen på det degenererte rommet, $\\frac{1}{\\sqrt5}{(\\psi_{12} + i\\psi_{21})}$, normert på nytt: $\\frac{1}{\\sqrt2}{(\\psi_{12} + i\\psi_{21})}$. Energien $9\\epsilon$ finnes ikke, og de tre laveste nivåene er $2\\epsilon$, $5\\epsilon$ og $8\\epsilon$."}
+/>
 
-B For $E = 5\epsilon$, the wave function becomes $\Psi = \frac{1}{\sqrt{2}}(\psi_{12} + i\psi_{21})$.
-
-C For $E = 9\epsilon$, the wave function becomes $\Psi = \psi_{22}$.
-
-D The three lowest possible total energies are $E = 2\epsilon$, $E = 4\epsilon$, and $E = 5\epsilon$.
-
-E It is not possible to measure $E = 5\epsilon$.
-
-<Solution>
-Energiene i superposisjonen er $2\epsilon$ for $\psi_{11}$, $5\epsilon$ for
-både $\psi_{12}$ og $\psi_{21}$, og $8\epsilon$ for $\psi_{22}$. Nivået
-$5\epsilon$ er degenerert, så sannsynligheten er summen
-$\tfrac15 + \tfrac15 = 0{,}4$, ikke 0,2. Måles $5\epsilon$, er den nye
-tilstanden projeksjonen på det degenererte rommet,
-$\frac{1}{\sqrt5}(\psi_{12} + i\psi_{21})$, normert på nytt:
-$\frac{1}{\sqrt2}(\psi_{12} + i\psi_{21})$. Det er B. C nevner en energi som
-ikke finnes, og de tre laveste nivåene er $2\epsilon$, $5\epsilon$ og $8\epsilon$.
-
-<Answer>B</Answer>
-</Solution>
 </Example>
 
 ## Impulsegenfunksjonene
@@ -383,32 +373,19 @@ $$
 \phi(p) = \begin{cases} C, & \text{for } 0 \le p \le p_0, \\ 0, & \text{otherwise.} \end{cases}
 $$
 
-Which one of the following options holds true?
+<Quiz
+  question={"Which one of the following options holds true?"}
+  options={[
+    "$C = \\dfrac{1}{\\sqrt{p_0}}$, $\\langle p^2\\rangle = \\dfrac{p_0^2}{3}$.",
+    "$C = \\dfrac{1}{p_0}$, $\\langle p^2\\rangle = \\dfrac{p_0^2}{4}$.",
+    "$C = \\dfrac{\\sqrt{2}}{p_0}$, $\\langle p^2\\rangle = \\dfrac{p_0^2}{3}$.",
+    "$C = \\dfrac{1}{\\sqrt{2p_0}}$, $\\langle p^2\\rangle = \\dfrac{p_0^2}{6}$.",
+    "$C = \\dfrac{\\sqrt{3}}{p_0}$, $\\langle p^2\\rangle = \\dfrac{p_0^2}{5}$."
+  ]}
+  answer={0}
+  explanation={"$|\\phi(p)|^2$ er sannsynlighetstettheten i impulsrommet, så $\\int_0^{p_0} C^2\\,dp = C^2 p_0 = 1$ gir $C = 1/\\sqrt{p_0}$. Forventningsverdien av en funksjon av $p$ er integralet av funksjonen mot tettheten: $\\langle p^2\\rangle = \\int_0^{p_0} p^2\\,|\\phi(p)|^2\\,dp = (1/p_0)(p_0^3/3) = p_0^2/3$."}
+/>
 
-A $C = \dfrac{1}{\sqrt{p_0}}$, $\langle p^2\rangle = \dfrac{p_0^2}{3}$.
-
-B $C = \dfrac{1}{p_0}$, $\langle p^2\rangle = \dfrac{p_0^2}{4}$.
-
-C $C = \dfrac{\sqrt{2}}{p_0}$, $\langle p^2\rangle = \dfrac{p_0^2}{3}$.
-
-D $C = \dfrac{1}{\sqrt{2p_0}}$, $\langle p^2\rangle = \dfrac{p_0^2}{6}$.
-
-E $C = \dfrac{\sqrt{3}}{p_0}$, $\langle p^2\rangle = \dfrac{p_0^2}{5}$.
-
-<Solution>
-$|\phi(p)|^2$ er sannsynlighetstettheten i impulsrommet, så
-$\int_0^{p_0} C^2\,dp = C^2 p_0 = 1$ gir $C = 1/\sqrt{p_0}$. Forventningsverdien
-av en funksjon av $p$ er integralet av funksjonen mot tettheten:
-
-$$
-\begin{aligned}
-\langle p^2\rangle &= \int_0^{p_0} p^2\,|\phi(p)|^2\,dp \\
-&= \frac{1}{p_0}\cdot\frac{p_0^3}{3} = \frac{p_0^2}{3}.
-\end{aligned}
-$$
-
-<Answer>A</Answer>
-</Solution>
 </Example>
 
 ## Kvantemekanikk i impulsrommet
