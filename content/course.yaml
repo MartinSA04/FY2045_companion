@@ -1,7 +1,7 @@
 # FY2045 Kvantemekanikk I — interaktiv pensumguide.
 # Innholdet er under arbeid; metadataene under er hentet fra NTNUs emneside.
 
-schemaVersion: 4
+schemaVersion: 5
 
 code: FY2045
 title: Kvantemekanikk I
@@ -90,7 +90,7 @@ examArchive:
 
 # ── Formelsamling ────────────────────────────────────────────────────────────
 # Hvilke formler som står på årets vedlegg til eksamen er ikke verifisert, så
-# ingen rader gjør onSheet/memorize-krav.
+# ingen rader gjør onSheet-krav.
 formulas:
   - id: planck-stralingslov
     tex: "u(\\nu, T) = \\dfrac{8\\pi\\nu^2}{c^3}\\,\\dfrac{h\\nu}{e^{h\\nu/k_BT} - 1}"
