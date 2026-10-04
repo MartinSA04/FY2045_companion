@@ -272,6 +272,55 @@ formulas:
     label: "Radiallikningen for $u(r) = rR(r)$ i et sentralsymmetrisk potensial. Kvantetallet $m$ inngår ikke."
     section: "Dreieimpuls"
 
+  - id: magnetisk-moment
+    tex: "\\vec\\mu_L = \\dfrac{q}{2m}\\,\\vec L = \\gamma\\vec L, \\allowbreak\\quad H = -\\vec\\mu\\cdot\\vec B"
+    label: "Det magnetiske momentet til en ladning $q$ i bane, og energien i et magnetfelt. $\\gamma$ er det gyromagnetiske forholdet."
+    section: "Spinn"
+  - id: larmor-presesjon
+    tex: "\\dfrac{d\\vec L}{dt} = \\vec\\omega_L\\times\\vec L, \\allowbreak\\quad \\vec\\omega_L = -\\gamma\\vec B"
+    label: "Larmor-presesjon i et homogent felt. Spinnretningen følger samme likning, med $\\gamma_e$ i stedet for $\\gamma$."
+    section: "Spinn"
+  - id: stern-gerlach-kraft
+    tex: "\\vec F = \\nabla(\\vec\\mu\\cdot\\vec B), \\allowbreak\\quad F_z = -a\\mu_z"
+    label: "Kraften på et magnetisk moment i et inhomogent felt. $F_z = -a\\mu_z$ gjelder Stern–Gerlach-feltet $\\vec B = ax\\,\\hat x - (B_0 + az)\\,\\hat z$."
+    section: "Spinn"
+  - id: bohr-magneton
+    tex: "\\mu_B = \\dfrac{e\\hbar}{2m_e} = 5{,}79\\cdot10^{-5}\\ \\text{eV/T}"
+    label: "Bohr-magnetonet. For banedreieimpulsen til elektronet er $(\\mu_L)_z = -\\mu_B m$."
+    section: "Spinn"
+  - id: elektronspinn-moment
+    tex: "\\vec\\mu_s = -g_e\\dfrac{e}{2m_e}\\,\\vec S = \\gamma_e\\vec S, \\allowbreak\\quad g_e = 2{,}0023"
+    label: "Det magnetiske momentet til elektronspinnet. Det peker motsatt av $\\vec S$."
+    section: "Spinn"
+  - id: paulimatrisene
+    tex: "\\vec S = \\dfrac{\\hbar}{2}\\,\\vec\\sigma, \\allowbreak\\quad \\sigma_x = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}, \\allowbreak\\quad \\sigma_y = \\begin{pmatrix} 0 & -i \\\\ i & 0 \\end{pmatrix}, \\allowbreak\\quad \\sigma_z = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}"
+    label: "Spinnoperatoren for spinn ½ i basisen $\\{|{\\uparrow}\\rangle, |{\\downarrow}\\rangle\\}$."
+    section: "Spinn"
+  - id: pauli-produkt
+    tex: "\\sigma_i\\sigma_j = \\delta_{ij}\\,\\mathbb{1} + i\\sum_k\\varepsilon_{ijk}\\,\\sigma_k"
+    label: "Produktet av to Paulimatriser. Gir $\\sigma_i^2 = \\mathbb{1}$, $[\\sigma_i, \\sigma_j] = 2i\\sum_k\\varepsilon_{ijk}\\sigma_k$ og $\\{\\sigma_i, \\sigma_j\\} = 2\\delta_{ij}\\mathbb{1}$."
+    section: "Spinn"
+  - id: spinor
+    tex: "\\chi = \\begin{pmatrix} a_+ \\\\ a_- \\end{pmatrix} = a_+\\chi_+ + a_-\\chi_-, \\allowbreak\\quad |a_+|^2 + |a_-|^2 = 1"
+    label: "En spinor. $|a_\\pm|^2$ er sannsynlighetene for $S_z = \\pm\\hbar/2$."
+    section: "Spinn"
+  - id: spinnretningen
+    tex: "\\langle S_x\\rangle + i\\langle S_y\\rangle = \\hbar\\,a_+^*a_-, \\allowbreak\\quad \\langle S_z\\rangle = \\tfrac{\\hbar}{2}\\bigl(|a_+|^2 - |a_-|^2\\bigr)"
+    label: "Spinnretningen $\\langle\\vec S\\rangle = \\chi^\\dagger\\vec S\\chi$. For spinn ½ er lengden alltid $\\hbar/2$."
+    section: "Spinn"
+  - id: egenspinorer-x-y
+    tex: "\\chi_\\pm^{(x)} = \\dfrac{1}{\\sqrt2}\\begin{pmatrix} 1 \\\\ \\pm 1 \\end{pmatrix}, \\allowbreak\\quad \\chi_\\pm^{(y)} = \\dfrac{1}{\\sqrt2}\\begin{pmatrix} 1 \\\\ \\pm i \\end{pmatrix}"
+    label: "Egenspinorene til $S_x$ og $S_y$ med egenverdiene $\\pm\\hbar/2$. Sannsynligheten for $S_x = \\pm\\hbar/2$ er $\\tfrac12|a_+ \\pm a_-|^2$."
+    section: "Spinn"
+  - id: spinn-langs-n
+    tex: "\\chi_+^{(n)} = \\begin{pmatrix} \\cos\\frac\\theta2 \\\\ e^{i\\varphi}\\sin\\frac\\theta2 \\end{pmatrix}, \\allowbreak\\quad \\langle\\vec S\\rangle = \\dfrac{\\hbar}{2}\\,\\hat n"
+    label: "Spinn opp langs $\\hat n = (\\sin\\theta\\cos\\varphi, \\sin\\theta\\sin\\varphi, \\cos\\theta)$. Måles $S_z$, er sannsynligheten for $+\\hbar/2$ lik $\\cos^2(\\theta/2)$."
+    section: "Spinn"
+  - id: spinn-i-magnetfelt
+    tex: "\\hat H = \\omega_L S_z, \\allowbreak\\quad \\omega_L = \\dfrac{g_e eB_0}{2m_e}, \\allowbreak\\quad \\chi(t) = \\begin{pmatrix} a_+e^{-i\\omega_L t/2} \\\\ a_-e^{i\\omega_L t/2} \\end{pmatrix}"
+    label: "Et elektron i feltet $B_0\\hat z$. Spinnretningen preseserer rundt feltet med vinkelfrekvensen $\\omega_L$."
+    section: "Spinn"
+
 # ── Symboler ─────────────────────────────────────────────────────────────────
 # Én rad per betydning. Der en bokstav betyr to ting (m, n, α, θ, F, a), sier
 # notatet hvilken den andre er.
@@ -327,7 +376,7 @@ symbols:
   - { tex: "\\vec J,\\allowbreak\\ J_x,\\allowbreak\\ J_y,\\allowbreak\\ J_z", meaning: "En dreieimpuls og komponentene av den", unit: "J·s", section: "Dreieimpuls og hydrogen", term: "Dreieimpuls", formula: dreieimpuls-kommutatorer, note: "Uten hatt, som stigeoperatorene. $J^2 = J_x^2 + J_y^2 + J_z^2$." }
   - { tex: "J_\\pm", meaning: "Heve- og senkeoperatoren for dreieimpuls, $J_x \\pm iJ_y$", section: "Dreieimpuls og hydrogen", formula: dreieimpuls-stigeoperatorer, note: "Endrer $m$ med $\\pm 1$. For banedreieimpulsen skrives de $L_\\pm$." }
   - { tex: "j", meaning: "Kvantetallet til $J^2$, med egenverdien $\\hbar^2 j(j+1)$", section: "Dreieimpuls og hydrogen", formula: dreieimpuls-egenverdier, note: "$j = 0, \\tfrac12, 1, \\tfrac32, \\dots$ Halvtallige $j$ hører til spinn." }
-  - { tex: "m", meaning: "Kvantetallet til $J_z$ og $L_z$, med egenverdien $\\hbar m$", section: "Dreieimpuls og hydrogen", formula: dreieimpuls-egenverdier, id: m-kvantetall, note: "$m = -j, \\dots, j$ i hele trinn, $2j + 1$ verdier. Ikke massen $m$." }
+  - { tex: "m", meaning: "Kvantetallet til $J_z$, $L_z$ og $S_z$, med egenverdien $\\hbar m$", section: "Dreieimpuls og hydrogen", formula: dreieimpuls-egenverdier, id: m-kvantetall, note: "$m = -j, \\dots, j$ i hele trinn, $2j + 1$ verdier. Ikke massen $m$." }
   - { tex: "\\varepsilon_{ijk}", meaning: "Levi-Civita-symbolet", section: "Dreieimpuls og hydrogen", formula: dreieimpuls-kommutatorer, note: "$+1$ for $xyz$ og sykliske permutasjoner, $-1$ for de andre og $0$ når to indekser er like. Ikke $\\varepsilon_0$." }
   - { tex: "\\vec L,\\allowbreak\\ L_z,\\allowbreak\\ L^2", meaning: "Banedreieimpulsen $\\vec r \\times \\vec p$", unit: "J·s", section: "Dreieimpuls og hydrogen", term: "Banedreieimpuls", formula: banedreieimpuls-kulekoordinater, note: "Uten hatt, som $\\vec J$. Eksamensoppgaver skriver $\\hat{\\mathbf L}$." }
   - { tex: "l", meaning: "Kvantetallet til $L^2$, med egenverdien $\\hbar^2 l(l+1)$", section: "Dreieimpuls og hydrogen", formula: kuleflatefunksjoner, note: "$l = 0, 1, 2, \\dots$, bare heltall. Eksamensoppgaver skriver også $\\ell$." }
@@ -337,6 +386,21 @@ symbols:
   - { tex: "\\kappa", meaning: "Hvor raskt en bunden tilstand avtar langt ute, $\\sqrt{-2mE}/\\hbar$", unit: "m⁻¹", section: "Dreieimpuls og hydrogen", note: "$u \\propto e^{-\\kappa r}$ når $E < 0$." }
   - { tex: "n", meaning: "Hovedkvantetallet, som nummererer energinivåene i hydrogen", section: "Dreieimpuls og hydrogen", formula: bohr-energier, id: n-hydrogen, note: "$n = 1, 2, 3, \\dots$ og $l = 0, \\dots, n - 1$. Ikke nivået $n$ i oscillatoren, som starter på 0." }
   - { tex: "E_n", meaning: "Energinivåene i hydrogen", unit: "eV", section: "Dreieimpuls og hydrogen", formula: bohr-energier, note: "$-13{,}6\\ \\text{eV}/n^2$, med $n^2$ tilstander per nivå uten spinn." }
+  # ── Spinn ──
+  - { tex: "\\vec S,\\allowbreak\\ S_x,\\allowbreak\\ S_y,\\allowbreak\\ S_z", meaning: "Spinnet og komponentene av det", unit: "J·s", section: "Spinn", term: "Spinn", formula: paulimatrisene, note: "Uten hatt, som $\\vec J$. Eksamensoppgaver skriver $\\hat S_z$." }
+  - { tex: "s", meaning: "Spinnkvantetallet, med egenverdien $\\hbar^2 s(s+1)$ for $S^2$", section: "Spinn", term: "Spinn", note: "$s = \\tfrac12$ for elektronet, protonet og nøytronet. Kvantetallet til $S_z$ er $m$, hos noen $m_s$." }
+  - { tex: "|{\\uparrow}\\rangle,\\allowbreak\\ |{\\downarrow}\\rangle", meaning: "Spinn opp og spinn ned langs $z$-aksen", section: "Spinn", formula: spinor, note: "Som spinorer $\\chi_+ = (1, 0)^T$ og $\\chi_- = (0, 1)^T$." }
+  - { tex: "\\chi,\\allowbreak\\ a_\\pm", meaning: "Spinoren og komponentene av den, amplitudene for $S_z = \\pm\\hbar/2$", section: "Spinn", term: "Spinor", formula: spinor, note: "Ikke senkeoperatoren $a$. I Stern–Gerlach-feltet er $a$ feltgradienten." }
+  - { tex: "\\chi_\\pm^{(x)},\\allowbreak\\ \\chi_\\pm^{(y)},\\allowbreak\\ \\chi_+^{(n)}", meaning: "Egenspinorene til $S_x$, $S_y$ og $S_n = \\hat n\\cdot\\vec S$", section: "Spinn", formula: egenspinorer-x-y, note: "Eksamensoppgaver skriver også $\\chi_\\pm^x$." }
+  - { tex: "\\vec\\sigma", meaning: "Paulimatrisene $(\\sigma_x, \\sigma_y, \\sigma_z)$", section: "Spinn", term: "Paulimatrisene", formula: paulimatrisene, note: "Dimensjonsløse, med $\\vec S = (\\hbar/2)\\vec\\sigma$. Eksamensoppgaver bruker også $\\sigma_A$ for standardavviket til $A$." }
+  - { tex: "\\vec\\mu", meaning: "Magnetisk moment", unit: "J/T", section: "Spinn", term: "Magnetisk moment", formula: magnetisk-moment, note: "$\\vec\\mu_L$ for banebevegelsen, $\\vec\\mu_s$ for spinnet." }
+  - { tex: "\\gamma,\\allowbreak\\ \\gamma_e", meaning: "Det gyromagnetiske forholdet", unit: "C/kg", section: "Spinn", term: "Gyromagnetisk forhold", formula: magnetisk-moment, note: "$\\gamma = q/2m$ for banebevegelse, $\\gamma_e = -g_ee/2m_e$ for elektronspinnet." }
+  - { tex: "g_e", meaning: "g-faktoren til elektronet", section: "Spinn", term: "g-faktor", formula: elektronspinn-moment, note: "$2{,}0023$, nesten nøyaktig 2." }
+  - { tex: "\\mu_B", meaning: "Bohr-magnetonet, $e\\hbar/2m_e$", unit: "J/T", section: "Spinn", term: "Bohr-magneton", formula: bohr-magneton, note: "$9{,}27\\cdot10^{-24}$ J/T, eller $5{,}79\\cdot10^{-5}$ eV/T." }
+  - { tex: "q", meaning: "Ladningen til partikkelen", unit: "C", section: "Spinn", formula: magnetisk-moment, note: "$q = -e$ for elektronet." }
+  - { tex: "\\vec B,\\allowbreak\\ B_0", meaning: "Magnetfeltet og styrken av det", unit: "T", section: "Spinn", formula: spinn-i-magnetfelt, note: "I Stern–Gerlach-magneten er $B_0$ den homogene delen av feltet." }
+  - { tex: "\\omega_L", meaning: "Larmor-frekvensen", unit: "s⁻¹", section: "Spinn", term: "Larmor-presesjon", formula: larmor-presesjon, note: "$|\\gamma|B$. For elektronspinnet er den $g_eeB/2m_e = 1{,}76\\cdot10^{11}\\ \\text{s}^{-1}$ ved 1 T. Ikke oscillatorens $\\omega$." }
+  - { tex: "\\hat n,\\allowbreak\\ \\theta,\\allowbreak\\ \\varphi", meaning: "Enhetsvektoren langs en måleakse og vinklene som angir den", section: "Spinn", formula: spinn-langs-n, note: "$\\hat n = (\\sin\\theta\\cos\\varphi, \\sin\\theta\\sin\\varphi, \\cos\\theta)$, de samme vinklene som i kulekoordinater." }
   # ── Konstanter ──
   - { tex: "h,\\ \\hbar", meaning: "Plancks konstant og $\\hbar = h/2\\pi$", unit: "J·s", section: "Konstanter", id: hbar }
   - { tex: "e", meaning: "Elementærladningen", unit: "C", section: "Konstanter", note: "Hydrogenpotensialet er $V(r) = -e^2/4\\pi\\varepsilon_0 r$." }
@@ -482,6 +546,37 @@ glossary:
   - term: "Sentrifugalpotensialet"
     definition: "Leddet $\\hbar^2 l(l+1)/2mr^2$ i radiallikningen: den kinetiske energien i bevegelsen rundt origo. Holder partikkelen borte fra sentrum når $l > 0$."
     section: "Dreieimpuls"
+
+  - term: "Spinn"
+    definition: "Indre dreieimpuls $\\vec S$ som ikke kommer av bevegelse i rommet. Komponentene oppfyller $[S_i, S_j] = i\\hbar\\sum_k\\varepsilon_{ijk}S_k$, og elektronet, protonet og nøytronet har $s = \\tfrac12$."
+    section: "Spinn"
+  - term: "Magnetisk moment"
+    definition: "Vektoren $\\vec\\mu$ som gir energien $-\\vec\\mu\\cdot\\vec B$ i et magnetfelt. For en dreieimpuls er $\\vec\\mu = \\gamma\\vec J$, der $\\gamma$ er det gyromagnetiske forholdet."
+    section: "Spinn"
+  - term: "Gyromagnetisk forhold"
+    definition: "Forholdet $\\gamma$ i $\\vec\\mu = \\gamma\\vec J$. For banebevegelse er $\\gamma = q/2m$, for elektronspinnet $\\gamma_e = -g_ee/2m_e$."
+    section: "Spinn"
+  - term: "g-faktor"
+    definition: "Det dimensjonsløse tallet $g$ i $\\vec\\mu = g\\,(q/2m)\\,\\vec J$, også kalt gyromagnetisk faktor. $g = 1$ for banedreieimpuls og $g_e = 2{,}0023$ for elektronspinnet."
+    section: "Spinn"
+  - term: "Bohr-magneton"
+    definition: "$\\mu_B = e\\hbar/2m_e = 5{,}79\\cdot10^{-5}$ eV/T, størrelsen på magnetiske momenter i atomer."
+    section: "Spinn"
+  - term: "Larmor-presesjon"
+    definition: "Et magnetisk moment i et homogent felt dreier rundt feltet med fast vinkel mot det og vinkelfrekvensen $\\omega_L = |\\gamma|B$. For spinnet gjelder det forventningsverdien $\\langle\\vec S\\rangle$."
+    section: "Spinn"
+  - term: "Stern–Gerlach-eksperimentet"
+    definition: "En stråle av sølvatomer sendes gjennom et inhomogent magnetfelt, som avbøyer hvert atom etter $\\mu_z$. Strålen deles i to, og det viser at elektronet har spinn $\\tfrac12$."
+    section: "Spinn"
+  - term: "Spinor"
+    definition: "Søylevektoren $\\chi = (a_+, a_-)^T$ som representerer en spinn-½-tilstand i basisen $\\{|{\\uparrow}\\rangle, |{\\downarrow}\\rangle\\}$."
+    section: "Spinn"
+  - term: "Paulimatrisene"
+    definition: "De tre dimensjonsløse $2\\times2$-matrisene $\\sigma_x$, $\\sigma_y$ og $\\sigma_z$, med $\\vec S = (\\hbar/2)\\vec\\sigma$ for spinn ½."
+    section: "Spinn"
+  - term: "Spinnretning"
+    definition: "Forventningsverdien $\\langle\\vec S\\rangle$. For spinn ½ har den lengden $\\hbar/2$, og tilstanden er spinn opp langs den. Retningen til selve $\\vec S$ er ingen observabel."
+    section: "Spinn"
 features:
   progress: true
   search: true

@@ -1,0 +1,495 @@
+---
+order: 6
+title: "Spinn"
+summary: "Elektronets indre dreieimpuls: magnetisk moment og Stern–Gerlach-eksperimentet, spinn ½ med spinorer og Paulimatrisene, måling langs en vilkårlig akse og Larmor-presesjon i et magnetfelt."
+importance: core
+updated: 2026-10-04
+---
+
+Elektronet har en dreieimpuls som ikke kommer av bevegelse i rommet. Den
+kalles <Term name="Spinn">spinnet</Term> $\vec S$, og kvantetallet er
+$s = \tfrac12$, en av de halvtallige verdiene som dreieimpulsalgebraen
+tillater og banedreieimpulsen ikke kan ha. Spinnet vises gjennom det
+magnetiske momentet som følger med det: i finstrukturen i atomspektra, i
+Zeeman-effekten og i Stern–Gerlach-eksperimentet, som splitter en stråle av
+sølvatomer i to. For spinn ½ er Hilbertrommet todimensjonalt, og alle
+operatorene er $2\times2$-matriser.
+
+<LearningGoals>
+
+- Forklare hvordan Stern–Gerlach-eksperimentet viser at elektronet har spinn $s = \tfrac12$.
+- Regne med spinorer og Paulimatrisene: forventningsverdier, spinnretningen og egenspinorer.
+- Finne sannsynlighetene når spinnet måles langs $x$, $y$, $z$ eller en vilkårlig akse $\hat n$.
+- Løse Schrödingerlikningen for et spinn i et konstant magnetfelt og vise at $\langle\vec S\rangle$ preseserer med Larmor-frekvensen.
+
+</LearningGoals>
+
+## Magnetisk moment
+
+En ladning $q$ med masse $m$ som går i en sirkel med radius $r$ og fart $v$,
+er en strømsløyfe med strømmen $I = qv/2\pi r$ og arealet $\pi r^2$. Det
+<Term name="Magnetisk moment">magnetiske momentet</Term> er
+$\mu = IA = \tfrac12 qvr$, og med $L = mvr$ blir det
+
+<Formula tex={"\\vec\\mu_L = \\frac{q}{2m}\\,\\vec L = \\gamma\\vec L"} caption={"Det magnetiske momentet til en ladning i bane. $\\gamma = q/2m$ er det gyromagnetiske forholdet."} />
+
+I et magnetfelt $\vec B$ har momentet energien $H = -\vec\mu\cdot\vec B$, og
+feltet virker på det med dreiemomentet $\vec\tau = \vec\mu\times\vec B$.
+Dreiemomentet endrer dreieimpulsen:
+
+$$
+\frac{d\vec L}{dt} = \gamma\,\vec L\times\vec B = \vec\omega_L\times\vec L, \allowbreak\qquad \vec\omega_L = -\gamma\vec B .
+$$
+
+$\vec L$ dreier altså rundt feltet med fast vinkel mot det. Dette er
+<Term name="Larmor-presesjon">Larmor-presesjon</Term>, og vinkelfrekvensen
+$\omega_L = |\gamma| B$ er Larmor-frekvensen. I et inhomogent felt virker det
+i tillegg en kraft, minus gradienten av energien:
+
+$$
+\vec F = \nabla(\vec\mu\cdot\vec B).
+$$
+
+I kvantemekanikken er $\vec\mu_L = (q/2m)\vec L$ en operator, og den arver
+kvantiseringen av $\vec L$. For elektronet er $q = -e$, og med
+<Term name="Bohr-magneton">Bohr-magnetonet</Term>
+
+<Formula tex={"\\mu_B = \\frac{e\\hbar}{2m_e} = 9{,}27\\cdot10^{-24}\\ \\text{J/T} \\allowbreak = 5{,}79\\cdot10^{-5}\\ \\text{eV/T}"} caption={"Bohr-magnetonet, den naturlige enheten for magnetiske momenter i atomer."} />
+
+er $|\vec\mu_L| = \mu_B\sqrt{l(l + 1)}$ og $(\mu_L)_z = -\mu_B m$ med
+$m = -l, \dots, l$. Momentet kan bare stå i $2l + 1$ vinkler mot $z$-aksen.
+
+## Stern–Gerlach-eksperimentet
+
+I <Term name="Stern–Gerlach-eksperimentet">Stern–Gerlach-eksperimentet</Term>
+går en stråle av nøytrale atomer langs $y$-aksen gjennom en magnet med
+feltet
+
+$$
+\vec B = ax\,\hat x - (B_0 + az)\,\hat z ,
+$$
+
+der den homogene delen $B_0$ er stor sammenlignet med variasjonen $az$ over
+strålen. Feltet oppfyller $\nabla\cdot\vec B = a - a = 0$. Kraften blir
+
+$$
+\vec F = \nabla\bigl(a\mu_x x - \mu_z(B_0 + az)\bigr) \allowbreak = a\,(\mu_x\hat x - \mu_z\hat z).
+$$
+
+Det sterke feltet $B_0\hat z$ får $\vec\mu$ til å presesere raskt rundt
+$z$-aksen. Da midles $\mu_x$ til null, mens $\mu_z$ er konstant, og igjen
+står $F_z = -a\mu_z$. Hvert atom avbøyes i $z$-retningen etter verdien av
+$\mu_z$.
+
+Klassisk kan $\mu_z$ ha enhver verdi mellom $-|\vec\mu|$ og $|\vec\mu|$, og
+strålen burde bli en sammenhengende stripe på skjermen. Stern og Gerlach
+brukte sølvatomer og fikk to adskilte flekker. En banedreieimpuls kan ikke
+forklare det, for $2l + 1$ verdier av $m$ gir et oddetall stråler. Sølv har
+47 elektroner. 46 av dem er paret slik at dreieimpulsene opphever hverandre,
+og det siste er i en $5s$-tilstand med $l = 0$. Atomet har altså ingen
+banedreieimpuls. Elektronet må derfor ha en egen dreieimpuls med
+$2s + 1 = 2$ verdier av $m$, og det gir $s = \tfrac12$.
+
+## Spinnoperatoren
+
+Spinnet er en dreieimpuls. Komponentene oppfyller
+$[S_i, S_j] = i\hbar\sum_k\varepsilon_{ijk}S_k$, og alt som fulgte av
+kommutatorene, gjelder:
+
+$$
+S^2|s, m\rangle = \hbar^2 s(s + 1)\,|s, m\rangle, \allowbreak\qquad S_z|s, m\rangle = \hbar m\,|s, m\rangle,
+$$
+
+med $S_\pm = S_x \pm iS_y$ som heve- og senkeoperator. Egenvektorene er ingen
+funksjoner av $\theta$ og $\varphi$, så kravet om entydighet som gjorde $l$
+til et heltall, gjelder ikke. Elektronet, protonet og nøytronet har alle
+$s = \tfrac12$, med $m = \pm\tfrac12$, som kalles spinn opp og spinn ned.
+
+Det magnetiske momentet til elektronspinnet er
+
+<Formula tex={"\\vec\\mu_s = -g_e\\frac{e}{2m_e}\\,\\vec S = \\gamma_e\\vec S, \\allowbreak\\qquad g_e = 2{,}0023"} caption={"Det magnetiske momentet til elektronspinnet. $\\gamma_e < 0$, så $\\vec\\mu_s$ peker motsatt av $\\vec S$."} />
+
+<Term name="g-faktor">g-faktoren</Term> $g_e$ er nesten nøyaktig 2, dobbelt
+så stor som for banebevegelsen, så $(\mu_s)_z = \mp\tfrac12 g_e\mu_B \approx \mp\mu_B$
+for spinn opp og ned. Protonet og nøytronet har også spinn ½, men momentet
+skalerer med $1/m$ og er av størrelsesorden en tusendel av elektronets. Det
+er elektronene som bestemmer hvordan et atom oppfører seg i et magnetfelt.
+
+## Spinn ½
+
+For $s = \tfrac12$ er det to egentilstander for $S^2$ og $S_z$,
+$|\tfrac12, \tfrac12\rangle = |{\uparrow}\rangle$ og
+$|\tfrac12, -\tfrac12\rangle = |{\downarrow}\rangle$. De er ortonormerte og
+fullstendige, $|{\uparrow}\rangle\langle{\uparrow}| + |{\downarrow}\rangle\langle{\downarrow}| = \mathbb{1}$.
+Stigeformelen gir $S_+|{\downarrow}\rangle = \hbar|{\uparrow}\rangle$,
+$S_-|{\uparrow}\rangle = \hbar|{\downarrow}\rangle$ og
+$S_+|{\uparrow}\rangle = S_-|{\downarrow}\rangle = 0$. En vilkårlig
+spinntilstand er
+
+$$
+|\chi\rangle = a_+|{\uparrow}\rangle + a_-|{\downarrow}\rangle, \allowbreak\qquad |a_+|^2 + |a_-|^2 = 1,
+$$
+
+der $a_\pm = \langle\pm|\chi\rangle$ er amplitudene for å måle
+$S_z = \pm\hbar/2$.
+
+I basisen $\{|{\uparrow}\rangle, |{\downarrow}\rangle\}$ er tilstanden en
+søylevektor, en <Term name="Spinor">spinor</Term>:
+
+$$
+\chi = \begin{pmatrix} a_+ \\ a_- \end{pmatrix} = a_+\chi_+ + a_-\chi_-, \allowbreak\qquad \chi_+ = \begin{pmatrix} 1 \\ 0 \end{pmatrix}, \allowbreak\quad \chi_- = \begin{pmatrix} 0 \\ 1 \end{pmatrix}.
+$$
+
+Bravektoren er radvektoren $\chi^\dagger = (a_+^*, a_-^*)$, og en operator
+er en $2\times2$-matrise med elementene $\langle m|\hat F|n\rangle$ der
+$m, n = \pm$. $S_z$ er diagonal med $\pm\hbar/2$. Stigeformelen gir
+
+$$
+S_+ = \hbar\begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}, \allowbreak\qquad S_- = \hbar\begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix},
+$$
+
+og $S_x = (S_+ + S_-)/2$, $S_y = (S_+ - S_-)/2i$. Alle tre komponentene har
+faktoren $\hbar/2$ foran, og det som står igjen, er
+<Term name="Paulimatrisene">Paulimatrisene</Term>:
+
+<Formula tex={"\\vec S = \\frac{\\hbar}{2}\\,\\vec\\sigma, \\allowbreak\\quad \\sigma_x = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}, \\allowbreak\\quad \\sigma_y = \\begin{pmatrix} 0 & -i \\\\ i & 0 \\end{pmatrix}, \\allowbreak\\quad \\sigma_z = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}"} caption={"Spinnoperatoren for spinn ½ i basisen $\\{|{\\uparrow}\\rangle, |{\\downarrow}\\rangle\\}$."} />
+
+Ganger du ut matrisene parvis, får du
+
+<Formula tex={"\\sigma_i\\sigma_j = \\delta_{ij}\\,\\mathbb{1} + i\\sum_k \\varepsilon_{ijk}\\,\\sigma_k"} caption={"Produktet av to Paulimatriser. Det gir $\\sigma_i^2 = \\mathbb{1}$, kommutatoren $[\\sigma_i, \\sigma_j] = 2i\\sum_k\\varepsilon_{ijk}\\sigma_k$ og antikommutatoren $\\{\\sigma_i, \\sigma_j\\} = 2\\delta_{ij}\\mathbb{1}$."} />
+
+Med $\vec S = (\hbar/2)\vec\sigma$ er kommutatoren den samme som for en
+dreieimpuls. Siden $\sigma_i^2 = \mathbb{1}$, er
+$S^2 = \tfrac34\hbar^2\,\mathbb{1}$, som det skal være for $s = \tfrac12$.
+
+### Spinnretningen
+
+En forventningsverdi er $\langle F\rangle = \chi^\dagger F\chi$, en rad
+ganger en matrise ganger en søyle. For de tre komponentene av spinnet gir det
+
+$$
+\begin{aligned}
+\langle S_x\rangle &= \hbar\,\mathrm{Re}(a_+^*a_-), \\
+\langle S_y\rangle &= \hbar\,\mathrm{Im}(a_+^*a_-), \\
+\langle S_z\rangle &= \tfrac{\hbar}{2}\bigl(|a_+|^2 - |a_-|^2\bigr).
+\end{aligned}
+$$
+
+Vektoren $\langle\vec S\rangle$ kalles
+<Term name="Spinnretning">spinnretningen</Term>. For $\chi_+$ er
+$\langle\vec S\rangle = \tfrac\hbar2\hat z$. Retningen til selve $\vec S$
+er ingen observabel, fordi komponentene ikke kommuterer og ikke kan ha
+skarpe verdier samtidig.
+
+## Måling langs andre akser
+
+Måler du $S_z$, får du $+\hbar/2$ med sannsynlighet $|a_+|^2$ og $-\hbar/2$
+med sannsynlighet $|a_-|^2$. For å måle $S_x$ trengs egenverdiene og
+egenvektorene til $S_x$. Egenverdiene er løsningene av
+$\det(S_x - \lambda\mathbb{1}) = 0$:
+
+$$
+\begin{vmatrix} -\lambda & \hbar/2 \\ \hbar/2 & -\lambda \end{vmatrix} = \lambda^2 - \frac{\hbar^2}{4} = 0,
+$$
+
+så $\lambda = \pm\hbar/2$, som for $S_z$. Egenvektorene har $a_- = \pm a_+$.
+Regningen for $S_y$ er den samme:
+
+<Formula tex={"\\chi_\\pm^{(x)} = \\frac{1}{\\sqrt2}\\begin{pmatrix} 1 \\\\ \\pm 1 \\end{pmatrix}, \\allowbreak\\qquad \\chi_\\pm^{(y)} = \\frac{1}{\\sqrt2}\\begin{pmatrix} 1 \\\\ \\pm i \\end{pmatrix}"} caption={"Egenspinorene til $S_x$ og $S_y$ med egenverdiene $\\pm\\hbar/2$."} />
+
+Sannsynligheten for $S_x = \pm\hbar/2$ er
+$|\chi_\pm^{(x)\dagger}\chi|^2 = \tfrac12|a_+ \pm a_-|^2$.
+
+Langs en vilkårlig akse
+$\hat n = (\sin\theta\cos\varphi, \sin\theta\sin\varphi, \cos\theta)$ er
+spinnkomponenten
+
+$$
+S_n = \hat n\cdot\vec S \allowbreak = \frac{\hbar}{2}\begin{pmatrix} \cos\theta & \sin\theta\,e^{-i\varphi} \\ \sin\theta\,e^{i\varphi} & -\cos\theta \end{pmatrix}.
+$$
+
+Produktregelen for Paulimatrisene gir $(\hat n\cdot\vec\sigma)^2 = \mathbb{1}$,
+så egenverdiene er igjen $\pm\hbar/2$.
+
+<Statement kind="theorem" name="Spinn opp langs $\hat n$" id="spinn-opp-langs-n">
+
+$$
+\chi_+^{(n)} = \begin{pmatrix} \cos\frac\theta2 \\ e^{i\varphi}\sin\frac\theta2 \end{pmatrix}, \allowbreak\qquad \langle\vec S\rangle = \frac{\hbar}{2}\,\hat n .
+$$
+
+$\chi_+^{(n)}$ er egenspinoren til $S_n$ med egenverdien $+\hbar/2$. Enhver
+normert spinor er lik $\chi_+^{(n)}$ for én retning $\hat n$, bortsett fra en
+fasefaktor, så hver spinntilstand er spinn opp langs spinnretningen sin.
+
+</Statement>
+
+Den siste påstanden følger av normeringen. Velg $\cos\tfrac\theta2 = |a_+|$
+og $\varphi$ lik faseforskjellen mellom $a_-$ og $a_+$. Da er
+$\sin\tfrac\theta2 = |a_-|$. En måling av $S_z$ på $\chi_+^{(n)}$ gir
+$+\hbar/2$ med sannsynlighet $\cos^2\tfrac\theta2$, der $\theta$ er vinkelen
+mellom spinnretningen og $z$-aksen. Ingen akse er spesiell. Måles spinnet
+langs en akse som danner vinkelen $\theta$ med spinnretningen, er
+sannsynligheten for $+\hbar/2$ derfor $\cos^2\tfrac\theta2$.
+
+En måling endrer tilstanden. Er spinnet i $\chi_+$, gir $S_z$ alltid
+$+\hbar/2$, mens $S_x$ gir $\pm\hbar/2$ med sannsynlighet $\tfrac12$ hver.
+Gir $S_x$-målingen $+\hbar/2$, er tilstanden etterpå $\chi_+^{(x)}$, og en ny
+måling av $S_z$ gir $\pm\hbar/2$ med like stor sannsynlighet. Resultatet av
+den første $S_z$-målingen er borte. En Stern–Gerlach-magnet gjør nettopp en
+slik måling. Hvert atom går ut i strålen som svarer til måleverdien, og står
+etterpå i egentilstanden for den.
+
+<Simulation
+  src="/sims/stern-gerlach.js"
+  title="Tre Stern–Gerlach-magneter etter hverandre"
+  caption="Hver magnet måler spinnet langs sin akse og sender atomet ut øverst ved $+\hbar/2$ og nederst ved $-\hbar/2$. Magnet 1 og 3 måler $S_z$, og magnet 1 stopper spinn ned. Magnet 2 måler langs $\hat n$, som danner vinkelen $\theta$ med $z$-aksen. Pilene viser aksene sett langs strålen, med $z$ opp og $x$ til høyre. Prosentene er sannsynligheten for hver utgang for et atom som kommer inn i magneten. Ved $\theta = 90^\circ$ måler magnet 2 $S_x$, og magnet 3 gir spinn ned for halvparten av atomene."
+  height={320}
+/>
+
+<Example title="Spinnretningen til en spinor">
+
+En spinn-½-partikkel er i tilstanden
+
+$$
+\chi = \frac{1}{\sqrt6}\begin{pmatrix} 1 + i \\ 2 \end{pmatrix}.
+$$
+
+Finn sannsynlighetene for $\pm\hbar/2$ når $S_z$ og når $S_x$ måles, og finn
+spinnretningen.
+
+<Solution>
+
+For $S_z$ er sannsynlighetene $|a_+|^2 = |1 + i|^2/6 = \tfrac13$ og
+$|a_-|^2 = 4/6 = \tfrac23$. For $S_x$ gir $\tfrac12|a_+ \pm a_-|^2$
+
+$$
+P_+^{(x)} = \frac{|3 + i|^2}{12} = \frac56, \allowbreak\qquad P_-^{(x)} = \frac{|{-1} + i|^2}{12} = \frac16 .
+$$
+
+Spinnretningen: $a_+^*a_- = (1 - i)\cdot 2/6 = (1 - i)/3$, så
+
+$$
+\langle\vec S\rangle = \hbar\Bigl(\frac13, -\frac13, \frac12\Bigl(\frac13 - \frac23\Bigr)\Bigr) \allowbreak = \frac{\hbar}{6}\,(2, -2, -1).
+$$
+
+Lengden er $\tfrac\hbar6\sqrt{4 + 4 + 1} = \tfrac\hbar2$, som for enhver
+spinor. Vinkelen med $z$-aksen er $\cos\theta = -\tfrac13$, og
+$\cos^2\tfrac\theta2 = \tfrac12(1 + \cos\theta) = \tfrac13$ stemmer med
+$P(S_z = +\hbar/2)$.
+
+<Answer>$P(S_z = \pm\hbar/2) = \tfrac13, \tfrac23$; $P(S_x = \pm\hbar/2) = \tfrac56, \tfrac16$; $\langle\vec S\rangle = \tfrac{\hbar}{6}(2, -2, -1)$</Answer>
+
+</Solution>
+
+</Example>
+
+<Example label="Eksamensoppgave" title="Hvilken egenspinor?">
+<ExamRef id="2025-des" task="1 g" />
+
+g) Consider that the initial spin state is
+$\chi = A\begin{pmatrix} 3 - i \\ 2 \end{pmatrix}$.
+
+<Quiz
+  question={"Which eigenspinor leads to the corresponding eigenvalue $-\\frac{\\hbar}{2}$ with a probability $P = \\frac{5}{14}$?"}
+  options={[
+    "$\\chi_+^z = \\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix}$",
+    "$\\chi_-^x = \\frac{1}{\\sqrt2}\\begin{pmatrix} 1 \\\\ -1 \\end{pmatrix}$",
+    "$\\chi_+^y = \\frac{1}{\\sqrt2}\\begin{pmatrix} 1 \\\\ i \\end{pmatrix}$",
+    "$\\chi_-^z = \\begin{pmatrix} 0 \\\\ 1 \\end{pmatrix}$",
+    "$\\chi_-^y = \\frac{1}{\\sqrt2}\\begin{pmatrix} 1 \\\\ -i \\end{pmatrix}$"
+  ]}
+  answer={4}
+  explanation={"Normeringen gir $|A|^2(10 + 4) = 1$, altså $A = 1/\\sqrt{14}$. Sannsynligheten for $-\\hbar/2$ er $|\\chi_-^\\dagger\\chi|^2$. For $S_z$ er den $4/14$, for $S_x$ er den $|3 - i - 2|^2/28 = 2/28$, og for $S_y$ er den $|3 - i + 2i|^2/28 = |3 + i|^2/28 = 5/14$. A og C hører til egenverdien $+\\hbar/2$."}
+/>
+
+</Example>
+
+## Elektron i magnetfelt
+
+Et elektron i ro i feltet $\vec B = B_0\hat z$ har Hamiltonoperatoren
+
+$$
+\hat H = -\vec\mu_s\cdot\vec B = -\gamma_e B_0 S_z = \omega_L S_z ,
+$$
+
+der Larmor-frekvensen er $\omega_L = -\gamma_e B_0 = g_e eB_0/2m_e$.
+
+$\hat H$ er diagonal, med energien $E_\pm = \pm\hbar\omega_L/2$ for $\chi_\pm$.
+Spinn ned har lavest energi, fordi $\vec\mu_s$ da peker langs feltet. Hver
+komponent får sin egen fase, og løsningen av
+$i\hbar\,\partial\chi/\partial t = H\chi$ er
+
+$$
+\chi(t) = \begin{pmatrix} a_+e^{-i\omega_L t/2} \\ a_-e^{i\omega_L t/2} \end{pmatrix}.
+$$
+
+Produktet $a_+^*a_-$ får faktoren $e^{i\omega_L t}$, og formlene for
+spinnretningen gir
+
+$$
+\begin{aligned}
+\langle S_x\rangle + i\langle S_y\rangle &= \hbar\,a_+^*a_-\,e^{i\omega_L t}, \\
+\langle S_z\rangle &= \tfrac{\hbar}{2}\bigl(|a_+|^2 - |a_-|^2\bigr).
+\end{aligned}
+$$
+
+$\langle S_z\rangle$ er konstant, mens $\langle S_x\rangle$ og
+$\langle S_y\rangle$ går rundt $z$-aksen med vinkelfrekvensen $\omega_L$.
+Spinnretningen preseserer rundt feltet med Larmor-frekvensen, slik et
+klassisk magnetisk moment gjør. Med kommutatorene for $\vec S$ gir
+$d\langle F\rangle/dt = (i/\hbar)\langle[\hat H, \hat F]\rangle$ den samme
+likningen som for $\vec L$:
+
+<Formula tex={"\\frac{d\\langle\\vec S\\rangle}{dt} = \\vec\\omega_L\\times\\langle\\vec S\\rangle, \\allowbreak\\qquad \\vec\\omega_L = -\\gamma_e\\vec B"} caption={"Larmor-presesjon av spinnretningen. For elektronet peker $\\vec\\omega_L$ langs feltet, og $\\omega_L = g_e eB/2m_e$."} />
+
+For $B_0 = 1$ T er $\omega_L = 1{,}76\cdot10^{11}\ \text{s}^{-1}$, en
+frekvens på 28 GHz.
+
+<Example label="Eksamensoppgave" title="Spinn i et magnetfelt">
+<ExamRef id="2023-des" task="3 a–c" />
+
+Consider a spin $\frac12$ particle in a constant magnetic field
+$\mathbf B = B\hat e_z$, described by the Hamiltonian
+
+$$
+\hat H = -\frac{2\mu_B B}{\hbar}\hat S_z, \qquad (5)
+$$
+
+where $\hat S_z$ is the operator for the $z$-component of the spin, and
+$\mu_B$ is the Bohr magneton.
+
+a) Solve the time-dependent Schrödinger equation to find the two
+eigenenergies and eigenstates of the system. You are free to use either
+abstract spin state vectors or spin spinors. *Hint:* The Pauli matrices are
+given in the formula sheet.
+
+b) At time $t = 0$, the spin is measured to be in the state
+
+$$
+|\chi\rangle = \frac{1}{\sqrt3}|{\uparrow}\rangle - \sqrt{\frac23}\,i|{\downarrow}\rangle \quad\allowbreak\Leftrightarrow\quad \chi = \frac{1}{\sqrt3}\begin{pmatrix} 1 \\ -i\sqrt2 \end{pmatrix}, \enspace (6)
+$$
+
+where $|{\uparrow}\rangle$ and $|{\downarrow}\rangle$ are the states with spin
+up and down with respect to the $z$ direction. Calculate the spin and energy
+expectation values $\langle\mathbf S\rangle$ and $\langle H\rangle$ for this
+state.
+
+c) What is the spin state at times $t > 0$?
+
+<Solution>
+
+a) Med $\hat S_z = \tfrac\hbar2\sigma_z$ er $\hat H = -\mu_B B\,\sigma_z$,
+som er diagonal. Settes $\chi\,e^{-iEt/\hbar}$ inn i
+$i\hbar\,\partial\chi/\partial t = \hat H\chi$, står egenverdilikningen
+$\hat H\chi = E\chi$ igjen, med løsningene $E_+ = -\mu_B B$ for $\chi_+$ og
+$E_- = +\mu_B B$ for $\chi_-$.
+
+b) Her er $a_+ = 1/\sqrt3$ og $a_- = -i\sqrt2/\sqrt3$, så
+$a_+^*a_- = -i\sqrt2/3$. Formlene for spinnretningen gir
+
+$$
+\langle S_x\rangle = 0, \allowbreak\quad \langle S_y\rangle = -\frac{\sqrt2}{3}\hbar, \allowbreak\quad \langle S_z\rangle = \frac\hbar2\Bigl(\frac13 - \frac23\Bigr) = -\frac\hbar6 .
+$$
+
+Energien: $\langle H\rangle = -(2\mu_B B/\hbar)\langle S_z\rangle = \mu_B B/3$.
+Kontroll: $\tfrac13 E_+ + \tfrac23 E_- = \mu_B B/3$.
+
+c) Hver komponent får fasen $e^{-iE_\pm t/\hbar}$:
+
+$$
+\chi(t) = \tfrac{1}{\sqrt3}\begin{pmatrix} e^{i\mu_B Bt/\hbar} \\ -i\sqrt2\,e^{-i\mu_B Bt/\hbar} \end{pmatrix}.
+$$
+
+<Answer>a) $E_\pm = \mp\mu_B B$ med $\chi_\pm$. b) $\langle\mathbf S\rangle = -\tfrac\hbar6(2\sqrt2\,\hat e_y + \hat e_z)$, $\langle H\rangle = \mu_B B/3$. c) $\chi(t) = \tfrac{1}{\sqrt3}\bigl(e^{i\mu_B Bt/\hbar}, -i\sqrt2\,e^{-i\mu_B Bt/\hbar}\bigr)^T$</Answer>
+
+</Solution>
+
+</Example>
+
+<Example label="Eksamensoppgave" title="Spinnet etter en halv omdreining">
+<ExamRef id="2025-des" task="1 n–o" />
+
+n) At time $t = 0$, a particle with spin $\frac12$ is measured to be in the
+spin state
+
+$$
+\chi(t = 0) = \frac{1}{\sqrt2}\begin{pmatrix} 1 \\ 1 \end{pmatrix}, \qquad (13)
+$$
+
+a superposition of the energy eigenstates of the system Hamiltonian,
+
+$$
+H = \hbar\omega\begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}. \qquad (14)
+$$
+
+<Quiz
+  question={"What is $\\chi(t)$, that is, the spin state of the particle at time $t \\geq 0$?"}
+  options={[
+    "$\\chi(t) = \\frac{1}{\\sqrt2}\\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix}$",
+    "$\\chi(t) = \\begin{pmatrix} e^{-i\\omega t} \\\\ 0 \\end{pmatrix}$",
+    "$\\chi(t) = \\begin{pmatrix} 0 \\\\ e^{i\\omega t} \\end{pmatrix}$",
+    "$\\chi(t) = \\frac{1}{\\sqrt2}\\begin{pmatrix} e^{i\\omega t} \\\\ e^{-i\\omega t} \\end{pmatrix}$",
+    "$\\chi(t) = \\frac{1}{\\sqrt2}\\begin{pmatrix} e^{-i\\omega t} \\\\ e^{i\\omega t} \\end{pmatrix}$"
+  ]}
+  answer={4}
+  explanation={"$H$ er diagonal med $E_\\pm = \\pm\\hbar\\omega$, så komponentene får fasene $e^{\\mp i\\omega t}$, og $\\chi(t) = \\tfrac{1}{\\sqrt2}(e^{-i\\omega t}, e^{i\\omega t})^T$. D har fortegnene byttet om, og B og C mister den ene komponenten."}
+/>
+
+o) Again, consider the particle described by the Hamiltonian in Eq. (14),
+measured to be in the spin state in Eq. (13) at $t = 0$.
+
+<Quiz
+  question={"Assuming no measurements have been made since $t = 0$, which of the following statements is true?"}
+  options={[
+    "If you measure the spin along $x$, you will always get $S_x = \\hbar/2$.",
+    "At $t = \\frac{\\pi}{2\\omega}$ you are guaranteed to measure $S_x = -\\hbar/2$.",
+    "It is always impossible to know anything about the outcome of a measurement of $S_y$.",
+    "At $t = \\frac{\\pi}{2\\omega}$ you are guaranteed to measure $S_y = -\\hbar/2$.",
+    "If you measure the energy of the particle, you lose all information about the spin state of the particle."
+  ]}
+  answer={1}
+  explanation={"Ved $t = \\pi/2\\omega$ er $\\chi = \\tfrac{1}{\\sqrt2}(-i, i)^T = -i\\,\\chi_-^{(x)}$, en egentilstand for $S_x$ med egenverdien $-\\hbar/2$. Spinnretningen starter langs $x$ og dreier rundt $z$-aksen med $(E_+ - E_-)/\\hbar = 2\\omega$, så den har gått en halv omdreining. A gjelder bare ved $t = 0$, og ved $t = \\pi/2\\omega$ er tilstanden ingen egentilstand for $S_y$. Sannsynlighetene for $S_y$ kan alltid regnes ut, og etter en energimåling er spinnet i $\\chi_+$ eller $\\chi_-$, som er kjente tilstander."}
+/>
+
+</Example>
+
+## Sjekk deg selv
+
+<Quiz
+  question={"Et atom har $l = 1$ og spinn null. I hvor mange stråler splitter en Stern–Gerlach-magnet en stråle av slike atomer?"}
+  options={[
+    "$1$",
+    "$2$",
+    "$3$",
+    "En sammenhengende stripe"
+  ]}
+  answer={2}
+  explanation={"$\\mu_z = -\\mu_B m$ med $m = -1, 0, 1$ gir tre stråler, og atomene med $m = 0$ går rett fram. Et heltallig $l$ gir alltid et oddetall stråler, og det var derfor to stråler for sølv krevde spinn ½."}
+/>
+
+<SelfCheck question={"Vis at $(\\hat n\\cdot\\vec\\sigma)^2 = \\mathbb{1}$ for en enhetsvektor $\\hat n$, og forklar hvorfor $S_n$ har egenverdiene $\\pm\\hbar/2$."}>
+
+Produktregelen gir
+
+$$
+(\hat n\cdot\vec\sigma)^2 = \sum_{i,j} n_i n_j\,\sigma_i\sigma_j \allowbreak = \sum_i n_i^2\,\mathbb{1} \allowbreak + i\sum_{i,j,k}\varepsilon_{ijk}\,n_i n_j\,\sigma_k = \mathbb{1},
+$$
+
+fordi $|\hat n| = 1$ og $\varepsilon_{ijk}$ skifter fortegn når $i$ og $j$
+bytter plass, mens $n_i n_j$ ikke gjør det. En egenverdi $\lambda$ av
+$\hat n\cdot\vec\sigma$ må da oppfylle $\lambda^2 = 1$. Sporet av matrisen er
+null, så egenverdiene er $+1$ og $-1$, og $S_n = (\hbar/2)\,\hat n\cdot\vec\sigma$
+har $\pm\hbar/2$.
+
+</SelfCheck>
+
+<KeyTakeaways>
+
+- Et magnetisk moment $\vec\mu = \gamma\vec L$ har energien $-\vec\mu\cdot\vec B$. I et homogent felt preseserer det med Larmor-frekvensen $|\gamma|B$, og i et inhomogent felt virker kraften $\nabla(\vec\mu\cdot\vec B)$.
+- Stern–Gerlach-eksperimentet splitter sølvatomer i to stråler. Et heltallig $l$ gir et oddetall, så elektronet har spinn $s = \tfrac12$, med $\vec\mu_s = -g_e(e/2m_e)\vec S$ og $g_e \approx 2$.
+- For spinn ½ er tilstanden en spinor $\chi = (a_+, a_-)^T$, og $\vec S = (\hbar/2)\vec\sigma$ med Paulimatrisene, der $\sigma_i\sigma_j = \delta_{ij}\mathbb{1} + i\sum_k\varepsilon_{ijk}\sigma_k$.
+- Langs enhver akse gir en måling $\pm\hbar/2$. Sannsynligheten er $|\chi_\pm^\dagger\chi|^2$ med egenspinoren for aksen, for $S_x$ altså $\tfrac12|a_+ \pm a_-|^2$.
+- Enhver spinor er spinn opp langs spinnretningen $\hat n$, med $\langle\vec S\rangle = \tfrac\hbar2\hat n$. Langs en akse med vinkelen $\theta$ fra $\hat n$ er sannsynligheten for $+\hbar/2$ lik $\cos^2\tfrac\theta2$.
+- I feltet $B_0\hat z$ er $\hat H = \omega_L S_z$ med $\omega_L = g_e eB_0/2m_e$, og $\langle\vec S\rangle$ preseserer rundt feltet med $\omega_L$.
+
+</KeyTakeaways>
