@@ -26,12 +26,7 @@ $\Phi(p, t)$ er bølgefunksjonen.
 
 Forventningsverdien $\langle F \rangle = \int \Psi^* \hat F\, \Psi\, d\tau$
 avhenger av tida fordi $\Psi$ gjør det, og eventuelt fordi $\hat F$ gjør
-det. Deriver under integraltegnet, sett inn Schrödingerlikningen for
-$\partial\Psi/\partial t$ og bruk at $\hat H$ er hermitesk.
-
-<Derivation title="Utledning">
-
-Produktregelen gir tre ledd,
+det. Deriver under integraltegnet. Produktregelen gir tre ledd,
 
 $$
 \frac{d}{dt}\langle F \rangle = \int \Bigl[(\partial_t\Psi^*)\,\hat F\,\Psi \allowbreak + \Psi^*\,(\partial_t\hat F)\,\Psi \allowbreak + \Psi^*\,\hat F\,\partial_t\Psi\Bigr]\,d\tau.
@@ -48,10 +43,8 @@ $$
 \end{aligned}
 $$
 
-fordi $\hat H$ er hermitesk: $\int (\hat H\Psi)^*\,\chi\, d\tau = \int
+ettersom $\hat H$ er hermitesk: $\int (\hat H\Psi)^*\,\chi\, d\tau = \int
 \Psi^*\,\hat H\chi\, d\tau$ for enhver $\chi$, her $\chi = \hat F\Psi$.
-
-</Derivation>
 
 <Formula tex={"\\dfrac{d}{dt}\\langle F \\rangle = \\dfrac{i}{\\hbar}\\,\\bigl\\langle [\\hat H, \\hat F] \\bigr\\rangle + \\Bigl\\langle \\dfrac{\\partial \\hat F}{\\partial t} \\Bigr\\rangle"} caption={"Tidsutviklingen til forventningsverdien av $F$, også kalt Ehrenfests generaliserte teorem."} />
 
@@ -69,7 +62,8 @@ konstant, som impulsen til en fri klassisk partikkel.
 
 For en partikkel i et potensial, $\hat H = \hat p^2/2m + V(x)$, gir formelen
 med $\hat F = \hat x$ og $\hat F = \hat p$ to bevegelseslikninger for
-forventningsverdiene. Begge kommutatorene følger av $[\hat x, \hat p] = i\hbar$.
+forventningsverdiene. Den første kommutatoren følger av
+$[\hat x, \hat p] = i\hbar$, den andre av $\hat p = (\hbar/i)\,\partial/\partial x$.
 
 <Derivation title="Kommutatorene">
 
@@ -92,7 +86,8 @@ $$
 \end{aligned}
 $$
 
-Sett inn i $d\langle F \rangle/dt = (i/\hbar)\langle[\hat H, \hat F]\rangle$.
+Med $\hat F = \hat x$ blir $d\langle x \rangle/dt = (i/\hbar)(-i\hbar/m)\langle p \rangle = \langle p \rangle/m$.
+Med $\hat F = \hat p$ blir $d\langle p \rangle/dt = (i/\hbar)\,i\hbar\,\langle V' \rangle = -\langle V' \rangle$.
 
 </Derivation>
 
@@ -112,15 +107,18 @@ har samme form som Newtons likninger $dx/dt = p/m$ og $dp/dt = -V'(x)$.
 Det ser ut som om $\langle x \rangle$ følger den klassiske banen, men
 høyresiden i den andre likningen er forventningsverdien av kraften,
 $\langle F(x) \rangle$, og ikke kraften i middelposisjonen,
-$F(\langle x \rangle)$. Rekkeutvikling om $\langle x \rangle$ viser
-forskjellen:
+$F(\langle x \rangle)$. Rekkeutvikle kraften om $\langle x \rangle$,
+$F(x) = F(\langle x \rangle) + (x - \langle x \rangle)\,F'(\langle x \rangle) + \tfrac12 (x - \langle x \rangle)^2 F''(\langle x \rangle) + \dots$,
+og ta forventningsverdien. Det lineære leddet faller bort, ettersom
+$\langle x - \langle x \rangle \rangle = 0$, og
+$\langle (x - \langle x \rangle)^2 \rangle = (\Delta x)^2$:
 
 $$
 \langle F(x) \rangle = F(\langle x \rangle) + \tfrac12\,(\Delta x)^2\,F''(\langle x \rangle) + \dots
 $$
 
-Korreksjonen vokser med bredden $\Delta x$ på bølgepakken og med hvor raskt
-kraften endrer seg. For en makroskopisk partikkel er $\Delta x$
+Korreksjonen vokser med bredden $\Delta x$ på bølgepakken og med krumningen
+$F''$ til kraften. For en makroskopisk partikkel er $\Delta x$
 forsvinnende liten, og klassisk mekanikk gjelder. Det samme gjelder en
 mikroskopisk partikkel i et potensial som varierer langsomt over
 $\Delta x$, slik som i en akselerator. I et lineært eller kvadratisk
@@ -154,13 +152,9 @@ You are free to use any formulation of quantum mechanics. Hint: Use the
 product rule.
 
 <Solution>
-Skriv forventningsverdien som et integral, $\langle F\rangle = \int \Psi^* \hat F \Psi\,d\tau$,
-og deriver med produktregelen. Tre ledd oppstår: ett der $\Psi^*$ deriveres,
-ett der $\Psi$ deriveres, og ett der $\hat F$ selv avhenger av tiden.
-
-Schrödingerligningen gir $\partial\Psi/\partial t = \hat H\Psi/(i\hbar)$, og
-den komplekskonjugerte gir $\partial\Psi^*/\partial t = -(\hat H\Psi)^*/(i\hbar)$.
-Sett inn:
+Skriv $\langle F\rangle = \int \Psi^* \hat F \Psi\,d\tau$ og deriver med produktregelen.
+Schrödingerlikningen gir $\partial\Psi/\partial t = \hat H\Psi/(i\hbar)$ og
+$\partial\Psi^*/\partial t = -(\hat H\Psi)^*/(i\hbar)$. Sett inn:
 
 $$
 \frac{d}{dt}\langle F\rangle = -\frac{1}{i\hbar}\int (\hat H\Psi)^* \hat F\Psi\,d\tau \allowbreak + \frac{1}{i\hbar}\int \Psi^* \hat F\hat H\Psi\,d\tau \allowbreak + \left\langle\frac{\partial\hat F}{\partial t}\right\rangle.
@@ -183,13 +177,18 @@ bare én slik tilstand, $\psi_n$. Er egenverdien
 $\hat F\psi_{ni} = f_n\psi_{ni}$ $g_n$ lineært uavhengige løsninger, og
 postulatet må presiseres.
 
-Utvid tilstanden i det ortonormerte egenfunksjonssettet,
+Utvikle tilstanden i det ortonormerte egenfunksjonssettet,
 $\Psi = \sum_n \sum_{i=1}^{g_n} c_{ni}\,\psi_{ni}$ med
 $c_{ni} = \int \psi_{ni}^*\,\Psi\,d\tau$. Forventningsverdien er på den ene
 siden $\sum_n P_n f_n$, med $P_n$ som sannsynligheten for å måle $f_n$. På
 den andre siden gir forventningsverdipostulatet
 $\int\Psi^*\hat F\Psi\,d\tau = \sum_n \bigl(\sum_i |c_{ni}|^2\bigr) f_n$.
-Begge gjelder for enhver $\Psi$, så sannsynligheten er summen over hele
+Byttes $\hat F$ ut med $G(\hat F)$ for en vilkårlig funksjon $G$, har
+operatoren de samme egenfunksjonene med egenverdiene $G(f_n)$, og det samme
+regnestykket gir
+$\sum_n P_n\,G(f_n) = \sum_n \bigl(\sum_i |c_{ni}|^2\bigr) G(f_n)$.
+Samme argument som for posisjonstettheten, med en $G$ som plukker ut
+egenverdien $f_n$, gir $P_n = \sum_i |c_{ni}|^2$, sannsynligheten for hele
 <Term name="Egenrom">egenrommet</Term>.
 
 <Formula tex={"P_n = \\sum_{i=1}^{g_n} |c_{ni}|^2 = \\lVert \\Psi_n \\rVert^2"} caption={"Måleutfallet $f_n$ har sannsynligheten til hele egenrommet. $\\Psi_n = \\sum_i c_{ni}\\,\\psi_{ni}$ er delen av $\\Psi$ som er forenlig med $f_n$."} />
@@ -201,8 +200,8 @@ $\Psi_n / \lVert \Psi_n \rVert$.
 
 </Statement>
 
-Delen av $\Psi$ som ikke er forenlig med $f_n$, fjernes. Det er dette som
-kalles <Term name="Kollaps">kollapsen</Term>. Vektene innenfor egenrommet
+At målingen fjerner delen av $\Psi$ som ikke er forenlig med $f_n$, kalles
+<Term name="Kollaps">kollapsen</Term>. Vektene innenfor egenrommet
 arves fra tilstanden før målingen, så målingen plukker ikke en vilkårlig
 egentilstand med riktig egenverdi.
 
@@ -242,9 +241,11 @@ samtidig; slike observable kalles
 <Term name="Kompatible observable">kompatible</Term>. I hydrogen er $E$,
 $L^2$ og $L_z$ kompatible med felles egenfunksjoner $\psi_{nlm}$: en
 energimåling fastlegger $n$, en måling av $L^2$ deretter $l$, og en måling
-av $L_z$ til slutt $m$. Kommuterer operatorene ikke, som $\hat x$ og
-$\hat p$, finnes ingen felles egenfunksjoner, og en måling av den ene
-ødelegger en skarp verdi for den andre.
+av $L_z$ til slutt $m$. Kommuterer operatorene ikke, finnes det ikke et
+fullstendig sett felles egenfunksjoner. For $\hat x$ og $\hat p$ finnes ingen i
+det hele tatt, ettersom en felles egenfunksjon $\psi$ ville gitt
+$(\hat x\hat p - \hat p\hat x)\psi = 0$, mens kommutatoren gir $i\hbar\psi$. En
+måling av den ene ødelegger en skarp verdi for den andre.
 
 <Example label="Eksamensoppgave" title="Måling i en todimensjonal brønn">
 <ExamRef id="2024-des" task="1 i" />
@@ -295,9 +296,11 @@ egenfunksjonene kan ikke normeres til 1. I stedet velges $A$ slik at
 
 <Formula tex={"\\int_{-\\infty}^{\\infty} \\psi_{p'}^*(x)\\,\\psi_p(x)\\,dx = \\delta(p - p')"} caption={"Deltafunksjonsnormering. Motstykket til $\\int \\psi_{n'}^*\\psi_n\\,dx = \\delta_{nn'}$ for et diskret spektrum."} />
 
-Med integralframstillingen $\delta(y) = (2\pi)^{-1}\int e^{iyx}\,dx$ blir
-venstresiden $|A|^2 \int e^{i(p - p')x/\hbar}\,dx = 2\pi\hbar\,|A|^2\,
-\delta(p - p')$, så $A = (2\pi\hbar)^{-1/2}$
+Integralframstillingen er $\delta(y) = (2\pi)^{-1}\int e^{iyx}\,dx$. Med
+$y = (p - p')/\hbar$ er
+$\int e^{i(p - p')x/\hbar}\,dx = 2\pi\,\delta\bigl((p - p')/\hbar\bigr) = 2\pi\hbar\,\delta(p - p')$,
+ettersom $\delta(u/\hbar) = \hbar\,\delta(u)$. Venstresiden blir
+$2\pi\hbar\,|A|^2\,\delta(p - p')$, så $A = (2\pi\hbar)^{-1/2}$
 (<FormulaRef id="impuls-egenfunksjoner" />).
 
 Posisjonsoperatoren har også et kontinuerlig spektrum.
@@ -332,7 +335,7 @@ $\delta(x - x')$.
 
 Med impulsegenfunksjonene som basis er utviklingen av $\Psi$ et
 fourierintegral, $\Psi(x, t) = \int \Phi(p, t)\,\psi_p(x)\,dp$, og
-koeffisienten finner vi ved å projisere på $\psi_p$.
+koeffisienten finner du ved å projisere på $\psi_p$.
 
 <Formula tex={"\\Phi(p, t) = \\int_{-\\infty}^{\\infty} \\psi_p^*(x)\\, \\Psi(x, t)\\, dx"} caption={"Bølgefunksjonen i impulsrommet er fouriertransformen av $\\Psi$."} />
 
@@ -350,9 +353,13 @@ $$
 \end{aligned}
 $$
 
-Her flyttet vi den hermiteske $\hat p_x$ over på den venstre faktoren, satte
-inn utviklingen av $\Psi$, brukte $\hat p_x\psi_p = p\,\psi_p$ og byttet
-rekkefølge på integralene. Sammenlikningen gir $P(p, t) = |\Phi(p, t)|^2$.
+Her er den hermiteske $\hat p_x$ flyttet over på den venstre faktoren,
+utviklingen av $\Psi$ satt inn, $\hat p_x\psi_p = p\,\psi_p$ brukt og
+rekkefølgen på integralene byttet. Det samme regnestykket med
+$G(\hat p_x)$ i stedet for $\hat p_x$ gir
+$\int P(p, t)\,G(p)\,dp = \int G(p)\,|\Phi(p, t)|^2\,dp$ for enhver $G$,
+ettersom $G(\hat p_x)\psi_p = G(p)\,\psi_p$. Samme argument som for posisjonstettheten, med en $G$ som plukker ut
+$[p, p + dp]$, gir $P(p, t) = |\Phi(p, t)|^2$.
 
 <Statement kind="principle" name="Sannsynlighetstettheten i impulsrommet" id="sannsynlighet-impulsrommet">
 
@@ -368,7 +375,7 @@ posisjonsrommet.
   title="The more general uncertainty principle, regarding Fourier transforms"
   channel="3Blue1Brown"
   duration="18:06"
-  caption="Usikkerhetsrelasjonen som en egenskap ved fouriertransformen, vist med dopplerradar før videoen kommer til kvantepartikler som bølger."
+  caption="En funksjon og fouriertransformen kan ikke begge være smale, så en smal $\Psi$ gir en bred $\Phi$. Videoen viser sammenhengen med dopplerradar før den kommer til kvantepartikler som bølger."
   number={1}
 />
 
@@ -399,8 +406,9 @@ $$
 
 ## Kvantemekanikk i impulsrommet
 
-Likheten er ikke tilfeldig. $\Phi(p, t)$ kan brukes som bølgefunksjon i en
-egen formulering av teorien. For en observabel som bare avhenger av $p$, er
+$\Phi(p, t)$ kan brukes som bølgefunksjon i en egen formulering av teorien,
+der postulat C får formen $\langle F \rangle = \int \Phi^*\hat F\,\Phi\,dp$.
+Da gjenstår det å finne operatorene. For en observabel som bare avhenger av $p$, er
 $\langle F(p) \rangle = \int |\Phi|^2\,F(p)\,dp$ fordi $|\Phi|^2$ er
 sannsynlighetstettheten. Skrevet som
 
@@ -408,7 +416,7 @@ $$
 \langle F(p) \rangle = \int \Phi^*\,F(p)\,\Phi\,dp
 $$
 
-har det samme form som $\int \Psi^* \hat F\,\Psi\,dx$, så $\hat p = p$, ren multiplikasjon, slik $\hat x = x$ er det i
+har integralet samme form som $\int \Psi^* \hat F\,\Psi\,dx$, så $\hat p = p$, ren multiplikasjon, slik $\hat x = x$ er det i
 posisjonsrommet. Den kinetiske energien $\hat p^2/2m$ blir dermed enkel.
 
 Posisjonen krever et regnestykke. Start i posisjonsrommet, med
@@ -423,18 +431,32 @@ $$
 \langle x^n \rangle = \int \Phi^*(p, t)\Bigl(-\frac{\hbar}{i}\frac{\partial}{\partial p}\Bigr)^n \Phi(p, t)\,dp.
 $$
 
-Sammenliknet med oppskriften $\langle F \rangle = \int\Phi^*\hat F\Phi\,dp$
-betyr det at $\hat x = -(\hbar/i)\,\partial/\partial p$. Et potensial
+Sammenliknet med $\langle F \rangle = \int\Phi^*\hat F\Phi\,dp$ er da
+$\hat x = -(\hbar/i)\,\partial/\partial p$. Et potensial
 $V(x) = \sum_n v_n x^n$ blir operatorfunksjonen
 $\hat V = \sum_n v_n\,\hat x^{\,n}$, altså $V$ med $\hat x$ satt inn.
 Kommutatoren er den samme som før, $[\hat x, \hat p] = i\hbar$.
 
 $\Phi$ inneholder all informasjon om systemet, for $\Psi$ og $\Phi$ er et
-fourierpar og bestemmer hverandre. $\Phi$ har også sin egen bølgelikning.
+fourierpar og bestemmer hverandre. $\Phi$ følger sin egen Schrödingerlikning.
+
+<Derivation title="Schrödingerlikningen for Φ">
+
 Deriver $\Phi = \int\psi_p^*\,\Psi\,dx$ med hensyn på tida og sett inn
-Schrödingerlikningen for $\Psi$. Den hermiteske $\hat H$ kan flyttes over på
-$\psi_p^*$, der $\hat p^2/2m$ gir tallet $p^2/2m$ og $V(x)$ blir
-operatorfunksjonen i $p$.
+Schrödingerlikningen for $\Psi$:
+
+$$
+i\hbar\,\partial_t\Phi = \int \psi_p^*\,i\hbar\,\partial_t\Psi\,dx = \int \psi_p^*\,\hat H\Psi\,dx.
+$$
+
+Flytt den hermiteske $\hat p^2/2m$ over på $\psi_p^*$. Den gir tallet
+$p^2/2m$, og leddet blir $(p^2/2m)\,\Phi$. I potensialleddet er
+$x\,\psi_p^* = -(\hbar/i)\,\partial_p\psi_p^*$, identiteten over konjugert, så
+hver potens $x^n$ blir $\bigl(-(\hbar/i)\,\partial_p\bigr)^n$. Den kan tas
+utenfor $x$-integralet:
+$\int \psi_p^*\,V(x)\,\Psi\,dx = V\bigl(-\tfrac{\hbar}{i}\partial_p\bigr)\Phi$.
+
+</Derivation>
 
 <Formula tex={"i\\hbar\\,\\frac{\\partial\\Phi}{\\partial t} = \\Bigl[\\frac{p^2}{2m} + V\\Bigl(-\\frac{\\hbar}{i}\\frac{\\partial}{\\partial p}\\Bigr)\\Bigr]\\Phi"} caption={"Schrödingerlikningen i impulsrommet: samme likning, med operatorene fra impulsrommet satt inn i $\\hat H$."} />
 
@@ -447,23 +469,30 @@ operatorfunksjonen i $p$.
     ["$i\\hbar\\,\\partial_t\\Psi = \\hat H\\Psi$", "$i\\hbar\\,\\partial_t\\Phi = \\hat H\\Phi$"],
   ]}
   rowHeader={false}
-  caption="De to formuleringene i én dimensjon, begge med $\hat H = \hat p^2/2m + V(\hat x)$. I tre dimensjoner gjelder det samme for hver komponent."
+  caption="De to formuleringene i én dimensjon, begge med $\hat H = \hat p^2/2m + V(\hat x)$. I tre dimensjoner gjelder erstatningene for hver komponent."
 />
 
-De to formuleringene gir samme fysikk. Posisjonsrommet er som regel enklest
-fordi $\hat H$ er kvadratisk i $p$ og mer innfløkt i $x$. Unntakene er en
-fri partikkel, et lineært potensial og den harmoniske oscillatoren, der de to
-er like enkle.
+De to formuleringene gir de samme sannsynlighetene og forventningsverdiene.
+Posisjonsrommet er som regel enklest fordi $\hat H$ er kvadratisk i $p$ og mer
+innfløkt i $x$. Unntakene er en fri partikkel og et lineært potensial, der
+likningen i impulsrommet er enklest (for det lineære potensialet blir den av
+første orden i $p$), og den harmoniske oscillatoren, der de to likningene har
+samme form.
 
-For en fri partikkel er likningen $i\hbar\,\partial_t\Phi = (p^2/2m)\,\Phi$
-med løsningen $\Phi(p, t) = \Phi(p, 0)\,e^{-ip^2t/2m\hbar}$. Da er
+<Derivation title="Fri partikkel i impulsrommet">
+
+Likningen er $i\hbar\,\partial_t\Phi = (p^2/2m)\,\Phi$ med løsningen
+$\Phi(p, t) = \Phi(p, 0)\,e^{-ip^2t/2m\hbar}$. Da er
 $|\Phi(p, t)|^2 = |\Phi(p, 0)|^2$: fordelingen av impuls endrer seg ikke,
 og alle observable som bare avhenger av $p$, har konstante
-forventningsverdier. Posisjonen har det ikke. Settes løsningen inn i
+forventningsverdier. Forventningsverdien av posisjonen endrer seg derimot.
+Settes løsningen inn i
 $\langle x \rangle = \int\Phi^*\,(-\tfrac{\hbar}{i}\partial_p)\,\Phi\,dp$,
 virker $\partial_p$ også på fasen, og det leddet gir
 $\langle x \rangle_t = \langle x \rangle_0 + \langle p \rangle\,t/m$,
 Newtons første lov for forventningsverdiene.
+
+</Derivation>
 
 <Example title="grunntilstanden til den harmoniske oscillatoren i impulsrommet">
 

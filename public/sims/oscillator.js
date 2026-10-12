@@ -88,7 +88,7 @@ export default function init({ ctx, controls, getSize, onResize, signal }) {
   }
   const b0 = stateBtn("|0⟩", "n0", "Grunntilstanden");
   const b1 = stateBtn("|1⟩", "n1", "Første eksiterte tilstand");
-  const bMix = stateBtn("(3|0⟩ + 4|1⟩)/5", "mix", "Blanding av de to nederste nivåene");
+  const bMix = stateBtn("(3|0⟩ + 4|1⟩)/5", "mix", "Superposisjon av de to nederste nivåene");
   const bKoh = stateBtn("koherent |α⟩", "koherent", "Koherent tilstand");
 
   const sLabel = document.createElement("label");

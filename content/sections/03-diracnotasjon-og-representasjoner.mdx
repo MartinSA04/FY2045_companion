@@ -54,9 +54,11 @@ skalarproduktet mellom bølgefunksjonene deres.
 
 Skalarproduktet $\langle a|b\rangle$ er sannsynlighetsamplituden for å finne
 systemet i tilstanden $|a\rangle$ når det er i tilstanden $|b\rangle$, slik
-$\int\psi_a^*\psi_b\,dx$ er det. Er $|x\rangle$ tilstanden der partikkelen
-står i $x$, er $\langle x|\psi\rangle$ amplituden for å finne partikkelen i
-$x$ når tilstanden er $|\psi\rangle$. Det er nettopp bølgefunksjonen.
+$\int\psi_a^*\psi_b\,dx$ er det. Ifølge tabellen har $|x'\rangle$ bølgefunksjonen
+$\delta(x - x')$, så
+$\langle x'|\psi\rangle = \int\delta(x - x')\,\psi(x)\,dx = \psi(x')$.
+Bølgefunksjonen i $x'$ er altså amplituden for å finne partikkelen i $x'$ når
+tilstanden er $|\psi\rangle$.
 
 <Statement kind="principle" name="Bølgefunksjonen som projeksjon" id="bolgefunksjon-projeksjon">
 
@@ -125,7 +127,7 @@ $$
 Dette gjelder for enhver $|\psi\rangle$, så operatoren i parentesen er
 enhetsoperatoren.
 
-<Formula tex={"\\begin{aligned} \\sum_n |n\\rangle\\langle n| &= \\mathbb{1}, \\\\[2pt] \\int dx\\,|x\\rangle\\langle x| &= \\mathbb{1} \\end{aligned}"} caption={"Fullstendighetsrelasjonen for en diskret og for en kontinuerlig basis. I det kontinuerlige tilfellet er $\\langle x'|x\\rangle = \\delta(x - x')$ i stedet for $\\delta_{kk'}$, og det samme gjelder for $|p\\rangle$."} />
+<Formula tex={"\\begin{aligned} \\sum_n |n\\rangle\\langle n| &= \\mathbb{1}, \\\\[2pt] \\int dx\\,|x\\rangle\\langle x| &= \\mathbb{1} \\end{aligned}"} caption={"Fullstendighetsrelasjonen for en diskret og for en kontinuerlig basis. I det kontinuerlige tilfellet er $\\langle x'|x\\rangle = \\delta(x - x')$ i stedet for $\\delta_{kk'}$. For impulsbasisen er $\\langle p'|p\\rangle = \\delta(p - p')$ og $\\int dp\\,|p\\rangle\\langle p| = \\mathbb{1}$."} />
 
 Et produkt $|a\rangle\langle b|$ med ketvektoren til venstre er en operator,
 mens $\langle a|b\rangle$ er et tall. Leddet $|n\rangle\langle n|$ er
@@ -164,7 +166,7 @@ komponentene til den samme enhetsvektoren.
 <Simulation
   src="/sims/basis.js"
   title="Én tilstand, tre basiser"
-  caption="Samme tilstand, en gaussisk pakke i en harmonisk oscillator, sett i tre basiser. Flytt pakken med $x_0$: posisjonsbildet og energifordelingen endrer seg, mens $|\Phi(p)|^2$ står stille og $x_0$ bare vises i fasen til $\Phi$. Gi pakken impuls $p_0$, og det er omvendt."
+  caption="Én tilstand, en gaussisk pakke i en harmonisk oscillator, sett i tre basiser. Flytt pakken med $x_0$: posisjonsbildet og energifordelingen endrer seg, mens $|\Phi(p)|^2$ står stille og $x_0$ bare vises i fasen til $\Phi$. Gi pakken impuls $p_0$: impulsbildet og energifordelingen endrer seg, mens $|\psi(x)|^2$ står stille og $p_0$ bare vises i fasen til $\psi$."
   height={360}
 />
 
@@ -222,14 +224,37 @@ operatorene, bytte bra og ket og snu rekkefølgen på faktorene. Tall og
 skalarprodukter kan flyttes fritt.
 
 Er $\hat A^\dagger = \hat A$, er operatoren
-<Term name="Hermitesk operator">hermitesk</Term>, og
-$\langle a|\hat A|a\rangle = \langle a|\hat A|a\rangle^*$ er reell for alle
-$|a\rangle$. Observable svarer til hermiteske operatorer.
+<Term name="Hermitesk operator">hermitesk</Term>. Sett $|b\rangle = |a\rangle$
+i definisjonen av $\hat A^\dagger$. Da er
+$\langle a|\hat A|a\rangle = \langle a|\hat A|a\rangle^*$, så
+$\langle a|\hat A|a\rangle$ er reell for alle $|a\rangle$. Observable svarer
+til hermiteske operatorer fordi det omvendte også gjelder: en måleverdi er
+reell, så $\langle a|\hat F|a\rangle$ må være reell for alle $|a\rangle$, og
+det kravet gir $\hat F^\dagger = \hat F$.
+
+<Derivation title="Reelle forventningsverdier gir en hermitesk operator">
+
+Sett $|a\rangle = |b\rangle + c\,|d\rangle$. Da er
+
+$$
+\langle a|\hat F|a\rangle = \langle b|\hat F|b\rangle + |c|^2\langle d|\hat F|d\rangle + c\,\langle b|\hat F|d\rangle + c^*\langle d|\hat F|b\rangle .
+$$
+
+De to første leddene er reelle, så $c\,\langle b|\hat F|d\rangle + c^*\langle d|\hat F|b\rangle$
+må være reell for $c = 1$ og for $c = i$. Med $X = \langle b|\hat F|d\rangle$ og
+$Y = \langle d|\hat F|b\rangle$ betyr $c = 1$ at $X + Y$ er reell, og $c = i$ at
+$X - Y$ er rent imaginær. Da er $Y = X^*$, altså
+$\langle d|\hat F|b\rangle = \langle b|\hat F|d\rangle^*$ for alle $|b\rangle$ og
+$|d\rangle$, og det er definisjonen av $\hat F^\dagger = \hat F$.
+
+</Derivation>
 
 Vektoren $|a\rangle$ er en egenvektor av $\hat A$ hvis
 $\hat A|a\rangle = \lambda_a|a\rangle$, og mengden av egenverdier er
 <Term name="Spektrum">spekteret</Term> til $\hat A$. For en hermitesk
-operator er egenverdiene reelle, og egenvektorene til en observabel antas å
+operator er egenverdiene reelle, ettersom
+$\lambda_a\langle a|a\rangle = \langle a|\hat A|a\rangle$ er reell og
+$\langle a|a\rangle$ er reell og positiv. Egenvektorene til en observabel antas å
 være et fullstendig sett, så de kan brukes som basis. Da gir
 fullstendighetsrelasjonen et uttrykk for operatoren selv. Med
 $\hat F|f\rangle = f|f\rangle$ og kontinuerlig spektrum er
@@ -246,9 +271,14 @@ og siden det gjelder for alle $|\psi\rangle$:
 <Formula tex={"\\begin{aligned} \\hat F &= \\int df\\,|f\\rangle f\\langle f| \\\\[2pt] \\hat F &= \\sum_n |f_n\\rangle f_n\\langle f_n| \\end{aligned}"} caption={"Spektralrepresentasjonen av en operator, for kontinuerlig (øverst) og diskret (nederst) spektrum. En operatorfunksjon $G(\\hat F)$ har samme form med $G(f)$ i stedet for $f$."} />
 
 Forventningsverdien følger med samme teknikk:
-$\langle\psi|\hat F|\psi\rangle = \sum_n f_n\,|\langle f_n|\psi\rangle|^2 = \sum_n P_n f_n$.
-Sannsynligheten for $f_n$ er kvadratet av komponenten langs $|f_n\rangle$,
-som i bølgemekanikken.
+$\langle\psi|\hat F|\psi\rangle = \sum_n f_n\,|\langle f_n|\psi\rangle|^2$.
+Med $G(\hat F)$ i stedet for $\hat F$ blir
+$\langle G(F)\rangle = \sum_n G(f_n)\,|\langle f_n|\psi\rangle|^2$ for enhver
+funksjon $G$. Forventningsverdien er også $\sum_n P_n\,G(f_n)$, der $P_n$ er
+sannsynligheten for $f_n$. Samme argument som for posisjonstettheten, med en
+$G$ som plukker ut egenverdien $f_n$, gir
+$P_n = |\langle f_n|\psi\rangle|^2$, kvadratet av komponenten langs
+$|f_n\rangle$.
 
 <Example title="regning i en diskret basis">
 
@@ -314,7 +344,7 @@ stedet for bølgefunksjonen.
     ["Måling gir en egenverdi $f_n$", "Måling gir en egenverdi $f_n$"],
   ]}
   rowHeader={false}
-  caption="Postulat B, C og D i de to formuleringene. Postulat A er det samme i begge: en observabel $F$ svarer til en lineær, hermitesk operator $\hat F$."
+  caption="Postulat B, C og D i de to formuleringene. Postulat A, at en observabel $F$ svarer til en lineær, hermitesk operator $\hat F$, står likt i begge. Den generelle formuleringen legger til kommutatoren."
 />
 
 Postulat A får ett tillegg. Operatorene for en generalisert koordinat og den
@@ -322,7 +352,7 @@ tilhørende impulsen oppfyller $[\hat q_n, \hat p_n] = i\hbar$. I den generelle
 formuleringen er $\hat p$ definert av denne kommutatoren, og uttrykket
 $(\hbar/i)\,\partial/\partial x$ er det $\hat p$ blir i én bestemt basis.
 Ingen av postulatene forutsetter en bølgefunksjon, så de gjelder også for
-spinn, der Hilbertrommet er todimensjonalt.
+spinn. For spinn ½ er Hilbertrommet todimensjonalt.
 
 ## Representasjoner
 
@@ -350,14 +380,14 @@ $$
 \end{aligned}
 $$
 
-Operatorene trenger matriseelementene $\langle x''|\hat F|x'\rangle$, for
-med to enhetsoperatorer er
+For å skrive en forventningsverdi i posisjonsbasisen setter du inn to
+enhetsoperatorer:
 
 $$
 \langle\psi|\hat F|\psi\rangle = \int dx''\!\int dx'\,\psi^*(x'') \allowbreak \times\langle x''|\hat F|x'\rangle\,\psi(x') .
 $$
 
-For $\hat x$ er $\langle x''|\hat x|x'\rangle = x'\,\delta(x'' - x')$, og for
+Da trenger du matriseelementene $\langle x''|\hat F|x'\rangle$. For $\hat x$ er $\langle x''|\hat x|x'\rangle = x'\,\delta(x'' - x')$, og for
 enhver funksjon som kan rekkeutvikles,
 $\langle x''|F(\hat x)|x'\rangle = F(x')\,\delta(x'' - x')$. Impulsoperatoren
 er bare definert gjennom kommutatoren, så den må hentes derfra.
@@ -372,15 +402,23 @@ $$
 (x'' - x')\,\langle x''|\hat p|x'\rangle = i\hbar\,\delta(x'' - x') .
 $$
 
-Delvis integrasjon gir identiteten $y\,\delta'(y) = -\delta(y)$, og med
-$y = x'' - x'$ er $(x'' - x')\,\delta'(x'' - x') = -\delta(x'' - x')$.
-Sammenliknet med likningen over betyr det at
+Likningen bestemmer ikke matriseelementet helt. Et ledd
+$g(x')\,\delta(x'' - x')$ kan legges til, ettersom
+$(x'' - x')\,\delta(x'' - x') = 0$, og leddet svarer til å gi hver
+$|x'\rangle$ en egen fase. Delvis integrasjon gir identiteten
+$y\,\delta'(y) = -\delta(y)$, og med $y = x'' - x'$ er
+$(x'' - x')\,\delta'(x'' - x') = -\delta(x'' - x')$. Da er
+$(x'' - x')\,\tfrac{\hbar}{i}\,\partial\delta/\partial x'' = -\tfrac{\hbar}{i}\,\delta = i\hbar\,\delta$,
+så $\tfrac{\hbar}{i}\,\partial\delta/\partial x''$ løser likningen. Med fasene
+valgt slik at tilleggsleddet er null, er
 
 $$
 \langle x''|\hat p|x'\rangle = \frac{\hbar}{i}\,\frac{\partial}{\partial x''}\,\delta(x'' - x') .
 $$
 
-Samme regning for potenser av $\hat p$ gir
+Sett inn $\mathbb{1} = \int dx\,|x\rangle\langle x|$ mellom faktorene. Hver
+$\hat p$ gir da en derivasjon $(\hbar/i)\,\partial/\partial x''$, og hver
+$\hat x$ gir faktoren $x''$:
 
 $$
 \langle x''|F(\hat p, \hat x)|x'\rangle = F\Bigl(\frac{\hbar}{i}\frac{\partial}{\partial x''}, x''\Bigr) \allowbreak \times\delta(x'' - x') .
@@ -449,6 +487,11 @@ $$
 &= 2\pi\hbar\,|C|^2\,\delta(p - p') .
 \end{aligned}
 $$
+
+Siste likhet bruker $\int dx\,e^{ikx} = 2\pi\,\delta(k)$ og
+$\delta\bigl((p - p')/\hbar\bigr) = \hbar\,\delta(p - p')$. Kravet
+$\langle p'|p\rangle = \delta(p - p')$ gir $|C|^2 = 1/(2\pi\hbar)$, og med $C$
+reell og positiv er $C = (2\pi\hbar)^{-1/2}$.
 
 </Derivation>
 

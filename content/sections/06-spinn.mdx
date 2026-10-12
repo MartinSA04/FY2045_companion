@@ -62,22 +62,25 @@ $m = -l, \dots, l$. Momentet kan bare stå i $2l + 1$ vinkler mot $z$-aksen.
 ## Stern–Gerlach-eksperimentet
 
 I <Term name="Stern–Gerlach-eksperimentet">Stern–Gerlach-eksperimentet</Term>
-går en stråle av nøytrale atomer langs $y$-aksen gjennom en magnet med
-feltet
+går en stråle av nøytrale atomer langs $y$-aksen gjennom en magnet. Magneten
+skal avbøye hvert atom etter $\mu_z$, så feltet må variere langs $z$. Et felt
+$-(B_0 + az)\,\hat z$ har $\nabla\cdot\vec B = -a$, men et magnetfelt har alltid
+null divergens. Et ledd $ax\,\hat x$ på tvers av strålen gir $+a$ og fjerner
+bidraget:
 
 $$
 \vec B = ax\,\hat x - (B_0 + az)\,\hat z ,
 $$
 
 der den homogene delen $B_0$ er stor sammenlignet med variasjonen $az$ over
-strålen. Feltet oppfyller $\nabla\cdot\vec B = a - a = 0$. Kraften blir
+strålen. Kraften blir
 
 $$
 \vec F = \nabla\bigl(a\mu_x x - \mu_z(B_0 + az)\bigr) \allowbreak = a\,(\mu_x\hat x - \mu_z\hat z).
 $$
 
-Det sterke feltet $B_0\hat z$ får $\vec\mu$ til å presesere raskt rundt
-$z$-aksen. Da midles $\mu_x$ til null, mens $\mu_z$ er konstant, og igjen
+Den sterke homogene delen $-B_0\hat z$ av feltet får $\vec\mu$ til å
+presesere raskt rundt $z$-aksen. Da midles $\mu_x$ til null, mens $\mu_z$ er konstant, og igjen
 står $F_z = -a\mu_z$. Hvert atom avbøyes i $z$-retningen etter verdien av
 $\mu_z$.
 
@@ -121,8 +124,11 @@ For $s = \tfrac12$ er det to egentilstander for $S^2$ og $S_z$,
 $|\tfrac12, \tfrac12\rangle = |{\uparrow}\rangle$ og
 $|\tfrac12, -\tfrac12\rangle = |{\downarrow}\rangle$. De er ortonormerte og
 fullstendige, $|{\uparrow}\rangle\langle{\uparrow}| + |{\downarrow}\rangle\langle{\downarrow}| = \mathbb{1}$.
-Stigeformelen gir $S_+|{\downarrow}\rangle = \hbar|{\uparrow}\rangle$,
-$S_-|{\uparrow}\rangle = \hbar|{\downarrow}\rangle$ og
+Stigeformelen $S_\pm|s, m\rangle = \hbar\sqrt{s(s + 1) - m(m \pm 1)}\,|s, m \pm 1\rangle$
+har med $s = \tfrac12$ og $m = \mp\tfrac12$ roten $\sqrt{\tfrac34 + \tfrac14} = 1$, så
+$S_+|{\downarrow}\rangle = \hbar|{\uparrow}\rangle$ og
+$S_-|{\uparrow}\rangle = \hbar|{\downarrow}\rangle$. Med $m = \tfrac12$ i $S_+$ og
+$m = -\tfrac12$ i $S_-$ er roten null, så
 $S_+|{\uparrow}\rangle = S_-|{\downarrow}\rangle = 0$. En vilkårlig
 spinntilstand er
 
@@ -148,7 +154,8 @@ $$
 S_+ = \hbar\begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}, \allowbreak\qquad S_- = \hbar\begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix},
 $$
 
-og $S_x = (S_+ + S_-)/2$, $S_y = (S_+ - S_-)/2i$. Alle tre komponentene har
+og $S_x = (S_+ + S_-)/2$, $S_y = (S_+ - S_-)/2i$. Med $1/i = -i$ har $S_y$
+elementene $-i$ og $i$ utenfor diagonalen. Alle tre komponentene har
 faktoren $\hbar/2$ foran, og det som står igjen, er
 <Term name="Paulimatrisene">Paulimatrisene</Term>:
 
@@ -184,7 +191,7 @@ skarpe verdier samtidig.
 ## Måling langs andre akser
 
 Måler du $S_z$, får du $+\hbar/2$ med sannsynlighet $|a_+|^2$ og $-\hbar/2$
-med sannsynlighet $|a_-|^2$. For å måle $S_x$ trengs egenverdiene og
+med sannsynlighet $|a_-|^2$. For å finne sannsynlighetene når $S_x$ måles, trenger du egenverdiene og
 egenvektorene til $S_x$. Egenverdiene er løsningene av
 $\det(S_x - \lambda\mathbb{1}) = 0$:
 
@@ -210,6 +217,25 @@ $$
 
 Produktregelen for Paulimatrisene gir $(\hat n\cdot\vec\sigma)^2 = \mathbb{1}$,
 så egenverdiene er igjen $\pm\hbar/2$.
+
+Egenspinoren til $S_n$ med egenverdien $+\hbar/2$ er den normerte
+$\chi = (a_+, a_-)^T$ som oppfyller $S_n\chi = \tfrac\hbar2\chi$.
+
+<Derivation title="Egenspinoren og spinnretningen langs $\hat n$">
+
+Første rad av $S_n\chi = \tfrac\hbar2\chi$ gir
+$(\cos\theta - 1)\,a_+ + \sin\theta\,e^{-i\varphi}a_- = 0$. Med
+$1 - \cos\theta = 2\sin^2\tfrac\theta2$ og
+$\sin\theta = 2\sin\tfrac\theta2\cos\tfrac\theta2$ er
+$a_-/a_+ = e^{i\varphi}\tan\tfrac\theta2$, og normert er
+$a_+ = \cos\tfrac\theta2$ og $a_- = e^{i\varphi}\sin\tfrac\theta2$. Sett dem
+inn i formlene for spinnretningen. Da er
+$a_+^*a_- = \tfrac12\sin\theta\,e^{i\varphi}$, som gir
+$\langle S_x\rangle = \tfrac\hbar2\sin\theta\cos\varphi$ og
+$\langle S_y\rangle = \tfrac\hbar2\sin\theta\sin\varphi$, og
+$|a_+|^2 - |a_-|^2 = \cos\theta$ gir $\langle S_z\rangle = \tfrac\hbar2\cos\theta$.
+
+</Derivation>
 
 <Statement kind="theorem" name="Spinn opp langs $\hat n$" id="spinn-opp-langs-n">
 
@@ -251,7 +277,7 @@ etterpå i egentilstanden for den.
   title="What is Spin? | Quantum Mechanics"
   channel="Looking Glass Universe"
   duration="10:17"
-  caption="Stern–Gerlach-forsøket, hvordan spinnet oppfører seg når det måles, og hva spinn egentlig er."
+  caption="Stern–Gerlach-eksperimentet, hvordan spinnet oppfører seg når det måles, og hva spinn egentlig er."
   number={1}
 />
 
@@ -345,9 +371,11 @@ $$
 $\langle S_z\rangle$ er konstant, mens $\langle S_x\rangle$ og
 $\langle S_y\rangle$ går rundt $z$-aksen med vinkelfrekvensen $\omega_L$.
 Spinnretningen preseserer rundt feltet med Larmor-frekvensen, slik et
-klassisk magnetisk moment gjør. Med kommutatorene for $\vec S$ gir
-$d\langle F\rangle/dt = (i/\hbar)\langle[\hat H, \hat F]\rangle$ den samme
-likningen som for $\vec L$:
+klassisk magnetisk moment gjør. Tidsderiverten av
+$\langle S_x\rangle + i\langle S_y\rangle$ er $i\omega_L$ ganger den selv, så
+$d\langle S_x\rangle/dt = -\omega_L\langle S_y\rangle$ og
+$d\langle S_y\rangle/dt = \omega_L\langle S_x\rangle$, mens $\langle S_z\rangle$
+er konstant. Komponentene samles i den samme likningen som for $\vec L$:
 
 <Formula tex={"\\frac{d\\langle\\vec S\\rangle}{dt} = \\vec\\omega_L\\times\\langle\\vec S\\rangle, \\allowbreak\\qquad \\vec\\omega_L = -\\gamma_e\\vec B"} caption={"Larmor-presesjon av spinnretningen. For elektronet peker $\\vec\\omega_L$ langs feltet, og $\\omega_L = g_e eB/2m_e$."} />
 
@@ -473,7 +501,7 @@ measured to be in the spin state in Eq. (13) at $t = 0$.
     "En sammenhengende stripe"
   ]}
   answer={2}
-  explanation={"$\\mu_z = -\\mu_B m$ med $m = -1, 0, 1$ gir tre stråler, og atomene med $m = 0$ går rett fram. Et heltallig $l$ gir alltid et oddetall stråler, og det var derfor to stråler for sølv krevde spinn ½."}
+  explanation={"$\\mu_z = -\\mu_B m$ med $m = -1, 0, 1$ gir tre stråler, og atomene med $m = 0$ går rett fram. Et heltallig $l$ gir alltid et oddetall stråler, og derfor krevde de to strålene for sølv spinn ½."}
 />
 
 <SelfCheck question={"Vis at $(\\hat n\\cdot\\vec\\sigma)^2 = \\mathbb{1}$ for en enhetsvektor $\\hat n$, og forklar hvorfor $S_n$ har egenverdiene $\\pm\\hbar/2$."}>

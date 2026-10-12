@@ -9,8 +9,8 @@ updated: 2026-09-27
 Fra TFY4215 er oscillatoren kjent i posisjonsrommet:
 Schrödingerlikningen med $V = \tfrac12 m\omega^2x^2$, en rekkeutvikling og
 Hermitefunksjoner som svar. Den generelle formuleringen gir en kortere vei.
-Spekteret og egentilstandene følger av kommutatoren $[\hat x, \hat p] = i\hbar$
-alene, uten at noen basis velges, og regningen er noen linjer algebra. Dette
+Spekteret følger av kommutatoren $[\hat x, \hat p] = i\hbar$ alene, uten at
+noen basis velges, og regningen er noen linjer algebra. Dette
 er den <Term name="Algebraisk metode">algebraiske metoden</Term>, og den
 rekker lenger enn oscillatoren: samme teknikk kvantiserer dreieimpuls og
 spinn. Oscillatoren selv dukker opp overalt, fordi nesten ethvert potensial
@@ -38,12 +38,14 @@ $$
 
 Hadde $\hat p$ og $\hat x$ vært tall, kunne summen av to kvadrater vært
 faktorisert som $(ip + m\omega x)(-ip + m\omega x)$. Operatorene kommuterer
-ikke, så faktoriseringen går ikke helt opp, men de to faktorene er verdt å
-definere likevel, med en skalering som gjør dem dimensjonsløse:
+ikke, så produktet av faktorene blir $\hat p^2 + (m\omega\hat x)^2$ pluss et
+ledd med kommutatoren $[\hat x, \hat p] = i\hbar$, som er et tall. Del hver
+faktor på $\sqrt{2\hbar m\omega}$. Da blir faktorene dimensjonsløse, og
+produktet blir $\hat H/\hbar\omega$ pluss en konstant:
 
 <Formula tex={"\\begin{aligned} a &= \\dfrac{i\\hat p + m\\omega\\hat x}{\\sqrt{2\\hbar m\\omega}}, \\\\[4pt] a^\\dagger &= \\dfrac{-i\\hat p + m\\omega\\hat x}{\\sqrt{2\\hbar m\\omega}} \\end{aligned}"} caption={"Stigeoperatorene. De er ikke hermiteske, men hverandres adjungerte, og skrives uten hatt."} />
 
-Produktet av dem er nesten $\hat H$:
+Utregnet er produktet $a^\dagger a$:
 
 $$
 \begin{aligned}
@@ -53,14 +55,16 @@ a^\dagger a &= \frac{\hat p^2 + (m\omega\hat x)^2 + im\omega\,[\hat x, \hat p]}{
 $$
 
 Kommutatoren i telleren er $i\hbar$, og den gir det siste leddet. Samme
-regning med motsatt rekkefølge gir $aa^\dagger = \hat H/\hbar\omega + \tfrac12$,
-og differansen mellom de to er alt metoden trenger:
+regning med motsatt rekkefølge gir $aa^\dagger = \hat H/\hbar\omega + \tfrac12$.
+Differansen av de to er $[a, a^\dagger] = 1$, og $a^\dagger a$ gir $\hat H$:
 
 <Formula tex={"[a, a^\\dagger] = 1, \\qquad \\hat H = \\hbar\\omega\\bigl(\\hat N + \\tfrac12\\bigr)"} caption={"Kommutatoren og Hamiltonoperatoren uttrykt med $\\hat N = a^\\dagger a$. Egenverdiproblemet for $\\hat H$ er dermed egenverdiproblemet for $\\hat N$."} />
 
 Operatoren $\hat N = a^\dagger a$ kalles
 <Term name="Talloperator">talloperatoren</Term>, og navnet blir begrunnet
-nedenfor. To kommutatorer til følger direkte av $[a, a^\dagger] = 1$:
+nedenfor. For å se hva $a$ og $a^\dagger$ gjør med en egentilstand av
+$\hat N$, trenger du kommutatorene deres med $\hat N$. Begge følger av
+$[a, a^\dagger] = 1$:
 
 $$
 \begin{aligned}
@@ -104,8 +108,7 @@ $$
 E_n = \hbar\omega\bigl(n + \tfrac12\bigr), \qquad n = 0, 1, 2, \dots
 $$
 
-Nivåene ligger i lik avstand $\hbar\omega$, og hvert nivå er
-ikke-degenerert. Grunntilstanden har
+Nivåene ligger i lik avstand $\hbar\omega$. Grunntilstanden har
 <Term name="Nullpunktsenergi">nullpunktsenergien</Term>
 $E_0 = \tfrac12\hbar\omega$.
 
@@ -211,9 +214,11 @@ der konstanten er valgt så $\int|\psi_0|^2\,dx = 1$.
 
 </Derivation>
 
-Grunntilstanden er en gausspakke, den samme som rekkeutviklingen gir. De
-eksiterte tilstandene følger ved å heve,
-$\psi_n(x) = \langle x|(a^\dagger)^n|0\rangle/\sqrt{n!}$. Hver $a^\dagger$
+Grunntilstanden er en gausspakke, den samme som rekkeutviklingen gir.
+Likningen $a|0\rangle = 0$ er av første orden og har bare én løsning, opp til
+en konstant, så grunntilstanden er entydig. De eksiterte tilstandene følger
+ved å heve, $\psi_n(x) = \langle x|(a^\dagger)^n|0\rangle/\sqrt{n!}$, og er
+dermed også entydige: ingen nivåer er degenerert. Hver $a^\dagger$
 er av første orden i $x$ og $d/dx$, så hvert trinn ganger inn et polynom av
 én grad høyere:
 
@@ -283,7 +288,7 @@ b) Calculate the normalization constant $A$ in Eq. (14).
 
 <Solution>
 a) I posisjonsrepresentasjonen virker $\hat x$ som $x$ og $\hat p_x$ som
-$(\hbar/i)\,d/dx$. Ligning (13) blir da en differensialligning for
+$(\hbar/i)\,d/dx$. Likning (13) blir da en differensiallikning for
 $\psi_0(x) = \langle x|0\rangle$:
 
 $$
@@ -359,7 +364,7 @@ $[\hat a, \hat p] = \sqrt{m\omega/2\hbar}\,[\hat x, \hat p] = i\sqrt{m\hbar\omeg
 En stasjonær tilstand står stille. Tettheten
 $|\Psi_n(x, t)|^2 = |\psi_n(x)|^2$ er tidsuavhengig, og
 $\langle x\rangle = 0$ uansett hvor høyt i stigen tilstanden ligger.
-Bevegelse krever en superposisjon av nivåer. I en blanding av to nabonivåer
+Bevegelse krever en superposisjon av nivåer. I en superposisjon av to nabonivåer
 svinger kryssleddet i $|\Psi|^2$ med differansefrekvensen
 $(E_{n+1} - E_n)/\hbar = \omega$, en svevning mellom de to stasjonære
 tilstandene, og $\langle x\rangle$ følger med.
@@ -413,14 +418,33 @@ Begge likningene stemmer.
 <Simulation
   src="/sims/oscillator.js"
   title="Tilstander i oscillatorpotensialet"
-  caption="Samme potensial, fire tilstander, med nivåene $E_n$ som trinn. De fylte trinnene er nivåene som inngår, med styrke $|c_n|^2$. Stasjonære tilstander står stille. Blandingen $(3|0\rangle + 4|1\rangle)/5$ svinger med frekvensen $\omega$, og den koherente tilstanden svinger som en klassisk partikkel uten å endre form."
+  caption="Samme potensial, fire tilstander, med nivåene $E_n$ som trinn. De fylte trinnene er nivåene som inngår, med styrke $|c_n|^2$. Stasjonære tilstander står stille. Superposisjonen $(3|0\rangle + 4|1\rangle)/5$ svinger med frekvensen $\omega$, og den koherente tilstanden svinger som en klassisk partikkel uten å endre form."
   height={340}
 />
 
 ## Koherente tilstander
 
 Schrödinger lette allerede i 1926 etter den kvantetilstanden som likner mest på
-en klassisk svingning. Svaret er egentilstandene til senkeoperatoren:
+en klassisk svingning. Grunntilstanden er en gausspakke med
+$\Delta x\,\Delta p = \hbar/2$, i ro i bunnen. Flytt den til posisjonen $x_0$
+og gi den impulsen $p_0$ uten å endre formen:
+
+$$
+\psi(x) = \psi_0(x - x_0)\,e^{ip_0x/\hbar}.
+$$
+
+I posisjonsrepresentasjonen er
+$a = (\hbar\,d/dx + m\omega x)/\sqrt{2\hbar m\omega}$. Fra $a|0\rangle = 0$ er
+$\hbar\,\psi_0'(x) = -m\omega x\,\psi_0(x)$, så produktregelen gir
+$\hbar\,\psi' = \bigl[-m\omega(x - x_0) + ip_0\bigr]\psi$, og
+
+$$
+a\psi = \frac{m\omega x_0 + ip_0}{\sqrt{2\hbar m\omega}}\,\psi = \alpha\,\psi .
+$$
+
+Den flyttede gausspakken er altså en egentilstand av senkeoperatoren, og
+egenverdien $\alpha$ samler $x_0$ og $p_0$ i ett komplekst tall. Slike
+tilstander kalles koherente. Det finnes en for enhver $\alpha$:
 
 <Formula tex={"\\begin{aligned} a\\,|\\alpha\\rangle &= \\alpha\\,|\\alpha\\rangle, \\\\[2pt] |\\alpha\\rangle &= e^{-|\\alpha|^2/2} \\sum_{n=0}^{\\infty} \\dfrac{\\alpha^n}{\\sqrt{n!}}\\,|n\\rangle \\end{aligned}"} caption={"Den koherente tilstanden. $a$ er ikke hermitesk, så egenverdien $\\alpha$ er kompleks, og det finnes en tilstand for enhver $\\alpha$."} />
 
@@ -432,22 +456,27 @@ $c_0$. Fordelingen over nivåene er en poissonfordeling,
 $|c_n|^2 = e^{-|\alpha|^2}|\alpha|^{2n}/n!$, med gjennomsnitt
 $\langle n\rangle = |\alpha|^2$.
 
-I tidsutviklingen får hvert ledd fasen $e^{-i(n + 1/2)\omega t}$, og
-$n$-avhengigheten kan flyttes inn i egenverdien:
+I tidsutviklingen får hvert ledd fasen $e^{-i(n + 1/2)\omega t}$. Faktoren
+$e^{-in\omega t}$ samler seg med $\alpha^n$ til $(\alpha e^{-i\omega t})^n$, og
+$|\alpha e^{-i\omega t}| = |\alpha|$, så normeringsfaktoren er uendret:
 
 $$
 |\Psi(t)\rangle = e^{-i\omega t/2}\,\bigl|\,\alpha e^{-i\omega t}\bigr\rangle .
 $$
 
 En koherent tilstand forblir koherent; egenverdien roterer i det komplekse
-planet med vinkelfrekvensen $\omega$. Med $\alpha = |\alpha|e^{i\theta}$ er
+planet med vinkelfrekvensen $\omega$. Sett
+$\hat x = \sqrt{\hbar/2m\omega}\,(a + a^\dagger)$ inn i forventningsverdien. Da
+er $\langle a\rangle = \alpha e^{-i\omega t}$ og $\langle a^\dagger\rangle$ den
+konjugerte, og med $\alpha = |\alpha|e^{i\theta}$ er
 
 $$
 \langle x\rangle = \sqrt{\frac{2\hbar}{m\omega}}\,|\alpha|\,
-\cos(\omega t - \theta),
+\cos(\omega t - \theta).
 $$
 
-og tettheten i posisjonsbasisen kan regnes ut eksakt:
+Tilstanden $|\alpha e^{-i\omega t}\rangle$ er igjen en flyttet grunntilstand, så
+tettheten er grunntilstandens tetthet flyttet til $\langle x\rangle$:
 
 $$
 |\langle x|\Psi(t)\rangle|^2
@@ -462,16 +491,17 @@ strålingsfeltet, og beskrivelsen ga Glauber nobelprisen i 2005.
 
 ## Schrödinger- og Heisenbergbildet
 
-Tidsutviklingen kan skrives som én operator. Når $\hat H$ ikke avhenger
-eksplisitt av tida, er
+Schrödingerlikningen $i\hbar\,d|\Psi, t\rangle/dt = \hat H|\Psi, t\rangle$ er av
+første orden i $t$. For et tall $y$ har $i\hbar\,dy/dt = Ey$ løsningen
+$y(t) = e^{-iE(t - t_0)/\hbar}\,y(t_0)$. Når $\hat H$ ikke avhenger eksplisitt
+av tida, løses Schrödingerlikningen på samme måte, med $\hat H$ i stedet for $E$:
 
 $$
 |\Psi, t\rangle = \hat U(t, t_0)\,|\Psi, t_0\rangle, \allowbreak\quad \hat U(t, t_0) = e^{-i(t - t_0)\hat H/\hbar},
 $$
 
 der eksponentialfunksjonen av en operator betyr rekka
-$e^{\hat X} = \sum_n \hat X^n/n!$. Deriver med hensyn på $t$, og
-$|\Psi, t\rangle$ oppfyller Schrödingerlikningen.
+$e^{\hat X} = \sum_n \hat X^n/n!$.
 <Term name="Tidsutviklingsoperator">Tidsutviklingsoperatoren</Term>
 $\hat U$ er unitær, $\hat U^\dagger = \hat U^{-1}$, så normen er den samme
 til alle tider. Sett den inn i en forventningsverdi:
@@ -484,7 +514,18 @@ Uttrykket kan leses på to måter. I
 <Term name="Schrödingerbildet">Schrödingerbildet</Term> står operatoren
 $\hat F$ fast, og tilstanden utvikler seg i tid. I
 <Term name="Heisenbergbildet">Heisenbergbildet</Term> står tilstanden fast
-i $|\Psi, t_0\rangle$, og tidsavhengigheten ligger i operatoren:
+i $|\Psi, t_0\rangle$, og tidsavhengigheten ligger i operatoren. Deriver
+$\hat F_H = \hat U^\dagger\hat F\hat U$ med produktregelen. Med
+$d\hat U/dt = -(i/\hbar)\,\hat H\hat U$ og
+$d\hat U^\dagger/dt = (i/\hbar)\,\hat U^\dagger\hat H$ er
+
+$$
+\frac{d\hat F_H}{dt}
+= \frac{i}{\hbar}\bigl(\hat U^\dagger\hat H\hat F\hat U - \hat U^\dagger\hat F\hat H\hat U\bigr)
+= \frac{i}{\hbar}\bigl[\hat H, \hat F_H\bigr],
+$$
+
+ettersom $\hat H$ kommuterer med $\hat U$ og $\hat U^\dagger$.
 
 <Formula tex={"\\hat F_H(t) = \\hat U^\\dagger\\hat F\\,\\hat U, \\allowbreak\\quad \\frac{d\\hat F_H}{dt} = \\frac{i}{\\hbar}\\,\\bigl[\\hat H, \\hat F_H\\bigr]"} caption={"Heisenbergbildet: operatoren og bevegelseslikningen dens, for en $\\hat F$ uten eksplisitt tidsavhengighet. Forventningsverdien av likningen er likningen for $d\\langle F\\rangle/dt$ i Schrödingerbildet."} />
 
@@ -494,7 +535,8 @@ $[\hat A_H, \hat B_H] = \hat U^\dagger[\hat A, \hat B]\,\hat U = \hat C_H$.
 En operator som kommuterer med $\hat H$, er derfor en
 <Term name="Bevegelseskonstant">bevegelseskonstant</Term> i begge bildene.
 
-For oscillatoren gir bevegelseslikningen stigeoperatorene direkte.
+For oscillatoren gir bevegelseslikningen tidsavhengigheten til
+stigeoperatorene direkte.
 
 <Example label="Eksamensoppgave" title="Stigeoperatoren i Heisenbergbildet">
 <ExamRef id="2025-aug-kont" task="3 d" />
@@ -540,7 +582,8 @@ $$
 
 Operatoren får bare en fasefaktor som dreier seg med vinkelfrekvensen
 $\omega$, og $\hat a^\dagger(t) = \hat a^\dagger(0)\,e^{i\omega t}$. Derfor svinger
-alle forventningsverdier som bygges av $\hat a$ og $\hat a^\dagger$ med $\omega$.
+forventningsverdien av enhver operator som er lineær i $\hat a$ og
+$\hat a^\dagger$, som $\hat x$ og $\hat p$, med $\omega$.
 Løsningsforslaget skriver $e^{+i\omega t}$, men $1/i = -i$ gir
 minustegnet.
 
@@ -559,7 +602,7 @@ $$
 
 den klassiske løsningen, men som en likning mellom operatorer. Derfor
 følger $\langle x\rangle$ en klassisk svingning i enhver tilstand, slik
-blandingen $(3|0\rangle + 4|1\rangle)/5$ gjorde. Guiden bruker
+superposisjonen $(3|0\rangle + 4|1\rangle)/5$ gjorde. Guiden bruker
 Schrödingerbildet der ikke annet er sagt.
 
 ## Sjekk deg selv
@@ -612,7 +655,7 @@ ett trinn $\hbar$ for hvert nivå oppover stigen.
 
 - Stigeoperatorene $a = (i\hat p + m\omega\hat x)/\sqrt{2\hbar m\omega}$ og $a^\dagger$ oppfyller $[a, a^\dagger] = 1$, og $\hat H = \hbar\omega(a^\dagger a + \tfrac12)$.
 - $a$ senker og $a^\dagger$ hever energien ett trinn: $a|n\rangle = \sqrt n\,|n-1\rangle$ og $a^\dagger|n\rangle = \sqrt{n+1}\,|n+1\rangle$. Normkravet stopper stigen nederst, $a|0\rangle = 0$.
-- Spekteret $E_n = \hbar\omega(n + \tfrac12)$, $n = 0, 1, 2, \dots$, er ikke-degenerert og følger av $[\hat x, \hat p] = i\hbar$ alene.
+- Spekteret $E_n = \hbar\omega(n + \tfrac12)$, $n = 0, 1, 2, \dots$, følger av $[\hat x, \hat p] = i\hbar$ alene. Hvert nivå er ikke-degenerert, fordi $a|0\rangle = 0$ har én løsning.
 - Matriseelementer regnes med $\hat x = \sqrt{\hbar/2m\omega}\,(a + a^\dagger)$ og $\hat p = i\sqrt{m\hbar\omega/2}\,(a^\dagger - a)$; begge kopler bare nabonivåer.
 - Grunntilstanden løser $a|0\rangle = 0$ og er en gausspakke; $(a^\dagger)^n$ bygger Hermitefunksjonene uten at noen differensiallikning av andre orden løses.
 - En stasjonær tilstand står stille. En superposisjon av nabonivåer svinger med $\omega$, og den koherente tilstanden $a|\alpha\rangle = \alpha|\alpha\rangle$ svinger som en klassisk partikkel uten å endre form.

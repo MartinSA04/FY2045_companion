@@ -28,8 +28,33 @@ kvantetallene som ordner nivåene i atomer.
 
 ## Dreieimpulsoperatorene
 
-En <Term name="Dreieimpuls">dreieimpuls</Term> $\vec J$ er en vektor av
-tre hermiteske operatorer $J_x$, $J_y$ og $J_z$ som oppfyller
+Banedreieimpulsen $\vec L = \vec r \times \vec p$ har komponentene
+
+$$
+L_x = \hat y\hat p_z - \hat z\hat p_y, \allowbreak\quad L_y = \hat z\hat p_x - \hat x\hat p_z, \allowbreak\quad L_z = \hat x\hat p_y - \hat y\hat p_x .
+$$
+
+Komponentene har kommutatoren $[L_x, L_y] = i\hbar L_z$, og de to andre
+følger ved syklisk permutasjon av $x$, $y$ og $z$.
+
+<Derivation title="Kommutatorene til banedreieimpulsen">
+
+Kommutatorene følger av $[\hat x_i, \hat p_j] = i\hbar\,\delta_{ij}$. Bare
+de to leddene der en koordinat møter sin egen impuls, bidrar:
+
+$$
+\begin{aligned}
+[L_x, L_y] &= [\hat y\hat p_z, \hat z\hat p_x] + [\hat z\hat p_y, \hat x\hat p_z] \\
+&= \hat y\,[\hat p_z, \hat z]\,\hat p_x + \hat x\,[\hat z, \hat p_z]\,\hat p_y \\
+&= i\hbar\,(\hat x\hat p_y - \hat y\hat p_x) = i\hbar L_z .
+\end{aligned}
+$$
+
+</Derivation>
+
+En <Term name="Dreieimpuls">dreieimpuls</Term> er enhver vektor $\vec J$ av
+tre hermiteske operatorer $J_x$, $J_y$ og $J_z$ med de samme
+kommutatorene som $\vec L$:
 
 <Formula tex={"[J_x, J_y] = i\\hbar J_z, \\allowbreak\\quad [J_y, J_z] = i\\hbar J_x, \\allowbreak\\quad [J_z, J_x] = i\\hbar J_y"} caption={"Definisjonen av en dreieimpuls. Kort skrevet er $[J_i, J_j] = i\\hbar\\sum_k \\varepsilon_{ijk}J_k$, der Levi-Civita-symbolet $\\varepsilon_{ijk}$ er $+1$ for $xyz$ og sykliske permutasjoner av den, $-1$ for de andre permutasjonene og $0$ når to indekser er like."} />
 
@@ -58,14 +83,16 @@ unntatt når hele dreieimpulsen er null.
 
 Kall de felles egenvektorene $|a, b\rangle$, med
 $J^2|a, b\rangle = a\,|a, b\rangle$ og $J_z|a, b\rangle = b\,|a, b\rangle$.
-Så langt vet vi ingenting om $a$ og $b$. Som for oscillatoren lønner det
-seg å danne to kombinasjoner som ikke er hermiteske:
+Se etter en kombinasjon $J_x + cJ_y$ som flytter egenverdien til $J_z$ ett
+fast trinn, altså med $[J_z, J_x + cJ_y] = \lambda\,(J_x + cJ_y)$.
+Kommutatorene gir $[J_z, J_x + cJ_y] = i\hbar J_y - ic\hbar J_x$. Leddet med
+$J_x$ krever $\lambda = -ic\hbar$, og leddet med $J_y$ krever
+$\lambda c = i\hbar$. Sammen gir de $c^2 = -1$, altså $c = \pm i$ og
+$\lambda = \pm\hbar$:
 
 <Formula tex={"J_\\pm = J_x \\pm iJ_y, \\allowbreak\\quad [J_z, J_\\pm] = \\pm\\hbar J_\\pm, \\allowbreak\\quad [J^2, J_\\pm] = 0"} caption={"Heveoperatoren $J_+$ og senkeoperatoren $J_-$. De er hverandres adjungerte, $J_+^\\dagger = J_-$."} />
 
-Kommutatoren med $J_z$ følger av definisjonen:
-$[J_z, J_x] \pm i[J_z, J_y] = i\hbar J_y \pm \hbar J_x = \pm\hbar J_\pm$.
-Den flytter $J_z$ forbi $J_\pm$:
+Kommutatoren $[J_z, J_\pm] = \pm\hbar J_\pm$ flytter $J_z$ forbi $J_\pm$:
 
 $$
 J_z\,(J_\pm|a, b\rangle) = (J_\pm J_z \pm \hbar J_\pm)|a, b\rangle \allowbreak = (b \pm \hbar)\,(J_\pm|a, b\rangle),
@@ -73,8 +100,9 @@ $$
 
 og siden $J_\pm$ kommuterer med $J^2$, har $J_\pm|a, b\rangle$ fortsatt
 egenverdien $a$. Heveoperatoren øker egenverdien til $J_z$ med $\hbar$ og
-senkeoperatoren minsker den med $\hbar$, mens $J^2$ er uendret. Det er
-samme stige som for oscillatoren, men nå med verdier av $J_z$ som trinn.
+senkeoperatoren minsker den med $\hbar$, mens $J^2$ er uendret. $J_+$ og
+$J_-$ virker altså som heve- og senkeoperatoren for oscillatoren: hver
+flytter egenverdien ett fast trinn, her $\hbar$ i $J_z$.
 
 Stigen kan ikke fortsette i noen retning. For å se det trengs produktet
 
@@ -123,8 +151,9 @@ like gode løsninger. For $j > 0$ er $j(j + 1) > j^2$, så $|J_z|$ er alltid
 mindre enn lengden $\sqrt{j(j+1)}\,\hbar$. Pekte $\vec J$ langs $z$-aksen,
 ville $J_x$ og $J_y$ begge vært null, og dermed skarpe samtidig.
 
-Normen bestemmer også virkningen av $J_\pm$, når fasen velges reell og
-positiv:
+Sett $a = \hbar^2 j(j + 1)$ og $b = \hbar m$ inn i normen. Da er kvadratet av
+normen til $J_\pm|j, m\rangle$ lik $\hbar^2[j(j + 1) - m(m \pm 1)]$, og med
+fasen valgt reell og positiv er
 
 <Formula tex={"J_\\pm|j, m\\rangle = \\hbar\\sqrt{j(j + 1) - m(m \\pm 1)}\\;|j, m \\pm 1\\rangle"} caption={"Virkningen av heve- og senkeoperatoren. Roten er null for $m = j$ oppover og for $m = -j$ nedover, så stigen stopper av seg selv."} />
 
@@ -137,26 +166,8 @@ positiv:
 
 ## Banedreieimpuls
 
-Den klassiske definisjonen $\vec L = \vec r \times \vec p$ gir
-<Term name="Banedreieimpuls">banedreieimpulsen</Term>, med komponentene
-
-$$
-L_x = \hat y\hat p_z - \hat z\hat p_y, \allowbreak\quad L_y = \hat z\hat p_x - \hat x\hat p_z, \allowbreak\quad L_z = \hat x\hat p_y - \hat y\hat p_x .
-$$
-
-Kommutatorene følger av $[\hat x_i, \hat p_j] = i\hbar\,\delta_{ij}$. Bare
-de to leddene der en koordinat møter sin egen impuls, bidrar:
-
-$$
-\begin{aligned}
-[L_x, L_y] &= [\hat y\hat p_z, \hat z\hat p_x] + [\hat z\hat p_y, \hat x\hat p_z] \\
-&= \hat y\,[\hat p_z, \hat z]\,\hat p_x + \hat x\,[\hat z, \hat p_z]\,\hat p_y \\
-&= i\hbar\,(\hat x\hat p_y - \hat y\hat p_x) = i\hbar L_z .
-\end{aligned}
-$$
-
-De to andre følger ved syklisk permutasjon av $x$, $y$ og $z$. $\vec L$ er altså en dreieimpuls,
-og alt fra forrige avsnitt gjelder, med $l$ i stedet for $j$:
+<Term name="Banedreieimpuls">Banedreieimpulsen</Term> $\vec L$ er en
+dreieimpuls, så alt som er vist for $\vec J$ gjelder, med $l$ i stedet for $j$:
 $L^2|l, m\rangle = \hbar^2 l(l + 1)|l, m\rangle$ og
 $L_z|l, m\rangle = \hbar m|l, m\rangle$. Det som gjenstår, er å finne ut
 hvilke $l$ som faktisk forekommer.
@@ -166,11 +177,12 @@ differensialoperatorer i vinklene alene:
 
 <Formula tex={"L_z = \\frac{\\hbar}{i}\\frac{\\partial}{\\partial\\varphi}, \\allowbreak\\quad L^2 = -\\hbar^2\\Bigl(\\frac{\\partial^2}{\\partial\\theta^2} + \\cot\\theta\\,\\frac{\\partial}{\\partial\\theta} + \\frac{1}{\\sin^2\\theta}\\frac{\\partial^2}{\\partial\\varphi^2}\\Bigr)"} caption={"Banedreieimpulsen i posisjonsrepresentasjonen, i kulekoordinater. Ingen av dem inneholder $r$."} />
 
-Projiser egenverdilikningene på $\langle r, \theta, \varphi|$, slik
-posisjonsrepresentasjonen ble funnet før. Da blir
+Projiser egenverdilikningene på $\langle r, \theta, \varphi|$. Da blir
 $\psi_{lm}(r, \theta, \varphi) = \langle r, \theta, \varphi|l, m\rangle$
-løsningen av to differensiallikninger der $r$ ikke inngår, og løsningen
-skiller seg:
+løsningen av to differensiallikninger der $r$ ikke inngår. Med
+$L_z = (\hbar/i)\,\partial/\partial\varphi$ er $L_z$-likningen
+$\partial\psi/\partial\varphi = im\psi$, så $\psi$ avhenger av $\varphi$ bare
+gjennom faktoren $e^{im\varphi}$. Løsningen skiller seg:
 
 $$
 \psi_{lm}(r, \theta, \varphi) = R(r)\,Y_{lm}(\theta, \varphi), \allowbreak\quad Y_{lm}(\theta, \varphi) = \Theta_{lm}(\theta)\,e^{im\varphi} .
@@ -178,8 +190,7 @@ $$
 
 <Term name="Kuleflatefunksjoner">Kuleflatefunksjonene</Term> $Y_{lm}$ er
 et ortonormert, fullstendig sett av funksjoner på kuleflaten. Faktoren
-$e^{im\varphi}$ løser $L_z$-likningen, og den avgjør hvilke $m$ som er
-lov. Vinklene $\varphi$ og $\varphi + 2\pi$ er samme punkt, men for
+$e^{im\varphi}$ avgjør hvilke $m$ som er lov. Vinklene $\varphi$ og $\varphi + 2\pi$ er samme punkt, men for
 halvtallig $m$ er $e^{im(\varphi + 2\pi)} = -e^{im\varphi}$. Da ville
 $Y_{lm}(\theta, \varphi + 2\pi) = -Y_{lm}(\theta, \varphi)$, og
 bølgefunksjonen ville ikke vært entydig. Altså er $m$ et heltall, og
@@ -201,7 +212,7 @@ values?
 $Y_{lm}$ inneholder faktoren $e^{im\varphi}$, og $\varphi$ og
 $\varphi + 2\pi$ er samme punkt. Bølgefunksjonen må ha samme verdi der,
 og det krever heltallig $m$. Siden $m$ går i hele trinn fra $-l$ til $l$,
-er $l$ også et heltall. Negativ er $l$ ikke: stigen gir
+er $l$ også et heltall. $l$ er heller ikke negativ: stigen gir
 $l = b_{\max}/\hbar$, og $b_{\max} \ge 0$ fordi $b_{\min} = -b_{\max}$
 ikke kan ligge over $b_{\max}$. Kvantetallet $m$ kan være negativt.
 
@@ -296,8 +307,9 @@ med sine egne komponenter. Derfor kommuterer $\hat H$ med $L^2$ og med
 $L_x$, $L_y$ og $L_z$. Alle fire er
 <Term name="Bevegelseskonstant">bevegelseskonstanter</Term>, og $\hat H$,
 $L^2$ og $L_z$ har felles egenfunksjoner
-$\psi(r, \theta, \varphi) = R(r)\,Y_{lm}(\theta, \varphi)$. Sett den inn,
-bytt $L^2$ med $\hbar^2 l(l + 1)$, og skriv $u(r) = rR(r)$:
+$\psi(r, \theta, \varphi) = R(r)\,Y_{lm}(\theta, \varphi)$. Sett den inn og
+bytt $L^2$ med $\hbar^2 l(l + 1)$. Med $u(r) = rR(r)$ er
+$R'' + \tfrac2r R' = u''/r$, så de to radielle leddene blir ett. Gang med $r$:
 
 <Formula tex={"-\\frac{\\hbar^2}{2m}\\frac{d^2u}{dr^2} \\allowbreak + \\Bigl[V(r) + \\frac{\\hbar^2 l(l + 1)}{2mr^2}\\Bigr]u \\allowbreak = Eu"} caption={"Radiallikningen for $u(r) = rR(r)$. Den har samme form som en endimensjonal Schrödingerlikning for $r > 0$, med sentrifugalpotensialet $\\hbar^2 l(l+1)/2mr^2$ lagt til $V(r)$."} />
 
@@ -364,21 +376,8 @@ sentralsymmetrisk.
 
 ### Hydrogenatomet
 
-For hydrogen er $V(r) = -e^2/4\pi\varepsilon_0 r$. Radiallikningen løses
-ikke i detalj her, men oppførselen i de to endene bestemmer formen på
-løsningen. Langt ute går både $V(r)$ og sentrifugalpotensialet mot null,
-og for en bunden tilstand med $E < 0$ står det igjen
-
-$$
-\frac{d^2u}{dr^2} = \kappa^2 u, \qquad \kappa = \frac{\sqrt{-2mE}}{\hbar},
-$$
-
-med den avtagende løsningen $u \propto e^{-\kappa r}$. Nær origo dominerer
-sentrifugalpotensialet, $u'' \approx l(l + 1)\,u/r^2$, med løsningene
-$r^{l+1}$ og $r^{-l}$. Den andre er singulær, så $u \propto r^{l+1}$ og
-$R \propto r^l$. Settes $u = e^{-\kappa r}v(r)$ med $v$ en potensrekke som
-begynner på $r^{l+1}$, må rekka brytes av for at $u$ skal kunne normeres.
-Det kvantiserer energien:
+For hydrogen er $V(r) = -e^2/4\pi\varepsilon_0 r$, og radiallikningen har
+normerbare løsninger bare for energiene
 
 $$
 E_n = -\frac{m_e}{2\hbar^2}\Bigl(\frac{e^2}{4\pi\varepsilon_0}\Bigr)^2\frac{1}{n^2} \allowbreak = -\frac{13{,}6\ \text{eV}}{n^2}, \allowbreak\qquad n = 1, 2, 3, \dots
@@ -390,6 +389,26 @@ $n - 1$ ganger $e^{-r/na_0}$, der $a_0$ er
 <Term name="Bohrradius">Bohrradien</Term>. Energien avhenger bare av $n$.
 Summen over $l$ gir $\sum_{l=0}^{n-1}(2l + 1) = n^2$ tilstander på hvert
 nivå, flere enn de $2l + 1$ som kulesymmetrien alene krever.
+
+<Derivation title="Hvorfor energien er kvantisert">
+
+Langt ute går både $V(r)$ og sentrifugalpotensialet mot null, og for en bunden tilstand med $E < 0$ står det igjen
+
+$$
+\frac{d^2u}{dr^2} = \kappa^2 u, \qquad \kappa = \frac{\sqrt{-2m_eE}}{\hbar},
+$$
+
+med den avtagende løsningen $u \propto e^{-\kappa r}$. Nær origo dominerer sentrifugalpotensialet, $u'' \approx l(l + 1)\,u/r^2$, med løsningene $r^{l+1}$ og $r^{-l}$. Den andre er singulær, så $u \propto r^{l+1}$ og $R \propto r^l$.
+
+Sett $u = e^{-\kappa r}v(r)$ og $a_0 = 4\pi\varepsilon_0\hbar^2/m_ee^2$. Radiallikningen blir $v'' - 2\kappa v' = \bigl[l(l+1)/r^2 - 2/a_0 r\bigr]v$. Med $v = \sum_{k \ge l+1} c_k r^k$ gir koeffisientene foran $r^{k-2}$
+
+$$
+\frac{c_k}{c_{k-1}} = \frac{2\,[\kappa(k - 1) - 1/a_0]}{k(k - 1) - l(l + 1)} .
+$$
+
+En rekke som aldri stopper, har $c_k/c_{k-1} \to 2\kappa/k$ og vokser som $e^{2\kappa r}$. Da vokser $u \propto e^{\kappa r}$, og $u$ kan ikke normeres. Rekka stopper etter $r^n$ bare når telleren for $k = n + 1$ er null, altså $\kappa = 1/na_0$, og siden den begynner på $r^{l+1}$, er $n \ge l + 1$. Da er $E_n = -\hbar^2\kappa^2/2m_e$, som er Bohr-energiene ovenfor.
+
+</Derivation>
 
 ## Sjekk deg selv
 

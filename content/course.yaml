@@ -183,7 +183,7 @@ formulas:
     section: "Diracnotasjon og representasjoner"
   - id: impuls-matriseelement
     tex: "\\langle x''|\\hat p|x'\\rangle = \\dfrac{\\hbar}{i}\\,\\dfrac{\\partial}{\\partial x''}\\,\\delta(x'' - x')"
-    label: "Matriseelementet til impulsoperatoren i posisjonsbasisen, utledet fra $[\\hat x, \\hat p] = i\\hbar$."
+    label: "Matriseelementet til impulsoperatoren i posisjonsbasisen, bestemt av $[\\hat x, \\hat p] = i\\hbar$ når fasene til $|x\\rangle$ er valgt slik at ingen ekstra ledd er med."
     section: "Diracnotasjon og representasjoner"
   - id: overlapp-x-p
     tex: "\\langle x|p\\rangle = \\dfrac{1}{\\sqrt{2\\pi\\hbar}}\\,e^{ipx/\\hbar}"
@@ -440,7 +440,7 @@ glossary:
     section: "Repetisjon og postulater"
 
   - term: "Observabel"
-    definition: "Målbar fysisk størrelse. Representeres i teorien av en lineær operator."
+    definition: "Målbar fysisk størrelse. Representeres i teorien av en lineær, hermitesk operator."
     section: "Repetisjon og postulater"
   - term: "Forventningsverdi"
     definition: "Gjennomsnittet måleverdiene nærmer seg når observabelen måles mange ganger på et ensemble preparert i samme tilstand."
@@ -563,7 +563,7 @@ glossary:
     definition: "$\\mu_B = e\\hbar/2m_e = 5{,}79\\cdot10^{-5}$ eV/T, størrelsen på magnetiske momenter i atomer."
     section: "Spinn"
   - term: "Larmor-presesjon"
-    definition: "Et magnetisk moment i et homogent felt dreier rundt feltet med fast vinkel mot det og vinkelfrekvensen $\\omega_L = |\\gamma|B$. For spinnet gjelder det forventningsverdien $\\langle\\vec S\\rangle$."
+    definition: "Et magnetisk moment i et homogent felt dreier rundt feltet med fast vinkel mot det og vinkelfrekvensen $\\omega_L = |\\gamma|B$. For spinnet preseserer forventningsverdien $\\langle\\vec S\\rangle$."
     section: "Spinn"
   - term: "Stern–Gerlach-eksperimentet"
     definition: "En stråle av sølvatomer sendes gjennom et inhomogent magnetfelt, som avbøyer hvert atom etter $\\mu_z$. Strålen deles i to, og det viser at elektronet har spinn $\\tfrac12$."
