@@ -163,7 +163,7 @@ formulas:
     section: "Diracnotasjon og representasjoner"
   - id: fullstendighetsrelasjonen
     tex: "\\begin{aligned} \\sum_n |n\\rangle\\langle n| &= \\mathbb{1}, \\\\[2pt] \\int dx\\,|x\\rangle\\langle x| &= \\mathbb{1} \\end{aligned}"
-    label: "Fullstendighetsrelasjonen for en diskret og en kontinuerlig basis. Settes inn for å bytte basis."
+    label: "Fullstendighetsrelasjonen for en diskret og en kontinuerlig basis. Settes inn mellom en bra og en ket for å skrive uttrykket i den basisen."
     section: "Diracnotasjon og representasjoner"
   - id: adjungert-operator
     tex: "\\begin{aligned} \\langle a|\\hat A^\\dagger|b\\rangle &= \\langle b|\\hat A|a\\rangle^*, \\\\[2pt] (\\hat A\\hat B)^\\dagger &= \\hat B^\\dagger\\hat A^\\dagger \\end{aligned}"
@@ -175,7 +175,7 @@ formulas:
     section: "Diracnotasjon og representasjoner"
   - id: forventningsverdi-dirac
     tex: "\\begin{aligned} \\langle F\\rangle &= \\langle\\Psi|\\hat F|\\Psi\\rangle \\\\[2pt] &= \\sum_n f_n\\,|\\langle f_n|\\Psi\\rangle|^2 \\end{aligned}"
-    label: "Forventningsverdien i generell formulering. $|\\langle f_n|\\Psi\\rangle|^2$ er sannsynligheten for $f_n$."
+    label: "Forventningsverdien i generell formulering. For en ikke-degenerert $f_n$ er $|\\langle f_n|\\Psi\\rangle|^2$ sannsynligheten for $f_n$."
     section: "Diracnotasjon og representasjoner"
   - id: schrodinger-generell
     tex: "i\\hbar\\,\\dfrac{d}{dt}|\\Psi, t\\rangle = \\hat H\\,|\\Psi, t\\rangle"
@@ -241,7 +241,7 @@ formulas:
     section: "Dreieimpuls"
   - id: dreieimpuls-stigeoperatorer
     tex: "J_\\pm = J_x \\pm iJ_y, \\allowbreak\\quad [J_z, J_\\pm] = \\pm\\hbar J_\\pm"
-    label: "Heve- og senkeoperatoren. De kommuterer med $J^2$, og $J_+^\\dagger = J_-$."
+    label: "Heve- og senkeoperatoren. De kommuterer med $J^2$, og $J_+^\\dagger = J_-$ fordi $J_x$ og $J_y$ er hermiteske."
     section: "Dreieimpuls"
   - id: jminus-jpluss
     tex: "J_\\mp J_\\pm = J^2 - J_z^2 \\mp \\hbar J_z"
@@ -269,7 +269,7 @@ formulas:
     section: "Dreieimpuls"
   - id: radiallikningen
     tex: "-\\dfrac{\\hbar^2}{2m}\\dfrac{d^2u}{dr^2} \\allowbreak + \\Bigl[V(r) + \\dfrac{\\hbar^2 l(l + 1)}{2mr^2}\\Bigr]u \\allowbreak = Eu"
-    label: "Radiallikningen for $u(r) = rR(r)$ i et sentralsymmetrisk potensial. Kvantetallet $m$ inngår ikke."
+    label: "Radiallikningen for $u(r) = rR(r)$ i et sentralsymmetrisk potensial, med partikkelmassen $m$. $L_z$-kvantetallet $m$ inngår ikke."
     section: "Dreieimpuls"
 
   - id: magnetisk-moment
@@ -286,7 +286,7 @@ formulas:
     section: "Spinn"
   - id: bohr-magneton
     tex: "\\mu_B = \\dfrac{e\\hbar}{2m_e} = 5{,}79\\cdot10^{-5}\\ \\text{eV/T}"
-    label: "Bohr-magnetonet. For banedreieimpulsen til elektronet er $(\\mu_L)_z = -\\mu_B m$."
+    label: "Bohr-magnetonet. For banedreieimpulsen til elektronet er $(\\mu_L)_z = -\\mu_B m$ med kvantetallet $m = -l, \\dots, l$."
     section: "Spinn"
   - id: elektronspinn-moment
     tex: "\\vec\\mu_s = -g_e\\dfrac{e}{2m_e}\\,\\vec S = \\gamma_e\\vec S, \\allowbreak\\quad g_e = 2{,}0023"
@@ -336,7 +336,7 @@ symbols:
   # ── Postulatene, måling og impulsrommet ──
   - { tex: "\\Psi(x, t)", meaning: "Bølgefunksjonen som funksjon av posisjon og tid", section: "Postulatene, måling og impulsrommet", term: "Bølgefunksjon", formula: schrodingerlikningen, id: bolgefunksjonen, note: "$|\\Psi|^2$ er sannsynlighetstettheten. $\\Psi$ selv kan ikke måles." }
   - { tex: "\\psi(x),\\allowbreak\\ \\psi_n(x)", meaning: "Bølgefunksjonen når tida ikke er skrevet ut, og egenfunksjonen med indeks $n$", section: "Postulatene, måling og impulsrommet", formula: komponenter-tre-basiser, note: "$\\psi(x) = \\langle x|\\psi\\rangle$ og $\\psi_n(x) = \\langle x|n\\rangle$." }
-  - { tex: "m", meaning: "Massen til partikkelen", unit: "kg", section: "Postulatene, måling og impulsrommet", id: masse, note: "Ikke kvantetallet $m$ til $J_z$. I $\\langle m|\\hat x|n\\rangle$ er $m$ et nivå, og massen står i samme formel." }
+  - { tex: "m", meaning: "Massen til partikkelen", unit: "kg", section: "Postulatene, måling og impulsrommet", id: masse, note: "Ikke kvantetallet $m$ til $J_z$. I oscillatorens matriseelementer $\\langle n'|\\hat x|n\\rangle$ er nivåene $n'$ og $n$." }
   - { tex: "F,\\ \\hat F", meaning: "En observabel og operatoren som svarer til den", section: "Postulatene, måling og impulsrommet", term: "Observabel", formula: forventningsverdi, note: "Ved Ehrenfests teorem er $F(x) = -V'(x)$ kraften." }
   - { tex: "f_n", meaning: "Egenverdiene til $\\hat F$, de mulige måleverdiene", section: "Postulatene, måling og impulsrommet", term: "Spektrum", formula: spektralrepresentasjon, note: "Skrives $f$ uten indeks når spekteret er kontinuerlig." }
   - { tex: "c_n", meaning: "Utviklingskoeffisienten, $c_n = \\langle n|\\psi\\rangle$", section: "Postulatene, måling og impulsrommet", formula: komponenter-tre-basiser, note: "$|c_n|^2$ er sannsynligheten for $f_n$. Ved degenerasjon $c_{ni}$ med $i = 1, \\dots, g_n$." }
@@ -344,7 +344,7 @@ symbols:
   - { tex: "d\\tau", meaning: "Volumelementet i integralet over alle koordinatene", section: "Postulatene, måling og impulsrommet", formula: forventningsverdi, note: "$dx$ i én dimensjon." }
   - { tex: "\\hat H", meaning: "Hamiltonoperatoren", section: "Postulatene, måling og impulsrommet", formula: schrodingerlikningen, note: "$\\hat p^2/2m + V$. Ikke Hermitepolynomet $H_n$." }
   - { tex: "V", meaning: "Potensiell energi, $V(x)$ eller $V(r)$", unit: "J", section: "Postulatene, måling og impulsrommet", formula: ehrenfests-teorem, note: "I et sentralsymmetrisk potensial avhenger $V$ bare av $r$." }
-  - { tex: "[\\hat A, \\hat B]", meaning: "Kommutatoren $\\hat A\\hat B - \\hat B\\hat A$", section: "Postulatene, måling og impulsrommet", formula: tidsutvikling-forventningsverdi, id: kommutator, note: "Er den null, har operatorene felles egenfunksjoner." }
+  - { tex: "[\\hat A, \\hat B]", meaning: "Kommutatoren $\\hat A\\hat B - \\hat B\\hat A$", section: "Postulatene, måling og impulsrommet", formula: tidsutvikling-forventningsverdi, id: kommutator, note: "Er den null, har operatorene et fullstendig sett felles egenfunksjoner." }
   - { tex: "g_n", meaning: "Degenerasjonsgraden til egenverdien $f_n$", section: "Postulatene, måling og impulsrommet", term: "Degenerasjon", formula: sannsynlighet-degenerert }
   - { tex: "P_n", meaning: "Sannsynligheten for å måle $f_n$", section: "Postulatene, måling og impulsrommet", formula: sannsynlighet-degenerert, note: "Ikke projeksjonsoperatoren $\\hat P_n$." }
   - { tex: "\\hat x,\\ \\hat p", meaning: "Posisjons- og impulsoperatoren", section: "Postulatene, måling og impulsrommet", formula: impulsrom-operatorer, note: "$[\\hat x, \\hat p] = i\\hbar$. I posisjonsrommet er $\\hat p = (\\hbar/i)\\,\\partial/\\partial x$, i impulsrommet $\\hat x = -(\\hbar/i)\\,\\partial/\\partial p$." }
@@ -358,7 +358,7 @@ symbols:
   - { tex: "\\langle a|b\\rangle", meaning: "Skalarproduktet, et komplekst tall", section: "Diracnotasjon", formula: skalarprodukt-dirac, note: "Amplituden for å finne systemet i $|a\\rangle$ når det er i $|b\\rangle$. $|\\langle a|b\\rangle|^2$ er sannsynligheten." }
   - { tex: "|n\\rangle", meaning: "Energiegenvektoren med indeks $n$", section: "Diracnotasjon", formula: komponenter-tre-basiser, note: "$|n\\rangle = |\\psi_n\\rangle = |E_n\\rangle$." }
   - { tex: "|x\\rangle,\\allowbreak\\ |p\\rangle", meaning: "Egenvektorene til $\\hat x$ og $\\hat p$", section: "Diracnotasjon", formula: overlapp-x-p, note: "Deltafunksjonsnormerte og ingen fysiske tilstander. $\\langle x|\\psi\\rangle = \\psi(x)$ og $\\langle p|\\psi\\rangle = \\Phi(p)$." }
-  - { tex: "\\mathbb{1}", meaning: "Enhetsoperatoren", section: "Diracnotasjon", formula: fullstendighetsrelasjonen, note: "$\\sum_n |n\\rangle\\langle n| = \\mathbb{1}$ settes inn for å bytte basis." }
+  - { tex: "\\mathbb{1}", meaning: "Enhetsoperatoren", section: "Diracnotasjon", formula: fullstendighetsrelasjonen, note: "$\\sum_n |n\\rangle\\langle n| = \\mathbb{1}$ settes inn mellom en bra og en ket for å regne i basisen $|n\\rangle$." }
   - { tex: "\\hat A^\\dagger", meaning: "Den adjungerte operatoren til $\\hat A$", section: "Diracnotasjon", term: "Adjungert operator", formula: adjungert-operator, note: "Operatoren er hermitesk når $\\hat A^\\dagger = \\hat A$." }
   - { tex: "\\hat P_n", meaning: "Projeksjonsoperatoren $|n\\rangle\\langle n|$", section: "Diracnotasjon", term: "Projeksjonsoperator", note: "Ikke sannsynligheten $P_n$." }
   # ── Harmonisk oscillator ──
@@ -464,7 +464,7 @@ glossary:
     definition: "Alle egenfunksjoner som hører til samme egenverdi $f_n$. Dimensjonen er degenerasjonsgraden $g_n$."
     section: "Tidsutvikling, måling og impulsrommet"
   - term: "Kompatible observable"
-    definition: "Observable med kommuterende operatorer. De har felles egenfunksjoner og kan ha skarpe verdier samtidig."
+    definition: "Observable med kommuterende operatorer. De har et fullstendig sett felles egenfunksjoner og kan ha skarpe verdier samtidig. Ved degenerasjon er ikke hver egenfunksjon av den ene en egenfunksjon av den andre."
     section: "Tidsutvikling, måling og impulsrommet"
   - term: "Deltafunksjonsnormering"
     definition: "Normering av egenfunksjoner med kontinuerlig spektrum: $\\int \\psi_{f'}^*\\psi_f\\,d\\tau = \\delta(f - f')$ i stedet for $\\delta_{nn'}$."
@@ -473,13 +473,13 @@ glossary:
     definition: "Vektoren $|\\psi\\rangle$ i Hilbertrommet som beskriver tilstanden. Bølgefunksjonen $\\psi(x) = \\langle x|\\psi\\rangle$ er komponentene dens i posisjonsbasisen."
     section: "Diracnotasjon og representasjoner"
   - term: "Hilbertrom"
-    definition: "Komplekst, lineært vektorrom med skalarprodukt. For bølgefunksjoner er det de kvadratisk integrerbare funksjonene, $L^2$."
+    definition: "Komplekst, lineært vektorrom med skalarprodukt, der tilstandsvektorene ligger. I posisjonsbasisen er komponentene $\\psi(x) = \\langle x|\\psi\\rangle$ kvadratisk integrerbare, så for én partikkel i én dimensjon er rommet $L^2$."
     section: "Diracnotasjon og representasjoner"
   - term: "Bra og ket"
     definition: "Ketvektoren $|a\\rangle$ er en tilstandsvektor, bravektoren $\\langle a|$ den duale vektoren. Sammen gir de skalarproduktet $\\langle a|b\\rangle$."
     section: "Diracnotasjon og representasjoner"
   - term: "Fullstendighetsrelasjonen"
-    definition: "$\\sum_n |n\\rangle\\langle n| = \\mathbb{1}$ for et ortonormert basissett. Settes inn i et uttrykk for å bytte basis."
+    definition: "$\\sum_n |n\\rangle\\langle n| = \\mathbb{1}$ for et ortonormert basissett. Settes inn mellom en bra og en ket for å skrive uttrykket i den basisen."
     section: "Diracnotasjon og representasjoner"
   - term: "Projeksjonsoperator"
     definition: "$\\hat P_n = |n\\rangle\\langle n|$. Plukker ut den delen av en vektor som peker langs $|n\\rangle$. Hermitesk, med $\\hat P_n^2 = \\hat P_n$."
@@ -563,7 +563,7 @@ glossary:
     definition: "$\\mu_B = e\\hbar/2m_e = 5{,}79\\cdot10^{-5}$ eV/T, størrelsen på magnetiske momenter i atomer."
     section: "Spinn"
   - term: "Larmor-presesjon"
-    definition: "Et magnetisk moment i et homogent felt dreier rundt feltet med fast vinkel mot det og vinkelfrekvensen $\\omega_L = |\\gamma|B$. For spinnet preseserer forventningsverdien $\\langle\\vec S\\rangle$."
+    definition: "Et magnetisk moment i et homogent felt dreier rundt feltet med fast vinkel mot det og vinkelfrekvensen $\\omega_L = |\\gamma|B$. For elektronspinnet preseserer forventningsverdien $\\langle\\vec S\\rangle$ mot klokka sett fra spissen av $\\vec B$, og en energiegentilstand preseserer ikke."
     section: "Spinn"
   - term: "Stern–Gerlach-eksperimentet"
     definition: "En stråle av sølvatomer sendes gjennom et inhomogent magnetfelt, som avbøyer hvert atom etter $\\mu_z$. Strålen deles i to, og det viser at elektronet har spinn $\\tfrac12$."

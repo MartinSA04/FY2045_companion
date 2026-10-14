@@ -58,10 +58,17 @@ konstant så lenge $\hat H$ ikke avhenger av tida. For en fri partikkel
 kommuterer $\hat p$ med $\hat H = \hat p^2/2m$, så $\langle p \rangle$ er
 konstant, som impulsen til en fri klassisk partikkel.
 
+<Callout title="Bevegelseskonstant">
+
+Kommuterer en tidsuavhengig operator $\hat F$ med $\hat H$, er
+$\langle F\rangle$ konstant i enhver tilstand.
+
+</Callout>
+
 ### Ehrenfests teorem
 
 For en partikkel i et potensial, $\hat H = \hat p^2/2m + V(x)$, gir formelen
-med $\hat F = \hat x$ og $\hat F = \hat p$ to bevegelseslikninger for
+for $d\langle F\rangle/dt$ med $\hat F = \hat x$ og $\hat F = \hat p$ to bevegelseslikninger for
 forventningsverdiene. Den første kommutatoren følger av
 $[\hat x, \hat p] = i\hbar$, den andre av $\hat p = (\hbar/i)\,\partial/\partial x$.
 
@@ -118,17 +125,29 @@ $$
 $$
 
 Korreksjonen vokser med bredden $\Delta x$ på bølgepakken og med krumningen
-$F''$ til kraften. For en makroskopisk partikkel er $\Delta x$
+$F''$ til kraften, og den kan sløyfes når
+$\tfrac12(\Delta x)^2\,|F''| \ll |F|$. For en makroskopisk partikkel er $\Delta x$
 forsvinnende liten, og klassisk mekanikk gjelder. Det samme gjelder en
 mikroskopisk partikkel i et potensial som varierer langsomt over
 $\Delta x$, slik som i en akselerator. I et lineært eller kvadratisk
 potensial er $F'' = 0$, så der følger $\langle x \rangle$ den klassiske
-banen eksakt, uansett hvor bred pakken er.
+banen eksakt, uansett hvor bred pakken er. I et $x^4$-potensial er
+$F'' \neq 0$, og $\langle x \rangle$ skiller lag med den klassiske banen,
+raskere jo bredere pakken er.
+
+<Callout title="Klassisk bane">
+
+$\langle x \rangle$ følger den klassiske banen eksakt i et lineært eller
+kvadratisk potensial, der $F'' = 0$. Ellers avviker kraften i
+Ehrenfests teorem fra $F(\langle x \rangle)$ med omtrent
+$\tfrac12(\Delta x)^2F''$.
+
+</Callout>
 
 <Simulation
   src="/sims/ehrenfest.js"
   title="Bølgepakke og klassisk partikkel"
-  caption="Den fylte prikken er $\langle x \rangle$ for bølgepakken, ringen er en klassisk partikkel som starter i ro på samme sted. I det harmoniske potensialet følger de hverandre uansett bredde. I $x^4$-potensialet skiller de lag, og raskere jo bredere pakken er."
+  caption="En bølgepakke og en klassisk partikkel som starter i ro på samme sted, i et harmonisk potensial eller et $x^4$-potensial. Den fylte prikken er $\langle x \rangle$ for pakken, ringen er den klassiske partikkelen."
   height={300}
 />
 
@@ -172,10 +191,16 @@ De to første leddene blir da $\frac{1}{i\hbar}\langle \hat F\hat H - \hat H\hat
 
 Målepostulatet sier at systemet rett etter en måling som ga $f_n$, står i en
 egentilstand med egenverdi $f_n$. Er egenverdien ikke-degenerert, finnes
-bare én slik tilstand, $\psi_n$. Er egenverdien
-<Term name="Degenerasjon">degenerert</Term>, har
-$\hat F\psi_{ni} = f_n\psi_{ni}$ $g_n$ lineært uavhengige løsninger, og
-postulatet må presiseres.
+bare én slik tilstand, $\psi_n$. I en uendelig dyp todimensjonal brønn med like sider har
+derimot $\psi_{12}$ og $\psi_{21}$, med $(n_x, n_y) = (1, 2)$ og $(2, 1)$,
+samme energi, og enhver kombinasjon
+$a\,\psi_{12} + b\,\psi_{21}$ er en egenfunksjon med den energien. En
+energimåling kan ikke skille dem, og postulatet sier ikke hvilken
+kombinasjon systemet står i etterpå. Generelt er egenverdien $f_n$
+<Term name="Degenerasjon">degenerert</Term> når likningen
+$\hat F\psi = f_n\psi$ har flere lineært uavhengige løsninger $\psi_{ni}$.
+Antallet $g_n$ er degenerasjonsgraden, og i brønnen er den 2 for energien
+til $\psi_{12}$.
 
 Utvikle tilstanden i det ortonormerte egenfunksjonssettet,
 $\Psi = \sum_n \sum_{i=1}^{g_n} c_{ni}\,\psi_{ni}$ med
@@ -183,15 +208,20 @@ $c_{ni} = \int \psi_{ni}^*\,\Psi\,d\tau$. Forventningsverdien er på den ene
 siden $\sum_n P_n f_n$, med $P_n$ som sannsynligheten for å måle $f_n$. På
 den andre siden gir forventningsverdipostulatet
 $\int\Psi^*\hat F\Psi\,d\tau = \sum_n \bigl(\sum_i |c_{ni}|^2\bigr) f_n$.
-Byttes $\hat F$ ut med $G(\hat F)$ for en vilkårlig funksjon $G$, har
-operatoren de samme egenfunksjonene med egenverdiene $G(f_n)$, og det samme
-regnestykket gir
-$\sum_n P_n\,G(f_n) = \sum_n \bigl(\sum_i |c_{ni}|^2\bigr) G(f_n)$.
-Samme argument som for posisjonstettheten, med en $G$ som plukker ut
-egenverdien $f_n$, gir $P_n = \sum_i |c_{ni}|^2$, sannsynligheten for hele
-<Term name="Egenrom">egenrommet</Term>.
+For en funksjon $G$ er operatorfunksjonen $G(\hat F)$ operatoren med de
+samme egenfunksjonene som $\hat F$ og egenverdiene $G(f_n)$. Med
+$G(\hat F)$ i stedet for $\hat F$ gir det samme regnestykket
+$\sum_n P_n\,G(f_n) = \sum_n \bigl(\sum_i |c_{ni}|^2\bigr) G(f_n)$
+for enhver $G$. Velg $G(f_n) = 1$ for én bestemt egenverdi og $G = 0$ for
+alle de andre. Da står bare ledd $n$ igjen på hver side, og
+$P_n = \sum_i |c_{ni}|^2$, sannsynligheten for hele
+<Term name="Egenrom">egenrommet</Term>. Delen av $\Psi$ i egenrommet,
+$\Psi_n = \sum_i c_{ni}\,\psi_{ni}$, er delen som er forenlig med $f_n$.
+Kvadratnormen er
+$\lVert\Psi_n\rVert^2 = \int|\Psi_n|^2\,d\tau = \sum_i |c_{ni}|^2$, så
+$P_n = \lVert\Psi_n\rVert^2$.
 
-<Formula tex={"P_n = \\sum_{i=1}^{g_n} |c_{ni}|^2 = \\lVert \\Psi_n \\rVert^2"} caption={"Måleutfallet $f_n$ har sannsynligheten til hele egenrommet. $\\Psi_n = \\sum_i c_{ni}\\,\\psi_{ni}$ er delen av $\\Psi$ som er forenlig med $f_n$."} />
+<Formula tex={"P_n = \\sum_{i=1}^{g_n} |c_{ni}|^2 = \\lVert \\Psi_n \\rVert^2"} caption={"Sannsynligheten for måleutfallet $f_n$ når egenverdien er degenerert."} />
 
 <Statement kind="principle" name="Målepostulatet for en degenerert egenverdi" id="maling-degenerert">
 
@@ -234,14 +264,34 @@ $\Psi_2/\lVert\Psi_2\rVert$.
 
 </Example>
 
-Målingen etterlater altså en superposisjon innenfor egenrommet. For å ende
-i én bestemt egenfunksjon må du måle en observabel til. To operatorer som
-kommuterer, har felles egenfunksjoner, og størrelsene kan ha skarpe verdier
+Tilstanden etter målingen er altså en egenfunksjon av $\hat F$, men
+egenrommet har mange, og hvilken du får, avhenger av tilstanden før. Skal
+tilstanden fastlegges uansett hva den var før, må du i tillegg måle en
+observabel $A$ der $\hat A$ kommuterer med $\hat F$ og har ulike egenverdier
+innenfor egenrommet. Er $\hat F\psi = f_n\psi$, er
+$\hat F(\hat A\psi) = \hat A\hat F\psi = f_n\,\hat A\psi$, så $\hat A$ fører
+ingen funksjon ut av egenrommet, og innenfor egenrommet kan du velge
+egenfunksjonene til $\hat A$. To operatorer som kommuterer, har derfor et
+fullstendig sett felles egenfunksjoner, og størrelsene kan ha skarpe verdier
 samtidig; slike observable kalles
-<Term name="Kompatible observable">kompatible</Term>. I hydrogen er $E$,
-$L^2$ og $L_z$ kompatible med felles egenfunksjoner $\psi_{nlm}$: en
-energimåling fastlegger $n$, en måling av $L^2$ deretter $l$, og en måling
-av $L_z$ til slutt $m$. Kommuterer operatorene ikke, finnes det ikke et
+<Term name="Kompatible observable">kompatible</Term>. Settet er felles, men
+ved degenerasjon er ikke hver egenfunksjon av den ene en egenfunksjon av den
+andre. For en fri partikkel kommuterer $\hat p$ med $\hat H$, men
+$\cos kx$ er en energiegenfunksjon uten skarp impuls, ettersom den er
+summen av $e^{ikx}$ og $e^{-ikx}$. I hydrogen er $E$, $L^2$ og $L_z$
+kompatible med felles egenfunksjoner $\psi_{nlm}$: en energimåling
+fastlegger $n$, en måling av $L^2$ deretter $l$, og en måling av $L_z$ til
+slutt $m$.
+
+<Callout title="Kompatible observable">
+
+To kommuterende operatorer har et fullstendig sett felles egenfunksjoner.
+Ved degenerasjon er likevel ikke hver egenfunksjon av den ene en
+egenfunksjon av den andre.
+
+</Callout>
+
+Kommuterer operatorene ikke, finnes det ikke et
 fullstendig sett felles egenfunksjoner. For $\hat x$ og $\hat p$ finnes ingen i
 det hele tatt, ettersom en felles egenfunksjon $\psi$ ville gitt
 $(\hat x\hat p - \hat p\hat x)\psi = 0$, mens kommutatoren gir $i\hbar\psi$. En
@@ -306,8 +356,10 @@ $2\pi\hbar\,|A|^2\,\delta(p - p')$, så $A = (2\pi\hbar)^{-1/2}$
 Posisjonsoperatoren har også et kontinuerlig spektrum.
 $\hat x\,\psi_y = y\,\psi_y$ har løsningen $\psi_y(x) = \delta(x - y)$, som
 er null overalt unntatt i $x = y$, og den er deltafunksjonsnormert på samme
-måte. Etter en posisjonsmåling som ga $x'$, står partikkelen i
-$\delta(x - x')$.
+måte. Verken $\psi_p$ eller $\psi_y$ kan normeres til 1, så ingen av dem er en
+fysisk tilstand. De er idealiseringer: en posisjonsmåling som ga $x'$,
+etterlater en smal topp rundt $x'$, og $\delta(x - x')$ er grensen når
+toppen blir uendelig smal.
 
 <Compare>
 
@@ -339,8 +391,8 @@ koeffisienten finner du ved å projisere på $\psi_p$.
 
 <Formula tex={"\\Phi(p, t) = \\int_{-\\infty}^{\\infty} \\psi_p^*(x)\\, \\Psi(x, t)\\, dx"} caption={"Bølgefunksjonen i impulsrommet er fouriertransformen av $\\Psi$."} />
 
-Tolkningen av $\Phi$ følger av samme sammenlikning som i det degenererte
-tilfellet. Måles $p_x$ mange ganger på et ensemble i tilstanden $\Psi$, er
+Tolkningen av $\Phi$ følger av å regne ut $\langle p_x\rangle$ på to måter.
+Måles $p_x$ mange ganger på et ensemble i tilstanden $\Psi$, er
 $\langle p_x \rangle = \int P(p, t)\,p\,dp$, der $P(p, t)\,dp$ er
 sannsynligheten for et resultat i $[p, p + dp]$. Forventningsverdipostulatet
 gir samtidig
@@ -358,8 +410,10 @@ utviklingen av $\Psi$ satt inn, $\hat p_x\psi_p = p\,\psi_p$ brukt og
 rekkefølgen på integralene byttet. Det samme regnestykket med
 $G(\hat p_x)$ i stedet for $\hat p_x$ gir
 $\int P(p, t)\,G(p)\,dp = \int G(p)\,|\Phi(p, t)|^2\,dp$ for enhver $G$,
-ettersom $G(\hat p_x)\psi_p = G(p)\,\psi_p$. Samme argument som for posisjonstettheten, med en $G$ som plukker ut
-$[p, p + dp]$, gir $P(p, t) = |\Phi(p, t)|^2$.
+ettersom $G(\hat p_x)\psi_p = G(p)\,\psi_p$. Velg $G = 1$ i et lite
+intervall $[p, p + dp]$ og $G = 0$ ellers. Da er venstresiden
+$P(p, t)\,dp$ og høyresiden $|\Phi(p, t)|^2\,dp$, så
+$P(p, t) = |\Phi(p, t)|^2$.
 
 <Statement kind="principle" name="Sannsynlighetstettheten i impulsrommet" id="sannsynlighet-impulsrommet">
 
@@ -417,7 +471,8 @@ $$
 $$
 
 har integralet samme form som $\int \Psi^* \hat F\,\Psi\,dx$, så $\hat p = p$, ren multiplikasjon, slik $\hat x = x$ er det i
-posisjonsrommet. Den kinetiske energien $\hat p^2/2m$ blir dermed enkel.
+posisjonsrommet. Den kinetiske energien $\hat p^2/2m$ blir dermed
+multiplikasjon med $p^2/2m$.
 
 Posisjonen krever et regnestykke. Start i posisjonsrommet, med
 $\langle x^n \rangle = \int (x^n\Psi)^*\,\Psi\,dx$, og sett inn utviklingen
@@ -554,15 +609,15 @@ $\Delta x\,\Delta p = \hbar/2$, minst mulig.
 />
 
 <Quiz
-  question={"En partikkel har den normerte bølgefunksjonen $\\Phi(p)$ i impulsrommet. Hvilken påstand er riktig?"}
+  question={"En partikkel har bølgefunksjonen $\\Phi(p) = C\\,p$ for $0 \\le p \\le p_0$ og $\\Phi(p) = 0$ ellers, med $C$ reell og positiv. Hva er $\\langle p \\rangle$?"}
   options={[
-    "$|\\Phi(p)|^2\\,dp$ er sannsynligheten for å finne partikkelen mellom $x$ og $x + dx$.",
-    "$\\int |\\Phi(p)|^2\\,dp = 1$.",
-    "$\\langle p \\rangle = \\int |\\Phi(p)|^2\\,dp$.",
-    "En tilstand med skarp impuls er også skarpt lokalisert i posisjon."
+    "$p_0/2$",
+    "$2p_0/3$",
+    "$3p_0/4$",
+    "$\\sqrt{3/5}\\,p_0$"
   ]}
-  answer={1}
-  explanation={"$|\\Phi|^2$ er sannsynlighetstettheten for impuls, så integralet over alle $p$ er 1. Forventningsverdien trenger en faktor $p$ i integranden, og en skarp impuls er en plan bølge, som er spredt over hele rommet."}
+  answer={2}
+  explanation={"$|\\Phi|^2 = C^2p^2$ er sannsynlighetstettheten for impulsen. Normeringen $\\int_0^{p_0} C^2p^2\\,dp = C^2p_0^3/3 = 1$ gir $C^2 = 3/p_0^3$, og $\\langle p \\rangle = \\int_0^{p_0} p\\,C^2p^2\\,dp = (3/p_0^3)(p_0^4/4) = 3p_0/4$. Tettheten er størst ved store $p$, så $\\langle p \\rangle$ ligger over midtpunktet $p_0/2$. Vektes $p$ med $\\Phi$ i stedet for $|\\Phi|^2$, blir svaret $2p_0/3$, og $\\sqrt{3/5}\\,p_0$ er $\\sqrt{\\langle p^2 \\rangle}$."}
 />
 
 <SelfCheck question={"Vis at $[\\hat x, \\hat p] = i\\hbar$ også med operatorene i impulsrommet."}>
@@ -578,7 +633,7 @@ Differansen er $-\tfrac{\hbar}{i}\,\Phi = i\hbar\,\Phi$.
 
 - $d\langle F \rangle/dt = (i/\hbar)\langle[\hat H, \hat F]\rangle + \langle \partial\hat F/\partial t \rangle$. En tidsuavhengig operator som kommuterer med $\hat H$, gir en bevegelseskonstant.
 - Ehrenfests teorem: $d\langle x \rangle/dt = \langle p \rangle/m$ og $d\langle p \rangle/dt = -\langle V'(x) \rangle$. $\langle x \rangle$ følger den klassiske banen eksakt bare når $F'' = 0$, altså i lineære og kvadratiske potensialer.
-- Degenerert egenverdi: $P_n = \sum_i |c_{ni}|^2 = \lVert\Psi_n\rVert^2$, og målingen etterlater $\Psi_n/\lVert\Psi_n\rVert$. Én egenfunksjon får du først ved å måle kompatible observable etter tur.
+- Degenerert egenverdi: $P_n = \sum_i |c_{ni}|^2 = \lVert\Psi_n\rVert^2$, og målingen etterlater $\Psi_n/\lVert\Psi_n\rVert$, en egenfunksjon av $\hat F$ som arver vektene fra tilstanden før. En måling av en kompatibel observabel med ulike egenverdier i egenrommet fastlegger tilstanden.
 - Impulsegenfunksjonene $\psi_p = (2\pi\hbar)^{-1/2}e^{ipx/\hbar}$ er deltafunksjonsnormerte: $\int\psi_{p'}^*\psi_p\,dx = \delta(p - p')$.
 - $\Phi(p, t) = \int\psi_p^*\,\Psi\,dx$, og $|\Phi(p, t)|^2\,dp$ er sannsynligheten for å måle impuls i $(p, p + dp)$.
 - I impulsrommet er $\hat p = p$ og $\hat x = -(\hbar/i)\,\partial/\partial p$, og $\Phi$ følger Schrödingerlikningen med samme $\hat H$.

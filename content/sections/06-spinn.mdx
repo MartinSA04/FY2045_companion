@@ -41,7 +41,9 @@ $$
 \frac{d\vec L}{dt} = \gamma\,\vec L\times\vec B = \vec\omega_L\times\vec L, \allowbreak\qquad \vec\omega_L = -\gamma\vec B .
 $$
 
-$\vec L$ dreier altså rundt feltet med fast vinkel mot det. Dette er
+Endringen står vinkelrett både på $\vec L$ og på $\vec B$, så lengden av
+$\vec L$ og komponenten langs feltet er konstante, og $\vec L$ dreier rundt
+feltet med fast vinkel mot det. Dette er
 <Term name="Larmor-presesjon">Larmor-presesjon</Term>, og vinkelfrekvensen
 $\omega_L = |\gamma| B$ er Larmor-frekvensen. I et inhomogent felt virker det
 i tillegg en kraft, minus gradienten av energien:
@@ -51,13 +53,14 @@ $$
 $$
 
 I kvantemekanikken er $\vec\mu_L = (q/2m)\vec L$ en operator, og den arver
-kvantiseringen av $\vec L$. For elektronet er $q = -e$, og med
+kvantiseringen av $\vec L$. For elektronet er $q = -e$ og massen $m_e$, og med
 <Term name="Bohr-magneton">Bohr-magnetonet</Term>
 
 <Formula tex={"\\mu_B = \\frac{e\\hbar}{2m_e} = 9{,}27\\cdot10^{-24}\\ \\text{J/T} \\allowbreak = 5{,}79\\cdot10^{-5}\\ \\text{eV/T}"} caption={"Bohr-magnetonet, den naturlige enheten for magnetiske momenter i atomer."} />
 
 er $|\vec\mu_L| = \mu_B\sqrt{l(l + 1)}$ og $(\mu_L)_z = -\mu_B m$ med
-$m = -l, \dots, l$. Momentet kan bare stå i $2l + 1$ vinkler mot $z$-aksen.
+kvantetallet $m = -l, \dots, l$. En måling av $(\mu_L)_z$ kan
+bare gi $2l + 1$ verdier.
 
 ## Stern–Gerlach-eksperimentet
 
@@ -90,8 +93,12 @@ brukte sølvatomer og fikk to adskilte flekker. En banedreieimpuls kan ikke
 forklare det, for $2l + 1$ verdier av $m$ gir et oddetall stråler. Sølv har
 47 elektroner. 46 av dem er paret slik at dreieimpulsene opphever hverandre,
 og det siste er i en $5s$-tilstand med $l = 0$. Atomet har altså ingen
-banedreieimpuls. Elektronet må derfor ha en egen dreieimpuls med
-$2s + 1 = 2$ verdier av $m$, og det gir $s = \tfrac12$.
+banedreieimpuls. Elektronet må derfor ha en egen dreieimpuls med to
+verdier av $m$, og $2s + 1 = 2$ gir $s = \tfrac12$.
+
+<Callout title="To stråler">
+En banedreieimpuls gir $2l + 1$ stråler, alltid et oddetall. Sølvatomet har ingen banedreieimpuls og gir to stråler, så elektronet har en egen dreieimpuls med $s = \tfrac12$.
+</Callout>
 
 ## Spinnoperatoren
 
@@ -110,12 +117,13 @@ $s = \tfrac12$, med $m = \pm\tfrac12$, som kalles spinn opp og spinn ned.
 
 Det magnetiske momentet til elektronspinnet er
 
-<Formula tex={"\\vec\\mu_s = -g_e\\frac{e}{2m_e}\\,\\vec S = \\gamma_e\\vec S, \\allowbreak\\qquad g_e = 2{,}0023"} caption={"Det magnetiske momentet til elektronspinnet. $\\gamma_e < 0$, så $\\vec\\mu_s$ peker motsatt av $\\vec S$."} />
+<Formula tex={"\\vec\\mu_s = -g_e\\frac{e}{2m_e}\\,\\vec S = \\gamma_e\\vec S, \\allowbreak\\qquad g_e = 2{,}0023"} caption={"Det magnetiske momentet til elektronspinnet."} />
 
-<Term name="g-faktor">g-faktoren</Term> $g_e$ er nesten nøyaktig 2, dobbelt
-så stor som for banebevegelsen, så $(\mu_s)_z = \mp\tfrac12 g_e\mu_B \approx \mp\mu_B$
-for spinn opp og ned. Protonet og nøytronet har også spinn ½, men momentet
-skalerer med $1/m$ og er av størrelsesorden en tusendel av elektronets. Det
+Elektronet er negativt ladd, så $\gamma_e < 0$, og $\vec\mu_s$ peker motsatt
+av $\vec S$. <Term name="g-faktor">g-faktoren</Term> $g_e$ er nesten nøyaktig 2, dobbelt
+så stor som $g = 1$ for banebevegelsen, der $\vec\mu_L = -(e/2m_e)\vec L$. For
+spinn opp og ned er $(\mu_s)_z = \mp\tfrac12 g_e\mu_B \approx \mp\mu_B$. Protonet og nøytronet har også spinn ½, men momentet
+er omvendt proporsjonalt med massen og er av størrelsesorden en tusendel av elektronets. Det
 er elektronene som bestemmer hvordan et atom oppfører seg i et magnetfelt.
 
 ## Spinn ½
@@ -136,8 +144,9 @@ $$
 |\chi\rangle = a_+|{\uparrow}\rangle + a_-|{\downarrow}\rangle, \allowbreak\qquad |a_+|^2 + |a_-|^2 = 1,
 $$
 
-der $a_\pm = \langle\pm|\chi\rangle$ er amplitudene for å måle
-$S_z = \pm\hbar/2$.
+der $a_+ = \langle{\uparrow}|\chi\rangle$ og
+$a_- = \langle{\downarrow}|\chi\rangle$ er amplitudene for å måle
+$S_z = +\hbar/2$ og $S_z = -\hbar/2$.
 
 I basisen $\{|{\uparrow}\rangle, |{\downarrow}\rangle\}$ er tilstanden en
 søylevektor, en <Term name="Spinor">spinor</Term>:
@@ -146,9 +155,12 @@ $$
 \chi = \begin{pmatrix} a_+ \\ a_- \end{pmatrix} = a_+\chi_+ + a_-\chi_-, \allowbreak\qquad \chi_+ = \begin{pmatrix} 1 \\ 0 \end{pmatrix}, \allowbreak\quad \chi_- = \begin{pmatrix} 0 \\ 1 \end{pmatrix}.
 $$
 
-Bravektoren er radvektoren $\chi^\dagger = (a_+^*, a_-^*)$, og en operator
-er en $2\times2$-matrise med elementene $\langle m|\hat F|n\rangle$ der
-$m, n = \pm$. $S_z$ er diagonal med $\pm\hbar/2$. Stigeformelen gir
+Søylene $\chi_+$ og $\chi_-$ er $|{\uparrow}\rangle$ og $|{\downarrow}\rangle$
+skrevet i denne basisen. Bravektoren er radvektoren
+$\chi^\dagger = (a_+^*, a_-^*)$, og en operator $\hat F$ er en
+$2\times2$-matrise med elementet $\langle{\uparrow}|\hat F|{\downarrow}\rangle$
+i første rad og andre søyle, og tilsvarende for de tre andre. $S_z$ er diagonal
+med $\pm\hbar/2$. Stigeformelen gir
 
 $$
 S_+ = \hbar\begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}, \allowbreak\qquad S_- = \hbar\begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix},
@@ -163,16 +175,24 @@ faktoren $\hbar/2$ foran, og det som står igjen, er
 
 Ganger du ut matrisene parvis, får du
 
-<Formula tex={"\\sigma_i\\sigma_j = \\delta_{ij}\\,\\mathbb{1} + i\\sum_k \\varepsilon_{ijk}\\,\\sigma_k"} caption={"Produktet av to Paulimatriser. Det gir $\\sigma_i^2 = \\mathbb{1}$, kommutatoren $[\\sigma_i, \\sigma_j] = 2i\\sum_k\\varepsilon_{ijk}\\sigma_k$ og antikommutatoren $\\{\\sigma_i, \\sigma_j\\} = 2\\delta_{ij}\\mathbb{1}$."} />
+<Formula tex={"\\sigma_i\\sigma_j = \\delta_{ij}\\,\\mathbb{1} + i\\sum_k \\varepsilon_{ijk}\\,\\sigma_k"} caption={"Produktet av to Paulimatriser."} />
 
-Med $\vec S = (\hbar/2)\vec\sigma$ er kommutatoren den samme som for en
+Med $i = j$ står $\sigma_i^2 = \mathbb{1}$ igjen. Bytter $i$ og $j$ plass,
+skifter bare leddet med $\varepsilon_{ijk}$ fortegn, så kommutatoren er
+$[\sigma_i, \sigma_j] = 2i\sum_k\varepsilon_{ijk}\sigma_k$ og antikommutatoren
+$\{\sigma_i, \sigma_j\} = 2\delta_{ij}\mathbb{1}$. Med
+$\vec S = (\hbar/2)\vec\sigma$ er kommutatoren
+$[S_i, S_j] = i\hbar\sum_k\varepsilon_{ijk}S_k$, den samme som for en
 dreieimpuls. Siden $\sigma_i^2 = \mathbb{1}$, er
-$S^2 = \tfrac34\hbar^2\,\mathbb{1}$, som det skal være for $s = \tfrac12$.
+$S^2 = \tfrac34\hbar^2\,\mathbb{1} = \hbar^2 s(s + 1)\,\mathbb{1}$ med
+$s = \tfrac12$.
 
 ### Spinnretningen
 
 En forventningsverdi er $\langle F\rangle = \chi^\dagger F\chi$, en rad
-ganger en matrise ganger en søyle. For de tre komponentene av spinnet gir det
+ganger en matrise ganger en søyle. For $S_x$ er
+$\chi^\dagger\sigma_x\chi = a_+^*a_- + a_-^*a_+ = 2\,\mathrm{Re}(a_+^*a_-)$, og
+de tre komponentene av spinnet blir
 
 $$
 \begin{aligned}
@@ -184,9 +204,11 @@ $$
 
 Vektoren $\langle\vec S\rangle$ kalles
 <Term name="Spinnretning">spinnretningen</Term>. For $\chi_+$ er
-$\langle\vec S\rangle = \tfrac\hbar2\hat z$. Retningen til selve $\vec S$
-er ingen observabel, fordi komponentene ikke kommuterer og ikke kan ha
-skarpe verdier samtidig.
+$\langle\vec S\rangle = \tfrac\hbar2\hat z$. Hver komponent er et
+gjennomsnitt. En måling av $S_z$ gir alltid $+\hbar/2$ eller $-\hbar/2$, og
+$\langle S_z\rangle$ er gjennomsnittet over mange målinger på spinn i samme tilstand. Retningen til selve
+$\vec S$ er ingen observabel, fordi komponentene ikke kommuterer og ikke kan
+ha skarpe verdier samtidig.
 
 ## Måling langs andre akser
 
@@ -199,8 +221,9 @@ $$
 \begin{vmatrix} -\lambda & \hbar/2 \\ \hbar/2 & -\lambda \end{vmatrix} = \lambda^2 - \frac{\hbar^2}{4} = 0,
 $$
 
-så $\lambda = \pm\hbar/2$, som for $S_z$. Egenvektorene har $a_- = \pm a_+$.
-Regningen for $S_y$ er den samme:
+så $\lambda = \pm\hbar/2$, som for $S_z$. Første rad av
+$(S_x - \lambda\mathbb{1})\chi = 0$ gir $a_- = (2\lambda/\hbar)\,a_+ = \pm a_+$.
+Regningen for $S_y$ er den samme og gir $a_- = \pm i\,a_+$:
 
 <Formula tex={"\\chi_\\pm^{(x)} = \\frac{1}{\\sqrt2}\\begin{pmatrix} 1 \\\\ \\pm 1 \\end{pmatrix}, \\allowbreak\\qquad \\chi_\\pm^{(y)} = \\frac{1}{\\sqrt2}\\begin{pmatrix} 1 \\\\ \\pm i \\end{pmatrix}"} caption={"Egenspinorene til $S_x$ og $S_y$ med egenverdiene $\\pm\\hbar/2$."} />
 
@@ -215,8 +238,17 @@ $$
 S_n = \hat n\cdot\vec S \allowbreak = \frac{\hbar}{2}\begin{pmatrix} \cos\theta & \sin\theta\,e^{-i\varphi} \\ \sin\theta\,e^{i\varphi} & -\cos\theta \end{pmatrix}.
 $$
 
-Produktregelen for Paulimatrisene gir $(\hat n\cdot\vec\sigma)^2 = \mathbb{1}$,
-så egenverdiene er igjen $\pm\hbar/2$.
+Produktet $\sigma_i\sigma_j = \delta_{ij}\,\mathbb{1} + i\sum_k\varepsilon_{ijk}\sigma_k$ gir
+
+$$
+(\hat n\cdot\vec\sigma)^2 = \sum_{i,j} n_i n_j\,\sigma_i\sigma_j = |\hat n|^2\,\mathbb{1} = \mathbb{1},
+$$
+
+fordi leddene med $\varepsilon_{ijk}$ skifter fortegn når $i$ og $j$ bytter
+plass, mens $n_i n_j$ ikke gjør det, så de faller bort i summen. En egenverdi
+$\lambda$ av $\hat n\cdot\vec\sigma$ oppfyller da $\lambda^2 = 1$. Sporet av
+matrisen er null, så egenverdiene er $+1$ og $-1$, og $S_n$ har igjen
+egenverdiene $\pm\hbar/2$.
 
 Egenspinoren til $S_n$ med egenverdien $+\hbar/2$ er den normerte
 $\chi = (a_+, a_-)^T$ som oppfyller $S_n\chi = \tfrac\hbar2\chi$.
@@ -229,7 +261,9 @@ $1 - \cos\theta = 2\sin^2\tfrac\theta2$ og
 $\sin\theta = 2\sin\tfrac\theta2\cos\tfrac\theta2$ er
 $a_-/a_+ = e^{i\varphi}\tan\tfrac\theta2$, og normert er
 $a_+ = \cos\tfrac\theta2$ og $a_- = e^{i\varphi}\sin\tfrac\theta2$. Sett dem
-inn i formlene for spinnretningen. Da er
+inn i $\langle S_x\rangle = \hbar\,\mathrm{Re}(a_+^*a_-)$,
+$\langle S_y\rangle = \hbar\,\mathrm{Im}(a_+^*a_-)$ og
+$\langle S_z\rangle = \tfrac\hbar2(|a_+|^2 - |a_-|^2)$. Da er
 $a_+^*a_- = \tfrac12\sin\theta\,e^{i\varphi}$, som gir
 $\langle S_x\rangle = \tfrac\hbar2\sin\theta\cos\varphi$ og
 $\langle S_y\rangle = \tfrac\hbar2\sin\theta\sin\varphi$, og
@@ -249,13 +283,24 @@ fasefaktor, så hver spinntilstand er spinn opp langs spinnretningen sin.
 
 </Statement>
 
-Den siste påstanden følger av normeringen. Velg $\cos\tfrac\theta2 = |a_+|$
-og $\varphi$ lik faseforskjellen mellom $a_-$ og $a_+$. Da er
-$\sin\tfrac\theta2 = |a_-|$. En måling av $S_z$ på $\chi_+^{(n)}$ gir
+Den siste påstanden følger av normeringen. Siden
+$|a_+|^2 + |a_-|^2 = 1$, finnes det en $\theta$ mellom $0$ og $\pi$ med
+$\cos\tfrac\theta2 = |a_+|$ og $\sin\tfrac\theta2 = |a_-|$. Trekk ut fasen til
+$a_+$ som en felles fasefaktor, og la $\varphi$ være faseforskjellen mellom
+$a_-$ og $a_+$. En måling av $S_z$ på $\chi_+^{(n)}$ gir
 $+\hbar/2$ med sannsynlighet $\cos^2\tfrac\theta2$, der $\theta$ er vinkelen
-mellom spinnretningen og $z$-aksen. Ingen akse er spesiell. Måles spinnet
-langs en akse som danner vinkelen $\theta$ med spinnretningen, er
-sannsynligheten for $+\hbar/2$ derfor $\cos^2\tfrac\theta2$.
+mellom spinnretningen og $z$-aksen. Ingen akse er spesiell, så når spinnet
+måles langs en akse som danner vinkelen $\theta$ med spinnretningen, er
+sannsynligheten for $+\hbar/2$ lik $\cos^2\tfrac\theta2$.
+
+Ved $\theta = 0$ er sannsynligheten 1, ved $\theta = 90^\circ$ er den
+$\tfrac12$, som for $S_x$ i $\chi_+$, og ved $\theta = 180^\circ$ er den null.
+Spinorene for to motsatte retninger i rommet er altså ortogonale, og spinn
+opp langs $-\hat n$ er spinn ned langs $\hat n$.
+
+<Callout title="Måling langs en akse">
+Enhver spinor er spinn opp langs spinnretningen sin. Måles spinnet langs en akse med vinkelen $\theta$ fra spinnretningen, er sannsynligheten for $+\hbar/2$ lik $\cos^2\tfrac\theta2$.
+</Callout>
 
 En måling endrer tilstanden. Er spinnet i $\chi_+$, gir $S_z$ alltid
 $+\hbar/2$, mens $S_x$ gir $\pm\hbar/2$ med sannsynlighet $\tfrac12$ hver.
@@ -265,10 +310,14 @@ den første $S_z$-målingen er borte. En Stern–Gerlach-magnet gjør nettopp en
 slik måling. Hvert atom går ut i strålen som svarer til måleverdien, og står
 etterpå i egentilstanden for den.
 
+<Callout title="Målingen endrer tilstanden">
+Etter en måling står spinnet i egentilstanden for måleverdien. En $S_x$-måling mellom to $S_z$-målinger gjør utfallet av den andre $S_z$-målingen helt tilfeldig.
+</Callout>
+
 <Simulation
   src="/sims/stern-gerlach.js"
   title="Tre Stern–Gerlach-magneter etter hverandre"
-  caption="Hver magnet måler spinnet langs sin akse og sender atomet ut øverst ved $+\hbar/2$ og nederst ved $-\hbar/2$. Magnet 1 og 3 måler $S_z$, og magnet 1 stopper spinn ned. Magnet 2 måler langs $\hat n$, som danner vinkelen $\theta$ med $z$-aksen. Pilene viser aksene sett langs strålen, med $z$ opp og $x$ til høyre. Prosentene er sannsynligheten for hver utgang for et atom som kommer inn i magneten. Ved $\theta = 90^\circ$ måler magnet 2 $S_x$, og magnet 3 gir spinn ned for halvparten av atomene."
+  caption="Magnet 1 og 3 måler $S_z$, og magnet 2 måler langs $\hat n$ med vinkelen $\theta$ fra $z$-aksen. Magnet 1 stopper spinn ned, og magnet 2 slipper bare én utgang videre. Hver magnet sender atomet ut øverst ved $+\hbar/2$ og nederst ved $-\hbar/2$, prosentene er sannsynligheten for hver utgang for et atom som kommer inn i magneten, og pilene viser aksene sett langs strålen, med $z$ opp og $x$ til høyre."
   height={320}
 />
 
@@ -368,19 +417,30 @@ $$
 \end{aligned}
 $$
 
-$\langle S_z\rangle$ er konstant, mens $\langle S_x\rangle$ og
-$\langle S_y\rangle$ går rundt $z$-aksen med vinkelfrekvensen $\omega_L$.
-Spinnretningen preseserer rundt feltet med Larmor-frekvensen, slik et
-klassisk magnetisk moment gjør. Tidsderiverten av
-$\langle S_x\rangle + i\langle S_y\rangle$ er $i\omega_L$ ganger den selv, så
+$\langle S_z\rangle$ er konstant, mens fasen til
+$\langle S_x\rangle + i\langle S_y\rangle$ øker med $\omega_L t$. Sett fra
+spissen av $\vec B$ går $(\langle S_x\rangle, \langle S_y\rangle)$ derfor
+mot klokka rundt $z$-aksen med vinkelfrekvensen $\omega_L$. Spinnretningen
+preseserer rundt feltet med Larmor-frekvensen, slik et klassisk magnetisk
+moment gjør. Tidsderiverten av $\langle S_x\rangle + i\langle S_y\rangle$ er
+$i\omega_L$ ganger den selv, så
 $d\langle S_x\rangle/dt = -\omega_L\langle S_y\rangle$ og
-$d\langle S_y\rangle/dt = \omega_L\langle S_x\rangle$, mens $\langle S_z\rangle$
-er konstant. Komponentene samles i den samme likningen som for $\vec L$:
+$d\langle S_y\rangle/dt = \omega_L\langle S_x\rangle$. Med $\langle S_z\rangle$
+konstant samles komponentene i den samme likningen som for $\vec L$, der
+$\vec\omega_L = -\gamma_e\vec B$ peker langs feltet fordi $\gamma_e < 0$:
 
-<Formula tex={"\\frac{d\\langle\\vec S\\rangle}{dt} = \\vec\\omega_L\\times\\langle\\vec S\\rangle, \\allowbreak\\qquad \\vec\\omega_L = -\\gamma_e\\vec B"} caption={"Larmor-presesjon av spinnretningen. For elektronet peker $\\vec\\omega_L$ langs feltet, og $\\omega_L = g_e eB/2m_e$."} />
+<Formula tex={"\\frac{d\\langle\\vec S\\rangle}{dt} = \\vec\\omega_L\\times\\langle\\vec S\\rangle, \\allowbreak\\qquad \\vec\\omega_L = -\\gamma_e\\vec B"} caption={"Larmor-presesjon av spinnretningen for elektronet."} />
 
-For $B_0 = 1$ T er $\omega_L = 1{,}76\cdot10^{11}\ \text{s}^{-1}$, en
-frekvens på 28 GHz.
+I $\chi_+$ og $\chi_-$ er $a_+^*a_- = 0$. Da er
+$\langle S_x\rangle = \langle S_y\rangle = 0$, og spinnretningen ligger
+stille langs $z$-aksen. Presesjonen krever en superposisjon av de to
+energiegentilstandene, og vinkelfrekvensen er $\omega_L = (E_+ - E_-)/\hbar$.
+For $B_0 = 1$ T er
+$\omega_L = 1{,}76\cdot10^{11}\ \text{s}^{-1}$, en frekvens på 28 GHz.
+
+<Callout title="Larmor-presesjon av spinnet">
+I feltet $B_0\hat z$ er $\langle S_z\rangle$ konstant, og spinnretningen preseserer mot klokka rundt feltet, sett fra spissen av $\vec B$, med $\omega_L = g_e eB_0/2m_e$. I $\chi_+$ og $\chi_-$ ligger spinnretningen stille langs $z$-aksen.
+</Callout>
 
 <Example label="Eksamensoppgave" title="Spinn i et magnetfelt">
 <ExamRef id="2023-des" task="3 a–c" />
@@ -419,14 +479,20 @@ a) Med $\hat S_z = \tfrac\hbar2\sigma_z$ er $\hat H = -\mu_B B\,\sigma_z$,
 som er diagonal. Settes $\chi\,e^{-iEt/\hbar}$ inn i
 $i\hbar\,\partial\chi/\partial t = \hat H\chi$, står egenverdilikningen
 $\hat H\chi = E\chi$ igjen, med løsningene $E_+ = -\mu_B B$ for $\chi_+$ og
-$E_- = +\mu_B B$ for $\chi_-$.
+$E_- = +\mu_B B$ for $\chi_-$. Fortegnet i $\hat H$ er motsatt av
+elektronets $\omega_L S_z$, så her har spinn opp lavest energi.
 
 b) Her er $a_+ = 1/\sqrt3$ og $a_- = -i\sqrt2/\sqrt3$, så
-$a_+^*a_- = -i\sqrt2/3$. Formlene for spinnretningen gir
+$a_+^*a_- = -i\sqrt2/3$. Med $\langle S_x\rangle = \hbar\,\mathrm{Re}(a_+^*a_-)$
+og $\langle S_y\rangle = \hbar\,\mathrm{Im}(a_+^*a_-)$ er
 
 $$
 \langle S_x\rangle = 0, \allowbreak\quad \langle S_y\rangle = -\frac{\sqrt2}{3}\hbar, \allowbreak\quad \langle S_z\rangle = \frac\hbar2\Bigl(\frac13 - \frac23\Bigr) = -\frac\hbar6 .
 $$
+
+Ingen enkeltmåling av $S_z$ gir $-\hbar/6$. Den gir $+\hbar/2$ med
+sannsynlighet $\tfrac13$ og $-\hbar/2$ med sannsynlighet $\tfrac23$, og
+$-\hbar/6$ er gjennomsnittet.
 
 Energien: $\langle H\rangle = -(2\mu_B B/\hbar)\langle S_z\rangle = \mu_B B/3$.
 Kontroll: $\tfrac13 E_+ + \tfrac23 E_- = \mu_B B/3$.
@@ -504,19 +570,21 @@ measured to be in the spin state in Eq. (13) at $t = 0$.
   explanation={"$\\mu_z = -\\mu_B m$ med $m = -1, 0, 1$ gir tre stråler, og atomene med $m = 0$ går rett fram. Et heltallig $l$ gir alltid et oddetall stråler, og derfor krevde de to strålene for sølv spinn ½."}
 />
 
-<SelfCheck question={"Vis at $(\\hat n\\cdot\\vec\\sigma)^2 = \\mathbb{1}$ for en enhetsvektor $\\hat n$, og forklar hvorfor $S_n$ har egenverdiene $\\pm\\hbar/2$."}>
+<SelfCheck question={"Et atom kommer ut av strålen for $S_x = +\\hbar/2$ og går inn i en magnet som måler langs $\\hat n$ i $xz$-planet, $60^\\circ$ fra $z$-aksen. Hvor stor er sannsynligheten for $+\\hbar/2$?"}>
 
-Produktregelen gir
+Spinnretningen er $\hat x$, så det er vinkelen mellom $\hat x$ og $\hat n$
+som inngår i $\cos^2\tfrac\theta2$. Med
+$\hat n = (\sin 60^\circ, 0, \cos 60^\circ)$ er
+$\hat x\cdot\hat n = \sin 60^\circ = \cos 30^\circ$, så vinkelen er
+$30^\circ$, og
 
 $$
-(\hat n\cdot\vec\sigma)^2 = \sum_{i,j} n_i n_j\,\sigma_i\sigma_j \allowbreak = \sum_i n_i^2\,\mathbb{1} \allowbreak + i\sum_{i,j,k}\varepsilon_{ijk}\,n_i n_j\,\sigma_k = \mathbb{1},
+P(+\hbar/2) = \cos^2 15^\circ = \tfrac12\bigl(1 + \cos 30^\circ\bigr) \allowbreak = \frac{2 + \sqrt3}{4} \approx 0{,}93 .
 $$
 
-fordi $|\hat n| = 1$ og $\varepsilon_{ijk}$ skifter fortegn når $i$ og $j$
-bytter plass, mens $n_i n_j$ ikke gjør det. En egenverdi $\lambda$ av
-$\hat n\cdot\vec\sigma$ må da oppfylle $\lambda^2 = 1$. Sporet av matrisen er
-null, så egenverdiene er $+1$ og $-1$, og $S_n = (\hbar/2)\,\hat n\cdot\vec\sigma$
-har $\pm\hbar/2$.
+Den samme verdien får du som $|\chi_+^{(n)\dagger}\chi_+^{(x)}|^2$ med
+$\chi_+^{(n)} = (\cos 30^\circ, \sin 30^\circ)^T$. Brukes $\cos^2 30^\circ = 0{,}75$,
+er halvvinkelen glemt.
 
 </SelfCheck>
 

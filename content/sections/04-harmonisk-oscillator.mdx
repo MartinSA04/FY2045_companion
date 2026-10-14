@@ -41,9 +41,11 @@ faktorisert som $(ip + m\omega x)(-ip + m\omega x)$. Operatorene kommuterer
 ikke, så produktet av faktorene blir $\hat p^2 + (m\omega\hat x)^2$ pluss et
 ledd med kommutatoren $[\hat x, \hat p] = i\hbar$, som er et tall. Del hver
 faktor på $\sqrt{2\hbar m\omega}$. Da blir faktorene dimensjonsløse, og
-produktet blir $\hat H/\hbar\omega$ pluss en konstant:
+produktet blir $\hat H/\hbar\omega$ pluss en konstant. Siden $\hat x$ og
+$\hat p$ er hermiteske, er de to faktorene hverandres adjungerte, og de
+skrives $a$ og $a^\dagger$:
 
-<Formula tex={"\\begin{aligned} a &= \\dfrac{i\\hat p + m\\omega\\hat x}{\\sqrt{2\\hbar m\\omega}}, \\\\[4pt] a^\\dagger &= \\dfrac{-i\\hat p + m\\omega\\hat x}{\\sqrt{2\\hbar m\\omega}} \\end{aligned}"} caption={"Stigeoperatorene. De er ikke hermiteske, men hverandres adjungerte, og skrives uten hatt."} />
+<Formula tex={"\\begin{aligned} a &= \\dfrac{i\\hat p + m\\omega\\hat x}{\\sqrt{2\\hbar m\\omega}}, \\\\[4pt] a^\\dagger &= \\dfrac{-i\\hat p + m\\omega\\hat x}{\\sqrt{2\\hbar m\\omega}} \\end{aligned}"} caption={"Stigeoperatorene, skrevet uten hatt. De er ikke hermiteske."} />
 
 Utregnet er produktet $a^\dagger a$:
 
@@ -58,11 +60,13 @@ Kommutatoren i telleren er $i\hbar$, og den gir det siste leddet. Samme
 regning med motsatt rekkefølge gir $aa^\dagger = \hat H/\hbar\omega + \tfrac12$.
 Differansen av de to er $[a, a^\dagger] = 1$, og $a^\dagger a$ gir $\hat H$:
 
-<Formula tex={"[a, a^\\dagger] = 1, \\qquad \\hat H = \\hbar\\omega\\bigl(\\hat N + \\tfrac12\\bigr)"} caption={"Kommutatoren og Hamiltonoperatoren uttrykt med $\\hat N = a^\\dagger a$. Egenverdiproblemet for $\\hat H$ er dermed egenverdiproblemet for $\\hat N$."} />
+<Formula tex={"[a, a^\\dagger] = 1, \\qquad \\hat H = \\hbar\\omega\\bigl(\\hat N + \\tfrac12\\bigr)"} caption={"Kommutatoren og Hamiltonoperatoren uttrykt med $\\hat N = a^\\dagger a$."} />
 
 Operatoren $\hat N = a^\dagger a$ kalles
-<Term name="Talloperator">talloperatoren</Term>, og navnet blir begrunnet
-nedenfor. For å se hva $a$ og $a^\dagger$ gjør med en egentilstand av
+<Term name="Talloperator">talloperatoren</Term>. $\hat H$ og $\hat N$ har
+de samme egentilstandene, og egenverdien $n$ til $\hat N$ gir energien
+$\hbar\omega(n + \tfrac12)$, så det er nok å finne egenverdiene til
+$\hat N$. For å se hva $a$ og $a^\dagger$ gjør med en egentilstand av
 $\hat N$, trenger du kommutatorene deres med $\hat N$. Begge følger av
 $[a, a^\dagger] = 1$:
 
@@ -85,10 +89,12 @@ $$
 $$
 
 Er $a|n\rangle$ ikke nullvektoren, er den en egentilstand med egenverdi
-$n - 1$: $a$ har senket energien ett trinn $\hbar\omega$. Tilsvarende viser
+$n - 1$: $a$ har senket energien ett trinn $\hbar\omega$, og $a$ kalles
+derfor senkeoperatoren. Tilsvarende viser
 $[\hat N, a^\dagger] = a^\dagger$ at $a^\dagger|n\rangle$ er en egentilstand
-med egenverdi $n + 1$. Fra én egentilstand lager de to operatorene en hel
-stige av egentilstander, og det er derfor de kalles stigeoperatorer.
+med egenverdi $n + 1$, så $a^\dagger$ er heveoperatoren. Fra én egentilstand
+lager de to operatorene en hel stige av egentilstander, og det er derfor de
+kalles stigeoperatorer.
 
 Oppover kan stigen fortsette uten ende, men ikke nedover. Kvadratet av
 normen til $a|n\rangle$ er
@@ -97,10 +103,12 @@ $$
 \|\,a|n\rangle\,\|^2 = \langle n|a^\dagger a|n\rangle = n \ge 0,
 $$
 
-så ingen egenverdi er negativ. Nedstigningen må derfor stoppe: det finnes en
-nederste tilstand $|0\rangle$ der $a|0\rangle = 0$, og for den gir samme
-likning $n_0 = \|\,a|0\rangle\,\|^2 = 0$. Fra en vilkårlig egentilstand går
-det et helt antall trinn ned til bunnen, så $n$ er et ikke-negativt heltall.
+så ingen egenverdi er negativ. Nedstigningen må derfor stoppe, og den kan
+bare stoppe ved at $a$ gir nullvektoren. Normen er null bare for $n = 0$, så
+stigen må treffe egenverdien $0$ nøyaktig, i en nederste tilstand $|0\rangle$
+med $a|0\rangle = 0$. Hvert trinn senker $n$ med $1$. En $n$ som ikke er et
+heltall, ville hoppe over $0$ og gi en negativ egenverdi, så $n$ er et
+ikke-negativt heltall.
 
 <Statement kind="theorem" name="Spekteret til den harmoniske oscillatoren" id="oscillator-spekteret">
 
@@ -116,13 +124,20 @@ $E_0 = \tfrac12\hbar\omega$.
 
 Spekteret er bestemt uten bølgefunksjoner og uten at noen basis er valgt.
 Regningen brukte bare $[a, a^\dagger] = 1$, som igjen kom fra
-$[\hat x, \hat p] = i\hbar$.
+$[\hat x, \hat p] = i\hbar$. Den samme kommutatoren gir nullpunktsenergien.
+Klassisk kan oscillatoren ligge i ro i bunnen med $E = 0$. Begge leddene i
+$\hat H$ er ikke-negative, så kvantemekanisk ville $E = 0$ kreve
+$\langle x^2\rangle = \langle p^2\rangle = 0$, altså $\Delta x = \Delta p = 0$,
+som uskarphetsrelasjonen $\Delta x\,\Delta p \ge \hbar/2$ utelukker.
+Egenverdien $n$ til $\hat N$ teller kvantene $\hbar\omega$ over nullpunktsenergien, og derfor
+heter $\hat N$ talloperatoren.
 
 Normene fastlegger også virkningen av operatorene, så nær som en fase som
-velges reell: $\|\,a|n\rangle\,\| = \sqrt n$, og samme regning med
-$aa^\dagger = \hat N + 1$ gir $\|\,a^\dagger|n\rangle\,\| = \sqrt{n + 1}$.
+velges reell: $\|\,a|n\rangle\,\|^2 = \langle n|a^\dagger a|n\rangle = n$, og
+med $aa^\dagger = \hat N + 1$ er
+$\|\,a^\dagger|n\rangle\,\|^2 = \langle n|aa^\dagger|n\rangle = n + 1$.
 
-<Formula tex={"\\begin{aligned} a\\,|n\\rangle &= \\sqrt{n}\\,|n - 1\\rangle, \\\\[2pt] a^\\dagger|n\\rangle &= \\sqrt{n + 1}\\,|n + 1\\rangle \\end{aligned}"} caption={"Virkningen på egentilstandene. $a$ kalles senkeoperatoren og $a^\\dagger$ heveoperatoren, og egenverdien $n$ til $\\hat N$ teller kvantene $\\hbar\\omega$ over nullpunktsenergien."} />
+<Formula tex={"\\begin{aligned} a\\,|n\\rangle &= \\sqrt{n}\\,|n - 1\\rangle, \\\\[2pt] a^\\dagger|n\\rangle &= \\sqrt{n + 1}\\,|n + 1\\rangle \\end{aligned}"} caption={"Virkningen av senkeoperatoren $a$ og heveoperatoren $a^\\dagger$ på egentilstandene."} />
 
 Hele stigen bygges nedenfra:
 
@@ -130,24 +145,34 @@ $$
 |n\rangle = \frac{(a^\dagger)^n}{\sqrt{n!}}\,|0\rangle .
 $$
 
+<Callout title="Stigen">
+$a$ senker og $a^\dagger$ hever $n$ ett trinn, med faktorene $\sqrt n$ og $\sqrt{n + 1}$. Normen $\|\,a|n\rangle\,\|^2 = n \ge 0$ stopper stigen i $|0\rangle$ med $a|0\rangle = 0$, så $n = 0, 1, 2, \dots$
+</Callout>
+
 ## Regning med stigeoperatorene
 
-Definisjonene løst for $\hat x$ og $\hat p$ gjør operatormetoden til et
-regneverktøy:
+Løs definisjonene av $a$ og $a^\dagger$ for $\hat x$ og $\hat p$. Da blir matriseelementene
+algebra i stedet for integraler:
 
-<Formula tex={"\\begin{aligned} \\hat x &= \\sqrt{\\dfrac{\\hbar}{2m\\omega}}\\,(a + a^\\dagger), \\\\[4pt] \\hat p &= i\\sqrt{\\dfrac{m\\hbar\\omega}{2}}\\,(a^\\dagger - a) \\end{aligned}"} caption={"Posisjon og impuls uttrykt med stigeoperatorene. Matriseelementer av $\\hat x$ og $\\hat p$ blir algebra i stedet for integraler."} />
+<Formula tex={"\\begin{aligned} \\hat x &= \\sqrt{\\dfrac{\\hbar}{2m\\omega}}\\,(a + a^\\dagger), \\\\[4pt] \\hat p &= i\\sqrt{\\dfrac{m\\hbar\\omega}{2}}\\,(a^\\dagger - a) \\end{aligned}"} caption={"Posisjon og impuls uttrykt med stigeoperatorene."} />
 
-Med virkningen på $|n\rangle$ og ortonormaliteten
-$\langle m|n\rangle = \delta_{mn}$ følger matriseelementene direkte:
+Med $a|n\rangle = \sqrt n\,|n - 1\rangle$,
+$a^\dagger|n\rangle = \sqrt{n + 1}\,|n + 1\rangle$ og ortonormaliteten
+$\langle n'|n\rangle = \delta_{n'n}$ følger matriseelementene direkte:
 
 $$
-\langle m|\hat x|n\rangle = \sqrt{\frac{\hbar}{2m\omega}}\,
-\bigl(\sqrt{n}\,\delta_{m,n-1} + \sqrt{n + 1}\,\delta_{m,n+1}\bigr).
+\langle n'|\hat x|n\rangle = \sqrt{\frac{\hbar}{2m\omega}}\,
+\bigl(\sqrt{n}\,\delta_{n',n-1} + \sqrt{n + 1}\,\delta_{n',n+1}\bigr).
 $$
 
 Både $\hat x$ og $\hat p$ kopler bare nabonivåer, og begge har null på
 diagonalen: $\langle x\rangle = \langle p\rangle = 0$ i enhver stasjonær
-tilstand.
+tilstand, slik middelposisjonen over en periode er null for den klassiske
+oscillatoren.
+
+<Callout title="Bare nabonivåer">
+Skrevet med $a$ og $a^\dagger$ flytter $\hat x$ og $\hat p$ tilstanden ett trinn opp eller ned. Bare $\langle n \pm 1|\hat x|n\rangle$ og $\langle n \pm 1|\hat p|n\rangle$ er ulik null.
+</Callout>
 
 <Example title="forventningsverdien av potensialet">
 
@@ -214,12 +239,14 @@ der konstanten er valgt så $\int|\psi_0|^2\,dx = 1$.
 
 </Derivation>
 
-Grunntilstanden er en gausspakke, den samme som rekkeutviklingen gir.
+Grunntilstanden er en gausspakke, den samme som rekkeutviklingsmetoden gir.
 Likningen $a|0\rangle = 0$ er av første orden og har bare én løsning, opp til
 en konstant, så grunntilstanden er entydig. De eksiterte tilstandene følger
-ved å heve, $\psi_n(x) = \langle x|(a^\dagger)^n|0\rangle/\sqrt{n!}$, og er
-dermed også entydige: ingen nivåer er degenerert. Hver $a^\dagger$
-er av første orden i $x$ og $d/dx$, så hvert trinn ganger inn et polynom av
+ved å heve, $\psi_n(x) = \langle x|(a^\dagger)^n|0\rangle/\sqrt{n!}$. De er
+også entydige: $n$ trinn med $a$ fører enhver egentilstand med egenverdi $n$
+ned til $|0\rangle$, og siden $a^\dagger a|n\rangle = n|n\rangle$, gir $n$
+trinn med $a^\dagger$ den samme egentilstanden tilbake, opp til en konstant.
+Ingen nivåer er altså degenerert. Hver $a^\dagger$ er av første orden i $x$ og $d/dx$, så hvert trinn ganger inn et polynom av
 én grad høyere:
 
 <Formula tex={"\\begin{aligned} \\psi_n(x) &= \\Bigl(\\dfrac{m\\omega}{\\pi\\hbar}\\Bigr)^{1/4} \\dfrac{H_n(\\xi)\\,e^{-\\xi^2/2}}{\\sqrt{2^n n!}} \\\\[4pt] \\xi &= \\sqrt{m\\omega/\\hbar}\\;x \\end{aligned}"} caption={"Egenfunksjonene. $H_n$ er Hermitepolynomene, og funksjonene er de samme som rekkeutviklingsmetoden gir, uten at en andreordens differensiallikning er løst."} />
@@ -369,6 +396,10 @@ svinger kryssleddet i $|\Psi|^2$ med differansefrekvensen
 $(E_{n+1} - E_n)/\hbar = \omega$, en svevning mellom de to stasjonære
 tilstandene, og $\langle x\rangle$ følger med.
 
+<Callout title="Bevegelse krever superposisjon">
+En stasjonær tilstand har tidsuavhengig tetthet og $\langle x\rangle = 0$. Bevegelse krever en superposisjon, og i en superposisjon av nabonivåer svinger $\langle x\rangle$ med frekvensen $\omega$.
+</Callout>
+
 <Example title="to nivåer i svingning">
 
 Oscillatoren er ved $t = 0$ i tilstanden
@@ -415,13 +446,6 @@ Begge likningene stemmer.
 
 </Example>
 
-<Simulation
-  src="/sims/oscillator.js"
-  title="Tilstander i oscillatorpotensialet"
-  caption="Samme potensial, fire tilstander, med nivåene $E_n$ som trinn. De fylte trinnene er nivåene som inngår, med styrke $|c_n|^2$. Stasjonære tilstander står stille. Superposisjonen $(3|0\rangle + 4|1\rangle)/5$ svinger med frekvensen $\omega$, og den koherente tilstanden svinger som en klassisk partikkel uten å endre form."
-  height={340}
-/>
-
 ## Koherente tilstander
 
 Schrödinger lette allerede i 1926 etter den kvantetilstanden som likner mest på
@@ -452,9 +476,12 @@ Rekka følger av definisjonen. Sett $|\alpha\rangle = \sum_n c_n|n\rangle$
 inn i $a|\alpha\rangle = \alpha|\alpha\rangle$; ledd for ledd gir det
 $c_{n+1}\sqrt{n + 1} = \alpha\,c_n$, altså $c_n = \alpha^n c_0/\sqrt{n!}$,
 og normeringen $\sum_n |c_n|^2 = |c_0|^2\,e^{|\alpha|^2} = 1$ bestemmer
-$c_0$. Fordelingen over nivåene er en poissonfordeling,
-$|c_n|^2 = e^{-|\alpha|^2}|\alpha|^{2n}/n!$, med gjennomsnitt
-$\langle n\rangle = |\alpha|^2$.
+$c_0$. Rekka viser også at egentilstanden til en gitt $\alpha$ er entydig,
+så hver $|\alpha\rangle$ er grunntilstandens gausspakke, flyttet til
+$x_0 = \sqrt{2\hbar/m\omega}\,\mathrm{Re}\,\alpha$ med impulsen
+$p_0 = \sqrt{2\hbar m\omega}\,\mathrm{Im}\,\alpha$. Fordelingen over nivåene
+er en poissonfordeling, $|c_n|^2 = e^{-|\alpha|^2}|\alpha|^{2n}/n!$, med
+gjennomsnitt $\langle n\rangle = |\alpha|^2$.
 
 I tidsutviklingen får hvert ledd fasen $e^{-i(n + 1/2)\omega t}$. Faktoren
 $e^{-in\omega t}$ samler seg med $\alpha^n$ til $(\alpha e^{-i\omega t})^n$, og
@@ -484,10 +511,27 @@ $$
 e^{-m\omega\,(x - \langle x\rangle)^2/\hbar}.
 $$
 
-Dette er en gausspakke med grunntilstandens bredde som svinger med klassisk
-amplitude uten å endre form, og med $\Delta x\,\Delta p = \hbar/2$ hele
-tiden. Laserlys er i god tilnærmelse en koherent tilstand av
-strålingsfeltet, og beskrivelsen ga Glauber nobelprisen i 2005.
+Pakken beholder altså grunntilstandens form og bredde
+$\Delta x = \sqrt{\hbar/2m\omega}$, med $\Delta x\,\Delta p = \hbar/2$ hele
+tiden, mens midten svinger med amplituden
+$A = \sqrt{2\hbar/m\omega}\,|\alpha|$, som er $2|\alpha|$ ganger bredden. For
+$|\alpha| \gg 1$ svinger pakken mange bredder ut og likner en klassisk
+partikkel, mens den for $|\alpha| < 1/2$ er bredere enn utslaget. Den
+klassiske energien til svingningen er
+$\tfrac12 m\omega^2A^2 = \hbar\omega|\alpha|^2 = \hbar\omega\langle n\rangle$,
+som er energien over nullpunktsenergien. Laserlys er i god tilnærmelse en
+koherent tilstand av strålingsfeltet, og beskrivelsen ga Glauber nobelprisen i 2005.
+
+<Callout title="Koherent tilstand">
+$|\alpha\rangle$ er egentilstanden $a|\alpha\rangle = \alpha|\alpha\rangle$: grunntilstandens gausspakke flyttet ut. Den beholder formen og $\Delta x\,\Delta p = \hbar/2$ mens midten svinger med amplituden $\sqrt{2\hbar/m\omega}\,|\alpha|$.
+</Callout>
+
+<Simulation
+  src="/sims/oscillator.js"
+  title="Tilstander i oscillatorpotensialet"
+  caption="Tettheten $|\Psi(x, t)|^2$ i oscillatorpotensialet for $|0\rangle$, $|1\rangle$, $(3|0\rangle + 4|1\rangle)/5$ og en koherent tilstand med reell $\alpha$. Trinnene er nivåene $E_n$. De fargede er nivåene som inngår, sterkere jo større $|c_n|^2$, og prikken på grunnlinja er $\langle x\rangle$."
+  height={340}
+/>
 
 ## Schrödinger- og Heisenbergbildet
 
@@ -515,7 +559,8 @@ Uttrykket kan leses på to måter. I
 $\hat F$ fast, og tilstanden utvikler seg i tid. I
 <Term name="Heisenbergbildet">Heisenbergbildet</Term> står tilstanden fast
 i $|\Psi, t_0\rangle$, og tidsavhengigheten ligger i operatoren. Deriver
-$\hat F_H = \hat U^\dagger\hat F\hat U$ med produktregelen. Med
+$\hat F_H = \hat U^\dagger\hat F\hat U$ med produktregelen, for en $\hat F$
+uten eksplisitt tidsavhengighet. Med
 $d\hat U/dt = -(i/\hbar)\,\hat H\hat U$ og
 $d\hat U^\dagger/dt = (i/\hbar)\,\hat U^\dagger\hat H$ er
 
@@ -525,9 +570,12 @@ $$
 = \frac{i}{\hbar}\bigl[\hat H, \hat F_H\bigr],
 $$
 
-ettersom $\hat H$ kommuterer med $\hat U$ og $\hat U^\dagger$.
+ettersom $\hat H$ kommuterer med $\hat U$ og $\hat U^\dagger$. Ta
+forventningsverdien i $|\Psi, t_0\rangle$. Da blir likningen
+$d\langle F\rangle/dt = (i/\hbar)\langle[\hat H, \hat F]\rangle$, den samme
+som i Schrödingerbildet.
 
-<Formula tex={"\\hat F_H(t) = \\hat U^\\dagger\\hat F\\,\\hat U, \\allowbreak\\quad \\frac{d\\hat F_H}{dt} = \\frac{i}{\\hbar}\\,\\bigl[\\hat H, \\hat F_H\\bigr]"} caption={"Heisenbergbildet: operatoren og bevegelseslikningen dens, for en $\\hat F$ uten eksplisitt tidsavhengighet. Forventningsverdien av likningen er likningen for $d\\langle F\\rangle/dt$ i Schrödingerbildet."} />
+<Formula tex={"\\hat F_H(t) = \\hat U^\\dagger\\hat F\\,\\hat U, \\allowbreak\\quad \\frac{d\\hat F_H}{dt} = \\frac{i}{\\hbar}\\,\\bigl[\\hat H, \\hat F_H\\bigr]"} caption={"Heisenbergbildet: operatoren og bevegelseslikningen dens, for en $\\hat F$ uten eksplisitt tidsavhengighet."} />
 
 Begge bildene gir de samme forventningsverdiene, og kommutatorene er de
 samme: er $[\hat A, \hat B] = \hat C$, er også
@@ -601,22 +649,31 @@ $$
 $$
 
 den klassiske løsningen, men som en likning mellom operatorer. Derfor
-følger $\langle x\rangle$ en klassisk svingning i enhver tilstand, slik
-superposisjonen $(3|0\rangle + 4|1\rangle)/5$ gjorde. Guiden bruker
+følger $\langle x\rangle$ den klassiske løsningen i enhver tilstand, slik
+Ehrenfests teorem sier for et kvadratisk potensial. Superposisjonen
+$(3|0\rangle + 4|1\rangle)/5$ svinger med amplituden
+$\tfrac{24}{25}\sqrt{\hbar/2m\omega}$, og i en stasjonær tilstand, med
+$\langle x\rangle = \langle p\rangle = 0$ ved $t = 0$, står $\langle x\rangle$
+stille i null. Det som gjør den koherente tilstanden klassisk, er altså ikke $\langle x\rangle$, men at
+pakken beholder formen og bredden mens den svinger. Guiden bruker
 Schrödingerbildet der ikke annet er sagt.
+
+<Callout title="Heisenbergbildet">
+Tilstanden står fast, og operatorene utvikler seg etter $d\hat F_H/dt = (i/\hbar)[\hat H, \hat F_H]$. Forventningsverdiene er de samme som i Schrödingerbildet.
+</Callout>
 
 ## Sjekk deg selv
 
 <Quiz
-  question={"Hva er $a^\\dagger a\\,|3\\rangle$?"}
+  question={"Hva er $a^\\dagger a^2\\,|3\\rangle$?"}
   options={[
-    "$\\sqrt{3}\\,|2\\rangle$",
-    "$3\\,|3\\rangle$",
-    "$4\\,|3\\rangle$",
-    "$\\hbar\\omega\\bigl(3 + \\tfrac12\\bigr)|3\\rangle$"
+    "$4\\sqrt{3}\\,|2\\rangle$",
+    "$\\sqrt{6}\\,|2\\rangle$",
+    "$2\\sqrt{3}\\,|2\\rangle$",
+    "$2\\sqrt{3}\\,|4\\rangle$"
   ]}
-  answer={1}
-  explanation={"Først $a|3\\rangle = \\sqrt{3}\\,|2\\rangle$, så $a^\\dagger$ på resultatet: $\\sqrt{3}\\cdot\\sqrt{3}\\,|3\\rangle = 3\\,|3\\rangle$. Talloperatoren $\\hat N = a^\\dagger a$ gir egenverdien $n$, ikke energien; den er egenverdien til $\\hat H = \\hbar\\omega(\\hat N + \\tfrac12)$."}
+  answer={2}
+  explanation={"Operatorene virker fra høyre. Først $a^2|3\\rangle = \\sqrt{3}\\sqrt{2}\\,|1\\rangle$, så $a^\\dagger|1\\rangle = \\sqrt{2}\\,|2\\rangle$, og resultatet er $\\sqrt{3}\\cdot\\sqrt{2}\\cdot\\sqrt{2}\\,|2\\rangle = 2\\sqrt{3}\\,|2\\rangle$. Lar du $a^\\dagger$ virke først, får du $4\\sqrt{3}$. Heveoperatoren gir $\\sqrt{n + 1}$, ikke $\\sqrt{n}$, så $\\sqrt{6}$ har feil faktor i siste trinn. Netto senker uttrykket ett trinn, så tilstanden er $|2\\rangle$, ikke $|4\\rangle$."}
 />
 
 <Quiz
