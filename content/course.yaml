@@ -321,6 +321,51 @@ formulas:
     label: "Et elektron i feltet $B_0\\hat z$. Spinnretningen preseserer rundt feltet med vinkelfrekvensen $\\omega_L$."
     section: "Spinn"
 
+  - id: to-partikler-uten-vekselvirkning
+    tex: "\\hat H = \\hat H_1 + \\hat H_2, \\allowbreak\\quad \\psi = \\psi_a(\\vec r_1)\\,\\psi_b(\\vec r_2), \\allowbreak\\quad E = E_a + E_b"
+    label: "To partikler uten vekselvirkning. Egenfunksjonen er et produkt av énpartikkeltilstander, og energiene adderes."
+    section: "Identiske partikler og tredimensjonal boks"
+  - id: ombyttingssymmetri
+    tex: "\\Psi(\\vec r_2, \\vec r_1, t) = \\pm\\,\\Psi(\\vec r_1, \\vec r_2, t)"
+    label: "Bølgefunksjonen for to identiske partikler: pluss for bosoner med heltallig spinn, minus for fermioner med halvtallig spinn."
+    section: "Identiske partikler og tredimensjonal boks"
+  - id: symmetriserte-tilstander
+    tex: "\\psi_\\pm = \\dfrac{1}{\\sqrt2}\\bigl[\\psi_a(\\vec r_1)\\,\\psi_b(\\vec r_2) \\allowbreak \\pm \\psi_b(\\vec r_1)\\,\\psi_a(\\vec r_2)\\bigr]"
+    label: "To identiske partikler uten vekselvirkning i énpartikkeltilstandene $a \\ne b$: $\\psi_+$ for bosoner, $\\psi_-$ for fermioner. Med $a = b$ er $\\psi_- = 0$, som er Pauliprinsippet."
+    section: "Identiske partikler og tredimensjonal boks"
+  - id: slater-determinant
+    tex: "\\psi(1, \\dots, N) = \\tfrac{1}{\\sqrt{N!}}\\det\\bigl[\\psi_i(j)\\bigr]"
+    label: "Slater-determinanten for $N$ fermioner uten vekselvirkning. Rad $i$ er énpartikkeltilstanden $\\psi_i$, søyle $j$ er koordinatene til partikkel $j$."
+    section: "Identiske partikler og tredimensjonal boks"
+  - id: utvekslingskraft
+    tex: "\\langle(x_1 - x_2)^2\\rangle_\\pm = \\langle x^2\\rangle_a + \\langle x^2\\rangle_b \\allowbreak - 2\\langle x\\rangle_a\\langle x\\rangle_b \\allowbreak \\mp 2\\,|\\langle x\\rangle_{ab}|^2"
+    label: "Middelkvadratet av avstanden for to bosoner (øvre fortegn) eller fermioner (nedre) i tilstandene $a$ og $b$, med $\\langle x\\rangle_{ab} = \\int x\\,\\psi_a^*\\psi_b\\,dx$. Uten det siste leddet gjelder uttrykket for skjelnbare partikler."
+    section: "Identiske partikler og tredimensjonal boks"
+  - id: spinntilstander-to-elektroner
+    tex: "|{\\uparrow\\uparrow}\\rangle, \\allowbreak\\quad \\dfrac{|{\\uparrow\\downarrow}\\rangle + |{\\downarrow\\uparrow}\\rangle}{\\sqrt2}, \\allowbreak\\quad |{\\downarrow\\downarrow}\\rangle, \\allowbreak\\qquad \\chi_\\text{singlett} = \\dfrac{|{\\uparrow\\downarrow}\\rangle - |{\\downarrow\\uparrow}\\rangle}{\\sqrt2}"
+    label: "De tre symmetriske spinntilstandene og den antisymmetriske singletten for to elektroner. Hele tilstanden er antisymmetrisk, så singletten hører sammen med en symmetrisk romdel."
+    section: "Identiske partikler og tredimensjonal boks"
+  - id: boks-tre-dimensjoner
+    tex: "E_{n_xn_yn_z} = \\dfrac{\\pi^2\\hbar^2}{2m}\\Bigl(\\dfrac{n_x^2}{L_x^2} + \\dfrac{n_y^2}{L_y^2} \\allowbreak + \\dfrac{n_z^2}{L_z^2}\\Bigr)"
+    label: "Energinivåene i en tredimensjonal boks, med $\\psi \\propto \\sin(n_x\\pi x/L_x)\\sin(n_y\\pi y/L_y)\\sin(n_z\\pi z/L_z)$ og $n_x, n_y, n_z = 1, 2, 3, \\dots$"
+    section: "Identiske partikler og tredimensjonal boks"
+  - id: periodiske-grensebetingelser
+    tex: "\\psi_{\\vec k}(\\vec r) = \\dfrac{1}{\\sqrt V}\\,e^{i\\vec k\\cdot\\vec r}, \\allowbreak\\quad k_i = \\dfrac{2\\pi n_i}{L_i}"
+    label: "Periodiske grensebetingelser i volumet $V = L_xL_yL_z$, med $n_i = 0, \\pm1, \\pm2, \\dots$ Gir samme tilstandstetthet som veggene."
+    section: "Identiske partikler og tredimensjonal boks"
+  - id: tilstandstetthet
+    tex: "N(E) = \\dfrac{V}{6\\pi^2}\\Bigl(\\dfrac{2mE}{\\hbar^2}\\Bigr)^{3/2}, \\allowbreak\\quad g(E) = \\dfrac{V}{4\\pi^2}\\Bigl(\\dfrac{2m}{\\hbar^2}\\Bigr)^{3/2}\\sqrt E"
+    label: "Antall romtilstander under $E$ og tilstandstettheten for en fri partikkel i volumet $V$, regnet for én spinnretning. For spinn ½ er begge dobbelt så store."
+    section: "Identiske partikler og tredimensjonal boks"
+  - id: fermi-energi
+    tex: "k_F = (3\\pi^2\\rho)^{1/3}, \\allowbreak\\quad E_F = \\dfrac{\\hbar^2}{2m}\\,(3\\pi^2\\rho)^{2/3}"
+    label: "Fermi-bølgetallet og Fermi-energien for fermioner med spinn ½ uten vekselvirkning, med partikkeltettheten $\\rho = N/V$."
+    section: "Identiske partikler og tredimensjonal boks"
+  - id: degenerasjonstrykk
+    tex: "E_\\text{tot} = \\tfrac35NE_F, \\allowbreak\\quad P = -\\dfrac{\\partial E_\\text{tot}}{\\partial V} = \\dfrac23\\,\\dfrac{E_\\text{tot}}{V}"
+    label: "Den totale energien og degenerasjonstrykket for $N$ fermioner med spinn ½ i grunntilstanden."
+    section: "Identiske partikler og tredimensjonal boks"
+
 # ── Symboler ─────────────────────────────────────────────────────────────────
 # Én rad per betydning. Der en bokstav betyr to ting (m, n, α, θ, F, a), sier
 # notatet hvilken den andre er.
@@ -343,7 +388,7 @@ symbols:
   - { tex: "\\langle F\\rangle", meaning: "Forventningsverdien av $F$", section: "Postulatene, måling og impulsrommet", term: "Forventningsverdi", formula: forventningsverdi, note: "I Diracnotasjon $\\langle\\Psi|\\hat F|\\Psi\\rangle$." }
   - { tex: "d\\tau", meaning: "Volumelementet i integralet over alle koordinatene", section: "Postulatene, måling og impulsrommet", formula: forventningsverdi, note: "$dx$ i én dimensjon." }
   - { tex: "\\hat H", meaning: "Hamiltonoperatoren", section: "Postulatene, måling og impulsrommet", formula: schrodingerlikningen, note: "$\\hat p^2/2m + V$. Ikke Hermitepolynomet $H_n$." }
-  - { tex: "V", meaning: "Potensiell energi, $V(x)$ eller $V(r)$", unit: "J", section: "Postulatene, måling og impulsrommet", formula: ehrenfests-teorem, note: "I et sentralsymmetrisk potensial avhenger $V$ bare av $r$." }
+  - { tex: "V", meaning: "Potensiell energi, $V(x)$ eller $V(r)$", unit: "J", section: "Postulatene, måling og impulsrommet", formula: ehrenfests-teorem, note: "I et sentralsymmetrisk potensial avhenger $V$ bare av $r$. I tilstandstettheten er $V$ volumet." }
   - { tex: "[\\hat A, \\hat B]", meaning: "Kommutatoren $\\hat A\\hat B - \\hat B\\hat A$", section: "Postulatene, måling og impulsrommet", formula: tidsutvikling-forventningsverdi, id: kommutator, note: "Er den null, har operatorene et fullstendig sett felles egenfunksjoner." }
   - { tex: "g_n", meaning: "Degenerasjonsgraden til egenverdien $f_n$", section: "Postulatene, måling og impulsrommet", term: "Degenerasjon", formula: sannsynlighet-degenerert }
   - { tex: "P_n", meaning: "Sannsynligheten for å måle $f_n$", section: "Postulatene, måling og impulsrommet", formula: sannsynlighet-degenerert, note: "Ikke projeksjonsoperatoren $\\hat P_n$." }
@@ -401,6 +446,25 @@ symbols:
   - { tex: "\\vec B,\\allowbreak\\ B_0", meaning: "Magnetfeltet og styrken av det", unit: "T", section: "Spinn", formula: spinn-i-magnetfelt, note: "I Stern–Gerlach-magneten er $B_0$ den homogene delen av feltet." }
   - { tex: "\\omega_L", meaning: "Larmor-frekvensen", unit: "s⁻¹", section: "Spinn", term: "Larmor-presesjon", formula: larmor-presesjon, note: "$|\\gamma|B$. For elektronspinnet er den $g_eeB/2m_e = 1{,}76\\cdot10^{11}\\ \\text{s}^{-1}$ ved 1 T. Ikke oscillatorens $\\omega$." }
   - { tex: "\\hat n,\\allowbreak\\ \\theta,\\allowbreak\\ \\varphi", meaning: "Enhetsvektoren langs en måleakse og vinklene som angir den", section: "Spinn", formula: spinn-langs-n, note: "$\\hat n = (\\sin\\theta\\cos\\varphi, \\sin\\theta\\sin\\varphi, \\cos\\theta)$, de samme vinklene som i kulekoordinater." }
+  # ── Identiske partikler og tredimensjonal boks ──
+  - { tex: "\\vec r_1,\\allowbreak\\ \\vec r_2", meaning: "Koordinatene til partikkel 1 og partikkel 2", section: "Identiske partikler og tredimensjonal boks", formula: ombyttingssymmetri, note: "I én dimensjon $x_1$ og $x_2$." }
+  - { tex: "\\psi_a,\\allowbreak\\ \\psi_b", meaning: "Énpartikkeltilstandene til to partikler", section: "Identiske partikler og tredimensjonal boks", term: "Énpartikkeltilstand", formula: to-partikler-uten-vekselvirkning, note: "Ikke spinorkomponentene $a_\\pm$." }
+  - { tex: "\\psi_\\pm", meaning: "Den symmetriske og den antisymmetriske tilstanden for to identiske partikler", section: "Identiske partikler og tredimensjonal boks", formula: symmetriserte-tilstander, note: "$\\psi_+$ for bosoner, $\\psi_-$ for fermioner. Ikke spinorene $\\chi_\\pm$." }
+  - { tex: "\\langle x\\rangle_{ab}", meaning: "Matriseelementet $\\int x\\,\\psi_a^*\\psi_b\\,dx$", section: "Identiske partikler og tredimensjonal boks", term: "Utvekslingskraft", formula: utvekslingskraft, note: "Null når $\\psi_a$ og $\\psi_b$ ikke overlapper." }
+  - { tex: "\\chi_\\text{singlett}", meaning: "Singletten, den antisymmetriske spinntilstanden for to spinn ½", section: "Identiske partikler og tredimensjonal boks", term: "Singlett", formula: spinntilstander-to-elektroner, note: "$(|{\\uparrow\\downarrow}\\rangle - |{\\downarrow\\uparrow}\\rangle)/\\sqrt2$, der $|{\\uparrow\\downarrow}\\rangle$ betyr spinn opp for partikkel 1 og spinn ned for partikkel 2." }
+  - { tex: "K", meaning: "Énpartikkelenergien $E_1 = \\pi^2\\hbar^2/2mL^2$ i en uendelig dyp brønn med bredde $L$", unit: "J", section: "Identiske partikler og tredimensjonal boks", note: "Nivåene er $E_n = Kn^2$." }
+  - { tex: "n_x,\\allowbreak\\ n_y,\\allowbreak\\ n_z", meaning: "Kvantetallene i en tredimensjonal boks", section: "Identiske partikler og tredimensjonal boks", formula: boks-tre-dimensjoner, note: "$1, 2, 3, \\dots$ med vegger og $0, \\pm1, \\pm2, \\dots$ med periodiske grensebetingelser." }
+  - { tex: "L_x,\\allowbreak\\ L_y,\\allowbreak\\ L_z", meaning: "Sidene i boksen", unit: "m", section: "Identiske partikler og tredimensjonal boks", formula: boks-tre-dimensjoner }
+  - { tex: "V", meaning: "Volumet $L_xL_yL_z$", unit: "m³", section: "Identiske partikler og tredimensjonal boks", formula: tilstandstetthet, id: volum, note: "Ikke potensialet $V$." }
+  - { tex: "\\vec k,\\allowbreak\\ k", meaning: "Bølgevektoren og bølgetallet til en fri partikkel", unit: "m⁻¹", section: "Identiske partikler og tredimensjonal boks", formula: periodiske-grensebetingelser, note: "$E = \\hbar^2k^2/2m$. Ikke Boltzmanns konstant $k_B$." }
+  - { tex: "N(E)", meaning: "Antall romtilstander med energi under $E$", section: "Identiske partikler og tredimensjonal boks", formula: tilstandstetthet, note: "Regnet for én spinnretning. Ikke partikkeltallet $N$." }
+  - { tex: "g(E)", meaning: "Tilstandstettheten, antall tilstander per energienhet", unit: "J⁻¹", section: "Identiske partikler og tredimensjonal boks", term: "Tilstandstetthet", formula: tilstandstetthet, note: "Regnet for én spinnretning, så for spinn ½ er antallet $2g(E)\\,dE$. Ikke degenerasjonsgraden $g_n$ eller g-faktoren $g_e$." }
+  - { tex: "N", meaning: "Antall partikler", section: "Identiske partikler og tredimensjonal boks", formula: fermi-energi, id: partikkeltall, note: "Ikke antall tilstander $N(E)$." }
+  - { tex: "\\rho", meaning: "Partikkeltettheten $N/V$", unit: "m⁻³", section: "Identiske partikler og tredimensjonal boks", formula: fermi-energi, note: "$8{,}5\\cdot10^{28}\\ \\text{m}^{-3}$ for ledningselektronene i kobber." }
+  - { tex: "k_F,\\allowbreak\\ p_F", meaning: "Fermi-bølgetallet og Fermi-impulsen $\\hbar k_F$", unit: "m⁻¹ og kg·m/s", section: "Identiske partikler og tredimensjonal boks", term: "Fermi-bølgetall", formula: fermi-energi }
+  - { tex: "E_F", meaning: "Fermi-energien, den høyeste fylte énpartikkelenergien i grunntilstanden", unit: "J", section: "Identiske partikler og tredimensjonal boks", term: "Fermi-energi", formula: fermi-energi, note: "$7{,}0$ eV for kobber." }
+  - { tex: "E_\\text{tot}", meaning: "Den totale energien til alle partiklene", unit: "J", section: "Identiske partikler og tredimensjonal boks", formula: degenerasjonstrykk, note: "$\\tfrac35NE_F$ i grunntilstanden for fermioner med spinn ½." }
+  - { tex: "P", meaning: "Trykket", unit: "Pa", section: "Identiske partikler og tredimensjonal boks", term: "Degenerasjonstrykk", formula: degenerasjonstrykk, note: "Ikke sannsynligheten $P_n$." }
   # ── Konstanter ──
   - { tex: "h,\\ \\hbar", meaning: "Plancks konstant og $\\hbar = h/2\\pi$", unit: "J·s", section: "Konstanter", id: hbar }
   - { tex: "e", meaning: "Elementærladningen", unit: "C", section: "Konstanter", note: "Hydrogenpotensialet er $V(r) = -e^2/4\\pi\\varepsilon_0 r$." }
@@ -408,6 +472,7 @@ symbols:
   - { tex: "m_e", meaning: "Elektronmassen", unit: "kg", section: "Konstanter", note: "Radiallikningen skriver massen $m$; for hydrogen er den $m_e$." }
   - { tex: "a_0", meaning: "Bohrradien", unit: "Å", section: "Konstanter", term: "Bohrradius", note: "$0{,}529$ Å." }
   - { tex: "\\alpha", meaning: "Finstrukturkonstanten", section: "Konstanter", term: "Finstrukturkonstanten", id: finstrukturkonstanten, note: "$\\alpha \\approx 1/137$, dimensjonsløs. Ikke egenverdien $\\alpha$ til en koherent tilstand." }
+  - { tex: "k_B", meaning: "Boltzmanns konstant", unit: "J/K", section: "Konstanter", note: "Den termiske energien $k_BT$ er omtrent $0{,}026$ eV ved romtemperatur." }
 
 # ── Begreper ─────────────────────────────────────────────────────────────────
 glossary:
@@ -577,6 +642,49 @@ glossary:
   - term: "Spinnretning"
     definition: "Forventningsverdien $\\langle\\vec S\\rangle$. For spinn ½ har den lengden $\\hbar/2$, og tilstanden er spinn opp langs den. Retningen til selve $\\vec S$ er ingen observabel."
     section: "Spinn"
+
+  - term: "Énpartikkeltilstand"
+    definition: "Tilstand for én partikkel, som $\\psi_a$. For partikler uten vekselvirkning er egenfunksjonene produkter av énpartikkeltilstander. For et elektron hører spinntilstanden med."
+    section: "Identiske partikler og tredimensjonal boks"
+  - term: "Sammenfiltret tilstand"
+    definition: "Tilstand for to partikler som ikke kan skrives som ett produkt av énpartikkeltilstander. En måling på den ene partikkelen bestemmer da tilstanden til den andre."
+    section: "Identiske partikler og tredimensjonal boks"
+  - term: "Boson"
+    definition: "Partikkel med heltallig spinn. Bølgefunksjonen for identiske bosoner er symmetrisk når to partikler bytter plass, og et hvilket som helst antall kan være i samme énpartikkeltilstand."
+    section: "Identiske partikler og tredimensjonal boks"
+  - term: "Fermion"
+    definition: "Partikkel med halvtallig spinn, som elektronet, protonet og nøytronet. Bølgefunksjonen for identiske fermioner er antisymmetrisk når to partikler bytter plass."
+    section: "Identiske partikler og tredimensjonal boks"
+  - term: "Pauliprinsippet"
+    definition: "To fermioner kan ikke være i samme énpartikkeltilstand. Prinsippet følger av at bølgefunksjonen for fermioner er antisymmetrisk."
+    section: "Identiske partikler og tredimensjonal boks"
+  - term: "Slater-determinant"
+    definition: "Determinanten $\\det[\\psi_i(j)]/\\sqrt{N!}$, den antisymmetriske tilstanden for $N$ fermioner uten vekselvirkning. Er to énpartikkeltilstander like, er den null."
+    section: "Identiske partikler og tredimensjonal boks"
+  - term: "Utvekslingskraft"
+    definition: "At $\\langle(x_1 - x_2)^2\\rangle$ for identiske bosoner og fermioner skiller seg med $\\mp2|\\langle x\\rangle_{ab}|^2$ fra verdien for skjelnbare partikler i de samme tilstandene. Når $\\langle x\\rangle_{ab} \\ne 0$, er bosoner nærmere hverandre og fermioner lenger fra hverandre. Ingen kraft virker, og forskjellen kommer av symmetrikravet."
+    section: "Identiske partikler og tredimensjonal boks"
+  - term: "Singlett"
+    definition: "Den antisymmetriske spinntilstanden $(|{\\uparrow\\downarrow}\\rangle - |{\\downarrow\\uparrow}\\rangle)/\\sqrt2$ for to spinn ½. To elektroner i samme romtilstand har spinnene i singletten."
+    section: "Identiske partikler og tredimensjonal boks"
+  - term: "Fritt-elektron-modellen"
+    definition: "Modell av et metall der ledningselektronene er partikler uten vekselvirkning i en boks på størrelse med metallbiten."
+    section: "Identiske partikler og tredimensjonal boks"
+  - term: "Tilstandstetthet"
+    definition: "$g(E) = dN/dE$, antall tilstander per energienhet. For en fri partikkel i tre dimensjoner vokser den som $\\sqrt E$."
+    section: "Identiske partikler og tredimensjonal boks"
+  - term: "Periodiske grensebetingelser"
+    definition: "Kravet $\\psi(x + L) = \\psi(x)$ i stedet for $\\psi = 0$ på veggene. Gir løpende bølger $e^{ikx}$ med $k = 2\\pi n/L$ og samme tilstandstetthet som veggene."
+    section: "Identiske partikler og tredimensjonal boks"
+  - term: "Fermi-bølgetall"
+    definition: "$k_F$, radien til kula i $k$-rommet som de fylte tilstandene ligger i når fermioner uten vekselvirkning er i grunntilstanden. Fermi-impulsen er $p_F = \\hbar k_F$."
+    section: "Identiske partikler og tredimensjonal boks"
+  - term: "Fermi-energi"
+    definition: "Den høyeste fylte énpartikkelenergien når fermioner uten vekselvirkning er i grunntilstanden, $E_F = \\hbar^2k_F^2/2m$."
+    section: "Identiske partikler og tredimensjonal boks"
+  - term: "Degenerasjonstrykk"
+    definition: "Trykket $P = \\tfrac23E_\\text{tot}/V$ fra en gass av fermioner i grunntilstanden. Trykket kommer av Pauliprinsippet og finnes også ved $T = 0$. Kalles også nullpunktstrykk."
+    section: "Identiske partikler og tredimensjonal boks"
 features:
   progress: true
   search: true

@@ -1,0 +1,641 @@
+---
+order: 7
+title: "Identiske partikler og tredimensjonal boks"
+summary: "To partikler i én bølgefunksjon: symmetriske bosoner og antisymmetriske fermioner, Pauliprinsippet, utvekslingskraften og elektroner med spinn, og den tredimensjonale boksen med tilstandstetthet, Fermi-energi og degenerasjonstrykk."
+importance: core
+updated: 2026-10-18
+---
+
+Et heliumatom har to elektroner, og en metallbit har ett eller flere
+ledningselektroner per atom. Bølgefunksjonen for slike systemer avhenger
+av koordinatene til alle partiklene. Når partiklene er identiske, kan ingen
+måling avgjøre hvilken som er hvilken, og bølgefunksjonen må være
+symmetrisk eller antisymmetrisk når to av dem bytter plass. Symmetrikravet
+deler partiklene i bosoner og fermioner og gir Pauliprinsippet for
+fermionene. Pauliprinsippet bestemmer hvor mange elektroner et orbital har
+plass til, og prinsippet gir elektronene i en metallbit, regnet som partikler i en
+tredimensjonal boks, et trykk også ved null temperatur.
+
+<LearningGoals>
+
+- Sette opp Schrödingerlikningen for to partikler og skille variablene når partiklene ikke vekselvirker.
+- Forklare hvorfor bølgefunksjonen er symmetrisk for identiske bosoner og antisymmetrisk for identiske fermioner, og utlede Pauliprinsippet.
+- Regne ut $\langle(x_1 - x_2)^2\rangle$ for skjelnbare partikler, bosoner og fermioner, og forklare utvekslingskraften.
+- Sette sammen en romdel og en spinndel til en antisymmetrisk tilstand for to elektroner.
+- Finne energinivåene og degenerasjonen i en tredimensjonal boks og fylle nivåene med fermioner.
+- Utlede tilstandstettheten, Fermi-energien og degenerasjonstrykket for en gass av fermioner.
+
+</LearningGoals>
+
+## To partikler
+
+For to partikler er bølgefunksjonen $\Psi(\vec r_1, \vec r_2, t)$, en
+funksjon av koordinatene til begge. Schrödingerlikningen er
+$i\hbar\,\partial\Psi/\partial t = \hat H\Psi$ som før, men
+Hamiltonoperatoren har ett kinetisk ledd for hver partikkel:
+
+$$
+\hat H = -\frac{\hbar^2}{2m}\nabla_1^2 - \frac{\hbar^2}{2m}\nabla_2^2 \allowbreak + V(\vec r_1, \vec r_2, t),
+$$
+
+der $\nabla_1$ deriverer med hensyn på $\vec r_1$ og $\nabla_2$ med hensyn på
+$\vec r_2$, og begge partiklene har massen $m$.
+$|\Psi(\vec r_1, \vec r_2, t)|^2\,d^3r_1\,d^3r_2$ er sannsynligheten for å
+finne partikkel 1 i volumelementet $d^3r_1$ rundt $\vec r_1$ og samtidig
+partikkel 2 i $d^3r_2$ rundt $\vec r_2$. Avhenger ikke $V$ av tida, skiller
+tida seg ut som for én partikkel, ${\Psi = \psi(\vec r_1, \vec r_2)\,e^{-iEt/\hbar}}$,
+og $\psi$ løser ${\hat H\psi = E\psi}$, en likning i seks variabler.
+
+Når partiklene vekselvirker, er den likningen vanskelig å løse. Uten
+vekselvirkning er potensialet en sum,
+${V = V_1(\vec r_1) + V_2(\vec r_2)}$, og Hamiltonoperatoren er
+${\hat H = \hat H_1 + \hat H_2}$, der
+${\hat H_i = -(\hbar^2/2m)\nabla_i^2 + V_i(\vec r_i)}$ bare virker på
+partikkel $i$. La ${\hat H_1\psi_a = E_a\psi_a}$ og
+${\hat H_2\psi_b = E_b\psi_b}$. Produktet $\psi_a(\vec r_1)\psi_b(\vec r_2)$
+er da en egenfunksjon, fordi $\hat H_1$ bare virker på den første faktoren og
+$\hat H_2$ bare på den andre:
+
+<Formula tex={"\\psi(\\vec r_1, \\vec r_2) = \\psi_a(\\vec r_1)\\,\\psi_b(\\vec r_2), \\allowbreak\\qquad E = E_a + E_b"} caption={"Egenfunksjon for to partikler uten vekselvirkning. $\\psi_a$ og $\\psi_b$ er énpartikkeltilstander."} />
+
+Partikkel 1 er i <Term name="Énpartikkeltilstand">énpartikkeltilstanden</Term>
+$a$ og partikkel 2 i $b$. Schrödingerlikningen er lineær, så også en sum av
+slike løsninger er en løsning, for eksempel
+$\tfrac35\,\Psi_a(\vec r_1, t)\Psi_b(\vec r_2, t) + \tfrac45\,\Psi_c(\vec r_1, t)\Psi_d(\vec r_2, t)$,
+der $\Psi_a = \psi_a e^{-iE_at/\hbar}$ og så videre. Summen kan ikke skrives
+som ett produkt, så partikkel 1 har ingen tilstand for seg selv. Måles
+partikkel 1 i tilstanden $a$, er partikkel 2 i $b$, og omvendt. Partiklene
+er <Term name="Sammenfiltret tilstand">sammenfiltret</Term>.
+
+## Bosoner og fermioner
+
+Klassisk kan du følge hver partikkel langs banen dens og dermed holde rede
+på hvilken som er partikkel 1. To elektroner har ingen baner, og alle
+egenskapene deres er like, så ingen måling kan skille dem. Bytter
+$\vec r_1$ og $\vec r_2$ plass, beskriver bølgefunksjonen den samme
+tilstanden, så sannsynlighetstettheten er den samme,
+${|\Psi(\vec r_2, \vec r_1, t)|^2 = |\Psi(\vec r_1, \vec r_2, t)|^2}$. To
+bølgefunksjoner for samme tilstand skiller seg bare med en konstant
+fasefaktor, $\Psi(\vec r_2, \vec r_1, t) = e^{i\phi}\,\Psi(\vec r_1, \vec r_2, t)$
+med reell $\phi$. Bytt dem om én gang til. Da er du tilbake til
+$\Psi(\vec r_1, \vec r_2, t)$, så ${e^{2i\phi} = 1}$ og ${e^{i\phi} = \pm1}$:
+
+$$
+\Psi(\vec r_2, \vec r_1, t) = \pm\,\Psi(\vec r_1, \vec r_2, t).
+$$
+
+<Sidenote>I to dimensjoner er to ombyttinger etter hverandre ikke det samme som ingen, og der finnes kvasipartikler, anyoner, med andre faser enn $\pm1$.</Sidenote>
+
+Partikler med pluss, der bølgefunksjonen er symmetrisk under ombytting, er
+<Term name="Boson">bosoner</Term>. Partikler med minus, der den er
+antisymmetrisk, er <Term name="Fermion">fermioner</Term>. Hvilken type en
+partikkel er, avgjøres av spinnet:
+
+<Statement kind="principle" name="Spinn og statistikk" id="spinn-og-statistikk">
+
+Partikler med heltallig spinn er bosoner. Partikler med halvtallig spinn er
+fermioner.
+
+</Statement>
+
+Sammenhengen kan bevises i relativistisk kvantemekanikk, og her tas den som
+et aksiom. Elektroner, protoner og nøytroner har spinn ½ og er fermioner.
+Fotoner har spinn 1 og er bosoner.
+
+For to identiske partikler uten vekselvirkning i samme potensial er
+$\psi_a(\vec r_1)\psi_b(\vec r_2)$ en løsning, men den er verken symmetrisk
+eller antisymmetrisk når $a \ne b$. Ombyttingen gir
+$\psi_a(\vec r_2)\psi_b(\vec r_1)$, en annen funksjon med samme energi
+$E_a + E_b$, fordi $\hat H_1 + \hat H_2$ er uendret når partiklene bytter
+plass. Summen av de to produktene er symmetrisk, og differansen er
+antisymmetrisk:
+
+<Formula tex={"\\psi_\\pm(\\vec r_1, \\vec r_2) = \\frac{1}{\\sqrt2}\\bigl[\\psi_a(\\vec r_1)\\,\\psi_b(\\vec r_2) \\allowbreak \\pm \\psi_b(\\vec r_1)\\,\\psi_a(\\vec r_2)\\bigr]"} caption={"To identiske partikler uten vekselvirkning i énpartikkeltilstandene $a \\ne b$: pluss for bosoner, minus for fermioner."} />
+
+Faktoren $1/\sqrt2$ normerer, fordi $\psi_a$ og $\psi_b$ er ortonormerte og
+kryssleddene i $|\psi_\pm|^2$ integrerer til null. Begge tilstandene er
+sammenfiltrede. Én partikkel er i $a$ og den andre i $b$, men ingen av dem
+er i en bestemt av de to tilstandene.
+
+<Callout title="Symmetrisk eller antisymmetrisk">
+Identiske partikler kan ikke skilles, så bølgefunksjonen er symmetrisk under ombytting for bosoner, som har heltallig spinn, og antisymmetrisk for fermioner, som har halvtallig spinn.
+</Callout>
+
+## Pauliprinsippet
+
+Sett $a = b$ i $\psi_-$. De to leddene er da like, og differansen er null for
+alle $\vec r_1$ og $\vec r_2$. Det finnes altså ingen tilstand for to
+fermioner der begge er i $a$:
+
+<Statement kind="principle" name="Pauliprinsippet" id="pauli">
+
+To fermioner kan ikke være i samme énpartikkeltilstand.
+
+</Statement>
+
+<Term name="Pauliprinsippet">Pauliprinsippet</Term> er ingen ekstra
+antagelse. Prinsippet følger av at bølgefunksjonen for fermioner er
+antisymmetrisk. Bosoner har ingen slik grense. To bosoner i samme tilstand
+har $\psi = \psi_a(\vec r_1)\psi_a(\vec r_2)$, som allerede er symmetrisk og
+normert, og i et Bose–Einstein-kondensat er et makroskopisk antall bosoner
+i samme énpartikkeltilstand.
+
+Den antisymmetriske tilstanden $\psi_-$ er en determinant:
+
+$$
+\psi_-(\vec r_1, \vec r_2) = \frac{1}{\sqrt2}\begin{vmatrix} \psi_a(\vec r_1) & \psi_a(\vec r_2) \\ \psi_b(\vec r_1) & \psi_b(\vec r_2) \end{vmatrix},
+$$
+
+med én rad for hver énpartikkeltilstand og én søyle for hver partikkel. For
+$N$ fermioner uten vekselvirkning i énpartikkeltilstandene
+$\psi_1, \dots, \psi_N$ gir den samme oppskriften
+<Term name="Slater-determinant">Slater-determinanten</Term>:
+
+<Formula tex={"\\psi(1, \\dots, N) = \\frac{1}{\\sqrt{N!}}\\,\\det\\bigl[\\psi_i(j)\\bigr]"} caption={"Slater-determinanten. Rad $i$ er énpartikkeltilstanden $\\psi_i$, og søyle $j$ er koordinatene til partikkel $j$."} />
+
+Å bytte om to partikler er å bytte om to søyler, og da skifter determinanten
+fortegn. Er to av énpartikkeltilstandene like, er to rader like, og
+determinanten er null, som Pauliprinsippet krever. Hvert av de $N!$ leddene
+gir $1/N!$ til normen og kryssleddene null, så faktoren $1/\sqrt{N!}$
+normerer. Slater-determinanten er en eksakt løsning bare når fermionene ikke
+vekselvirker.
+
+Symmetrikravet endrer energinivåene. Ta to partikler uten vekselvirkning i
+en uendelig dyp brønn med bredde $L$. Er partiklene fermioner, la dem ha samme
+spinntilstand, slik at symmetrikravet gjelder romdelen alene.
+Énpartikkeltilstandene er ${\psi_n(x) = \sqrt{2/L}\,\sin(n\pi x/L)}$ med
+energiene $E_n = Kn^2$, der $K = \pi^2\hbar^2/2mL^2$.
+
+- Skjelnbare partikler har grunntilstanden $\psi_1(x_1)\psi_1(x_2)$ med energien $2K$. Det neste nivået, $5K$, har to tilstander, $\psi_1(x_1)\psi_2(x_2)$ og $\psi_2(x_1)\psi_1(x_2)$.
+- Bosoner har den samme grunntilstanden. På nivået $5K$ er bare den symmetriske kombinasjonen $\psi_+$ tillatt, så nivået har én tilstand.
+- Fermioner kan ikke begge være i $\psi_1$. Grunntilstanden er $\psi_-$ med $a = 1$ og $b = 2$, og energien er $5K$.
+
+<Callout title="Pauliprinsippet">
+To fermioner i samme spinntilstand i en brønn har grunntilstandsenergien $5K$, fordi de ikke kan være i samme énpartikkeltilstand. To bosoner har $2K$.
+</Callout>
+
+## Utvekslingskraft
+
+Symmetrikravet endrer også hvor langt fra hverandre partiklene er. Sett
+$\vec r_1 = \vec r_2 = \vec r$ i en antisymmetrisk romfunksjon. Da er
+${\psi(\vec r, \vec r) = -\psi(\vec r, \vec r)}$, altså null, og to fermioner
+i $\psi_-$ er aldri på samme sted. For bosoner er
+${|\psi_+(\vec r, \vec r)|^2 = 2|\psi_a(\vec r)\psi_b(\vec r)|^2}$, dobbelt så
+mye som for skjelnbare partikler i $\psi_a(\vec r_1)\psi_b(\vec r_2)$.
+
+Mål avstanden med middelkvadratet
+$\langle(x_1 - x_2)^2\rangle = \langle x_1^2\rangle + \langle x_2^2\rangle - 2\langle x_1x_2\rangle$
+i én dimensjon. For skjelnbare partikler i $\psi_a(x_1)\psi_b(x_2)$ deler
+hvert integral seg i ett over $x_1$ og ett over $x_2$. Med
+${\langle x^2\rangle_a = \int x^2|\psi_a|^2\,dx}$ og tilsvarende er
+
+$$
+\langle(x_1 - x_2)^2\rangle_\text{skj} = \langle x^2\rangle_a + \langle x^2\rangle_b \allowbreak - 2\langle x\rangle_a\langle x\rangle_b .
+$$
+
+I $|\psi_\pm|^2$ er det fire ledd. I $\langle x_1^2\rangle$ har de to
+kryssleddene faktoren ${\int\psi_b^*\psi_a\,dx_2 = 0}$, så
+${\langle x_1^2\rangle = \tfrac12(\langle x^2\rangle_a + \langle x^2\rangle_b)}$.
+Det samme gjelder $\langle x_2^2\rangle$, så summen
+$\langle x_1^2\rangle + \langle x_2^2\rangle$ er den samme som for skjelnbare
+partikler. I $\langle x_1x_2\rangle$ står $x$ i begge integralene, og
+kryssleddene overlever:
+
+$$
+\langle x_1x_2\rangle_\pm = \langle x\rangle_a\langle x\rangle_b \pm |\langle x\rangle_{ab}|^2, \allowbreak\qquad \langle x\rangle_{ab} = \int x\,\psi_a^*(x)\,\psi_b(x)\,dx .
+$$
+
+Med $\langle x_1x_2\rangle_\pm$ satt inn i middelkvadratet er
+
+<Formula tex={"\\langle(x_1 - x_2)^2\\rangle_\\pm = \\langle(x_1 - x_2)^2\\rangle_\\text{skj} \\allowbreak \\mp 2\\,|\\langle x\\rangle_{ab}|^2"} caption={"Middelkvadratet av avstanden for bosoner (øvre fortegn) og fermioner (nedre), sammenlignet med skjelnbare partikler i de samme to tilstandene."} />
+
+Når ${\langle x\rangle_{ab} \ne 0}$, er bosoner altså nærmere hverandre enn
+skjelnbare partikler, og fermioner er lenger fra hverandre. Effekten kalles
+<Term name="Utvekslingskraft">utvekslingskraften</Term>, men partiklene
+vekselvirker ikke, og ingen kraft virker. Forskjellen kommer av
+symmetrikravet alene. Ligger $\psi_a$ og $\psi_b$ så langt fra hverandre at
+de ikke overlapper, er ${\langle x\rangle_{ab} = 0}$, og symmetriseringen gir
+ingen forskjell. Derfor kan du se bort fra den for elektroner som er langt
+fra hverandre.
+
+<Callout title="Utvekslingskraften">
+Når ${\langle x\rangle_{ab} \ne 0}$, er identiske bosoner nærmere hverandre og identiske fermioner lenger fra hverandre enn skjelnbare partikler i de samme tilstandene. Forskjellen i $\langle(x_1 - x_2)^2\rangle$ er $2|\langle x\rangle_{ab}|^2$ og kommer av symmetrikravet, ikke av noen kraft.
+</Callout>
+
+<Simulation
+  src="/sims/identiske-partikler.js"
+  title="To partikler i en uendelig dyp brønn"
+  caption="Kvadratet er alle plasseringene $(x_1, x_2)$ av to partikler i en brønn med bredde $L$, og fargen er $|\psi(x_1, x_2)|^2$ med énpartikkeltilstandene $a$ og $b$. Den stiplede diagonalen er $x_1 = x_2$. De heltrukne linjene er ${|x_1 - x_2| = \sqrt{\langle(x_1 - x_2)^2\rangle}}$, og de prikkede er den samme avstanden for skjelnbare partikler."
+  height={350}
+/>
+
+## Elektroner med spinn
+
+Et elektron har både en posisjon og et spinn. Spinnet alene har et
+todimensjonalt Hilbertrom, og Hilbertrommet for posisjon og spinn sammen er
+tensorproduktet av romdelen og spinndelen, skrevet med $\otimes$. Hver
+basisvektor er en romtilstand ganger en spinntilstand,
+$|\psi\rangle \otimes |\chi\rangle$, eller ${\psi(\vec r)\,\chi}$ med spinoren
+$\chi$, og en generell tilstand er en sum av slike produkter. Når $\hat H$
+ikke virker på spinnet, kan egentilstandene for to elektroner skrives som
+$\psi(\vec r_1, \vec r_2)\,\chi(1, 2)$. Når elektronene bytter plass,
+bytter både posisjonene og spinnene, og det er hele tilstanden som må være
+antisymmetrisk. Enten er romdelen antisymmetrisk og spinndelen symmetrisk,
+eller romdelen er symmetrisk og spinndelen antisymmetrisk.
+
+To spinn ½ har de fire basistilstandene $|{\uparrow\uparrow}\rangle$,
+$|{\uparrow\downarrow}\rangle$, $|{\downarrow\uparrow}\rangle$ og
+$|{\downarrow\downarrow}\rangle$, der $|{\uparrow\downarrow}\rangle$ betyr at
+elektron 1 har spinn opp og elektron 2 spinn ned. Ombyttingen lar
+$|{\uparrow\uparrow}\rangle$ og $|{\downarrow\downarrow}\rangle$ være som de er
+og gjør $|{\uparrow\downarrow}\rangle$ til $|{\downarrow\uparrow}\rangle$, så
+summen og differansen av de to siste spiller samme rolle som $\psi_\pm$. Tre
+tilstander er symmetriske og én antisymmetrisk:
+
+<Formula tex={"|{\\uparrow\\uparrow}\\rangle, \\allowbreak\\quad \\frac{|{\\uparrow\\downarrow}\\rangle + |{\\downarrow\\uparrow}\\rangle}{\\sqrt2}, \\allowbreak\\quad |{\\downarrow\\downarrow}\\rangle, \\allowbreak\\qquad \\chi_\\text{singlett} = \\frac{|{\\uparrow\\downarrow}\\rangle - |{\\downarrow\\uparrow}\\rangle}{\\sqrt2}"} caption={"De tre symmetriske spinntilstandene for to elektroner og den antisymmetriske singletten."} />
+
+Den antisymmetriske tilstanden er
+<Term name="Singlett">singletten</Term>. Er to elektroner i samme romtilstand
+$\psi_a$, er romdelen $\psi_a(\vec r_1)\psi_a(\vec r_2)$ symmetrisk, og da
+må spinndelen være singletten:
+
+$$
+\psi(1, 2) = \psi_a(\vec r_1)\,\psi_a(\vec r_2)\,\chi_\text{singlett} .
+$$
+
+To elektroner kan altså dele en romtilstand når spinnene står i singletten,
+og et tredje elektron må i en annen romtilstand. Derfor har hvert orbital i
+et atom plass til to elektroner. For et elektron er en énpartikkeltilstand i
+Pauliprinsippet en romtilstand sammen med en spinntilstand. Grunntilstandsenergien
+$5K$ for to fermioner i brønnen gjelder altså bare når de har samme
+spinntilstand.
+
+Utvekslingskraften følger romdelen. I singletten er romdelen symmetrisk, og
+elektronene er nærmere hverandre, som bosonene. I de tre symmetriske
+spinntilstandene er romdelen antisymmetrisk, og elektronene er lenger fra
+hverandre, som fermionene i regningen ovenfor.
+
+<Callout title="To elektroner">
+Hele tilstanden er antisymmetrisk. En symmetrisk romdel hører sammen med singletten, en antisymmetrisk romdel med en av de tre symmetriske spinntilstandene. To elektroner kan dele en romtilstand bare i singletten.
+</Callout>
+
+<Example label="Eksamensoppgave" title="To fermioner i en brønn">
+<ExamRef id="2025-aug-kont" task="5 a" />
+
+Two identical spin-1/2 fermions are placed in an infinite square well. They
+do not interact with each other but they experience an external potential
+
+$$
+V(x) = \lambda\delta\Bigl(x - \frac{L}{2}\Bigr), \qquad (9)
+$$
+
+where $L$ is the width of the well and $\lambda$ is a small constant.
+
+a) First, determine the ground state and the first excited state of the
+unperturbed system - both the two-particle wave functions and associated
+energies.
+
+<Solution>
+
+Uten $V(x)$ er énpartikkeltilstandene
+${\psi_n(x) = \sqrt{2/L}\,\sin(n\pi x/L)}$ med ${E_n = n^2\pi^2\hbar^2/2mL^2}$.
+
+Grunntilstanden har begge fermionene i $\psi_1$. Romdelen
+$\psi_1(x_1)\psi_1(x_2)$ er symmetrisk, så spinndelen er singletten:
+
+$$
+\Psi_0 = \psi_1(x_1)\,\psi_1(x_2)\,\chi_\text{singlett},
+$$
+
+med energien ${E = 2E_1 = \pi^2\hbar^2/mL^2}$.
+
+Første eksiterte nivå har ett fermion i $\psi_1$ og ett i $\psi_2$, med
+${E = E_1 + E_2 = 5\pi^2\hbar^2/2mL^2}$. Romdelen kan være symmetrisk eller
+antisymmetrisk:
+
+$$
+\psi_\pm = \frac{1}{\sqrt2}\bigl[\psi_1(x_1)\psi_2(x_2) \allowbreak \pm \psi_2(x_1)\psi_1(x_2)\bigr].
+$$
+
+$\psi_+$ går sammen med singletten, og $\psi_-$ med hver av de tre
+symmetriske spinntilstandene $|{\uparrow\uparrow}\rangle$,
+${(|{\uparrow\downarrow}\rangle + |{\downarrow\uparrow}\rangle)/\sqrt2}$ og
+$|{\downarrow\downarrow}\rangle$. Nivået har dermed fire tilstander.
+
+<Answer>Grunntilstanden er $\psi_1(x_1)\psi_1(x_2)\,\chi_\text{singlett}$ med $E = \pi^2\hbar^2/mL^2$. Første eksiterte nivå har ${E = 5\pi^2\hbar^2/2mL^2}$ og fire tilstander: $\psi_+\chi_\text{singlett}$ og $\psi_-$ med hver av de tre symmetriske spinntilstandene.</Answer>
+
+</Solution>
+
+</Example>
+
+## Boks i tre dimensjoner
+
+Den tredimensjonale boksen er den uendelig dype brønnen i tre dimensjoner:
+$V = 0$ for ${0 < x < L_x}$, ${0 < y < L_y}$ og ${0 < z < L_z}$, og $V = \infty$
+utenfor. Inne i boksen er
+
+$$
+\hat H = -\frac{\hbar^2}{2m}\Bigl(\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}\Bigr) \allowbreak = \hat H_x + \hat H_y + \hat H_z ,
+$$
+
+en sum av tre ledd som hvert virker på én koordinat. Strukturen er den samme
+som $\hat H_1 + \hat H_2$ for to partikler uten vekselvirkning, så
+egenfunksjonene er produkter av løsningene i én dimensjon, som hver er null på
+de to veggene i sin retning, og energiene adderes:
+
+$$
+\psi_{n_xn_yn_z} = \psi_{n_x}(x)\,\psi_{n_y}(y)\,\psi_{n_z}(z), \allowbreak\qquad \psi_{n_x}(x) = \sqrt{\frac{2}{L_x}}\,\sin\frac{n_x\pi x}{L_x},
+$$
+
+<Formula tex={"E_{n_xn_yn_z} = \\frac{\\pi^2\\hbar^2}{2m}\\Bigl(\\frac{n_x^2}{L_x^2} + \\frac{n_y^2}{L_y^2} \\allowbreak + \\frac{n_z^2}{L_z^2}\\Bigr)"} caption={"Energinivåene i en tredimensjonal boks, med $n_x, n_y, n_z = 1, 2, 3, \\dots$"} />
+
+Er to sider like, for eksempel $L_x = L_y$, har $\psi_{211}$ og
+$\psi_{121}$ samme energi. Degenerasjonen kommer av en symmetri. En
+symmetri betyr at $\hat H$ er uendret under en transformasjon, og da fører
+transformasjonen en egenfunksjon over i en egenfunksjon med samme energi.
+Med $L_x = L_y$ er $\hat H$ den samme når $x$ og $y$ bytter plass, og
+ombyttingen gjør $\psi_{211}$ til $\psi_{121}$, en annen funksjon. I en kube
+med ${L_x = L_y = L_z = L}$ avhenger energien bare av
+$n_x^2 + n_y^2 + n_z^2$. Nivået med tallene $(2, 1, 1)$ har da tre
+tilstander, og nivået med $(1, 2, 3)$ har seks, én for hver rekkefølge.
+
+<Callout title="Degenerasjon fra symmetri">
+Energiene i boksen er summer av tre ledd, ett for hver retning. Like sider gjør $\hat H$ uendret når koordinatene bytter plass, og tilstandene som byttes over i hverandre, har samme energi.
+</Callout>
+
+<Example label="Eksamensoppgave" title="Fem fermioner i en boks">
+<ExamRef id="2023-des" task="1 g" />
+
+g) A rectangular box with dimensions $L_x$, $L_y$ and $L_z$ contains 5
+identical, non-interacting fermions with spin $\frac12$. The single-particle
+eigenenergies are given by
+
+$$
+E_{n_xn_yn_z} = \frac{\hbar^2\pi^2}{2m}\Biggl[\frac{n_x^2}{L_x^2} + \frac{n_y^2}{L_y^2} \allowbreak + \frac{n_z^2}{L_z^2}\Biggr], \allowbreak\qquad (3)
+$$
+
+where $n_x, n_y, n_z = 1, 2, 3, \ldots$, and $L_x = L_y = L$ and
+$L_z = \frac23 L$.
+
+<Quiz
+  question={"What are the quantum numbers $(n_x, n_y, n_z)$ of the filled single-particle states of the ground state of the system?"}
+  options={[
+    "5 particles in $(1, 1, 1)$",
+    "2 particles in $(1, 1, 1)$; 2 particles in $(2, 1, 1)$ and 1 in $(1, 2, 1)$ or vice versa",
+    "1 particle in $(1, 1, 1)$; 1 particle in $(2, 1, 1)$, $(1, 2, 1)$ and $(1, 1, 2)$; 1 particle in $(2, 2, 1)$",
+    "2 particles in $(1, 1, 1)$; 2 particles in $(1, 1, 2)$; 1 in $(2, 1, 1)$ or $(1, 2, 1)$",
+    "2 particles in $(1, 1, 1)$; 3 particles in any combination of states with $n_x + n_y + n_z = 4$"
+  ]}
+  answer={1}
+  explanation={"Med $E_0 = \\hbar^2\\pi^2/2mL^2$ og $1/L_z^2 = 9/(4L^2)$ er $E_{111} = \\tfrac{17}{4}E_0$, $E_{211} = E_{121} = \\tfrac{29}{4}E_0$, $E_{221} = \\tfrac{41}{4}E_0$ og $E_{112} = 11E_0$. Hver romtilstand gir to énpartikkeltilstander, én for hver spinnretning. To går i $(1, 1, 1)$, og de tre andre fyller tre av de fire plassene på det degenererte nivået $(2, 1, 1)$ og $(1, 2, 1)$. A bryter Pauliprinsippet, C glemmer spinnet, D overser at den korte siden $L_z$ gjør $n_z = 2$ dyrt, og E teller $n_x + n_y + n_z$ i stedet for energien."}
+/>
+
+</Example>
+
+## Tilstandstettheten
+
+I et metall er de ytterste elektronene i hvert atom løst bundet. De beveger
+seg gjennom hele metallet nesten uten å vekselvirke, og
+<Term name="Fritt-elektron-modellen">fritt-elektron-modellen</Term> regner
+dem som partikler uten vekselvirkning i en boks på størrelse med
+metallbiten. I et makroskopisk volum ${V = L_xL_yL_z}$, der $V$ nå er volumet
+og ikke potensialet, ligger nivåene svært tett, fordi energien går som $1/L^2$. Da er det mer
+nyttig å telle hvor mange tilstander det er per energienhet,
+<Term name="Tilstandstetthet">tilstandstettheten</Term> $g(E)$.
+
+Skriv tilstandene med bølgevektoren ${\vec k = (k_x, k_y, k_z)}$, der
+$k_x = n_x\pi/L_x$ og tilsvarende for $y$ og $z$, slik at
+${E = \hbar^2k^2/2m}$. Hver tilstand er et punkt i et gitter i $k$-rommet med
+avstanden $\pi/L_x$, $\pi/L_y$ og $\pi/L_z$ langs aksene, så hvert punkt tar
+volumet $\pi^3/V$. Tilstandene med energi under $E$ ligger inne i kula med
+radius ${k = \sqrt{2mE}/\hbar}$, men bare i oktanten der alle $n_i$ er
+positive. Antallet er volumet av oktanten delt på volumet per tilstand:
+
+$$
+N(E) = \frac18\cdot\frac{4\pi k^3}{3}\cdot\frac{V}{\pi^3} = \frac{V}{6\pi^2}\,k^3 \allowbreak = \frac{V}{6\pi^2}\Bigl(\frac{2mE}{\hbar^2}\Bigr)^{3/2}.
+$$
+
+Opptellingen bytter antall gitterpunkter ut med et volum. Det er en god
+tilnærming når $k$ er mye større enn avstanden $\pi/L$ mellom tillatte $k$,
+altså når det er mange tilstander under $E$. Tilstandstettheten er antall tilstander i et lite
+energiintervall delt på intervallet, ${g(E) = dN/dE}$:
+
+<Formula tex={"g(E) = \\frac{V}{4\\pi^2}\\Bigl(\\frac{2m}{\\hbar^2}\\Bigr)^{3/2}\\sqrt E"} caption={"Tilstandstettheten for en fri partikkel i volumet $V$, regnet for én spinnretning."} />
+
+Hvert punkt i $k$-rommet er én romtilstand. For partikler med spinn ½ har
+hver romtilstand to spinntilstander, så antall tilstander er $2g(E)$.
+
+$g(E)$ vokser som $\sqrt E$ fordi $N$ går som ${k^3 \propto E^{3/2}}$. I to
+dimensjoner tar hver tilstand arealet $\pi^2/A$, og tilstandene under $E$
+ligger i en kvart sirkel med arealet $\tfrac14\pi k^2$. I én dimensjon tar
+hver tilstand lengden $\pi/L$ på et linjestykke med lengden $k$. Det gir
+${N^{(2D)} = Ak^2/4\pi}$ og ${N^{(1D)} = Lk/\pi}$, altså $N \propto E$ og
+$N \propto \sqrt E$, og den deriverte er
+
+$$
+g^{(2D)}(E) = \frac{Am}{2\pi\hbar^2}, \allowbreak\qquad g^{(1D)}(E) = \frac{\sqrt{2m}\,L}{2\pi\hbar}\,\frac{1}{\sqrt E},
+$$
+
+med arealet $A = L_xL_y$. I to dimensjoner er tilstandstettheten konstant,
+og i én dimensjon avtar den med energien.
+
+<Derivation title="Effektivt todimensjonale systemer">
+
+Todimensjonale systemer finnes. Er $L_x$ mye mindre enn $L_y$ og $L_z$, er
+$\pi^2\hbar^2/2mL_x^2$ mye større enn de to andre leddene i energien. Ved
+lave energier er da $n_x = 1$ for alle partiklene, og de beveger seg bare i
+$y$ og $z$. Systemet er effektivt todimensjonalt, og tilstandstettheten er
+den konstante $g^{(2D)}$.
+
+</Derivation>
+
+### Periodiske grensebetingelser
+
+For en fri partikkel er det ofte mer naturlig å bruke løpende bølger
+$e^{ikx}$, som er egenfunksjoner for impulsen med egenverdien $\hbar k$, enn
+stående bølger som er null på veggene. Bøy en endimensjonal boks med
+lengden $L$ til en ring, slik at $x$ og $x + L$ er samme punkt. Bølgefunksjonen
+må da være entydig, ${\psi(x + L) = \psi(x)}$, og for $e^{ikx}$ gir kravet
+${e^{ikL} = 1}$:
+
+$$
+k = \frac{2\pi n}{L}, \allowbreak\quad n = 0, \pm1, \pm2, \dots, \allowbreak\qquad E = \frac{\hbar^2k^2}{2m} = \frac{(2\pi\hbar)^2}{2mL^2}\,n^2 .
+$$
+
+Med $\psi = Ae^{ikx}$ gir normeringen $|A|^2L = 1$, altså ${A = 1/\sqrt L}$.
+For $k \ne k'$ er
+
+$$
+\int_0^L e^{i(k' - k)x}\,dx = \frac{e^{i(k' - k)L} - 1}{i(k' - k)} = 0,
+$$
+
+fordi både $e^{ikL}$ og $e^{ik'L}$ er 1. Tilstandene er dermed ortonormerte. I
+tre dimensjoner gjelder det samme langs hver akse:
+
+<Formula tex={"\\psi_{\\vec k}(\\vec r) = \\frac{1}{\\sqrt V}\\,e^{i\\vec k\\cdot\\vec r}, \\allowbreak\\qquad k_i = \\frac{2\\pi n_i}{L_i}"} caption={"Periodiske grensebetingelser i volumet $V = L_xL_yL_z$, med heltallige $n_i$."} />
+
+En boks i tre dimensjoner kan ikke bøyes sammen slik, men egenskapene inne
+i et stort volum avhenger ikke av hva som skjer ved overflaten. Derfor kan
+du bruke <Term name="Periodiske grensebetingelser">periodiske
+grensebetingelser</Term> også der. Tilstandstettheten blir den samme. Langs
+hver akse ligger punktene nå med avstanden $2\pi/L_i$, dobbelt så langt fra
+hverandre, så hvert punkt tar volumet $(2\pi)^3/V$, åtte ganger så mye. Til
+gjengjeld teller alle de åtte oktantene, fordi $e^{i\vec k\cdot\vec r}$ med
+negative $k_i$ er andre tilstander enn med positive:
+
+$$
+N(E) = \frac{4\pi k^3}{3}\cdot\frac{V}{(2\pi)^3} = \frac{V}{6\pi^2}\,k^3 ,
+$$
+
+det samme som med veggene.
+
+<Callout title="Tilstandstettheten">
+Med vegger tar hver tilstand volumet $\pi^3/V$ i én oktant av $k$-rommet, og med periodiske grensebetingelser $(2\pi)^3/V$ i hele rommet. Begge gir ${N(E) = (V/6\pi^2)(2mE/\hbar^2)^{3/2}}$ romtilstander under $E$, og $g(E)$ vokser som $\sqrt E$.
+</Callout>
+
+<Example label="Eksamensoppgave" title="Tilstandstettheten med spinn">
+<ExamRef id="2025-des" task="1 k" />
+
+k) Consider a 3D cubic box of side L (volume $V = L^3$) with periodic
+boundary conditions
+
+$$
+\mathbf k = \frac{2\pi}{L}\,(n_x, n_y, n_z), \allowbreak\qquad n_x, n_y, n_z \in \mathbb Z. \allowbreak\qquad (8)
+$$
+
+The number of states with $|\mathbf k| \le k$ (including spin degeneracy 2)
+is
+
+$$
+N(k) = 2\times\frac{\frac{4\pi}{3}k^3}{\left(\frac{2\pi}{L}\right)^3} \allowbreak = \frac{V\,k^3}{3\pi^2}. \allowbreak\qquad (9)
+$$
+
+<Quiz
+  question={"Which is the correct result for the density of states $g(E)$ assuming that we have a free particle?"}
+  options={[
+    "$\\frac{V}{2\\pi^2}\\left(\\frac{2m}{\\hbar^2}\\right)^{3/2}\\sqrt{E}$",
+    "$\\frac{V}{\\pi^2}\\left(\\frac{m}{\\hbar^2}\\right)^{3/2}\\sqrt{E}$",
+    "$\\frac{V}{6\\pi^2}\\left(\\frac{2m}{\\hbar^2}\\right)^{3/2}\\sqrt{E}$",
+    "$\\frac{V}{2\\pi^2}\\left(\\frac{m}{\\hbar^2}\\right)^{3/2}E$",
+    "$\\frac{V}{\\pi^2}\\left(\\frac{2m}{\\hbar^2}\\right)^{3/2}\\frac{1}{\\sqrt{E}}$"
+  ]}
+  answer={0}
+  explanation={"Sett $k = \\sqrt{2mE}/\\hbar$ inn i $N(k)$: $N(E) = (V/3\\pi^2)(2mE/\\hbar^2)^{3/2}$, og $g(E) = dN/dE = (V/2\\pi^2)(2m/\\hbar^2)^{3/2}\\sqrt E$. Det er det dobbelte av tilstandstettheten for én spinnretning, fordi $N(k)$ her teller med spinnet. C er $N(E)/E$ for én spinnretning, ikke den deriverte. E avtar med energien som i én dimensjon, og D vokser lineært, som i fire dimensjoner."}
+/>
+
+</Example>
+
+## Fermi-energien
+
+Fyll $N$ fermioner med spinn ½ uten vekselvirkning inn i volumet $V$.
+Grunntilstanden er tilstanden med lavest total energi. Pauliprinsippet
+tillater to partikler i hver romtilstand, én med spinn opp og én med spinn
+ned, så de $N$ partiklene fyller de $N/2$ laveste romtilstandene. Med
+periodiske grensebetingelser er det alle punktene i en kule i $k$-rommet
+med radius $k_F$, <Term name="Fermi-bølgetall">Fermi-bølgetallet</Term>:
+
+$$
+\frac N2 = \frac{4\pi k_F^3}{3}\cdot\frac{V}{(2\pi)^3} \allowbreak\quad\Rightarrow\quad k_F = \Bigl(\frac{3\pi^2N}{V}\Bigr)^{1/3} \allowbreak = (3\pi^2\rho)^{1/3},
+$$
+
+der ${\rho = N/V}$ er partikkeltettheten. Den høyeste fylte energien er
+<Term name="Fermi-energi">Fermi-energien</Term>:
+
+<Formula tex={"E_F = \\frac{\\hbar^2k_F^2}{2m} = \\frac{\\hbar^2}{2m}\\,(3\\pi^2\\rho)^{2/3}"} caption={"Fermi-energien for fermioner med spinn ½ uten vekselvirkning, med partikkeltettheten $\\rho = N/V$."} />
+
+Fermi-energien avhenger bare av tettheten, ikke av hvor stor boksen er, og
+den er omvendt proporsjonal med massen. Fermi-impulsen er
+$p_F = \hbar k_F$. Kobber har ${\rho = 8{,}5\cdot10^{28}\ \text{m}^{-3}}$
+ledningselektroner, og det gir ${k_F = 1{,}36\cdot10^{10}\ \text{m}^{-1}}$ og
+${E_F = 7{,}0\ \text{eV}}$. For en kobberbit med sidekant 1 cm er avstanden mellom
+tillatte $k$ bare ${\pi/L \approx 3\cdot10^2\ \text{m}^{-1}}$, så
+opptellingen med et volum i $k$-rommet holder med god margin. Den termiske energien $k_BT$ er omtrent $0{,}026\ \text{eV}$ ved
+romtemperatur, så elektronene i et metall er nesten i grunntilstanden.
+
+Den totale energien er summen over alle fylte tilstander. Med to
+spinnretninger er antall partikler med energi mellom $E$ og $E + dE$ lik
+$2g(E)\,dE$, så
+
+$$
+E_\text{tot} = \int_0^{E_F} E\cdot 2g(E)\,dE \allowbreak = \frac{V}{5\pi^2}\Bigl(\frac{2m}{\hbar^2}\Bigr)^{3/2}E_F^{5/2} .
+$$
+
+På samme måte er
+
+$$
+N = \int_0^{E_F}2g(E)\,dE \allowbreak = \frac{V}{3\pi^2}\Bigl(\frac{2m}{\hbar^2}\Bigr)^{3/2}E_F^{3/2},
+$$
+
+og forholdet gir ${E_\text{tot} = \tfrac35NE_F}$. Middelenergien per partikkel er
+$\tfrac35E_F$.
+
+Med ${\rho = N/V}$ satt inn er
+${E_\text{tot} = \tfrac35N\,(\hbar^2/2m)(3\pi^2N/V)^{2/3}}$, som avtar som
+$V^{-2/3}$ når volumet øker og $N$ står fast. Gassen gir altså fra seg
+energi når den utvider seg, og energien går til arbeidet $P\,dV$ på veggene,
+${dE_\text{tot} = -P\,dV}$. Trykket er
+
+<Formula tex={"P = -\\frac{\\partial E_\\text{tot}}{\\partial V} = \\frac23\\,\\frac{E_\\text{tot}}{V} \\allowbreak = \\frac{(3\\pi^2)^{2/3}\\hbar^2}{5m}\\,\\rho^{5/3}"} caption={"Degenerasjonstrykket for fermioner med spinn ½ i grunntilstanden."} />
+
+En gass av fermioner nær grunntilstanden kalles degenerert, og trykket
+kalles derfor <Term name="Degenerasjonstrykk">degenerasjonstrykket</Term>.
+Ordet betyr her noe annet enn en degenerert egenverdi. En klassisk ideell
+gass har trykket $Nk_BT/V$, som går mot null når $T \to 0$. Fermiongassen
+har trykk også i grunntilstanden, fordi Pauliprinsippet tvinger partiklene
+opp i tilstander med stor $k$.
+
+<Callout title="Fermi-energien og trykket">
+$N$ fermioner med spinn ½ fyller alle romtilstander opp til ${E_F = (\hbar^2/2m)(3\pi^2\rho)^{2/3}}$, to i hver. Middelenergien er $\tfrac35E_F$, og gassen har trykket ${P = \tfrac23E_\text{tot}/V}$ også ved $T = 0$.
+</Callout>
+
+<Derivation title="Hvite dverger">
+
+Når en stjerne har brukt opp kjernebrenselet, trekker gravitasjonen den
+sammen. I en hvit dverg holder degenerasjonstrykket fra elektronene igjen,
+og stjernen er i likevekt. Jo tyngre stjernen er, desto mer presses den
+sammen, og elektronene får så stor impuls at de nærmer seg lysfarten. Da
+vokser trykket langsommere med tettheten enn $\rho^{5/3}$. Over
+Chandrasekhar-grensen, omtrent 1,4 solmasser, kan ikke trykket holde
+stjernen oppe, og den faller sammen til en nøytronstjerne.
+
+</Derivation>
+
+## Sjekk deg selv
+
+<Quiz
+  question={"En kubisk boks med sidekant $L$ inneholder elektroner uten vekselvirkning. Hvor mange elektroner har plass på nivået med $n_x^2 + n_y^2 + n_z^2 = 9$?"}
+  options={[
+    "$2$",
+    "$3$",
+    "$6$",
+    "$12$"
+  ]}
+  answer={2}
+  explanation={"Bare tallene $2$, $2$ og $1$ gir $4 + 4 + 1 = 9$, og fordi to av dem er like, finnes bare tre rekkefølger: $(2, 2, 1)$, $(2, 1, 2)$ og $(1, 2, 2)$. Hver romtilstand gir to énpartikkeltilstander, én for hver spinnretning, så nivået har plass til $6$ elektroner. Med $3$ har du glemt spinnet, $12$ kommer av å regne $3! = 6$ rekkefølger som om tallene var ulike, og $2$ hører til et nivå med bare én romtilstand, som $(1, 1, 1)$."}
+/>
+
+<SelfCheck question={"To partikler uten vekselvirkning i en uendelig dyp brønn er i énpartikkeltilstandene $\\psi_1$ og $\\psi_3$. Vis at $\\langle(x_1 - x_2)^2\\rangle$ er den samme for bosoner, fermioner og skjelnbare partikler, selv om $\\psi_-$ er null på diagonalen $x_1 = x_2$."}>
+
+Forskjellen er $\mp2|\langle x\rangle_{13}|^2$, så det holder å vise at
+$\langle x\rangle_{13} = \int_0^L x\,\psi_1\psi_3\,dx = 0$. Skriv
+$x = L/2 + (x - L/2)$. Det første leddet gir $(L/2)\int\psi_1\psi_3\,dx = 0$,
+fordi tilstandene er ortogonale. Både $\psi_1$ og $\psi_3$ er symmetriske om
+midten av brønnen, mens $x - L/2$ er antisymmetrisk om den, så også det
+andre integralet er null. Middelkvadratet av avstanden fanger altså ikke opp hele
+forskjellen. Tettheten nær diagonalen er null for fermioner og forsterket for
+bosoner, men andre steder i kvadratet endres den slik at middelkvadratet
+blir det samme.
+
+</SelfCheck>
+
+<KeyTakeaways>
+
+- For to partikler uten vekselvirkning er ${\hat H = \hat H_1 + \hat H_2}$, egenfunksjonene er produkter $\psi_a(\vec r_1)\psi_b(\vec r_2)$, og energiene adderes.
+- Identiske partikler kan ikke skilles, så $\Psi(\vec r_2, \vec r_1) = \pm\Psi(\vec r_1, \vec r_2)$: pluss for bosoner med heltallig spinn, minus for fermioner med halvtallig spinn. To partikler i $a \ne b$ har $\psi_\pm$, summen eller differansen av $\psi_a(\vec r_1)\psi_b(\vec r_2)$ og $\psi_b(\vec r_1)\psi_a(\vec r_2)$ delt på $\sqrt2$.
+- Med $a = b$ er $\psi_- = 0$, så to fermioner kan ikke være i samme énpartikkeltilstand. For $N$ fermioner er den antisymmetriske tilstanden en Slater-determinant.
+- $\langle(x_1 - x_2)^2\rangle$ endres med $\mp2|\langle x\rangle_{ab}|^2$, så når ${\langle x\rangle_{ab} \ne 0}$, er bosoner nærmere hverandre og fermioner lenger fra hverandre enn skjelnbare partikler, uten at noen kraft virker.
+- For to elektroner er hele tilstanden antisymmetrisk. Symmetrisk romdel går med singletten, så to elektroner kan dele en romtilstand når spinnene står i singletten.
+- I en boks er energien en sum av tre ledd ${\pi^2\hbar^2n_i^2/2mL_i^2}$, ett for hver retning, og like sider gir degenerasjon. Tilstandstettheten er $g(E) = (V/4\pi^2)(2m/\hbar^2)^{3/2}\sqrt E$ per spinnretning, med vegger og med periodiske grensebetingelser.
+- $N$ fermioner med spinn ½ fyller romtilstandene opp til ${E_F = (\hbar^2/2m)(3\pi^2\rho)^{2/3}}$. Da er ${E_\text{tot} = \tfrac35NE_F}$, og degenerasjonstrykket er ${P = \tfrac23E_\text{tot}/V}$.
+
+</KeyTakeaways>
